@@ -1,0 +1,58 @@
+{
+    "KeySpecs": [
+        {
+            "icon": "assets/svg/Charging Time.png",
+            "label": "Charging Time",
+            "value": "5 - 6 HRS"
+        },
+        {
+            "icon": "assets/svg/range.png",
+            "label": "Range",
+            "value": "120KM"
+        },
+        {
+            "icon": "assets/svg/Top Speed.png",
+            "label": "Top Speed",
+            "value": "100KMPH"
+        },
+        {
+            "icon": "assets/svg/Fast Charging.png",
+            "label": "Fast Charging Speed",
+            "value": "120KM"
+        },
+        {
+            "icon": "assets/svg/Warrenty.png",
+            "label": "Warranty",
+            "value": "2 Years"
+        }
+    ],
+    "Offerings": [
+        {
+            "icon": "assets/svg/Fast Charging.png",
+            "label": "Fast Charging Speed",
+            "value": "120KM"
+        },
+        {
+            "icon": "assets/svg/Warrenty.png",
+            "label": "Warranty",
+            "value": "2 Years"
+        }
+    ],
+    "AppFeatures": [
+        {
+            "icon": "assets/svg/Charging Time.png",
+            "label": "Charging Time",
+            "value": "5 - 6 HRS"
+        },
+        {
+            "icon": "assets/svg/range.png",
+            "label": "Range",
+            "value": "120KM"
+        },
+        {
+            "icon": "assets/svg/Top Speed.png",
+            "label": "Top Speed",
+            "value": "100KMPH"
+        }
+    ]
+}

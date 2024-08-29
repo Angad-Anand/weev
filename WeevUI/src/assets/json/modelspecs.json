@@ -1,0 +1,15 @@
+{
+  "specifications": [
+    { "feature": "Manufacturer", "value": "5 - 6 HRS" },
+    { "feature": "Model", "value": "120 KMPH" },
+    { "feature": "Variant", "value": "3 - 4 HRS" },
+    { "feature": "Price(Ex Showroom)", "value": "120 KM" },
+    { "feature": "Max Speed", "value": "5 YEARS" },
+    { "feature": "Max Speed", "value": "5 YEARS" },{ "feature": "Manufacturer", "value": "5 - 6 HRS" },
+    { "feature": "Model", "value": "120 KMPH" },
+    { "feature": "Variant", "value": "3 - 4 HRS" },
+    { "feature": "Price(Ex Showroom)", "value": "120 KM" },
+    { "feature": "Max Speed", "value": "5 YEARS" },
+    { "feature": "Max Speed", "value": "5 YEARS" }
+  ]
+}
