@@ -163,6 +163,18 @@
          </div>
          <a href="#" class="view-all-specs">View all Specs &#10145;</a>
       </div>
+      <div class="spec-container">
+         <h2 class="modelspecs_title">OLA S1 Pro's Model Features</h2>
+         <div class="table">
+            <div *ngFor="let spec of specifications; let i = index">
+               <div class="spec-row">
+                  <div class="spec-label">{{ spec.feature }} :</div>
+                  <div class="spec-value">{{ spec.value }}</div>
+               </div>
+            </div>
+         </div>
+         <a href="#" class="view-all-specs">View all Specs &#10145;</a>
+      </div>
       <div class="otherModels">
          <div class="otherModels-title">Other Models like OLA S1 PRO</div>
          <div class="models">
