@@ -1,0 +1,315 @@
+
+   
+   
+   body,
+    html {
+        font-family: 'Lato', sans-serif;
+        font-weight: 400;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        color: $black;
+        background: $white;
+    }
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: 'Lato', sans-serif;
+        @include transition();
+    }
+    
+    a {
+        font-weight: 400;
+        text-decoration: none;
+    }
+    // @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+    
+    // font classes
+ 
+    
+    .shadow-box {
+        background: #fff;
+        @include border-radius(10px);
+        @include box-shadow(0px 0px 30px rgba($black, 0.7));
+    }
+    
+    // color classes
+    .orange {
+        color: $orng;
+    }
+    
+    .orange-bg {
+        @include transition();
+        @include horizontal-gradient($black, $dorng);
+        color: #fff;
+    }
+    
+    .sectiontitle {
+        color: $dorng;
+        font-weight: 400;
+        letter-spacing: 3px;
+    }
+    
+    .pagehead {
+        color: $blue1;
+        font-weight: 500;
+    }
+    
+    .sectionhead {
+        color: $black;
+        font-weight: 700;
+    }
+    
+    h1 {
+        font-size: $head1;
+        line-height: 62px;
+        font-weight: 700;
+    }
+    
+    h2 {
+        font-size: $head2;
+        line-height: 50px;
+        font-weight: 700;
+    }
+    
+    h3 {
+        font-size: $head3;
+        line-height: 42px;
+        font-weight: 700;
+    }
+    
+    h4 {
+        font-size: $head4;
+        line-height: 40px;
+    }
+    
+    @include desktop {
+        h1 {
+            font-size: $head2;
+            margin: 40px 0px 0px 0;
+        }
+        h2 {
+            font-size: $head2;
+        }
+    }
+    
+    @include smdp {
+        h1 {
+            font-size: 28px;
+            margin: 40px 0px 0px 0;
+        }
+        h2 {
+            font-size: 28px;
+        }
+    }
+    
+    @include mobile {
+        h1 {
+            font-size: $head3;
+            margin: 20px 0px 10px 0;
+        }
+        h2 {
+            font-size: $head3;
+        }
+    }
+    .fullwidth{width: $fwidth;}
+    .posrel{position:relative !important; }
+    .headlink {
+        font-size: 14px;
+        font-weight: 400;
+        color: $black;
+        padding: 26px 10px;
+        
+        cursor: pointer;
+        outline: none; 
+        @include transition();
+        text-decoration: none;
+        &:hover,
+        &:active,
+        &:focus {
+            border-bottom: 2px solid $blue3;
+            color: $blue2;
+            @include transition();
+        }
+        @include smdp {
+            font-size: 12px;
+        }
+        @include tab {
+            font-size: 11px;
+        }
+    }
+    
+    .headlinkactive {
+        font-size: 16px;
+        font-weight: 400 ;
+        padding: 10px 20px !important;
+        background: $blue3 ;
+        border-radius: 8px;
+        color: $blue1 !important;
+        @include transition();
+        cursor: pointer;
+        outline: none;
+        &:hover {
+            background: $blue3 !important;
+            color: $white !important;
+        }
+        @include smdp {
+            font-size: 12px;
+            padding: 10px 10px !important;
+        }
+        @include tab {
+            font-size: 11px;
+            padding: 10px 8px !important;
+        }
+    }
+    .line{
+        width:1200px; height:1px; 
+        background:$lorng; margin: 75px auto 0; 
+        position:relative;
+            a{
+                position:absolute;
+                top: -13px;
+                color:$dorng ;
+                right: 0;
+                background: #fff;
+                padding: 0px 15px;
+            }
+            @include mobile {width:95%;
+                margin: 35px auto 0; 
+            }
+        }
+
+    .container {
+        width: 90%;
+        max-width: 1280px;
+    
+        @include smdp {
+            width: 100%;
+        }
+        @include mobile {
+            width: 100%;
+        }
+    }
+    
+    .desbar {
+        display: block;
+        @include mobile {
+            display: none;
+        }
+    }
+    
+    .mbar {
+        display: none;
+        @include mobile {
+            display: block;
+        }
+    }
+    
+    .commonbt {
+        padding: 10px 15px 10px 15px;
+        cursor: pointer;
+        outline: none;
+        border: 0 !important;
+        letter-spacing: 3px;
+        height: 40px;
+        font-size: 18px;
+        @include transition();
+        @include flbox($align: center, $justify: center);
+        line-height: 30px;
+        text-decoration: none;
+        outline: none;
+        &:hover {
+            box-shadow: 0 .4em .7em 0 rgba(4, 49, 64, .2);
+            transform: scale(1.1, 1.1);
+            @include transition();
+            outline: none;
+        }
+        img {
+            width: auto !important;
+            border-radius: 0 !important;
+            margin: 0 !important;
+        }
+        @include tab {
+            font-size: 13px;
+            letter-spacing: 2px;
+            padding: 8px 12px 8px 15px;
+            height: 40px;
+            line-height: 24px;
+        }
+        @include mobile {
+            font-size: 13px;
+            letter-spacing: 2px;
+            padding: 8px 12px 8px 15px;
+            height: 40px;
+            line-height: 24px;
+        }
+    }
+    
+    .btwhite {
+        background: $white;
+        color: $blue1;
+        outline: none;
+        @extend .commonbt;
+        &:hover {
+            color: $blue1;
+        }
+    }
+    
+    .btwhite1 {
+        background: $white;
+        color: $dorng;
+        border: 1px solid $dorng !important;
+        outline: none;
+        @extend .commonbt;
+        &:hover {
+            color: $blue1;
+        }
+    }
+    
+    .btorng {
+        background: $dorng;
+        color: $white;
+        outline: none;
+        @extend .commonbt;
+        
+        &:hover {
+            color: $white;
+        }
+        img {
+            height: 22px;
+            @include mobile {
+                max-height: 20px;
+                max-width: 100px;
+            }
+        }
+    }
+    
+    .box {
+        @include box( $back: $white, $shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.1), );
+    }
+    
+    .dispfbanner {
+        @include flbox($direction: column, $justify: flex-start, );
+        @include mobile {
+            @include flbox($justify: center, );
+        }
+    }
+
+    .dotsbg {
+        content: "";
+        position: absolute;
+        //background: url(../src/assets/images/dotsbg.svg) no-repeat center top;
+        width: 240px;
+        height: 240px;
+        background-size: 100%;
+        z-index: 0;
+        @include mobile {
+            width: 160px;
+            height: 160px;
+        }
+    }

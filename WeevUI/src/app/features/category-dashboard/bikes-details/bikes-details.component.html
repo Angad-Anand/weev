@@ -1,0 +1,74 @@
+<section>
+   <div class="headingarea ">
+      <ol class="breadcrumb">
+         <li><a routerLink="">Home</a></li>
+         <li class="las la-angle-right">
+            <svg class="back" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M7 13L1 7L7 1" stroke="#23272F" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+            </svg>
+            <span class="bike_title">{{title}}</span>
+         </li>
+      </ol>
+
+      <h1 class="pagehead">{{title}}
+      </h1>
+      <h6 class="pagesub">
+         There are 299 electric bikes/motorcycles currently on sale from various manufacturers like Ather, Ola, TVS and
+         many more starting from Rs 25,000. The most popular products under this bracket are the Ola S1(Rs. 84,999),
+         Ather 450X(Rs. 1.19 Lakh)
+      </h6>
+   </div>
+   <div class="line"></div>
+</section>
+
+<section>
+   <!-- <div class="landingarea">
+      <div class="vehiclbox" *ngFor="let Cll of twowheelerlist">
+         <img src="{{Cll.path}}" alt="" onerror="this.src='assets/images/pr1.png';" class="image"
+            (click)="onSelect(Cll.twId)">
+         <div class="infobx" (click)="onSelect(Cll.twId)">
+            <h4> {{Cll.manufacturer}} {{Cll.model}}</h4>
+            <p>Rs. {{Cll.exShowroomPrice}} *</p>
+            <span>
+               <img src="assets/images/star-g.svg"
+                  *ngFor="let item of [].constructor(Cll.selectedRating); let i = index">
+               <img src="assets/images/star-w.svg"
+                  *ngFor="let item of [].constructor(Cll.unSelectRating); let i = index">
+            </span>
+         </div>
+         <div class="icobx">
+            <a href="" class="share">
+            </a>
+            <a href="" class="heart">
+            </a>
+         </div>
+
+      </div>
+   </div> -->
+   <div class="landingarea">
+      <div class="vehicleBox" *ngFor="let Cll of twowheelerlist">
+         <img src="{{Cll.path}}" alt="" onerror="this.src='assets/images/pr1.png';" class="image"
+            (click)="onSelect(Cll.twId)">
+         <div class="infobox" (click)="onSelect(Cll.twId)">
+            <h4>{{Cll.manufacturer}} {{Cll.model}}</h4>
+            <p>Rs. {{Cll.exShowroomPrice}} *</p>
+            <span>
+               <img src="assets/images/star-g.svg"
+                  *ngFor="let item of [].constructor(Cll.selectedRating); let i = index">
+               <img src="assets/images/star-w.svg"
+                  *ngFor="let item of [].constructor(Cll.unSelectRating); let i = index">
+            </span>
+         </div>
+         <div class="icobx">
+            <a href="#" class="share">
+               <img src="./share.svg" alt="Share Icon">
+            </a>
+            <a href="#" class="heart">
+               <img src="./like-outline.svg" alt="Wishlist Icon">
+            </a>
+         </div>
+      </div>
+   </div>
+   <div class="line"><a href="">more</a></div>
+</section>

@@ -1,0 +1,344 @@
+E:\Vehicles\WeevServices\bin\Debug\net6.0\appsettings.Development.json
+E:\Vehicles\WeevServices\bin\Debug\net6.0\appsettings.json
+E:\Vehicles\WeevServices\bin\Debug\net6.0\WeevServices.exe
+E:\Vehicles\WeevServices\bin\Debug\net6.0\WeevServices.deps.json
+E:\Vehicles\WeevServices\bin\Debug\net6.0\WeevServices.runtimeconfig.json
+E:\Vehicles\WeevServices\bin\Debug\net6.0\WeevServices.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\ref\WeevServices.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\WeevServices.pdb
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Azure.Core.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Azure.Identity.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Microsoft.OpenApi.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\MySqlConnector.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Newtonsoft.Json.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Scrutor.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Swashbuckle.AspNetCore.Annotations.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\System.Drawing.Common.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\System.Memory.Data.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\System.Runtime.Caching.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\System.Security.Permissions.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\System.Windows.Extensions.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+E:\Vehicles\WeevServices\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+E:\Vehicles\WeevServices\obj\Debug\net6.0\WeevServices.csproj.AssemblyReference.cache
+E:\Vehicles\WeevServices\obj\Debug\net6.0\WeevServices.GeneratedMSBuildEditorConfig.editorconfig
+E:\Vehicles\WeevServices\obj\Debug\net6.0\WeevServices.AssemblyInfoInputs.cache
+E:\Vehicles\WeevServices\obj\Debug\net6.0\WeevServices.AssemblyInfo.cs
+E:\Vehicles\WeevServices\obj\Debug\net6.0\WeevServices.csproj.CoreCompileInputs.cache
+E:\Vehicles\WeevServices\obj\Debug\net6.0\WeevServices.MvcApplicationPartsAssemblyInfo.cs
+E:\Vehicles\WeevServices\obj\Debug\net6.0\WeevServices.MvcApplicationPartsAssemblyInfo.cache
+E:\Vehicles\WeevServices\obj\Debug\net6.0\staticwebassets.build.json
+E:\Vehicles\WeevServices\obj\Debug\net6.0\staticwebassets.development.json
+E:\Vehicles\WeevServices\obj\Debug\net6.0\scopedcss\bundle\WeevServices.styles.css
+E:\Vehicles\WeevServices\obj\Debug\net6.0\WeevServices.csproj.CopyComplete
+E:\Vehicles\WeevServices\obj\Debug\net6.0\WeevServices.dll
+E:\Vehicles\WeevServices\obj\Debug\net6.0\ref\WeevServices.dll
+E:\Vehicles\WeevServices\obj\Debug\net6.0\WeevServices.pdb
+E:\Vehicles\WeevServices\obj\Debug\net6.0\WeevServices.genruntimeconfig.cache
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\appsettings.Development.json
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\appsettings.json
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\WeevServices.exe
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\WeevServices.deps.json
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\WeevServices.runtimeconfig.json
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\WeevServices.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\WeevServices.pdb
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Azure.Core.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Azure.Identity.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Microsoft.OpenApi.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\MySqlConnector.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Newtonsoft.Json.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Scrutor.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Swashbuckle.AspNetCore.Annotations.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\System.Drawing.Common.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\System.Memory.Data.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\System.Runtime.Caching.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\System.Security.Permissions.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\System.Windows.Extensions.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\obj\Debug\net6.0\WeevServices.csproj.AssemblyReference.cache
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\obj\Debug\net6.0\WeevServices.GeneratedMSBuildEditorConfig.editorconfig
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\obj\Debug\net6.0\WeevServices.AssemblyInfoInputs.cache
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\obj\Debug\net6.0\WeevServices.AssemblyInfo.cs
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\obj\Debug\net6.0\WeevServices.csproj.CoreCompileInputs.cache
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\obj\Debug\net6.0\WeevServices.MvcApplicationPartsAssemblyInfo.cs
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\obj\Debug\net6.0\WeevServices.MvcApplicationPartsAssemblyInfo.cache
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\obj\Debug\net6.0\staticwebassets\msbuild.WeevServices.Microsoft.AspNetCore.StaticWebAssets.props
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\obj\Debug\net6.0\staticwebassets\msbuild.build.WeevServices.props
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.WeevServices.props
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.WeevServices.props
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\obj\Debug\net6.0\staticwebassets.pack.json
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\obj\Debug\net6.0\staticwebassets.build.json
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\obj\Debug\net6.0\staticwebassets.development.json
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\obj\Debug\net6.0\scopedcss\bundle\WeevServices.styles.css
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\obj\Debug\net6.0\WeevServices.csproj.CopyComplete
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\obj\Debug\net6.0\WeevServices.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\obj\Debug\net6.0\refint\WeevServices.dll
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\obj\Debug\net6.0\WeevServices.pdb
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\obj\Debug\net6.0\WeevServices.genruntimeconfig.cache
+Z:\WEEV\Backend Code-20240313T161730Z-001\Backend Code\WeevServices\WeevServices\obj\Debug\net6.0\ref\WeevServices.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\appsettings.Development.json
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\appsettings.json
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\WeevServices.exe
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\WeevServices.deps.json
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\WeevServices.runtimeconfig.json
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\WeevServices.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\WeevServices.pdb
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Azure.Core.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Azure.Identity.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Microsoft.OpenApi.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\MySqlConnector.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Newtonsoft.Json.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Scrutor.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Swashbuckle.AspNetCore.Annotations.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\System.Drawing.Common.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\System.Memory.Data.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\System.Runtime.Caching.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\System.Security.Permissions.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\System.Windows.Extensions.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\obj\Debug\net6.0\WeevServices.csproj.AssemblyReference.cache
+Z:\WEEV\GIT Repository\Weev\WeevServices\obj\Debug\net6.0\WeevServices.GeneratedMSBuildEditorConfig.editorconfig
+Z:\WEEV\GIT Repository\Weev\WeevServices\obj\Debug\net6.0\WeevServices.AssemblyInfoInputs.cache
+Z:\WEEV\GIT Repository\Weev\WeevServices\obj\Debug\net6.0\WeevServices.AssemblyInfo.cs
+Z:\WEEV\GIT Repository\Weev\WeevServices\obj\Debug\net6.0\WeevServices.csproj.CoreCompileInputs.cache
+Z:\WEEV\GIT Repository\Weev\WeevServices\obj\Debug\net6.0\WeevServices.MvcApplicationPartsAssemblyInfo.cs
+Z:\WEEV\GIT Repository\Weev\WeevServices\obj\Debug\net6.0\WeevServices.MvcApplicationPartsAssemblyInfo.cache
+Z:\WEEV\GIT Repository\Weev\WeevServices\obj\Debug\net6.0\staticwebassets\msbuild.WeevServices.Microsoft.AspNetCore.StaticWebAssets.props
+Z:\WEEV\GIT Repository\Weev\WeevServices\obj\Debug\net6.0\staticwebassets\msbuild.build.WeevServices.props
+Z:\WEEV\GIT Repository\Weev\WeevServices\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.WeevServices.props
+Z:\WEEV\GIT Repository\Weev\WeevServices\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.WeevServices.props
+Z:\WEEV\GIT Repository\Weev\WeevServices\obj\Debug\net6.0\staticwebassets.pack.json
+Z:\WEEV\GIT Repository\Weev\WeevServices\obj\Debug\net6.0\staticwebassets.build.json
+Z:\WEEV\GIT Repository\Weev\WeevServices\obj\Debug\net6.0\staticwebassets.development.json
+Z:\WEEV\GIT Repository\Weev\WeevServices\obj\Debug\net6.0\scopedcss\bundle\WeevServices.styles.css
+Z:\WEEV\GIT Repository\Weev\WeevServices\obj\Debug\net6.0\WeevServices.csproj.CopyComplete
+Z:\WEEV\GIT Repository\Weev\WeevServices\obj\Debug\net6.0\WeevServices.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\obj\Debug\net6.0\refint\WeevServices.dll
+Z:\WEEV\GIT Repository\Weev\WeevServices\obj\Debug\net6.0\WeevServices.pdb
+Z:\WEEV\GIT Repository\Weev\WeevServices\obj\Debug\net6.0\WeevServices.genruntimeconfig.cache
+Z:\WEEV\GIT Repository\Weev\WeevServices\obj\Debug\net6.0\ref\WeevServices.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\appsettings.Development.json
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\appsettings.json
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\WeevServices.exe
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\WeevServices.deps.json
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\WeevServices.runtimeconfig.json
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\WeevServices.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\WeevServices.pdb
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Azure.Core.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Azure.Identity.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Microsoft.OpenApi.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\MySqlConnector.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Newtonsoft.Json.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Scrutor.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Swashbuckle.AspNetCore.Annotations.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\System.Drawing.Common.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\System.Memory.Data.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\System.Runtime.Caching.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\System.Security.Permissions.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\System.Windows.Extensions.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+E:\codefolder\Weev\WeevServices\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+E:\codefolder\Weev\WeevServices\obj\Debug\net6.0\WeevServices.csproj.AssemblyReference.cache
+E:\codefolder\Weev\WeevServices\obj\Debug\net6.0\WeevServices.GeneratedMSBuildEditorConfig.editorconfig
+E:\codefolder\Weev\WeevServices\obj\Debug\net6.0\WeevServices.AssemblyInfoInputs.cache
+E:\codefolder\Weev\WeevServices\obj\Debug\net6.0\WeevServices.AssemblyInfo.cs
+E:\codefolder\Weev\WeevServices\obj\Debug\net6.0\WeevServices.csproj.CoreCompileInputs.cache
+E:\codefolder\Weev\WeevServices\obj\Debug\net6.0\WeevServices.MvcApplicationPartsAssemblyInfo.cs
+E:\codefolder\Weev\WeevServices\obj\Debug\net6.0\WeevServices.MvcApplicationPartsAssemblyInfo.cache
+E:\codefolder\Weev\WeevServices\obj\Debug\net6.0\WeevServices.sourcelink.json
+E:\codefolder\Weev\WeevServices\obj\Debug\net6.0\staticwebassets.build.json
+E:\codefolder\Weev\WeevServices\obj\Debug\net6.0\staticwebassets.development.json
+E:\codefolder\Weev\WeevServices\obj\Debug\net6.0\staticwebassets\msbuild.WeevServices.Microsoft.AspNetCore.StaticWebAssets.props
+E:\codefolder\Weev\WeevServices\obj\Debug\net6.0\staticwebassets\msbuild.build.WeevServices.props
+E:\codefolder\Weev\WeevServices\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.WeevServices.props
+E:\codefolder\Weev\WeevServices\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.WeevServices.props
+E:\codefolder\Weev\WeevServices\obj\Debug\net6.0\staticwebassets.pack.json
+E:\codefolder\Weev\WeevServices\obj\Debug\net6.0\scopedcss\bundle\WeevServices.styles.css
+E:\codefolder\Weev\WeevServices\obj\Debug\net6.0\WeevServ.5CE59328.Up2Date
+E:\codefolder\Weev\WeevServices\obj\Debug\net6.0\WeevServices.dll
+E:\codefolder\Weev\WeevServices\obj\Debug\net6.0\refint\WeevServices.dll
+E:\codefolder\Weev\WeevServices\obj\Debug\net6.0\WeevServices.pdb
+E:\codefolder\Weev\WeevServices\obj\Debug\net6.0\WeevServices.genruntimeconfig.cache
+E:\codefolder\Weev\WeevServices\obj\Debug\net6.0\ref\WeevServices.dll

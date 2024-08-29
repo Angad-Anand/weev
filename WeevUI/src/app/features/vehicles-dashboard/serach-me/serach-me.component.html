@@ -1,0 +1,55 @@
+<section class="blogsec blogbg">
+            
+    <div class="blogarea ">
+     <div class="blogleft">
+     <div class=" floatbox" data-aos="zoom-in-right">
+          <h4 class=" sectiontitle ">Search mE  </h4>
+          <form action="" class="form-style ">
+          <ul class="nav nav-pills ntab" role="tablist">
+             <li class="nav-item"  >
+               <a class="nav-link active btst" data-bs-toggle="pill" (click)="onClick(1)" [ngClass]="{'active': tab==='home'}">Car</a>
+             </li>
+             <li class="nav-item" >
+               <a class="nav-link btst" data-bs-toggle="pill" (click)="onClick(2)" [ngClass]="{'active': tab==='menu1'}">Bike</a>
+             </li>             
+           </ul>        
+           
+           <div class="tab-content">
+             <div id="home" class="container tab-pane active" [ngClass]="{'active': tab==='home'}" *ngIf = "isShow"><br>
+                <div class="form-group">
+                   <input type="text" class="form-control" id="user-brand" required="required">
+                   <label for="user-brand">Brand Car</label>
+                   <span class="error-text">Enter Brand</span>
+                </div>
+                <div class="form-group">
+                   <input type="text" class="form-control" id="user-budget" required="required">
+                   <label for="user-budget">Budget </label>
+                   <span class="error-text">Enter Budget</span>
+                </div>
+               
+                <button class="btorng" routerLink="/Selection">SEARCH</button>
+             </div>
+             <div id="menu1" class="container tab-pane " [ngClass]="{'active': tab==='menu1'}" *ngIf = "isShowMenu"><br>
+                <div class="form-group">
+                   <input type="text" class="form-control" id="user-brand1" required="required">                   
+                   <label for="user-brand1">Brand</label>
+                   <span class="error-text">Enter Brand</span>
+                </div>
+                <div class="form-group">
+                   <input type="text" class="form-control" id="user-budget1" required="required">
+                   <label for="user-budget1">Budget</label>
+                   <span class="error-text">Enter Budget</span>
+                </div>
+               
+                <button class="btorng" routerLink="/Selection">SEARCH</button>
+             </div>
+           
+           </div>
+           </form>
+       </div></div>  
+       <div class="blogbox">
+       <h2> Electric cars are coal-powered cars. Their carbon emissions can be worse than gasoline-powered cars. </h2>
+       </div>
+    </div>
+   
+ </section>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="204.979" height="49.315" viewBox="0 0 204.979 49.315">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.931" y1="1" x2="-0.28" y2="0.277" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#0e7aab"/>
+      <stop offset="1" stop-color="#02bee1"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.923" y1="0.088" x2="-0.021" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#81e4ef"/>
+      <stop offset="1" stop-color="#09c9e5"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" y1="0.176" x2="0.866" y2="0.835" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#01d3f1"/>
+      <stop offset="1" stop-color="#0094bb"/>
+    </linearGradient>
+  </defs>
+  <g id="Untitled" transform="translate(-421.433 -871.379)">
+    <g id="Group_89" data-name="Group 89" transform="translate(421.433 871.379)">
+      <g id="Group_84" data-name="Group 84" transform="translate(7.121 0)">
+        <path id="Path_553" data-name="Path 553" d="M124.35,32.457a6.008,6.008,0,0,1-1.542-4.15c-1.628-2.253-.717-5.864-.047-7.984,8.652,12.167,21.039,5.568,30.542,14.33-.825.542-2.656.824-3.229,1.364C143.678,31.226,131.148,35.024,124.35,32.457Z" transform="translate(-121.894 -20.323)" fill-rule="evenodd" fill="url(#linear-gradient)"/>
+      </g>
+      <g id="Group_85" data-name="Group 85" transform="translate(8.504 8.743)">
+        <path id="Path_554" data-name="Path 554" d="M188.463,140.188a22.417,22.417,0,0,0-10.555-3.717c-.235-.019-2.923-2.085-3.163-2.1-.308-.014,1.829,2.029,1.513,2.029-.187,0-2.2-1.218-2.393-1.212s1.449,1.234,1.257,1.245c-.221.013-1.846-.617-2.07-.6s.939.7.7.726c-5.354.693-11.527,3.764-17.367,11.98-4.392,6.178-5.768,21.7-18.631,25.459,5.98-.294,29.48,1.29,36.239-19.124,3.656-11.044,8.927-13.607,13.345-14.5C187.723,140.308,188.1,140.244,188.463,140.188Z" transform="translate(-137.76 -134.375)" fill-rule="evenodd" fill="url(#linear-gradient-2)"/>
+      </g>
+      <g id="Group_86" data-name="Group 86" transform="translate(0 5.009)">
+        <path id="Path_555" data-name="Path 555" d="M24.944,94.511c6.611,7.016,15.155,6.827,28.007,7.553,8.546.483,16.549,8.452,16.009,17.285-1.122,18.378-26.775,21.425-36.18,18.5,11.972-1.3,17.993-9.437,16.731-14.421-1.676-6.623-11.721-4.236-17.844-9.64-3-1.294-5.042-4.03-4.547-5.446-1.648-.674-2.857-4.6-1.907-5.755C23.6,101.031,24.4,96.294,24.944,94.511Z" transform="translate(-24.256 -94.511)" fill-rule="evenodd" fill="url(#linear-gradient-3)"/>
+      </g>
+      <g id="Group_87" data-name="Group 87" transform="translate(53.979 18.437)">
+        <text id="PolicyWings" transform="translate(0 21)" fill="#fff" font-size="26" font-family="CeraPro-Bold, Cera Pro" font-weight="700"><tspan x="0" y="0">PolicyWings</tspan></text>
+      </g>
+      <g id="Group_88" data-name="Group 88" transform="translate(45.114 13.561)">
+        <ellipse id="Ellipse_3" data-name="Ellipse 3" cx="0.896" cy="0.865" rx="0.896" ry="0.865" transform="translate(0 0)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

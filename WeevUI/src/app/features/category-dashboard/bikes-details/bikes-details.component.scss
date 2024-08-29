@@ -1,0 +1,46 @@
+.back{
+    margin: 5px;
+    height: 15px;
+}
+.bike_title{
+    font-weight: 900;
+}
+
+.iconbx{
+    display: flex;
+    flex-direction: column;
+}
+
+.share_button{
+    position: absolute;
+    padding: 5px;
+    border-radius: 20px;
+    width: 30%;
+    height: auto;
+    background: #ffffff9b;
+    color: #111111;
+    border: none;
+    right: 5px;
+    top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add_to_wishlist{
+    position: absolute;
+    padding: 5px;
+    border-radius: 20px;
+    width: 30%;
+    height: auto;
+    background: #ffffff9b;
+    color: #111111;
+    border: none;
+    right: 5px;
+    top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+

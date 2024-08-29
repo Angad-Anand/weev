@@ -1,0 +1,885 @@
+ <div class="category">
+   <div class="category_containers">
+      <div class="category_navbar">
+         <a href="#" class="active">Ola S1 Pro</a>
+         <a href="#">Specs</a>
+         <a href="">Key Specs</a>
+         <a href="#">Images</a>
+         <a href="#">Colors</a>
+      </div>
+      <div class="mainDetails">
+         <div class="gallery-container">
+            <div class="main-image-container">
+               <img [src]="mainImageSrc" id="mainImage" alt="Main Image" />
+            </div>
+            <div class="thumbnails-container">
+               <div class="thumbnails">
+                  <img *ngFor="let image of imageList" [src]="image" [class.active]="image === mainImageSrc"
+                     class="thumbnail" (click)="changeImage(image)" [attr.data-image]="image" alt="Thumbnail" />
+                  <div class="thumbnail view-all-button" data-image="view-all" onclick="viewAll()">View All
+                     <span>&#10132;</span>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="description">
+            <div class="title">
+               <h1>{{productListModel?.manufacturer}} {{productListModel?.model}}</h1>
+               <div class="rating">
+                  <img src="assets/images/star-g.svg"
+                     *ngFor="let item of [].constructor(productListModel?.ourRating); let i = index">
+                  <img src="assets/images/star-w.svg"
+                     *ngFor="let item of [].constructor(unSelectRating); let i = index">
+               </div>
+            </div>
+            <div class="details">
+               <!-- Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+               Ipsum has been the industry's standard dummy text ever since the 1500s, when an  -->
+               {{productListModel?.additionalFeatures}}
+            </div>
+            <div class="price">Price: Rs. {{productListModel?.exShowroomPrice}}</div>
+            <div class="status">Booking Status: <div class="currentStatus">Available</div>
+            </div>
+            <div>
+               Colours : 4
+            </div>
+         </div>
+      </div>
+      <div class="specs_booking">
+         <div class="specs">
+            <div class="tabs">
+               <button class="tablinks" [class.active]="activeTab === 'KeySpecs'" (click)="onTabClick('KeySpecs')">
+                  Key Specs
+               </button>
+               <button class="tablinks" [class.active]="activeTab === 'AppFeatures'"
+                  (click)="onTabClick('AppFeatures')">
+                  App Features
+               </button>
+            </div>
+
+            <div id="KeySpecs" class="tabcontent" *ngIf="activeTab === 'KeySpecs'">
+               <div class="grid-container">
+                  <div class="grid-item" *ngFor="let item of keySpecs">
+                     <img [src]="item.icon" [alt]="item.label" />
+                     <span>{{ item.label }}:</span>
+                     <span>{{ item.value }}</span>
+                  </div>
+               </div>
+            </div>
+
+            <div id="AppFeatures" class="tabcontent" *ngIf="activeTab === 'AppFeatures'">
+               <div class="grid-container">
+                  <div class="grid-item" *ngFor="let item of appFeatures">
+                     <img [src]="item.icon" [alt]="item.label" />
+                     <span>{{ item.label }}:</span>
+                     <span>{{ item.value }}</span>
+                  </div>
+               </div>
+            </div>
+
+            <button class="link_button specs_button">See all specs &#10145;</button>
+         </div>
+
+         <div class="booking">
+            <h1 class="booking-title">Booking details</h1>
+            <table>
+               <tr>
+                  <td>Availablity : </td>
+                  <td>Available</td>
+               </tr>
+               <tr>
+                  <td>Booking Amount : </td>
+                  <td>{{productListModel?.bookingPrice}}Lakh</td>
+               </tr>
+            </table>
+            <button class="standard_button booking_button">Interested in Make Model</button>
+         </div>
+      </div>
+      <div class="variants-container">
+         <h2 class="variants-title">OLA S1 Pro's Varients</h2>
+         <table class="variants-table">
+            <thead>
+               <tr>
+                  <th>Variants</th>
+                  <th>Specifications</th>
+                  <th>Price</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td>OLA S1<br><span class="variants-specs">5.5hr &nbsp; 300kms</span></td>
+                  <td>
+                     <div class="specs-container">
+                        <span>6 - 7 hrs</span>
+                        <span>300kms</span>
+                     </div>
+                  </td>
+                  <td>70000</td>
+               </tr>
+               <tr>
+                  <td>OLA S1<br><span class="variants-specs">5.5hr &nbsp; 5.5hr</span></td>
+                  <td>
+                     <div class="specs-container">
+                        <span>5 - 4 hrs</span>
+                        <span>400kms</span>
+                     </div>
+                  </td>
+                  <td>50000</td>
+               </tr>
+               <tr>
+                  <td>OLA S1<br><span class="variants-specs">5.5hr &nbsp; 5.5hr</span></td>
+                  <td>
+                     <div class="specs-container">
+                        <span></span>
+                        <span></span>
+                     </div>
+                  </td>
+                  <td>40000</td>
+               </tr>
+               <tr>
+                  <td>OLA S1<br><span class="variants-specs">5.5hr &nbsp; 5.5hr</span></td>
+                  <td>
+                     <div class="specs-container">
+                        <span></span>
+                        <span></span>
+                     </div>
+                  </td>
+                  <td>55000</td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+
+      <div class="spec-container">
+         <h2 class="modelspecs_title">Ola S1 Pro's Model Specifications</h2>
+         <div class="table">
+            <div *ngFor="let spec of specifications; let i = index">
+               <div class="spec-row">
+                  <div class="spec-label">{{ spec.feature }} :</div>
+                  <div class="spec-value">{{ spec.value }}</div>
+               </div>
+            </div>
+         </div>
+         <a href="#" class="view-all-specs">View all Specs &#10145;</a>
+      </div>
+      <div class="otherModels">
+         <div class="otherModels-title">Other Models like OLA S1 PRO</div>
+         <div class="models">
+            <div class="model">
+               <img src="../1.png" alt="Product Image">
+               <div class="card-content">
+                  <h3>Product Name</h3>
+                  <img class="favorite-icon" src="../heart.png" alt="">
+                  <p>Price: ₹700,000</p>
+                  <p>Colors: 4</p>
+                  <button class="view-button">View</button>
+               </div>
+            </div>
+            <div class="model">
+               <img src="../1.png" alt="Product Image">
+               <div class="card-content">
+                  <h3>Product Name</h3>
+                  <img class="favorite-icon" src="../heart.png" alt="">
+                  <p>Price: ₹700,000</p>
+                  <p>Colors: 4</p>
+                  <button class="view-button">View</button>
+               </div>
+            </div>
+            <div class="model">
+               <img src="../1.png" alt="Product Image">
+               <div class="card-content">
+                  <h3>Product Name</h3>
+                  <img class="favorite-icon" src="../heart.png" alt="">
+                  <p>Price: ₹700,000</p>
+                  <p>Colors: 4</p>
+                  <button class="view-button">View</button>
+               </div>
+            </div>
+            <div class="model">
+               <img src="../1.png" alt="Product Image">
+               <div class="card-content">
+                  <h3>Product Name</h3>
+                  <img class="favorite-icon" src="../heart.png" alt="">
+                  <p>Price: ₹700,000</p>
+                  <p>Colors: 4</p>
+                  <button class="view-button">View</button>
+               </div>
+            </div>
+            <div class="model">
+               <img src="../1.png" alt="Product Image">
+               <div class="card-content">
+                  <h3>Product Name</h3>
+                  <img class="favorite-icon" src="../heart.png" alt="">
+                  <p>Price: ₹700,000</p>
+                  <p>Colors: 4</p>
+                  <button class="view-button">View</button>
+               </div>
+            </div>
+            <div class="model">
+               <img src="../1.png" alt="Product Image">
+               <div class="card-content">
+                  <h3>Product Name</h3>
+                  <img class="favorite-icon" src="../heart.png" alt="">
+                  <p>Price: ₹700,000</p>
+                  <p>Colors: 4</p>
+                  <button class="view-button">View</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+
+
+<!-- 
+<section>
+<div class="center mobview">
+      <div class="imgarea">
+
+         <img src={{productListModel?.path}} class="img-fluid" alt="..." />
+      </div>
+      <div class="top-right mobview">
+         <div class="text">
+            <h3 style="font-size: 30px; color: white;">
+               {{productListModel?.manufacturer}} {{productListModel?.model}}</h3>
+            <p style="font-size: 10px;"> Rs {{productListModel?.exShowroomPrice}} Lakh</p>
+            &#9733; &#9733; &#9733; &#9733; &#9734;
+         </div>
+
+      </div>
+
+
+   </div>
+   <div class="img mobview ">
+      <div class="im mobview">
+         <img src="{{productListModel?.path}}" alt="" width="100" height="90" />
+      </div>
+      <div class="im">
+         <img src="{{productListModel?.path}}" alt="" width="100" height="90" />
+      </div>
+      <div class="im">
+         <img src="{{productListModel?.path}}" alt="" width="100" height="90" />
+      </div>
+      <div class="im">
+         <img src="{{productListModel?.path}}" alt="" width="100" height="90" />
+      </div>
+   </div>
+
+   <div class="center innerbanner container ">
+      <div class="imgarea deskview ">
+         <div class="h">
+            <img src="{{CllOutResult}}" alt="" onerror="this.src='assets/images/pr4.png';">
+         </div>
+
+         <div class="img " #scrollMe style="overflow: scroll; height: xyz;">
+            <div class="item" [ngStyle]="{'background-color':Cll? Cll:''}" *ngFor="let Cll of tabs"
+               (click)="onClickDynamic(Cll)"></div>
+
+         </div>
+      </div>
+      <div class="txtarea">
+         <div class="top-right deskview">
+            <div class="text deskview">
+               <h2 style="font-size: 60px;">{{productListModel?.manufacturer}} {{productListModel?.model}}</h2>
+               <p> Rs {{productListModel?.exShowroomPrice}} </p>
+               <span>
+                  <img style="width: 5%;" src="assets/images/star-g.svg"
+                     *ngFor="let item of [].constructor(productListModel?.ourRating); let i = index">
+
+                  <img style="width: 5%;" src="assets/images/star-w.svg"
+                     *ngFor="let item of [].constructor(unSelectRating); let i = index">
+               </span>
+            </div>
+
+         </div>
+         <div class="price container deskview">
+            <div class="h">
+               <h1>Description</h1>
+            </div>
+            <p>
+
+               {{productListModel?.additionalFeatures}}
+
+            </p>
+         </div>
+         <div class="int  container deskview" (click)="open(popup)">
+            INTERSETED IN OLA SI PRO
+         </div>
+      </div>
+
+   </div>
+</section>
+<section>
+   <div class="specs container">
+      <div class="item" [ngClass]="{'active': tab==='Price'}"><a (click)="onClick(1)">Price</a></div>
+      <div class="item" [ngClass]="{'active': tab==='Specs'}"><a (click)="onClick(2)">Specs</a></div>
+      <div class="item" [ngClass]="{'active': tab==='User'}"><a (click)="onClick(3)" >User reviews</a></div>
+        <div class="item" [ngClass]="{'active': tab==='Expert'}"><a (click)="onClick(4)" >Expert Reviews</a></div>
+        <div class="item" [ngClass]="{'active': tab==='Videos'}"><a (click)="onClick(5)" >Videos</a></div>
+   </div>
+
+
+   <div class="contain container deskview" style="font-family: var(--bs-font-sans-serif)" *ngIf="isShowPrice">
+      <div class="h">
+         <h1>Price</h1>
+      </div>
+      <p>
+         ShowroomPrice: Rs {{productListModel?.exShowroomPrice}} Lakh
+         <br>
+         BookingPrice: Rs {{productListModel?.bookingPrice}}Lakh
+      </p>
+   </div>
+
+   <div class="contain container deskview" style="font-family: var(--bs-font-sans-serif)" *ngIf="isShowSpecs">
+
+      <div class="st  ">
+
+         <div class="item" [ngClass]="{'active': tab==='OverView'}"><a (click)="onClick(6)">OverView</a></div>
+         <div class="item" [ngClass]="{'active': tab==='EngineTransmission'}"><a (click)="onClick(7)">Engine and
+               Transmission</a></div>
+         <div class="item" [ngClass]="{'active': tab==='Features'}"><a (click)="onClick(8)">Features</a></div>
+
+      </div>
+   </div>
+   <div class="contain container mobview" style="font-family: var(--bs-font-sans-serif)" *ngIf="isShowSpecs">
+      <div class="h">
+         <h1>Specs</h1>
+      </div>
+      <div class="st container mobview ">
+         <div class="spec1 container mobview">
+            <div id="circle"></div>
+            Specs1
+         </div>
+         <div class="spec1  container mobview">
+            <div id="circle"></div>
+            Specs2
+         </div>
+         <div class="spec1 container mobview">
+            <div id="circle"></div>
+            Specs3
+         </div>
+         <div class="spec1 container mobview">
+            <div id="circle"></div>
+            Specs4
+         </div>
+         <div class="spec1 container mobview">
+            <div id="circle"></div>
+            Specs5
+         </div>
+         <div class="spec1 container mobview">
+            <div id="circle"></div>
+            Specs6
+         </div>
+      </div>
+   </div>
+   <div class="fluid container" style="font-family: var(--bs-font-sans-serif);" *ngIf="isShowUser">
+      <div class="h">
+         <h1>User Review</h1>
+      </div>
+      <div class="row">
+         <div class="col-sm-1" style="top: 15px;">
+            <div id="circle"></div>
+         </div>
+         <div class="col-sm-9">
+            <h3>User 1</h3>
+            <p>Particularly the monster recieves a motorcycle like look that closely resembles Honda 125 mini bike
+            </p>
+
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-sm-1" style="top: 15px;">
+            <div id="circle"></div>
+         </div>
+         <div class="col-sm-9">
+            <h3>User 2</h3>
+            <p>Particularly the monster recieves a motorcycle like look that closely resembles Honda 125 mini bike
+            </p>
+
+         </div>
+      </div>
+      <div id="more">
+         More...
+      </div>
+   </div>
+   <div class="fluid container" *ngIf="isShowExpert">
+      <div class="h">
+         <h1>Expert Review</h1>
+      </div>
+      <div class="row">
+         <div class="col-sm-1" style="top: 15px;">
+            <div id="circle"></div>
+         </div>
+         <div class="col-sm-9">
+            <h3>Expert 1</h3>
+            <p>Particularly the monster recieves a motorcycle like look that closely resembles Honda 125 mini bike
+            </p>
+
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-sm-1" style="top: 15px;">
+            <div id="circle"></div>
+         </div>
+         <div class="col-sm-9">
+            <h3>Expert 2</h3>
+            <p>Particularly the monster recieves a motorcycle like look that closely resembles Honda 125 mini bike
+            </p>
+
+         </div>
+      </div>
+      <div id="more">
+         More...
+      </div>
+   </div>
+
+   <div class="vi container" *ngIf="isShowVideos">
+      <div class="specs container">
+         <div class="item" *ngFor="let Cll of tabs"><a (click)="onClickDynamic(Cll)">{{Cll}}</a></div>
+
+
+      </div>
+      <div class="h">
+         <img src="{{CllOutResult}}" alt="">
+      </div>
+      <div class="h">
+         <h1>VIDEOS</h1>
+      </div>
+
+      <div class="im1"><img src="assets/images/pr4.png" alt=""></div>
+      <div class="im1"><img src="assets/images/pr4.png" alt=""></div>
+      <div class="im1"><img src="assets/images/pr4.png" alt=""></div>
+      <div class="im1"><img src="assets/images/pr4.png" alt=""></div>
+      <div class="int mobview " (click)="open(popup)">
+         INTERSETED IN OLA SI PRO
+      </div>
+   </div>
+
+
+   <div class="contain container deskview" style="font-family: var(--bs-font-sans-serif)" *ngIf="isShowOverView">
+
+      <div class="h">
+         <h1>OverView</h1>
+      </div>
+
+      <div class="img">
+         <div class="boxDiv">
+            Manufacturer: {{productListModel?.manufacturer}}
+         </div>
+         <div class="boxDiv">
+            Model :{{productListModel?.model}}
+         </div>
+         <div class="boxDiv">
+            Variant :{{productListModel?.variant}}
+         </div>
+         <div class="boxDiv">
+            Variant Type : {{productListModel?.variantType}}
+         </div>
+         <div class="boxDiv">
+            Price(Ex Showroom) :{{productListModel?.exShowroomPrice}}<br>
+         </div>
+
+      </div>
+      <div class="img">
+         <div class="boxDiv">
+            Max Speed :{{productListModel?.maxSpeed}}<br>
+         </div>
+         <div class="boxDiv">
+            Charging Time :{{productListModel?.chargingTime}}<br>
+         </div>
+         <div class="boxDiv">
+            Accelration (0-60 km/h) :{{productListModel?.accelration0To60kmph}}<br>
+         </div>
+         <div class="boxDiv">
+            Accelration (0-40 km.h) :{{productListModel?.accelration0To40kmph}}<br>
+         </div>
+         <div class="boxDiv">
+            Available :{{productListModel?.available}}<br>
+         </div>
+
+      </div>
+      <div class="img">
+         <div class="boxDiv">
+            Order or Booking :
+         </div>
+         <div class="boxDiv">
+            Offline or Online :{{productListModel?.offlineOronline}}<br>
+         </div>
+         <div class="boxDiv">
+            Booking site :{{productListModel?.bookingSite}}<br>
+         </div>
+         <div class="boxDiv">
+            City Presence :
+         </div>
+         <div class="boxDiv">
+            Cateogry :{{productListModel?.category}}<br>
+         </div>
+
+      </div>
+      <div class="img">
+         <div class="boxDiv">
+            Booking Price :{{productListModel?.bookingPrice}}<br>
+         </div>
+         <div class="boxDiv">
+            Note :
+         </div>
+         <div class="boxDiv">
+         </div>
+         <div class="boxDiv">
+         </div>
+         <div class="boxDiv">
+         </div>
+      </div>
+
+   </div>
+   <div class="contain container deskview" style="font-family: var(--bs-font-sans-serif)"
+      *ngIf="isShowEngineTransmission">
+      <div class="h">
+         <h1>Engine Transmission</h1>
+      </div>
+
+      <div class="img">
+         <div class="boxDiv ">
+            Continuous Power: {{productListModel?.continuousPower}}
+         </div>
+         <div class="boxDiv">
+            No. Of Batteries :{{productListModel?.noOfBatteries}}
+         </div>
+         <div class="boxDiv">
+            Motor Power (w) :{{productListModel?.motorPower}}
+         </div>
+         <div class="boxDiv">
+            Range : {{productListModel?.rangeOfVehicle}}
+         </div>
+         <div class="boxDiv">
+            Starting :
+         </div>
+
+      </div>
+      <div class="img">
+         <div class="boxDiv">
+            Motor IP Rating :
+         </div>
+         <div class="boxDiv">
+         </div>
+         <div class="boxDiv">
+         </div>
+         <div class="boxDiv">
+         </div>
+         <div class="boxDiv">
+         </div>
+      </div>
+
+
+   </div>
+   <div class="contain container deskview" style="font-family: var(--bs-font-sans-serif)" *ngIf="isShowFeatures">
+      <div class="h">
+         <h1>Features</h1>
+      </div>
+      <div class="img">
+         <div class="boxDiv ">
+            Instrument Console : {{productListModel?.instrumentConsole}}
+         </div>
+         <div class="boxDiv">
+            Bluetooth Connectivity : {{productListModel?.bluetoothConnectivity}}
+         </div>
+         <div class="boxDiv">
+            Navigation : {{productListModel?.navigation}}
+         </div>
+         <div class="boxDiv">
+            Call/SMS Alerts : {{productListModel?.callOrsmsalerts}}
+         </div>
+         <div class="boxDiv">
+            Geo Fencing : {{productListModel?.geoFencing}}
+         </div>
+      </div>
+      <div class="img">
+         <div class="boxDiv ">
+            Anti Theft Alarm : {{productListModel?.antiTheftAlarm}}
+         </div>
+         <div class="boxDiv">
+            USB Charging Port : {{productListModel?.usbchargingPort}}
+         </div>
+         <div class="boxDiv">
+            Music Control : {{productListModel?.musicControl}}
+         </div>
+         <div class="boxDiv">
+            Central Locking : {{productListModel?.centralLocking}}
+         </div>
+         <div class="boxDiv">
+            OTA :
+         </div>
+      </div>
+      <div class="img">
+         <div class="boxDiv">
+            Cruise Control : {{productListModel?.cruiseControl}}
+         </div>
+         <div class="boxDiv">
+            External Speakers : {{productListModel?.externalSpeakers}}
+         </div>
+         <div class="boxDiv">
+            Speedometer : {{productListModel?.speedometer}}
+         </div>
+         <div class="boxDiv">
+            Tripmeter : {{productListModel?.tripmeter}}
+         </div>
+         <div class="boxDiv">
+            Odometer : {{productListModel?.Odometer}}
+         </div>
+      </div>
+      <div class="img">
+         <div class="boxDiv">
+            Additional Features Of Variant : {{productListModel?.additionalFeatures}}
+         </div>
+         <div class="boxDiv">
+            Seat Type :
+         </div>
+         <div class="boxDiv">
+            Clock : {{productListModel?.clock}}
+         </div>
+         <div class="boxDiv">
+            Passenger Footrest :
+         </div>
+         <div class="boxDiv">
+            Carry Hook :
+         </div>
+      </div>
+      <div class="img">
+         <div class="boxDiv">
+            Underseat storage : {{productListModel?.manufacturer}}
+         </div>
+         <div class="boxDiv">
+            Distance to Empty Indicator : {{productListModel?.manufacturer}}
+         </div>
+         <div class="boxDiv">
+            Charger Output : {{productListModel?.manufacturer}}
+         </div>
+         <div class="boxDiv">
+            Features and Safety : {{productListModel?.manufacturer}}
+         </div>
+         <div class="boxDiv">
+            Braking Type : {{productListModel?.manufacturer}}
+         </div>
+      </div>
+      <div class="img">
+         <div class="boxDiv">
+            Charging Point : {{productListModel?.manufacturer}}
+         </div>
+         <div class="boxDiv">
+            Fast Charging : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Fast Charging Time : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Artificial Exhaust Sound System : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Internet Connectivity : {{productListModel?.manufacturer}}</div>
+      </div>
+      <div class="img">
+         <div class="boxDiv">
+            Operating System : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Processor : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Mobile Application : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Charging Station Locater : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Gradeability : {{productListModel?.manufacturer}}</div>
+      </div>
+      <div class="img">
+         <div class="boxDiv">
+            Speedometer : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Tripmeter : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Clock : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Riding Modes : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            EBS : {{productListModel?.manufacturer}}</div>
+      </div>
+      <div class="img">
+         <div class="boxDiv">
+            Additional Features : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Passenger Footrest : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Display : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Mileage and Performance : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Braking (60-0 Kmph) : {{productListModel?.manufacturer}}</div>
+      </div>
+      <div class="img">
+         <div class="boxDiv">
+            Chassis and Suspension : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Body Type : {{productListModel?.bodyType}}</div>
+         <div class="boxDiv">
+            Dimensions and Capacity : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Boot Space : {{productListModel?.bootSpace}}</div>
+         <div class="boxDiv">
+            Width : {{productListModel?.width}}</div>
+      </div>
+      <div class="img">
+         <div class="boxDiv">
+            Length : {{productListModel?.length}}</div>
+         <div class="boxDiv">
+            Height : {{productListModel?.height}}</div>
+         <div class="boxDiv">
+            Saddle Height : {{productListModel?.saddleHeight}}</div>
+         <div class="boxDiv">
+            Ground Clearance : {{productListModel?.groundClearance}}</div>
+         <div class="boxDiv">
+            Wheelbase : {{productListModel?.wheelbase}}</div>
+      </div>
+      <div class="img">
+         <div class="boxDiv">
+            Kerb Weight : {{productListModel?.kerbWeight}}</div>
+         <div class="boxDiv">
+            Additional Storage : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Load Carrying Capacity : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Electricals : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Headlight : {{productListModel?.manufacturer}}</div>
+      </div>
+      <div class="img">
+         <div class="boxDiv">
+            Tail Light : {{productListModel?.manufacturer}} </div>
+         <div class="boxDiv">
+            Turn Signal Lamp : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Projector Headlights : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            DRLs : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Low Battery Indicator : {{productListModel?.manufacturer}}</div>
+      </div>
+      <div class="img">
+         <div class="boxDiv">
+            Tyres and Brakes : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Front Brake Diameter : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Rear Brake Diameter : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Performance : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Scooter Speed : {{productListModel?.manufacturer}}</div>
+      </div>
+      <div class="img">
+         <div class="boxDiv">
+            0-100 Kmph (sec) : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            0-60 Kmph (sec): {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            0-40 Kmph (sec): {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Top Speed : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Motor & Battery : {{productListModel?.manufacturer}}</div>
+      </div>
+      <div class="img">
+         <div class="boxDiv">
+            Motor Type : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Continious Power : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Torque (Motor): {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Torque (Wheel): {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Motor Warranty: {{productListModel?.manufacturer}}</div>
+      </div>
+      <div class="img">
+         <div class="boxDiv">
+            Drive Type : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Battery Type : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Battery Capacity : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Battery Warranty : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Water Proof Rating : {{productListModel?.manufacturer}}</div>
+      </div>
+      <div class="img">
+         <div class="boxDiv">
+            Swappable Battery : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Reverse Assist : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Transmission : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Range : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Claimed Range : {{productListModel?.manufacturer}}</div>
+      </div>
+      <div class="img">
+         <div class="boxDiv">
+            Charging : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Charging Time(0-80%) : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Charging Time(0-100%) : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Charging At Home : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Charging At Charging Station : {{productListModel?.manufacturer}}</div>
+      </div>
+      <div class="img">
+         <div class="boxDiv">
+            Underpinnings : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Suspension Front : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Suspension Rear : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Brakes Front : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Brakes Rear : {{productListModel?.manufacturer}}</div>
+      </div>
+      <div class="img">
+         <div class="boxDiv">
+            Tyre Size : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Wheel Size : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Wheels Type : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Frame : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Tubeless Tyre : {{productListModel?.manufacturer}}</div>
+      </div>
+      <div class="img">
+         <div class="boxDiv">
+            IP Rating : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Motor : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Controller : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Battery : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Display : {{productListModel?.manufacturer}}</div>
+      </div>
+      <div class="img">
+         <div class="boxDiv">
+            Warranty : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Vehicle : {{productListModel?.manufacturer}}</div>
+         <div class="boxDiv">
+            Battery : {{productListModel?.manufacturer}} </div>
+
+         <div class="boxDiv">
+         </div>
+         <div class="boxDiv">
+         </div>
+      </div>
+
+   </div>
+</section>  -->

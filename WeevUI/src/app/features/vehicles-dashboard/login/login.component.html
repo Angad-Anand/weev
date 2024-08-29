@@ -1,0 +1,228 @@
+<section>
+   <div *ngIf="isShowRegisteration" class=window__container>
+    <div class="modal-header">
+      <h4 class="modal-title" >Registeration</h4>
+      <button type="button" class="btn-close" (click)="isShowRegisteration = false"></button>
+    </div>
+    
+    <div class="modal-body">
+       <form [formGroup]="reactiveRegisteration" #form="ngForm">
+          <div class="form-group">
+            <label>Full Name</label>
+           <input type="text" id="fullname" name="fullname" formControlName="fullname" 
+           placeholder="Your name" required minlength="1" maxlength="50"
+            class="form-control form-control-sm" 
+            [class.is-invalid]="fullname.invalid && (fullname.dirty || fullname.touched)">
+           <div *ngIf="fullname.invalid && (fullname.dirty || fullname.touched)"
+            class="invalid-feedback">
+             <div *ngIf="fullname.errors?.['required']">
+               This field is required.
+             </div>
+             <div *ngIf="fullname.errors?.['minlength']">
+               This field must have at least 3 character.
+             </div>
+             <div *ngIf="fullname.errors?.['maxlength']">
+               This field must have at most 50 characters.
+             </div>
+          </div>
+          </div>
+      
+          <div class="form-group">
+            <label>Username</label>
+            <input type="text" id="username" name="username" formControlName="username" 
+           placeholder="Your name" required minlength="1" maxlength="50"
+            class="form-control form-control-sm" 
+            [class.is-invalid]="username.invalid && (username.dirty || username.touched)">
+           <div *ngIf="username.invalid && (username.dirty || username.touched)"
+            class="invalid-feedback">
+             <div *ngIf="username.errors?.['required']">
+               This field is required.
+             </div>
+             <div *ngIf="username.errors?.['minlength']">
+               This field must have at least 3 character.
+             </div>
+             <div *ngIf="username.errors?.['maxlength']">
+               This field must have at most 50 characters.
+             </div>
+            
+          </div>
+          </div>
+          <div class="form-group">        
+             <label for="mobile">Mobile </label>
+            <input type="text" id="mobile" name="mobile" formControlName="mobile" 
+         placeholder="98" required minlength="10" maxlength="10" 
+         class="form-control form-control-sm" [class.is-invalid]="mobile.invalid && (mobile.dirty || mobile.touched)">
+         <div *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)" class="invalid-feedback">
+           <div *ngIf="mobile.errors?.['required']">
+             This field is required.
+           </div>
+           <div *ngIf="mobile.errors?.['minlength']">
+             This field must have at least 10 character.
+           </div>
+           <div *ngIf="mobile.errors?.['maxlength']">
+             This field must have at most 100 characters.
+           </div>
+           <div *ngIf="!mobile.errors?.['required'] && !mobile.errors?.['minlength'] && !mobile.errors?.['maxlength'] && mobile.errors?.['onlyNumber']">
+             Invalid Mobile format.
+           </div>
+            
+            </div>
+           
+            </div>  
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="email" name="email" formControlName="email" 
+         placeholder="your-name@provider.com" required minlength="1" maxlength="250" 
+         class="form-control form-control-sm" [class.is-invalid]="email.invalid && (email.dirty || email.touched)">
+         <div *ngIf="email.invalid && (email.dirty || email.touched)" class="invalid-feedback">
+           <div *ngIf="email.errors?.['required']">
+             This field is required.
+           </div>
+           <div *ngIf="email.errors?.['minlength']">
+             This field must have at least 1 character.
+           </div>
+           <div *ngIf="email.errors?.['maxlength']">
+             This field must have at most 250 characters.
+           </div>
+           <div *ngIf="!email.errors?.['required'] && !email.errors?.['minlength'] && !email.errors?.['maxlength'] && email.errors?.['emailValidator']">
+             Invalid email format.
+           </div>
+         
+        </div>
+          </div>
+      
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="password" name="password" formControlName="password" 
+           placeholder="Your password" required minlength="6" maxlength="10"
+            class="form-control form-control-sm" 
+            [class.is-invalid]="password.invalid && (password.dirty || password.touched)">
+           <div *ngIf="password.invalid && (password.dirty || password.touched)"
+            class="invalid-feedback">
+             <div *ngIf="password.errors?.['required']">
+               This field is required.
+             </div>
+             <div *ngIf="password.errors?.['minlength']">
+               This field must have at least 6 character.
+             </div>
+             <div *ngIf="password.errors?.['maxlength']">
+               This field must have at most 10 characters.
+             </div>
+            
+          </div>
+          </div>
+      
+          <div class="form-group">
+            <label>Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" formControlName="confirmPassword" 
+           placeholder="Your confirmPassword" required minlength="6" maxlength="10"
+            class="form-control form-control-sm" 
+            [class.is-invalid]="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)">
+           <div *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)"
+            class="invalid-feedback">
+             <div *ngIf="confirmPassword.errors?.['required']">
+               This field is required.
+             </div>
+             <div *ngIf="confirmPassword.errors?.['minlength']">
+               This field must have at least 6 character.
+             </div>
+             <div *ngIf="confirmPassword.errors?.['maxlength']">
+               This field must have at most 10 characters.
+             </div>
+            </div>
+          </div>
+      
+          <div class="form-group form-check">
+            <input
+              type="checkbox"
+              formControlName="acceptTerms"
+              class="form-check-input"
+              [ngClass]="{ 'is-invalid': acceptTerms.errors }"
+            />
+            <label for="acceptTerms" class="form-check-label"
+              >I have read and agree to the Terms</label
+            >
+            <div *ngIf="acceptTerms.errors" class="invalid-feedback">
+              Accept Terms is required
+            </div>
+          </div>
+      
+          
+        </form>
+    </div>
+    <div class="modal-footers" *ngIf="reactiveRegisteration.valid">
+      <!-- <button class="btorng"  type="button" (click)="onSubmit(1)">Save</button> -->
+      <!-- <a type="submit" class="int container deskview btorng" (click)="onSubmit(1)"  *ngIf="reactiveRegisteration.valid">Submit</a>
+      <a type="submit" class="intReg container deskview btorng" (click)="onClick(1)">Login</a> -->
+      <button class="btorng" (click)="onSubmit(1)"  *ngIf="reactiveRegisteration.valid">Registration</button>
+      <!-- <button class="btorng"(click)="onClick(1)">Login </button> -->
+    </div>
+  </div>
+ 
+  <div *ngIf="isShowLogin" class=window__container>
+    <div class="modal-header">
+      <h4 class="modal-title" >Login</h4>
+      <button type="button" class="btn-close" (click)="isShowLogin = false"></button>
+    </div>
+    
+    <div class="modal-body">
+      <form [formGroup]="reactiveLogin" #form="ngForm"  >
+        <div class="form-group">
+          
+          <label for="lusername">User name</label>
+ 
+          <input type="text" id="lusername" name="lusername" formControlName="lusername" 
+          placeholder="Your name" required minlength="1" maxlength="50"
+           class="form-control form-control-sm" 
+           [class.is-invalid]="lusername.invalid && (lusername.dirty || lusername.touched)">
+          <div *ngIf="lusername.invalid && (lusername.dirty || lusername.touched)"
+           class="invalid-feedback">
+            <div *ngIf="lusername.errors?.['required']">
+              This field is required.
+            </div>
+            <div *ngIf="lusername.errors?.['minlength']">
+              This field must have at least 3 character.
+            </div>
+            <div *ngIf="lusername.errors?.['maxlength']">
+              This field must have at most 50 characters.
+            </div>
+        
+       </div>
+        </div>
+            
+        <div class="form-group">
+          
+          <label for="lpassword">Password</label>
+ 
+          <input type="password" id="lpassword" name="lpassword" formControlName="lpassword" 
+          placeholder="Your password" required minlength="1" maxlength="50"
+           class="form-control form-control-sm" 
+           [class.is-invalid]="lpassword.invalid && (lpassword.dirty || lpassword.touched)">
+          <div *ngIf="lpassword.invalid && (lpassword.dirty || lpassword.touched)"
+           class="invalid-feedback">
+            <div *ngIf="lpassword.errors?.['required']">
+              This field is required.
+            </div>
+            <div *ngIf="lpassword.errors?.['minlength']">
+              This field must have at least 6 character.
+            </div>
+            <div *ngIf="lpassword.errors?.['maxlength']">
+              This field must have at most 10 characters.
+            </div>
+        
+       </div>
+        </div>
+       
+      </form>
+    </div>
+    <div class="modal-footers" *ngIf="reactiveLogin.valid">
+      <!-- <button class="btorng"  type="button" (click)="onSubmit(2)">Save</button> -->
+      <button class="btorng" (click)="onSubmit(2)">Login</button>
+      <!-- <button class="btorng"(click)="onClick(2)">Registration</button> -->
+      <!-- <a type="submit" class="int container deskview btorng"   (click)="onSubmit(2)" >Login</a>
+      <a type="submit" class="intReg container deskview btorng" (click)="onClick(2)">Registration</a> -->
+ 
+    </div>
+  </div>
+</section> 
+

@@ -1,0 +1,99 @@
+  //mixies
+  @mixin transition {
+    transition: all 0.5s ease;
+}
+
+@mixin tab {
+    @media (max-width: $tab) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: $mob) {
+        @content;
+    }
+}
+
+@mixin smdp {
+    @media (max-width: $smalldesktop) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (max-width: $desktop) {
+        @content;
+    }
+}
+
+@mixin iphone {
+    @media (max-width: $ip) {
+        @content;
+    }
+}
+
+@mixin box-shadow($shadow) {
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    box-shadow: $shadow;
+}
+
+@mixin border-radius($radius: none) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin horizontal-gradient($from, $to, $stop: 100%) {
+    /* fallback/image non-cover color */
+    background-color: $from;
+    /* Firefox 3.6+ */
+    background-image: -moz-linear-gradient(left, $from 0%, $to $stop);
+    /* Safari 4+, Chrome 1+ */
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, $from), color-stop($stop, $to));
+    /* Safari 5.1+, Chrome 10+ */
+    background-image: -webkit-linear-gradient(left, $from 0%, $to $stop);
+    /* Opera 11.10+ */
+    background-image: -o-linear-gradient(left, $from 0%, $to $stop);
+    /* IE10+ */
+    background: -ms-linear-gradient(left, $from 0%, $to $stop);
+    /* Standard */
+    background: linear-gradient(to right, $from 0%, $to $stop);
+}
+
+@mixin flbox( $direction: row, $wrap: null, $justify: null, $align: null, $alignc: null) {
+    @include flx;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    justify-content: $justify;
+    align-items: $align;
+    align-content: $alignc;
+}
+
+@mixin flx {
+    display: flex;
+}
+
+@mixin box( $shadow:null, $radius: null, $pad: null, $back: null, $border:null, $marg:null, $height:null, $width:null, $bimg:null, $color:null, $bcolor:null) {
+    box-shadow: $shadow;
+    border-radius: $radius;
+    padding: $pad;
+    margin: $marg;
+    background: $back;
+    border: $border;
+    height: $height;
+    width: $width;
+    background-image: $bimg;
+    color: $color;
+    background-color: $bcolor;
+}
+
