@@ -1,4 +1,4 @@
- <div class="category">
+<div class="category">
    <div class="category_containers">
       <div class="category_navbar">
          <a href="#" class="active">Ola S1 Pro</a>
@@ -11,15 +11,21 @@
       <div class="mainDetails">
          <div class="gallery-container">
             <div class="main-image-container">
-               <img [src]="mainImageSrc" id="mainImage" alt="Main Image" />
+               <img src="{{productListModel?.path}}" alt="" onerror="this.src='assets/images/pr4.png';">
+
             </div>
             <div class="thumbnails-container">
                <div class="thumbnails">
-                  <img *ngFor="let image of imageList" [src]="image" [class.active]="image === mainImageSrc"
-                     class="thumbnail" (click)="changeImage(image)" [attr.data-image]="image" alt="Thumbnail" />
-                  <div class="thumbnail view-all-button" data-image="view-all" onclick="viewAll()">View All
-                     <span>&#10132;</span>
+                  <div class="thumbnail view-all-button" data-image="view-all" onclick="viewAll()"
+                     [style.background-image]="'url(' + (productListModel?.path || './pr4.png') + ')'">
+                     4<br>Color
                   </div>
+                  <div class="thumbnail view-all-button" data-image="view-all" onclick="viewAll()"
+                     [style.background-image]="'url(' + (productListModel?.path || './pr4.png') + ')'">
+                     23<br>Images
+                  </div>
+
+
                </div>
             </div>
          </div>
@@ -108,7 +114,7 @@
             </thead>
             <tbody>
                <tr>
-                  <td>OLA S1<br><span class="variants-specs">5.5hr &nbsp; 300kms</span></td>
+                  <td>OLA S1</td>
                   <td>
                      <div class="specs-container">
                         <span>6 - 7 hrs</span>
@@ -118,7 +124,7 @@
                   <td>70000</td>
                </tr>
                <tr>
-                  <td>OLA S1<br><span class="variants-specs">5.5hr &nbsp; 5.5hr</span></td>
+                  <td>OLA S1</td>
                   <td>
                      <div class="specs-container">
                         <span>5 - 4 hrs</span>
@@ -128,7 +134,7 @@
                   <td>50000</td>
                </tr>
                <tr>
-                  <td>OLA S1<br><span class="variants-specs">5.5hr &nbsp; 5.5hr</span></td>
+                  <td>OLA S1</td>
                   <td>
                      <div class="specs-container">
                         <span></span>
@@ -138,7 +144,7 @@
                   <td>40000</td>
                </tr>
                <tr>
-                  <td>OLA S1<br><span class="variants-specs">5.5hr &nbsp; 5.5hr</span></td>
+                  <td>OLA S1</td>
                   <td>
                      <div class="specs-container">
                         <span></span>
@@ -154,10 +160,11 @@
       <div class="spec-container">
          <h2 class="modelspecs_title">Ola S1 Pro's Model Specifications</h2>
          <div class="table">
-            <div *ngFor="let spec of specifications; let i = index">
+
+            <div *ngFor="let entry of getProductEntries()">
                <div class="spec-row">
-                  <div class="spec-label">{{ spec.feature }} :</div>
-                  <div class="spec-value">{{ spec.value }}</div>
+                  <div class="spec-label">{{ entry.key }} :</div>
+                  <div class="spec-value">{{ entry.value }}</div>
                </div>
             </div>
          </div>
