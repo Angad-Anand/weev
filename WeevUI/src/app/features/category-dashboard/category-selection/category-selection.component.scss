@@ -448,7 +448,7 @@
   border-radius: 10px;
   overflow: hidden;
   display: flex;
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
 .main-image-container {
@@ -502,23 +502,10 @@
   border-radius: 5px;
   cursor: pointer;
   transition: transform 0.3s ease;
-  background-color: #f5f5f5;
-  opacity: 0.5;
-  /* Default to faded */
-}
-
-.thumbnail.active {
-  opacity: 1;
-  /* Fully visible for the active thumbnail */
-}
-
-.thumbnail:hover {
-  transform: scale(1.05);
-}
-
-.view-all-button {
+  // background-position: center;
+  // background-repeat: no-repeat;
   background-color: #d0d0d0;
-  background-size: cover;
+  // background-size: cover;
   color: white;
   border: none;
   font-size: 15px;
@@ -528,6 +515,15 @@
   align-items: center;
   align-content: center;
   opacity: 0.7;
+}
+
+.thumbnail.active {
+  opacity: 1;
+  /* Fully visible for the active thumbnail */
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
 }
 
 .view-all-button:hover {
@@ -981,6 +977,18 @@
     display: block;
     padding: 0;
   }
+  .gallery-container{
+    flex-direction: column;
+  }
+
+  .thumbnails{
+    flex-direction: row;
+  }
+  .thumbnail{
+    width: 70px;
+    height: 50px;
+  }
+
 
   .mainDetails .mainImage {
     width: 100%;
@@ -1111,8 +1119,11 @@
     font-size: 18px;
   }
 
+  .table{
+    grid-template-columns: repeat(1, 1fr);
+  }
   .spec-row {
-    flex-direction: column;
+    flex-direction: row;
     margin-bottom: 0px;
     gap: 0px;
     font-size: 12px;
@@ -1121,7 +1132,7 @@
   .spec-row div {
     /* outline: 1px solid green; */
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
   }
 
   .otherModels {

@@ -1,9 +1,9 @@
 <div class="category">
    <div class="category_containers">
       <div class="category_navbar">
-         <a href="#" class="active">Ola S1 Pro</a>
+         <a href="#" class="active">{{productListModel?.manufacturer}} {{productListModel?.model}}</a>
          <a href="#">Specs</a>
-         <a href="">Key Specs</a>
+         <a href="">Varients</a>
          <a href="#">Images</a>
          <a href="#">Colors</a>
          <!-- angad anand -->
@@ -16,11 +16,11 @@
             </div>
             <div class="thumbnails-container">
                <div class="thumbnails">
-                  <div class="thumbnail view-all-button" data-image="view-all" onclick="viewAll()"
+                  <div class="thumbnail" data-image="view-all" onclick="viewAll()"
                      [style.background-image]="'url(' + (productListModel?.path || './pr4.png') + ')'">
                      4<br>Color
                   </div>
-                  <div class="thumbnail view-all-button" data-image="view-all" onclick="viewAll()"
+                  <div class="thumbnail" data-image="view-all" onclick="viewAll()"
                      [style.background-image]="'url(' + (productListModel?.path || './pr4.png') + ')'">
                      23<br>Images
                   </div>
@@ -160,7 +160,6 @@
       <div class="spec-container">
          <h2 class="modelspecs_title">Ola S1 Pro's Model Specifications</h2>
          <div class="table">
-
             <div *ngFor="let entry of getProductEntries()">
                <div class="spec-row">
                   <div class="spec-label">{{ entry.key }} :</div>
@@ -173,10 +172,10 @@
       <div class="spec-container">
          <h2 class="modelspecs_title">OLA S1 Pro's Model Features</h2>
          <div class="table">
-            <div *ngFor="let spec of specifications; let i = index">
+            <div *ngFor="let entry of getProductEntries()">
                <div class="spec-row">
-                  <div class="spec-label">{{ spec.feature }} :</div>
-                  <div class="spec-value">{{ spec.value }}</div>
+                  <div class="spec-label">{{ entry.key }} :</div>
+                  <div class="spec-value">{{ entry.value }}</div>
                </div>
             </div>
          </div>

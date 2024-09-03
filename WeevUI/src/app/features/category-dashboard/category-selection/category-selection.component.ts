@@ -28,6 +28,7 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
   popup = false;
 
   productListModel: ProductListModel | undefined;
+  nextproductListModel: ProductListModel | undefined;
   tab: any = 'Price';
   isShowPrice: boolean = true;
   isShowSpecs: boolean = false;
@@ -41,6 +42,7 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
 
   productID: number = 0;
   productlist: Array<ProductListModel> = new Array<ProductListModel>();
+  nextproductlist: Array<ProductListModel> = new Array<ProductListModel>();
   tabs: Array<any> = new Array<any>();
   ImgName: Array<any> = new Array<any>();
   CllOutResult?: string;
@@ -72,9 +74,8 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
     if (this.productID != 0 || this.productID != undefined) {
       this.getProductDataWithID(+this.productID);
       this.getImgNameWithID(+this.productID);
+      this.getOtherModelswithID(+this.productID);
     }
-
-    this.fetchSpecifications();
   }
 
   ngAfterViewChecked() {
@@ -103,6 +104,39 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
         this.getTabNameWithID(productID);
       });
   }
+
+  getOtherModelswithID(productID: any) {
+    const generateRandomOffsets = (count: number, min: number, max: number) => {
+      const offsets = [];
+      for (let i = 0; i < count; i++) {
+        const randomValue = Math.floor(Math.random() * (max - min + 1)) + min;
+        offsets.push(randomValue);
+      }
+      return offsets;
+    };
+  
+    const offsets = generateRandomOffsets(5, 1, 46);
+    const combinedModelStrings: string[] = [];
+  
+    offsets.forEach((offset) => {
+      this.vehiclesService
+        .getOtherModelswithID(productID + offset)
+        .subscribe((response) => {
+          this.nextproductlist = response;
+          this.nextproductListModel = this.nextproductlist;
+  
+          const combinedString = `${this.nextproductListModel?.manufacturer} ${this.nextproductListModel?.model}`;
+          combinedModelStrings.push(combinedString);
+  
+          console.log(this.nextproductListModel);
+        });
+    });
+  
+    console.log(combinedModelStrings); // Logs all combined strings after the loop
+  }
+  
+  
+  
 
   getTabNameWithID(productID: any) {
     this.vehiclesService.getTabNameWithID(productID).subscribe((response) => {
@@ -195,7 +229,7 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
         },
       ],
     };
-    console.log(keyspecsjson); // Debugging line
+    // console.log(keyspecsjson); 
     this.keySpecs = keyspecsjson.KeySpecs.slice(0, 5); // Limit to first 5 items
     this.appFeatures = keyspecsjson.AppFeatures.slice(0, 5); // Limit to first 5 items
     this.cd.detectChanges(); // Force change detection
@@ -206,18 +240,6 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
   }
 
   //specs
-  specifications: any[] = [];
-  fetchSpecifications(): void {
-    this.http.get<any>('assets/json/modelspecs.json').subscribe(
-      (data) => {
-        this.specifications = data.specifications.slice(0, 8); // Limit to first 8 items
-      },
-      (error) => {
-        console.error('Error fetching JSON data:', error);
-      }
-    );
-  }
-
   private keyDisplayMap: { [key: string]: string } = {
     manufacturer: 'Manufacturer',
     model: 'Model',
@@ -268,9 +290,10 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
     tripmeter: 'Tripmeter',
     Odometer: 'Odometer',
     carryHook: 'Carry Hook',
-    abstractrtificialExhaustSoundSystem: 'Abstractrtificial Exhaust Sound System',
+    abstractrtificialExhaustSoundSystem:
+      'Abstractrtificial Exhaust Sound System',
     internetConnectivity: 'Internet Connectivity',
-    operatingSystem: 'Operating System', 
+    operatingSystem: 'Operating System',
     processor: 'Processor',
     mobileApplication: 'Mobile Application',
     chargingStationLocater: 'Charging Station Locater',
@@ -279,7 +302,7 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
     lowBatteryIndicator: 'Low Battery Indicator',
     bodyType: 'Body Type',
     dimensionsAndCapacity: 'Dimensions And Capacity',
-    bootSpace: 'Boot Space', 
+    bootSpace: 'Boot Space',
     width: 'Width',
     length: 'Length',
     height: 'Height',
@@ -288,7 +311,7 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
     wheelbase: 'Wheelbase',
     kerbWeight: 'Kerb Weight',
     loadCarryingCapacity: 'Load Carrying Capacity',
-    turnSignalLamp: 'Turn Signal Lamp', 
+    turnSignalLamp: 'Turn Signal Lamp',
     drls: 'DRLS',
     topSpeed: 'Top Speed',
     motorType: 'Motor Type',
@@ -296,7 +319,7 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
     motorWarrantyForKm: 'Motor Warranty For Km',
     driveType: 'Drive Type',
     batteryWarrantyForMonths: 'Battery Warranty For Months',
-    batteryWarrantyForKm: 'Battery Warranty For Km', 
+    batteryWarrantyForKm: 'Battery Warranty For Km',
     waterProofRating: 'Water Proof Rating',
     suspensionFront: 'Suspension Front',
     suspensionRear: 'Suspension Rear',
@@ -304,22 +327,63 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
     brakesRear: 'Brakes Rear',
     tyreSize: 'Tyre Size',
     wheelSize: 'Wheel Size',
-    wheelsType: 'Wheels Type', 
+    wheelsType: 'Wheels Type',
     ourRating: 'Our Rating',
     path: 'Path',
-     // Add more mappings as needed
-    // Example: 'chargingTime': 'Charging Time',
+  };
+
+  valueTransformMap: { [key: string]: (value: any) => string } = {
+    exShowroomPrice: (value) => `$${value} (Estimated)`,
+    maxSpeed: (value) => `${value} km/h`,
+    chargingTime: (value) => `${(value / 60).toFixed(2)} hours`,
+    available: (value) => (value ? 'Yes' : 'No'),
+    batteryCapacity: (value) => `${value} kWh`,
+    chargingTime0To80Perc: (value) =>
+      `${(value / 60).toFixed(2)} hours (0-80%)`,
+    chargingTime0To100Perc: (value) =>
+      `${(value / 60).toFixed(2)} hours (0-100%)`,
+    rangeOfVehicle: (value) => `${value / 60} km`,
+    fastChargingTimeUpto80Perc: (value) => `${(value / 60).toFixed(2)} hours`,
+    motorPower: (value) => `${value / 60} kW`,
+    motorWarrantyForMonths: (value) => `${value} months`,
+    motorWarrantyForKm: (value) => `${value} km`,
+    batteryWarrantyForMonths: (value) => `${value} months`,
+    batteryWarrantyForKm: (value) => `${value} km`,
+    width: (value) => `${value / 100} m`,
+    length: (value) => `${value / 100} m`,
+    height: (value) => `${value / 100} m`,
+    saddleHeight: (value) => `${value / 100} m`,
+    groundClearance: (value) => `${value / 100} m`,
+    wheelbase: (value) => `${value / 100} m`,
+    kerbWeight: (value) => `${value / 100} kg`,
+    loadCarryingCapacity: (value) => `${value / 100} kg`,
+    turnSignalLamp: (value) => (value ? 'Yes' : 'No'),
+    drls: (value) => (value ? 'Yes' : 'No'),
+    topSpeed: (value) => `${value / 60} km/h`,
+    tyreSize: (value) => `${value / 100} m`,
+    wheelSize: (value) => `${value / 100} m`,
+    wheelsType: (value) => (value ? 'Yes' : 'No'),
+    ourRating: (value) => `${value} / 5`,
+    path: (value) => (value ? 'Yes' : 'No'),
+    // Add more key-value transformations as needed
   };
 
   getProductEntries(): Array<{ key: string; value: any }> {
-    // console.log(this.productListModel);
     return Object.entries(this.productListModel || {})
-      .filter(([key, value]) => value !== undefined && value !== '' && value !== null) // Filter out invalid values
+      .filter(
+        ([key, value]) => value !== undefined && value !== '' && value !== null
+      ) // Filter out invalid values
       .slice(0, 8)
-      .map(([key, value]) => ({
-        key: this.keyDisplayMap[key] || key, // Use mapped key or original key
-        value,
-      }));
+      .map(([key, value]) => {
+        const transformedValue = this.valueTransformMap[key]
+          ? this.valueTransformMap[key](value) // Apply the transformation if it exists
+          : value; // Use the original value if no transformation is defined
+
+        return {
+          key: this.keyDisplayMap[key] || key, // Use mapped key or original key
+          value: transformedValue,
+        };
+      });
   }
 }
 

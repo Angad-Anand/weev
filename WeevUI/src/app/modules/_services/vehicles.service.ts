@@ -54,6 +54,22 @@ constructor(
     );
   }
 
+  getOtherModelswithID(twId:any): Observable<any> {
+    const auth = this.getAuthFromLocalStorage();
+    if (!auth ) {
+      return of(undefined);
+    }
+    this.isLoadingSubject.next(true);
+    return this.vehiclesHttpService.getProductDataWithID(auth,twId)
+    .pipe(
+      map((TwoWheeler: any) => {
+        
+        return TwoWheeler;
+      }),
+      finalize(() => this.isLoadingSubject.next(false))
+    );
+  }
+  
   getTabNameWithID(twId:any): Observable<any> {
     const auth = this.getAuthFromLocalStorage();
     if (!auth ) {
