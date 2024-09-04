@@ -184,62 +184,12 @@
       <div class="otherModels">
          <div class="otherModels-title">Other Models like OLA S1 PRO</div>
          <div class="models">
-            <div class="model">
-               <img src="../1.png" alt="Product Image">
+            <div class="model" *ngFor="let model of nextproductlist">
+               <img src="{{model.path}}" alt="Product Image" onerror="this.src='assets/images/pr4.png';">
                <div class="card-content">
-                  <h3>Product Name</h3>
-                  <img class="favorite-icon" src="../heart.png" alt="">
-                  <p>Price: ₹700,000</p>
-                  <p>Colors: 4</p>
-                  <button class="view-button">View</button>
-               </div>
-            </div>
-            <div class="model">
-               <img src="../1.png" alt="Product Image">
-               <div class="card-content">
-                  <h3>Product Name</h3>
-                  <img class="favorite-icon" src="../heart.png" alt="">
-                  <p>Price: ₹700,000</p>
-                  <p>Colors: 4</p>
-                  <button class="view-button">View</button>
-               </div>
-            </div>
-            <div class="model">
-               <img src="../1.png" alt="Product Image">
-               <div class="card-content">
-                  <h3>Product Name</h3>
-                  <img class="favorite-icon" src="../heart.png" alt="">
-                  <p>Price: ₹700,000</p>
-                  <p>Colors: 4</p>
-                  <button class="view-button">View</button>
-               </div>
-            </div>
-            <div class="model">
-               <img src="../1.png" alt="Product Image">
-               <div class="card-content">
-                  <h3>Product Name</h3>
-                  <img class="favorite-icon" src="../heart.png" alt="">
-                  <p>Price: ₹700,000</p>
-                  <p>Colors: 4</p>
-                  <button class="view-button">View</button>
-               </div>
-            </div>
-            <div class="model">
-               <img src="../1.png" alt="Product Image">
-               <div class="card-content">
-                  <h3>Product Name</h3>
-                  <img class="favorite-icon" src="../heart.png" alt="">
-                  <p>Price: ₹700,000</p>
-                  <p>Colors: 4</p>
-                  <button class="view-button">View</button>
-               </div>
-            </div>
-            <div class="model">
-               <img src="../1.png" alt="Product Image">
-               <div class="card-content">
-                  <h3>Product Name</h3>
-                  <img class="favorite-icon" src="../heart.png" alt="">
-                  <p>Price: ₹700,000</p>
+                  <h3>{{ model.manufacturer }} {{ model.model }}</h3>
+                  <img class="favorite-icon" src="assets/images/heart.svg" alt="">
+                  <p>Price: ₹{{ model.exShowroomPrice }}</p>
                   <p>Colors: 4</p>
                   <button class="view-button">View</button>
                </div>

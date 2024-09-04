@@ -433,9 +433,10 @@
   padding-left: 6px;
   padding-bottom: 6px;
   /* border-bottom: 1px solid #D0D0D0; */
+   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
   /* box-shadow: 2px 3px 3px 2px rgba(0, 0, 0, 0.10); */
-  /* border: 1px solid #ddd;
-  border-radius: 10px; */
+  /* border: 1px solid #ddd;*/
+  border-radius: 10px; 
 }
 
 .gallery-container {
@@ -443,7 +444,8 @@
   /* margin-top: 20px; */
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 2px 3px 3px 2px rgba(0, 0, 0, 0.1);
+  // box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  // box-shadow: 2px 3px 3px 2px rgba(0, 0, 0, 0.1);
   /* border: 1px solid #ddd; */
   border-radius: 10px;
   overflow: hidden;
@@ -603,7 +605,7 @@
   border-radius: 10px;
   /* border: 0.1px #888787; */
   /* background: #FBFBFB; */
-  box-shadow: 2px 3px 3px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   /* border: 1px solid #ddd; */
   /* padding-right: 20px; */
   /* padding-left: 20px; */
@@ -688,7 +690,8 @@
   /* background-color: white; */
   margin-left: 15px;
   border-radius: 10px;
-  box-shadow: 2px 3px 3px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  // box-shadow: 2px 3px 3px 2px rgba(0, 0, 0, 0.1);
   /* border: 1px solid #ddd; */
   display: flex;
   flex-direction: column;
@@ -733,7 +736,8 @@
   box-sizing: border-box;
   margin-top: 20px;
   /* border: 1px solid #ddd; */
-  box-shadow: 2px 3px 3px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  // box-shadow: 2px 3px 3px 2px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
 
@@ -795,7 +799,8 @@
   width: 70%;
   margin: 20px 0px;
   /* border: 1px solid #ddd; */
-  box-shadow: 2px 3px 3px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  // box-shadow: 2px 3px 3px 2px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   padding-bottom: 20px;
 }
@@ -882,7 +887,8 @@
   height: 300px;
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   position: relative;
   padding: 5px;
   box-sizing: border-box;

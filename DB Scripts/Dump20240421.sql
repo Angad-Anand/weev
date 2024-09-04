@@ -392,7 +392,7 @@ BEGIN
            TurnSignalLamp, DRLs, TopSpeed, MotorType, MotorWarrantyForMonths, MotorWarrantyForKm, DriveType, 
            BatteryWarrantyForMonths, BatteryWarrantyForKm, WaterProofRating, SuspensionFront,
            SuspensionRear, BrakesFront, BrakesRear, TyreSize, WheelSize, WheelsType ,OurRating ,           
-           CONCAT(twi.Path,'/',twi.grey1 ,'.jpeg') Path
+           CONCAT(twi.Path,'/',twi.Blue ,'.jpeg') Path
  	FROM twowheelerdata twd
     INNER JOIN twimagedata twi
     ON twd.TWId=twi.TW_Ref_ID 

@@ -29,6 +29,7 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
 
   productListModel: ProductListModel | undefined;
   nextproductListModel: ProductListModel | undefined;
+  nextproductlist: Array<ProductListModel> = [];
   tab: any = 'Price';
   isShowPrice: boolean = true;
   isShowSpecs: boolean = false;
@@ -42,7 +43,6 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
 
   productID: number = 0;
   productlist: Array<ProductListModel> = new Array<ProductListModel>();
-  nextproductlist: Array<ProductListModel> = new Array<ProductListModel>();
   tabs: Array<any> = new Array<any>();
   ImgName: Array<any> = new Array<any>();
   CllOutResult?: string;
@@ -105,6 +105,7 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
       });
   }
 
+
   getOtherModelswithID(productID: any) {
     const generateRandomOffsets = (count: number, min: number, max: number) => {
       const offsets = [];
@@ -115,24 +116,19 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
       return offsets;
     };
   
-    const offsets = generateRandomOffsets(5, 1, 46);
-    const combinedModelStrings: string[] = [];
-  
+    const offsets = generateRandomOffsets(10, 1, 27);
+    
     offsets.forEach((offset) => {
+      // Fetch other models
       this.vehiclesService
         .getOtherModelswithID(productID + offset)
         .subscribe((response) => {
-          this.nextproductlist = response;
-          this.nextproductListModel = this.nextproductlist;
-  
-          const combinedString = `${this.nextproductListModel?.manufacturer} ${this.nextproductListModel?.model}`;
-          combinedModelStrings.push(combinedString);
-  
-          console.log(this.nextproductListModel);
+          this.nextproductlist.push(response); // Store each response in the array
+          this.nextproductListModel = response; // Update the current model
         });
     });
   
-    console.log(combinedModelStrings); // Logs all combined strings after the loop
+    console.log(this.nextproductlist); // Logs all product models after the loop
   }
   
   
