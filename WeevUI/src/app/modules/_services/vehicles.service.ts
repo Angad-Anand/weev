@@ -38,6 +38,7 @@ constructor(
     );
   }
 
+  
   getProductDataWithID(twId:any): Observable<any> {
     const auth = this.getAuthFromLocalStorage();
     if (!auth ) {
@@ -53,7 +54,7 @@ constructor(
       finalize(() => this.isLoadingSubject.next(false))
     );
   }
-
+  
   getOtherModelswithID(twId:any): Observable<any> {
     const auth = this.getAuthFromLocalStorage();
     if (!auth ) {

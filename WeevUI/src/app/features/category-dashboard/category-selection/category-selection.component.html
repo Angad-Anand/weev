@@ -3,7 +3,7 @@
       <div class="category_navbar">
          <a href="#" class="active">{{productListModel?.manufacturer}} {{productListModel?.model}}</a>
          <a href="#">Specs</a>
-         <a href="">Varients</a>
+         <a (click)="scrollToSection()" style="cursor: pointer;">Varients</a>
          <a href="#">Images</a>
          <a href="#">Colors</a>
          <!-- angad anand -->
@@ -99,10 +99,10 @@
                   <td>{{productListModel?.bookingPrice}}Lakh</td>
                </tr>
             </table>
-            <button class="standard_button booking_button">Interested in Make Model</button>
+            <button class="standard_button booking_button">Interested in Model</button>
          </div>
       </div>
-      <div class="variants-container">
+      <div class="variants-container" #variantsContainer>
          <h2 class="variants-title">OLA S1 Pro's Varients</h2>
          <table class="variants-table">
             <thead>
@@ -113,45 +113,15 @@
                </tr>
             </thead>
             <tbody>
-               <tr>
-                  <td>OLA S1</td>
+               <tr *ngFor="let item of varientList">
+                  <td>{{item.manufacturer}} {{item.model}} {{item.variant}}</td>
                   <td>
                      <div class="specs-container">
-                        <span>6 - 7 hrs</span>
-                        <span>300kms</span>
+                        <span>{{item.chargingTime}}</span>
+                        <span>{{item.rangeOfVehicle}}</span>
                      </div>
                   </td>
-                  <td>70000</td>
-               </tr>
-               <tr>
-                  <td>OLA S1</td>
-                  <td>
-                     <div class="specs-container">
-                        <span>5 - 4 hrs</span>
-                        <span>400kms</span>
-                     </div>
-                  </td>
-                  <td>50000</td>
-               </tr>
-               <tr>
-                  <td>OLA S1</td>
-                  <td>
-                     <div class="specs-container">
-                        <span></span>
-                        <span></span>
-                     </div>
-                  </td>
-                  <td>40000</td>
-               </tr>
-               <tr>
-                  <td>OLA S1</td>
-                  <td>
-                     <div class="specs-container">
-                        <span></span>
-                        <span></span>
-                     </div>
-                  </td>
-                  <td>55000</td>
+                  <td>{{item.exShowroomPrice}}</td>
                </tr>
             </tbody>
          </table>

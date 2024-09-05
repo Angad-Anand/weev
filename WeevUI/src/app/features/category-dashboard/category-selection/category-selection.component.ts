@@ -24,12 +24,19 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CategorySelectionComponent implements OnInit, AfterViewChecked {
   @ViewChild('scrollMe') private myScrollContainer?: ElementRef;
+  @ViewChild('variantsContainer') variantsContainer!: ElementRef;
+
+  scrollToSection() {
+    this.variantsContainer.nativeElement.scrollIntoView({ behavior: 'smooth' });
+  }
 
   popup = false;
 
   productListModel: ProductListModel | undefined;
   nextproductListModel: ProductListModel | undefined;
+  varientListModel: ProductListModel | undefined;
   nextproductlist: Array<ProductListModel> = [];
+  varientList: Array<ProductListModel> = [];
   tab: any = 'Price';
   isShowPrice: boolean = true;
   isShowSpecs: boolean = false;
@@ -75,6 +82,8 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
       this.getProductDataWithID(+this.productID);
       this.getImgNameWithID(+this.productID);
       this.getOtherModelswithID(+this.productID);
+      this.getTwoWheelerData();
+      this.getforVarientsData();
     }
   }
 
@@ -95,7 +104,8 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
     this.vehiclesService
       .getProductDataWithID(productID)
       .subscribe((response) => {
-        this.productlist = response;
+        const transformedResponse = this.transformResponse(response); // Transform the response
+        this.productlist = transformedResponse; // Assign transformed response
         this.productListModel = this.productlist;
 
         this.fetchData();
@@ -105,6 +115,55 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
       });
   }
 
+  twowheelerlist: Array<any> = [];
+  variantsList: number[] = [];
+
+  getTwoWheelerData() {
+    this.vehiclesService.getTwoWheelerData().subscribe((response) => {
+      this.twowheelerlist = response;
+
+      // Merge objects into one with multiple props
+      this.variantsList = this.twowheelerlist
+        .filter(
+          (item) => item.manufacturer === this.productListModel?.manufacturer
+        )
+        .map((item) => item.twId);
+
+      // Fetch variant data once variantsList is populated
+      if (this.variantsList.length > 0) {
+        this.getforVarientsData();
+      }
+    });
+  }
+
+  private transformResponse(response: any): any {
+    const transformedResponse: any = {};
+
+    // Iterate over the keys in keyDisplayMap
+    for (const key in this.keyDisplayMap) {
+      if (response.hasOwnProperty(key)) {
+        transformedResponse[key] = this.valueTransformMap[key]
+          ? this.valueTransformMap[key](response[key])
+          : response[key];
+      }
+    }
+
+    return transformedResponse;
+  }
+
+  getforVarientsData() {
+    console.log(this.variantsList);
+
+    // Ensure variant list is processed sequentially
+    this.variantsList.forEach((variantId) => {
+      this.vehiclesService
+        .getProductDataWithID(variantId)
+        .subscribe((response) => {
+          const transformedResponse = this.transformResponse(response);
+          this.varientList.push(transformedResponse); // Store transformed response
+        });
+    });
+  }
 
   getOtherModelswithID(productID: any) {
     const generateRandomOffsets = (count: number, min: number, max: number) => {
@@ -115,24 +174,21 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
       }
       return offsets;
     };
-  
+
     const offsets = generateRandomOffsets(10, 1, 27);
-    
+
     offsets.forEach((offset) => {
       // Fetch other models
       this.vehiclesService
-        .getOtherModelswithID(productID + offset)
+        .getOtherModelswithID(offset)
         .subscribe((response) => {
           this.nextproductlist.push(response); // Store each response in the array
           this.nextproductListModel = response; // Update the current model
         });
     });
-  
+
     console.log(this.nextproductlist); // Logs all product models after the loop
   }
-  
-  
-  
 
   getTabNameWithID(productID: any) {
     this.vehiclesService.getTabNameWithID(productID).subscribe((response) => {
@@ -225,7 +281,7 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
         },
       ],
     };
-    // console.log(keyspecsjson); 
+    // console.log(keyspecsjson);
     this.keySpecs = keyspecsjson.KeySpecs.slice(0, 5); // Limit to first 5 items
     this.appFeatures = keyspecsjson.AppFeatures.slice(0, 5); // Limit to first 5 items
     this.cd.detectChanges(); // Force change detection
@@ -236,6 +292,25 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
   }
 
   //specs
+  getProductEntries(): Array<{ key: string; value: any }> {
+    return (
+      Object.entries(this.productListModel || {})
+        .filter(
+          ([key, value]) =>
+            value !== undefined && value !== '' && value !== null
+        ) // Filter out invalid values
+        .slice(0, 8)
+        .map(([key, value]) => {
+          return {
+            key: this.keyDisplayMap[key] || key, // Use mapped key or original key
+            value: value, // Use the transformed value directly
+          };
+        })
+    );
+  }
+
+
+
   private keyDisplayMap: { [key: string]: string } = {
     manufacturer: 'Manufacturer',
     model: 'Model',
@@ -329,59 +404,69 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
   };
 
   valueTransformMap: { [key: string]: (value: any) => string } = {
-    exShowroomPrice: (value) => `$${value} (Estimated)`,
+    exShowroomPrice: (value) => `₹ ${value.toLocaleString('en-IN')}`,
     maxSpeed: (value) => `${value} km/h`,
     chargingTime: (value) => `${(value / 60).toFixed(2)} hours`,
-    available: (value) => (value ? 'Yes' : 'No'),
     batteryCapacity: (value) => `${value} kWh`,
     chargingTime0To80Perc: (value) =>
       `${(value / 60).toFixed(2)} hours (0-80%)`,
     chargingTime0To100Perc: (value) =>
       `${(value / 60).toFixed(2)} hours (0-100%)`,
-    rangeOfVehicle: (value) => `${value / 60} km`,
-    fastChargingTimeUpto80Perc: (value) => `${(value / 60).toFixed(2)} hours`,
-    motorPower: (value) => `${value / 60} kW`,
+    bookingPrice: (value) => `${value} ₹`,
+    accelration0To60kmph: (value) => `${value} sec (0-60 km/h)`,
+    accelration0To40kmph: (value) => `${value} sec (0-40 km/h)`,
+    continuousPower: (value) => `${value} kW`,
+    motorPower: (value) => `${value} kW`,
+    rangeOfVehicle: (value) => `${value} km`,
+    underseatStorage: (value) => `${value} liters`,
+    chargerOutputMin: (value) => `${value} kW`,
+    chargerOutputMax: (value) => `${value} kW`,
+    gradeability: (value) => `${value} degrees`,
+    width: (value) => `${value} mm`,
+    length: (value) => `${value} mm`,
+    height: (value) => `${value} mm`,
+    saddleHeight: (value) => `${value} mm`,
+    groundClearance: (value) => `${value} mm`,
+    wheelbase: (value) => `${value} mm`,
+    kerbWeight: (value) => `${value} kg`,
+    loadCarryingCapacity: (value) => `${value} kg`,
+    topSpeed: (value) => `${value} km/h`,
     motorWarrantyForMonths: (value) => `${value} months`,
     motorWarrantyForKm: (value) => `${value} km`,
     batteryWarrantyForMonths: (value) => `${value} months`,
     batteryWarrantyForKm: (value) => `${value} km`,
-    width: (value) => `${value / 100} m`,
-    length: (value) => `${value / 100} m`,
-    height: (value) => `${value / 100} m`,
-    saddleHeight: (value) => `${value / 100} m`,
-    groundClearance: (value) => `${value / 100} m`,
-    wheelbase: (value) => `${value / 100} m`,
-    kerbWeight: (value) => `${value / 100} kg`,
-    loadCarryingCapacity: (value) => `${value / 100} kg`,
-    turnSignalLamp: (value) => (value ? 'Yes' : 'No'),
-    drls: (value) => (value ? 'Yes' : 'No'),
-    topSpeed: (value) => `${value / 60} km/h`,
-    tyreSize: (value) => `${value / 100} m`,
-    wheelSize: (value) => `${value / 100} m`,
-    wheelsType: (value) => (value ? 'Yes' : 'No'),
-    ourRating: (value) => `${value} / 5`,
-    path: (value) => (value ? 'Yes' : 'No'),
-    // Add more key-value transformations as needed
+    // ourRating: (value) => `${value}`,
+    abstractrtificialExhaustSoundSystem: (value) => `${value}`,
+    drls: (value) => `${value}`,
+    turnSignalLamp: (value) => `${value}`,
+    internetConnectivity: (value) => `${value}`,
+    bluetoothConnectivity: (value) => `${value}`,
+    geoFencing: (value) => `${value}`,
+    antiTheftAlarm: (value) => `${value}`,
+    usbchargingPort: (value) => `${value}`,
+    fastCharging: (value) => `${value}`,
+    fastChargingTimeUpto80Perc: (value) => `${value}`,
+    ridingModes: (value) => `${value}`,
+    musicControl: (value) => `${value}`,
+    externalSpeakers: (value) => `${value}`,
+    centralLocking: (value) => `${value}`,
+    cruiseControl: (value) => `${value}`,
+    lowBatteryIndicator: (value) => `${value}`,
+    waterProofRating: (value) => `${value}`,
+    suspensionFront: (value) => `${value}`,
+    suspensionRear: (value) => `${value}`,
+    brakesFront: (value) => `${value}`,
+    brakesRear: (value) => `${value}`,
+    tyreSize: (value) => `${value}`,
+    wheelSize: (value) => `${value}`,
+    wheelsType: (value) => `${value}`,
+    bodyType: (value) => `${value}`,
+    dimensionsAndCapacity: (value) => `${value}`,
+    bootSpace: (value) => `${value} liters`,
   };
-
-  getProductEntries(): Array<{ key: string; value: any }> {
-    return Object.entries(this.productListModel || {})
-      .filter(
-        ([key, value]) => value !== undefined && value !== '' && value !== null
-      ) // Filter out invalid values
-      .slice(0, 8)
-      .map(([key, value]) => {
-        const transformedValue = this.valueTransformMap[key]
-          ? this.valueTransformMap[key](value) // Apply the transformation if it exists
-          : value; // Use the original value if no transformation is defined
-
-        return {
-          key: this.keyDisplayMap[key] || key, // Use mapped key or original key
-          value: transformedValue,
-        };
-      });
-  }
 }
+
+
 
 const EMPTY_Application: ProductListModel = {
   tWId: 0,
