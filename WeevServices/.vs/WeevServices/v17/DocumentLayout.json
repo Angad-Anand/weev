@@ -3,8 +3,36 @@
   "WorkspaceRootPath": "E:\\codefolder\\Weev\\WeevServices\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4616CE1E-F8C7-42DC-BEE0-281867517CCA}|WeevServices.csproj|e:\\codefolder\\weev\\weevservices\\controllers\\vehiclescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4616CE1E-F8C7-42DC-BEE0-281867517CCA}|WeevServices.csproj|solutionrelative:controllers\\vehiclescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4616CE1E-F8C7-42DC-BEE0-281867517CCA}|WeevServices.csproj|e:\\codefolder\\weev\\weevservices\\models\\refreshtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4616CE1E-F8C7-42DC-BEE0-281867517CCA}|WeevServices.csproj|solutionrelative:models\\refreshtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4616CE1E-F8C7-42DC-BEE0-281867517CCA}|WeevServices.csproj|e:\\codefolder\\weev\\weevservices\\models\\twowheeler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4616CE1E-F8C7-42DC-BEE0-281867517CCA}|WeevServices.csproj|solutionrelative:models\\twowheeler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4616CE1E-F8C7-42DC-BEE0-281867517CCA}|WeevServices.csproj|e:\\codefolder\\weev\\weevservices\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4616CE1E-F8C7-42DC-BEE0-281867517CCA}|WeevServices.csproj|solutionrelative:models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4616CE1E-F8C7-42DC-BEE0-281867517CCA}|WeevServices.csproj|e:\\codefolder\\weev\\weevservices\\models\\vehiclesmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4616CE1E-F8C7-42DC-BEE0-281867517CCA}|WeevServices.csproj|solutionrelative:models\\vehiclesmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4616CE1E-F8C7-42DC-BEE0-281867517CCA}|WeevServices.csproj|e:\\codefolder\\weev\\weevservices\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4616CE1E-F8C7-42DC-BEE0-281867517CCA}|WeevServices.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4616CE1E-F8C7-42DC-BEE0-281867517CCA}|WeevServices.csproj|e:\\codefolder\\weev\\weevservices\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4616CE1E-F8C7-42DC-BEE0-281867517CCA}|WeevServices.csproj|solutionrelative:user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4616CE1E-F8C7-42DC-BEE0-281867517CCA}|WeevServices.csproj|e:\\codefolder\\weev\\weevservices\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4616CE1E-F8C7-42DC-BEE0-281867517CCA}|WeevServices.csproj|solutionrelative:userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4616CE1E-F8C7-42DC-BEE0-281867517CCA}|WeevServices.csproj|e:\\codefolder\\weev\\weevservices\\models\\vehiclesquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -13,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{4616CE1E-F8C7-42DC-BEE0-281867517CCA}|WeevServices.csproj|e:\\codefolder\\weev\\weevservices\\weevservices.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}",
       "RelativeMoniker": "D:0:0:{4616CE1E-F8C7-42DC-BEE0-281867517CCA}|WeevServices.csproj|solutionrelative:weevservices.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4616CE1E-F8C7-42DC-BEE0-281867517CCA}|WeevServices.csproj|e:\\codefolder\\weev\\weevservices\\models\\twowheeler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4616CE1E-F8C7-42DC-BEE0-281867517CCA}|WeevServices.csproj|solutionrelative:models\\twowheeler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,52 +50,133 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "VehiclesController.cs",
+              "DocumentMoniker": "E:\\codefolder\\Weev\\WeevServices\\Controllers\\VehiclesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\VehiclesController.cs",
+              "ToolTip": "E:\\codefolder\\Weev\\WeevServices\\Controllers\\VehiclesController.cs",
+              "RelativeToolTip": "Controllers\\VehiclesController.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAowAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-08T09:02:20.832Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "RefreshToken.cs",
+              "DocumentMoniker": "E:\\codefolder\\Weev\\WeevServices\\Models\\RefreshToken.cs",
+              "RelativeDocumentMoniker": "Models\\RefreshToken.cs",
+              "ToolTip": "E:\\codefolder\\Weev\\WeevServices\\Models\\RefreshToken.cs",
+              "RelativeToolTip": "Models\\RefreshToken.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-08T09:00:57.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserModel.cs",
+              "DocumentMoniker": "E:\\codefolder\\Weev\\WeevServices\\Models\\UserModel.cs",
+              "RelativeDocumentMoniker": "Models\\UserModel.cs",
+              "ToolTip": "E:\\codefolder\\Weev\\WeevServices\\Models\\UserModel.cs",
+              "RelativeToolTip": "Models\\UserModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-08T09:00:23.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "VehiclesModels.cs",
+              "DocumentMoniker": "E:\\codefolder\\Weev\\WeevServices\\Models\\VehiclesModels.cs",
+              "RelativeDocumentMoniker": "Models\\VehiclesModels.cs",
+              "ToolTip": "E:\\codefolder\\Weev\\WeevServices\\Models\\VehiclesModels.cs",
+              "RelativeToolTip": "Models\\VehiclesModels.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-08T09:00:07.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "User.cs",
+              "DocumentMoniker": "E:\\codefolder\\Weev\\WeevServices\\User.cs",
+              "RelativeDocumentMoniker": "User.cs",
+              "ToolTip": "E:\\codefolder\\Weev\\WeevServices\\User.cs",
+              "RelativeToolTip": "User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-08T08:59:52.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "E:\\codefolder\\Weev\\WeevServices\\UserDto.cs",
+              "RelativeDocumentMoniker": "UserDto.cs",
+              "ToolTip": "E:\\codefolder\\Weev\\WeevServices\\UserDto.cs",
+              "RelativeToolTip": "UserDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-08T08:59:46.499Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "VehiclesQuery.cs",
               "DocumentMoniker": "E:\\codefolder\\Weev\\WeevServices\\Models\\VehiclesQuery.cs",
               "RelativeDocumentMoniker": "Models\\VehiclesQuery.cs",
               "ToolTip": "E:\\codefolder\\Weev\\WeevServices\\Models\\VehiclesQuery.cs",
               "RelativeToolTip": "Models\\VehiclesQuery.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAA1wBcAAAAxAAAA",
+              "ViewState": "AQIAABEAAAAAAAAAAAAQwBcAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-12T11:54:55.799Z"
+              "WhenOpened": "2024-08-12T11:54:55.799Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "WeevServices",
               "DocumentMoniker": "E:\\codefolder\\Weev\\WeevServices\\WeevServices.csproj",
               "RelativeDocumentMoniker": "WeevServices.csproj",
               "ToolTip": "E:\\codefolder\\Weev\\WeevServices\\WeevServices.csproj",
               "RelativeToolTip": "WeevServices.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-08-04T09:17:39.645Z"
+              "WhenOpened": "2024-08-04T09:17:39.645Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "TwoWheeler.cs",
               "DocumentMoniker": "E:\\codefolder\\Weev\\WeevServices\\Models\\TwoWheeler.cs",
               "RelativeDocumentMoniker": "Models\\TwoWheeler.cs",
               "ToolTip": "E:\\codefolder\\Weev\\WeevServices\\Models\\TwoWheeler.cs",
               "RelativeToolTip": "Models\\TwoWheeler.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAA1wAwAAAAVAAAA",
+              "ViewState": "AQIAALIAAAAAAAAAAAAxwAwAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-04T09:17:39.689Z"
+              "WhenOpened": "2024-08-04T09:17:39.689Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\codefolder\\Weev\\WeevServices\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "E:\\codefolder\\Weev\\WeevServices\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAtwC8AAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-04T09:17:39.693Z",
               "EditorCaption": ""

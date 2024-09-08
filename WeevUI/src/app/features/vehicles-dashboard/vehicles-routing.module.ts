@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BikesDetailsComponent } from '../category-dashboard/bikes-details/bikes-details.component';
 import { CategorySelectionComponent } from '../category-dashboard/category-selection/category-selection.component';
+import { VehicleColorPageComponent } from '../category-dashboard/category-selection/VehicleColorPage/vehiclecolorpage.component';
 // import { LoginComponent } from './login/login.component';
 
 
@@ -22,6 +23,10 @@ const routes: Routes = [
       {
         path: 'Selection/:twId',
         component: CategorySelectionComponent
+      }, 
+      {
+        path: 'Selection/:twId/Colors',
+        component: VehicleColorPageComponent
       }, 
   //     {
   //   path:'Login', 

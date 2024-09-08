@@ -1,11 +1,11 @@
 <div class="category">
    <div class="category_containers">
       <div class="category_navbar">
-         <a href="#" class="active">{{productListModel?.manufacturer}} {{productListModel?.model}}</a>
-         <a href="#">Specs</a>
-         <a (click)="scrollToSection()" style="cursor: pointer;">Varients</a>
-         <a href="#">Images</a>
-         <a href="#">Colors</a>
+         <div class="active" >{{productListModel?.manufacturer}} {{productListModel?.model}}</div>
+         <div>Specs</div>
+         <div (click)="scrollToSection()">Varients</div>
+         <div>Images</div>
+         <div (click)="onColors()">Colors{{productListModel?.twId}}</div>
          <!-- angad anand -->
       </div>
       <div class="mainDetails">
@@ -17,11 +17,11 @@
             <div class="thumbnails-container">
                <div class="thumbnails">
                   <div class="thumbnail" data-image="view-all" onclick="viewAll()"
-                     [style.background-image]="'url(' + (productListModel?.path || './pr4.png') + ')'">
+                     [style.background-image]="'url(' + (productListModel?.path || './pr4.png') + ')'" >
                      4<br>Color
                   </div>
                   <div class="thumbnail" data-image="view-all" onclick="viewAll()"
-                     [style.background-image]="'url(' + (productListModel?.path || './pr4.png') + ')'">
+                     [style.background-image]="'url(' + (productListModel?.path || './pr4.png') + ')'" >
                      23<br>Images
                   </div>
 

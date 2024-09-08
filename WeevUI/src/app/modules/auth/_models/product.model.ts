@@ -1,6 +1,6 @@
 export interface  ProductListModel
     {        
-        tWId?: number ;
+        twId?: number ;
         manufacturer?: string;
         model?: string;
         variant?: string;

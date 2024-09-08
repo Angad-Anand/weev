@@ -37,7 +37,8 @@ export class BikesDetailsComponent implements OnInit {
   }
   // manufacturer + model //exShowroomPrice //
 
-  onSelect(twId:any){      
+  onSelect(twId:any){  
+    // console.log(twId); 
     this.router.navigate(["/Selection", twId]);
   }
 }

@@ -14,6 +14,7 @@ import { AuthService } from 'src/app/modules/auth/_services/auth.service';
 import { DialogService } from 'src/app/modules/_services/dialog.service';
 import { CustomerEnquiriesComponent } from 'src/app/component/customer-enquiries/customer-enquiries.component';
 import { takeWhile } from 'rxjs';
+import { Router } from '@angular/router';
 
 import { HttpClient } from '@angular/common/http';
 
@@ -62,6 +63,7 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
   topSpeed: number = 0;
   fastChargingTime: number = 0;
   warranty: number = 0;
+  title: string = '';
 
   constructor(
     private modal: UntypedFormBuilder,
@@ -70,7 +72,8 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
     private authService: AuthService,
     private readonly dialogService: DialogService,
     private http: HttpClient,
-    private cd: ChangeDetectorRef
+    private cd: ChangeDetectorRef,
+    private router: Router
   ) {
     this.route.params.subscribe((params) => (this.productID = params['twId']));
   }
@@ -107,6 +110,7 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
         const transformedResponse = this.transformResponse(response); // Transform the response
         this.productlist = transformedResponse; // Assign transformed response
         this.productListModel = this.productlist;
+        console.log(this.productListModel);
 
         this.fetchData();
         this.selectedRating = this.productListModel?.ourRating ?? 0;
@@ -293,23 +297,25 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
 
   //specs
   getProductEntries(): Array<{ key: string; value: any }> {
-    return (
-      Object.entries(this.productListModel || {})
-        .filter(
-          ([key, value]) =>
-            value !== undefined && value !== '' && value !== null
-        ) // Filter out invalid values
-        .slice(0, 8)
-        .map(([key, value]) => {
-          return {
-            key: this.keyDisplayMap[key] || key, // Use mapped key or original key
-            value: value, // Use the transformed value directly
-          };
-        })
-    );
+    return Object.entries(this.productListModel || {})
+      .filter(
+        ([key, value]) => value !== undefined && value !== '' && value !== null
+      ) // Filter out invalid values
+      .slice(0, 8)
+      .map(([key, value]) => {
+        return {
+          key: this.keyDisplayMap[key] || key, // Use mapped key or original key
+          value: value, // Use the transformed value directly
+        };
+      });
   }
 
-
+  twId: number = 0;
+  onColors() {
+    // console.log(twId);
+    this.twId = this.productID;
+    this.router.navigate(["/Selection", this.twId, "Colors"]);
+    }
 
   private keyDisplayMap: { [key: string]: string } = {
     manufacturer: 'Manufacturer',
@@ -466,10 +472,8 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
   };
 }
 
-
-
 const EMPTY_Application: ProductListModel = {
-  tWId: 0,
+  twId: 0,
   manufacturer: undefined,
   model: undefined,
   variant: undefined,
