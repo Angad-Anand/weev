@@ -128,9 +128,7 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
 
       // Merge objects into one with multiple props
       this.variantsList = this.twowheelerlist
-        .filter(
-          (item) => item.manufacturer === this.productListModel?.manufacturer
-        )
+        .filter((item) => item.model === this.productListModel?.model)
         .map((item) => item.twId);
 
       // Fetch variant data once variantsList is populated
@@ -296,26 +294,65 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
   }
 
   //specs
-  getProductEntries(): Array<{ key: string; value: any }> {
-    return Object.entries(this.productListModel || {})
-      .filter(
-        ([key, value]) => value !== undefined && value !== '' && value !== null
-      ) // Filter out invalid values
-      .slice(0, 8)
-      .map(([key, value]) => {
-        return {
-          key: this.keyDisplayMap[key] || key, // Use mapped key or original key
-          value: value, // Use the transformed value directly
-        };
-      });
+  getProductSpecs(): Array<{ key: string; value: any }> {
+    const selectedKeys = [
+      'rangeOfVehicle', // Range
+      'maxSpeed', // Max Speed
+      'chargingTime', // Charging Time
+      'noOfBatteries', // No. Of Batteries
+      'batteryCapacity', // Battery Capacity
+      'motorPower', // Motor Power (w)
+      'fastCharging', // Fast Charging
+      'swappableBattery', // Swappable Battery
+      'tyreSize', // Tubeless Tyre
+    ];
+
+    return selectedKeys
+      .map((key) => {
+        const value = this.productListModel?.[key as keyof ProductListModel];
+        return value !== undefined && value !== '' && value !== null
+          ? {
+              key: this.keyDisplayMap[key] || key, // Use mapped key or original key
+              value: value, // Use the transformed value directly
+            }
+          : null;
+      })
+      .filter((item): item is { key: string; value: any } => item !== null); // Type guard to filter out null values
+  }
+
+  //Features
+  getProductFeatures(): Array<{ key: string; value: any }> {
+    const selectedKeys = [
+      'instrumentConsole', // Range
+      'bluetoothConnectivity', // Max Speed
+      'navigation', // Charging Time
+      'antiTheftAlarm', // No. Of Batteries
+      'usbchargingPort', // Battery Capacity
+      'lowBatteryIndicator', // Motor Power (w)
+      'ridingModes', // Fast Charging
+      'underseatStorage', // Swappable Battery
+      'waterProofRating', // Tubeless Tyre
+    ];
+
+    return selectedKeys
+      .map((key) => {
+        const value = this.productListModel?.[key as keyof ProductListModel];
+        return value !== undefined && value !== '' && value !== null
+          ? {
+              key: this.keyDisplayMap[key] || key, // Use mapped key or original key
+              value: value, // Use the transformed value directly
+            }
+          : null;
+      })
+      .filter((item): item is { key: string; value: any } => item !== null); // Type guard to filter out null values
   }
 
   twId: number = 0;
   onColors() {
     // console.log(twId);
     this.twId = this.productID;
-    this.router.navigate(["/Selection", this.twId, "Colors"]);
-    }
+    this.router.navigate(['/Selection', this.twId, 'Colors']);
+  }
 
   private keyDisplayMap: { [key: string]: string } = {
     manufacturer: 'Manufacturer',
@@ -463,7 +500,10 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
     suspensionRear: (value) => `${value}`,
     brakesFront: (value) => `${value}`,
     brakesRear: (value) => `${value}`,
-    tyreSize: (value) => `${value}`,
+    tyreSize: (value: string) => {
+      const sizes = value.split(', ').map((size: string) => size.trim());
+      return sizes.join('\n');
+    },
     wheelSize: (value) => `${value}`,
     wheelsType: (value) => `${value}`,
     bodyType: (value) => `${value}`,

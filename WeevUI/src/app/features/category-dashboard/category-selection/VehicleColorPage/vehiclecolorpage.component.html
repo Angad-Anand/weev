@@ -2,15 +2,55 @@
     <div class="category_containers">
         <div class="category_navbar">
             <div (click)="onDetails()">{{productListModel?.manufacturer}} {{productListModel?.model}}</div>
-            <div >Specs</div>
-            <div >Varients</div>
-            <div >Images</div>
+            <div>Specs</div>
+            <div>Varients</div>
+            <div>Images</div>
             <div class="active">Colors</div>
         </div>
     </div>
+    <div class="mainDetails">
+        <div class="gallery-container">
+            <div class="main-image-container">
+                <img src="{{productListModel?.path}}" alt="" onerror="this.src='assets/images/pr4.png';">
+
+            </div>
+        </div>
+        <div class="description">
+            <div class="title">
+                <h1>Colors of {{productListModel?.manufacturer}} {{productListModel?.model}}</h1>
+            </div>
+            <div class="details">
+                {{ getTruncatedFeatures(productListModel?.additionalFeatures) }}
+            </div>
+
+            <div class="price">Price: Rs. {{productListModel?.exShowroomPrice}}</div>
+            <div class="status">Booking Status: <div class="currentStatus">Available</div>
+            </div>
+            <div>
+                Colours : 4
+            </div>
+        </div>
+    </div>
     <div class="color_container">
-        <div class="color_box">
-            
+        <div id="colorCarousel" class="carousel">
+            <div class="carousel-inner">
+                <div *ngFor="let imagePath of imagePaths; let i = index" [class.active]="i === currentIndex" >
+                    <img [src]="imagePath" alt="Vehicle Image" class="carousel-image">
+                </div>
+            </div>
+            <div class="thumbnail-container"> 
+                <div *ngFor="let imagePath of imagePaths; let i = index" 
+                     (click)="currentIndex = i" 
+                     [class.selected]="i === currentIndex"
+                     [style.opacity]="i === currentIndex ? '1' : '0.5'"
+                     [style.transition]="'opacity 0.3s ease'"> 
+                    <img [src]="imagePath" alt="Thumbnail" class="thumbnail-image">
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-button prev-button" (click)="prevSlide()"><img src="assets/svg/Back.svg" alt=""></button>
+                <button class="carousel-button next-button" (click)="nextSlide()"><img src="assets/svg/Back.svg" alt="" style="transform: rotate(180deg);"></button>
+            </div>
         </div>
     </div>
 </div>

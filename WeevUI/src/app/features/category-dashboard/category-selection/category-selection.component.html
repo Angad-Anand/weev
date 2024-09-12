@@ -12,17 +12,20 @@
          <div class="gallery-container">
             <div class="main-image-container">
                <img src="{{productListModel?.path}}" alt="" onerror="this.src='assets/images/pr4.png';">
-
             </div>
             <div class="thumbnails-container">
                <div class="thumbnails">
-                  <div class="thumbnail" data-image="view-all" onclick="viewAll()"
-                     [style.background-image]="'url(' + (productListModel?.path || './pr4.png') + ')'" >
-                     4<br>Color
+                  <div class="thumbnail" (click)="onColors()">
+                     <img src="{{productListModel?.path}}" alt="" style="width: 100%; height: 100%; object-fit: cover; filter: blur(1px);">
+                     <div class="text-content">
+                        4<br>Colors
+                     </div>
                   </div>
-                  <div class="thumbnail" data-image="view-all" onclick="viewAll()"
-                     [style.background-image]="'url(' + (productListModel?.path || './pr4.png') + ')'" >
-                     23<br>Images
+                  <div class="thumbnail" (click)="onColors()">
+                     <img src="{{productListModel?.path}}" alt="" style="width: 100%; height: 100%; object-fit: cover; filter: blur(1px);">
+                     <div class="text-content">
+                        24<br>Images
+                     </div>
                   </div>
 
 
@@ -117,8 +120,7 @@
                   <td>{{item.manufacturer}} {{item.model}} {{item.variant}}</td>
                   <td>
                      <div class="specs-container">
-                        <span>{{item.chargingTime}}</span>
-                        <span>{{item.rangeOfVehicle}}</span>
+                        <span>{{item.chargingTime}}, {{item.rangeOfVehicle}}</span>
                      </div>
                   </td>
                   <td>{{item.exShowroomPrice}}</td>
@@ -130,10 +132,10 @@
       <div class="spec-container">
          <h2 class="modelspecs_title">Ola S1 Pro's Model Specifications</h2>
          <div class="table">
-            <div *ngFor="let entry of getProductEntries()">
+            <div *ngFor="let entry of getProductSpecs()">
                <div class="spec-row">
                   <div class="spec-label">{{ entry.key }} :</div>
-                  <div class="spec-value">{{ entry.value }}</div>
+                  <div class="spec-value" style="white-space: pre-line;">{{ entry.value }}</div>
                </div>
             </div>
          </div>
@@ -142,10 +144,10 @@
       <div class="spec-container">
          <h2 class="modelspecs_title">OLA S1 Pro's Model Features</h2>
          <div class="table">
-            <div *ngFor="let entry of getProductEntries()">
+            <div *ngFor="let entry of getProductFeatures()">
                <div class="spec-row">
                   <div class="spec-label">{{ entry.key }} :</div>
-                  <div class="spec-value">{{ entry.value }}</div>
+                  <div class="spec-value" style="white-space: pre-line;">{{ entry.value }}</div>
                </div>
             </div>
          </div>

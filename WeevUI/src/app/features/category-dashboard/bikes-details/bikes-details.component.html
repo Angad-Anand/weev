@@ -47,7 +47,7 @@
       </div>
    </div> -->
    <div class="landingarea">
-      <div class="vehicleBox" *ngFor="let Cll of twowheelerlist">
+      <div class="vehicleBox" *ngFor="let Cll of filteredtwowheelerlist">
          <img src="{{Cll.path}}" alt="" onerror="this.src='assets/images/pr1.png';" class="image"
             (click)="onSelect(Cll.twId)">
          <div class="infobox" (click)="onSelect(Cll.twId)">
@@ -60,14 +60,14 @@
                   *ngFor="let item of [].constructor(Cll.unSelectRating); let i = index">
             </span>
          </div>
-         <div class="icobx">
+         <!-- <div class="icobx">
             <a href="#" class="share">
                <img src="assets/images/share.svg" alt="Share Icon">
             </a>
             <a href="#" class="heart">
                <img src="assets/images/heart.svg" alt="Wishlist Icon">
             </a>
-         </div>
+         </div> -->
       </div>
    </div>
    <div class="line"><a href="">more</a></div>

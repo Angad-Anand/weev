@@ -5,6 +5,7 @@ import { BikesDetailsComponent } from './bikes-details/bikes-details.component';
 import { CategoryRoutingModule } from './category-routing.module';
 import { CategorySelectionComponent } from './category-selection/category-selection.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { VehicleColorPageComponent } from './category-selection/VehicleColorPage/vehiclecolorpage.component';
 // import { VehicleColorPageComponent } from '../category-dashboard/category-selection/VehicleColorPage/VehicleColorPage.component'; // Add this line
 
 @NgModule({
@@ -12,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DashboardComponent,
     BikesDetailsComponent,
     CategorySelectionComponent,
+    VehicleColorPageComponent
   ],
   imports: [
     CommonModule,

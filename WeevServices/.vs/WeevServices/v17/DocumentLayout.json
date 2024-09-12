@@ -50,20 +50,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 6,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "VehiclesController.cs",
-              "DocumentMoniker": "E:\\codefolder\\Weev\\WeevServices\\Controllers\\VehiclesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\VehiclesController.cs",
-              "ToolTip": "E:\\codefolder\\Weev\\WeevServices\\Controllers\\VehiclesController.cs",
-              "RelativeToolTip": "Controllers\\VehiclesController.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAowAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-08T09:02:20.832Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -138,6 +126,31 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\codefolder\\Weev\\WeevServices\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "E:\\codefolder\\Weev\\WeevServices\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAAC8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-04T09:17:39.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "VehiclesController.cs",
+              "DocumentMoniker": "E:\\codefolder\\Weev\\WeevServices\\Controllers\\VehiclesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\VehiclesController.cs",
+              "ToolTip": "E:\\codefolder\\Weev\\WeevServices\\Controllers\\VehiclesController.cs",
+              "RelativeToolTip": "Controllers\\VehiclesController.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAowAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-08T09:02:20.832Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 9,
               "Title": "WeevServices",
               "DocumentMoniker": "E:\\codefolder\\Weev\\WeevServices\\WeevServices.csproj",
@@ -158,19 +171,6 @@
               "ViewState": "AQIAALIAAAAAAAAAAAAxwAwAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-04T09:17:39.689Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\codefolder\\Weev\\WeevServices\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "E:\\codefolder\\Weev\\WeevServices\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAiwC8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-04T09:17:39.693Z",
-              "EditorCaption": ""
             }
           ]
         }

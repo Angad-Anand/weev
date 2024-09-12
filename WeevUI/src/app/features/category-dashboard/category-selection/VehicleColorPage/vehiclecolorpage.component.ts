@@ -2,6 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import { Router ,ActivatedRoute} from '@angular/router';
 import { VehiclesService } from 'src/app/modules/_services/vehicles.service';
 import { ProductListModel } from 'src/app/modules/auth/_models/product.model';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-vehiclecolorpage',
@@ -12,6 +13,8 @@ export class VehicleColorPageComponent {
   productListModel: ProductListModel | undefined;
   productID: number = 0;
   productlist: Array<ProductListModel> = new Array<ProductListModel>();
+  imagePaths: string[] = [];
+  currentIndex: number = 0; // {{ edit_3 }}: Track the current index of the carousel
 
   
   constructor( 
@@ -24,9 +27,21 @@ export class VehicleColorPageComponent {
 
   ngOnInit(): void {
     this.productListModel = Object.assign({}, EMPTY_Application);
+    this.imagePaths = [
+      'assets/path/to/image1.png', // {{ edit_1 }}: Static path for image 1
+      'assets/path/to/image2.png', // {{ edit_2 }}: Static path for image 2
+      'assets/path/to/image3.png', // {{ edit_3 }}: Static path for image 3
+    ];
     if (this.productID != 0 || this.productID != undefined) {
       this.getProductDataWithID(+this.productID);
     }
+  }
+
+  getTruncatedFeatures(features: string | undefined): string {
+    if (features) {
+      return features.length > 20 ? features.slice(0, 50) + '...' : features;
+    }
+    return '';
   }
 
   private transformResponse(response: any): any {
@@ -51,6 +66,11 @@ export class VehicleColorPageComponent {
         const transformedResponse = this.transformResponse(response); // Transform the response
         this.productlist = transformedResponse; // Assign transformed response
         this.productListModel = this.productlist;
+        this.imagePaths = [
+          this.productListModel?.path ?? '',
+          "assets/images/pr4.png",
+          "assets/images/pr2.png",
+        ];
         console.log(this.productListModel);
       });
   }
@@ -58,6 +78,14 @@ export class VehicleColorPageComponent {
 
   onDetails() {
     this.router.navigate(["/Selection", this.productID]);
+  }
+
+  prevSlide() { // {{ edit_4 }}: Method to go to the previous slide
+      this.currentIndex = (this.currentIndex > 0) ? this.currentIndex - 1 : this.imagePaths.length - 1;
+  }
+
+  nextSlide() { // {{ edit_5 }}: Method to go to the next slide
+      this.currentIndex = (this.currentIndex < this.imagePaths.length - 1) ? this.currentIndex + 1 : 0;
   }
 
   private keyDisplayMap: { [key: string]: string } = {
