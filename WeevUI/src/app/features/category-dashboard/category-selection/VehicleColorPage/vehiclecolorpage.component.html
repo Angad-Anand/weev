@@ -12,7 +12,6 @@
         <div class="gallery-container">
             <div class="main-image-container">
                 <img src="{{productListModel?.path}}" alt="" onerror="this.src='assets/images/pr4.png';">
-
             </div>
         </div>
         <div class="description">
@@ -38,8 +37,12 @@
                     <img [src]="imagePath" alt="Vehicle Image" class="carousel-image">
                 </div>
             </div>
+            <div class="carousel-controls">
+                <button class="carousel-button prev-button" (click)="prevSlide()"><img src="assets/svg/Back.svg" alt=""></button>
+                <button class="carousel-button next-button" (click)="nextSlide()"><img src="assets/svg/Back.svg" alt="" style="transform: rotate(180deg);"></button>
+            </div>
             <div class="thumbnail-container"> 
-                <div *ngFor="let imagePath of imagePaths; let i = index" 
+                <div *ngFor="let imagePath of imagePaths; let i = index" class="thumbnail"
                      (click)="currentIndex = i" 
                      [class.selected]="i === currentIndex"
                      [style.opacity]="i === currentIndex ? '1' : '0.5'"
@@ -47,10 +50,7 @@
                     <img [src]="imagePath" alt="Thumbnail" class="thumbnail-image">
                 </div>
             </div>
-            <div class="carousel-controls">
-                <button class="carousel-button prev-button" (click)="prevSlide()"><img src="assets/svg/Back.svg" alt=""></button>
-                <button class="carousel-button next-button" (click)="nextSlide()"><img src="assets/svg/Back.svg" alt="" style="transform: rotate(180deg);"></button>
-            </div>
+            
         </div>
     </div>
 </div>

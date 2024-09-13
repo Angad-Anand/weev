@@ -27,11 +27,11 @@ export class VehicleColorPageComponent {
 
   ngOnInit(): void {
     this.productListModel = Object.assign({}, EMPTY_Application);
-    this.imagePaths = [
-      'assets/path/to/image1.png', // {{ edit_1 }}: Static path for image 1
-      'assets/path/to/image2.png', // {{ edit_2 }}: Static path for image 2
-      'assets/path/to/image3.png', // {{ edit_3 }}: Static path for image 3
-    ];
+    // this.imagePaths = [
+    //   'assets/path/to/image1.png', 
+    //   'assets/path/to/image2.png', 
+    //   'assets/path/to/image3.png', 
+    // ];
     if (this.productID != 0 || this.productID != undefined) {
       this.getProductDataWithID(+this.productID);
     }
@@ -69,6 +69,10 @@ export class VehicleColorPageComponent {
         this.imagePaths = [
           this.productListModel?.path ?? '',
           "assets/images/pr4.png",
+          "assets/images/pr2.png",
+          "assets/images/pr2.png",
+          "assets/images/pr2.png",
+          "assets/images/pr2.png",
           "assets/images/pr2.png",
         ];
         console.log(this.productListModel);

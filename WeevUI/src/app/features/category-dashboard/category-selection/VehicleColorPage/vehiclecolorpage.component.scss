@@ -142,16 +142,20 @@
   justify-content: center;
 }
 
-.carousel {
-  position: relative; /* Set position relative for absolute positioning of buttons */
-}
-
 $carousel-width: 1000px;
 
+.carousel {
+  width: $carousel-width;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .carousel-image {
-  width: $carousel-width; /* Set width to 400px */
-  height: 600px; /* Set height to 300px */
-  object-fit: cover; /* Ensure the image covers the area without distortion */
+  width: $carousel-width; 
+  height: 600px;
+  object-fit: cover; 
 }
 
 .carousel-inner {
@@ -159,24 +163,24 @@ $carousel-width: 1000px;
 }
 
 .carousel-inner div {
-  display: none; /* Hide all images by default */
+  display: none; 
 }
 
 .carousel-inner div.active {
-  display: block; /* Show only the active image */
+  display: block; 
 }
 
 .carousel-controls {
-  position: absolute; /* Position buttons absolutely */
-  top: 45%; /* Center vertically */
-  width: $carousel-width; /* Full width */
-  display: flex; /* Use flexbox for alignment */
-  justify-content: space-between; /* Space buttons to the sides */
-  transform: translateY(-50%); /* Adjust for vertical centering */
+  position: absolute; 
+  top: 45%; 
+  width: $carousel-width;
+  display: flex; 
+  justify-content: space-between; 
+  transform: translateY(-50%); 
 }
 
 .carousel-button {
-  cursor: pointer; /* Pointer cursor on hover */
+  cursor: pointer; 
   border: none;
   background-color: transparent;
 }
@@ -191,22 +195,31 @@ $carousel-width: 1000px;
 
 
 .prev-button {
-  margin-right: 10px; /* Space between buttons */
+  margin-right: 10px; 
 }
 
 .next-button {
-  margin-left: 10px; /* Space between buttons */
+  margin-left: 10px; 
 }
 
 .thumbnail-container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  margin-top: 10px;
+  overflow-y: hidden;
+  overflow-x: auto;
+  scrollbar-width: none;
+  height: auto;
+}
+
+.thumbnail {
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .thumbnail-image {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 130px;
   object-fit: cover;
+  border-radius: 10px;
 }

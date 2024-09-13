@@ -64,6 +64,7 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
   fastChargingTime: number = 0;
   warranty: number = 0;
   title: string = '';
+  loading: boolean = false; // Add loading state
 
   constructor(
     private modal: UntypedFormBuilder,
@@ -80,10 +81,14 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
 
   ngOnInit(): void {
     this.scrollToBottom();
+    this.route.params.subscribe((params) => {
+      this.productID = params['twId'];
+      this.getProductDataWithID(this.productID); // Fetch data when twId changes
+    });
     this.productListModel = Object.assign({}, EMPTY_Application);
     if (this.productID != 0 || this.productID != undefined) {
       this.getProductDataWithID(+this.productID);
-      this.getImgNameWithID(+this.productID);
+      // this.getImgNameWithID(+this.productID);
       this.getOtherModelswithID(+this.productID);
       this.getTwoWheelerData();
       this.getforVarientsData();
@@ -115,7 +120,7 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
         this.fetchData();
         this.selectedRating = this.productListModel?.ourRating ?? 0;
         this.unSelectRating = this.countRating - this.selectedRating;
-        this.getTabNameWithID(productID);
+        // this.getTabNameWithID(productID);
       });
   }
 
@@ -164,8 +169,24 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
           const transformedResponse = this.transformResponse(response);
           this.varientList.push(transformedResponse); // Store transformed response
         });
-    });
-  }
+      });
+    }
+    
+    onVarientClick(item: any) {
+      console.log(item.twId);
+      this.loading = true; // Set loading to true
+      
+      window.scrollTo(0, 0); // Scroll to top
+  
+      // Show loader and redirect after 3 seconds
+      setTimeout(() => {
+        this.router.navigate(["/Selection", item.twId]).then(() => {
+          this.loading = false; // Reset loading after navigation
+          this.cd.detectChanges(); // Force change detection after navigation
+        });
+      }, 500); // 3000 milliseconds = 3 seconds
+    }
+
 
   getOtherModelswithID(productID: any) {
     const generateRandomOffsets = (count: number, min: number, max: number) => {
@@ -192,22 +213,22 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
     console.log(this.nextproductlist); // Logs all product models after the loop
   }
 
-  getTabNameWithID(productID: any) {
-    this.vehiclesService.getTabNameWithID(productID).subscribe((response) => {
-      this.tabs = response;
-      if (this.tabs[0] != 'No_Result') {
-        this.CllOutResult = this.productListModel?.path?.toString();
-      } else {
-        this.tabs[0] = 'Default';
-        this.CllOutResult = 'assets/images/pr4.png';
-      }
-    });
-  }
-  getImgNameWithID(productID: any) {
-    this.vehiclesService.getImgNameWithID(productID).subscribe((response) => {
-      this.ImgName = response;
-    });
-  }
+  // getTabNameWithID(productID: any) {
+  //   this.vehiclesService.getTabNameWithID(productID).subscribe((response) => {
+  //     this.tabs = response;
+  //     if (this.tabs[0] != 'No_Result') {
+  //       this.CllOutResult = this.productListModel?.path?.toString();
+  //     } else {
+  //       this.tabs[0] = 'Default';
+  //       this.CllOutResult = 'assets/images/pr4.png';
+  //     }
+  //   });
+  // }
+  // getImgNameWithID(productID: any) {
+  //   this.vehiclesService.getImgNameWithID(productID).subscribe((response) => {
+  //     this.ImgName = response;
+  //   });
+  // }
 
   onClickDynamic(check: any) {
     if (check != 'Default') {
@@ -355,6 +376,7 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
   }
 
   private keyDisplayMap: { [key: string]: string } = {
+    twId: 'twId',
     manufacturer: 'Manufacturer',
     model: 'Model',
     variant: 'Variant',

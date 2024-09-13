@@ -5,9 +5,13 @@
          <div>Specs</div>
          <div (click)="scrollToSection()">Varients</div>
          <div>Images</div>
-         <div (click)="onColors()">Colors{{productListModel?.twId}}</div>
+         <div (click)="onColors()">Colors</div>
          <!-- angad anand -->
       </div>
+      <div *ngIf="loading" class="loading">
+         <div class="loader"></div>
+      </div>
+      <div *ngIf="!loading" class="MainDetails">
       <div class="mainDetails">
          <div class="gallery-container">
             <div class="main-image-container">
@@ -106,7 +110,7 @@
          </div>
       </div>
       <div class="variants-container" #variantsContainer>
-         <h2 class="variants-title">OLA S1 Pro's Varients</h2>
+         <h2 class="variants-title">{{productListModel?.manufacturer}} {{productListModel?.model}}s Varients</h2>
          <table class="variants-table">
             <thead>
                <tr>
@@ -116,7 +120,7 @@
                </tr>
             </thead>
             <tbody>
-               <tr *ngFor="let item of varientList">
+               <tr *ngFor="let item of varientList" (click)="onVarientClick(item)">
                   <td>{{item.manufacturer}} {{item.model}} {{item.variant}}</td>
                   <td>
                      <div class="specs-container">
@@ -130,7 +134,7 @@
       </div>
 
       <div class="spec-container">
-         <h2 class="modelspecs_title">Ola S1 Pro's Model Specifications</h2>
+         <h2 class="modelspecs_title">{{productListModel?.manufacturer}} {{productListModel?.model}}'s Model Specifications</h2>
          <div class="table">
             <div *ngFor="let entry of getProductSpecs()">
                <div class="spec-row">
@@ -142,7 +146,7 @@
          <a href="#" class="view-all-specs">View all Specs &#10145;</a>
       </div>
       <div class="spec-container">
-         <h2 class="modelspecs_title">OLA S1 Pro's Model Features</h2>
+         <h2 class="modelspecs_title">{{productListModel?.manufacturer}} {{productListModel?.model}} 's Model Features</h2>
          <div class="table">
             <div *ngFor="let entry of getProductFeatures()">
                <div class="spec-row">
@@ -154,9 +158,9 @@
          <a href="#" class="view-all-specs">View all Specs &#10145;</a>
       </div>
       <div class="otherModels">
-         <div class="otherModels-title">Other Models like OLA S1 PRO</div>
+         <div class="otherModels-title">Other Models like {{productListModel?.manufacturer}} {{productListModel?.model}}</div>
          <div class="models">
-            <div class="model" *ngFor="let model of nextproductlist">
+            <div class="model" *ngFor="let model of nextproductlist" (click)="onVarientClick(model)">
                <img src="{{model.path}}" alt="Product Image" onerror="this.src='assets/images/pr4.png';">
                <div class="card-content">
                   <h3>{{ model.manufacturer }} {{ model.model }}</h3>
@@ -168,6 +172,7 @@
             </div>
          </div>
       </div>
+   </div>
    </div>
 </div>
 
