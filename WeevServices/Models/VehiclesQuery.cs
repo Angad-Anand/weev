@@ -151,6 +151,22 @@ namespace WeevServices.Models
            
             return result.Count > 0 ? result[0] : null;
         }
+        // mainimage 
+        public async Task<TwoMainimagedata> FindOneMainImgAsync(int twId)
+        {
+            using var connectionString = Db.Connection;
+            MySqlCommand cmd = new MySqlCommand("GetmainimagebyTWID", connectionString);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new MySqlParameter
+            {
+                ParameterName = "@id",
+                DbType = DbType.Int32,
+                Value = twId,
+            });
+            var result = await ReadAllMainImgTaskAsync(await cmd.ExecuteReaderAsync());
+           
+            return result.Count > 0 ? result[0] : null;
+        }
 
         private async Task<List<Twoimagedata>> ReadAllImgTaskAsync(DbDataReader reader)
         {
@@ -159,6 +175,16 @@ namespace WeevServices.Models
             dt.Load(reader);
             List<Twoimagedata> posts = new List<Twoimagedata>();
             posts = ConvertDataTable<Twoimagedata>(dt);
+            return posts;
+        }   
+        // mainimage     
+        private async Task<List<TwoMainimagedata>> ReadAllMainImgTaskAsync(DbDataReader reader)
+        {
+            DataTable dt = new DataTable();
+            // var posts = new List<TwoWheeler>();
+            dt.Load(reader);
+            List<TwoMainimagedata> posts = new List<TwoMainimagedata>();
+            posts = ConvertDataTable<TwoMainimagedata>(dt);
             return posts;
         }       
 

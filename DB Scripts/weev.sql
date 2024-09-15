@@ -123,7 +123,7 @@ VALUES
     '../../../assets/images/2W/Revolt/Color', 'Revolt-Mist Grey', '', '', 'Revolt-Comic Black', '', 'Revolt-Rebel Red', '', '', '', '', '', '', '', ''
   ),
   (
-    10, 10, '../../../src/assets/images/2W/Bajaj/Chetak Premium/Color ', 'Bajaj-Chetak Premium-Hazel nut', '', '', 'Bajaj-Chetak Premium-Brooklun Black', '', '', 'Bajaj-Chetak Premium-Indigo Metallic', '', '', '', '', '', '', ''
+    10, 10, '../../../src/assets/images/2W/Bajaj/Chetak Premium/Color', 'Bajaj-Chetak Premium-Hazelnut', '', '', 'Bajaj-Chetak Premium-Brooklun Black', '', '', 'Bajaj-Chetak Premium-Indigo Metallic', '', '', '', '', '', '', ''
   ),
   (
     11, 11, '../../../assets/images/2W/Bajaj/Chetak Premium 2023/Color', 'Bajaj-Chetak Premium 2023-Matte Coarse Grey', '', '', '', '', '', 'Bajaj-Chetak Premium 2023-Matte Carebbean Blue', '', '', '', '', '', '', ''
@@ -145,10 +145,10 @@ VALUES
     17, 17, '../../../assets/images/2W/Torq/Kartos/Color', '', '', 'Torq-Kartos-white', 'Torq-Kartos-black', '', 'Torq-Kartos-red', 'Torq-Kartos-blue', '', '', '', '', '', '', ''
   ),
   (
-    18, 18, '../../../assets/images/2W/Ampere/Color', 'Ampere-Magnus EX-Galactic Grey', '', 'Ampere-Magnus EX-Glacial White', 'Ampere-Magnus EX-Graphite Black', '', 'Ampere-Magnus EX-Metallic Red', 'Ampere-Magnus EX-Ocean Blue', '', '', '', '', '', '', ''
+    18, 18, '../../../assets/images/2W/Ampere/MagnusEX/Color', 'Ampere-Magnus EX-Galactic Grey', '', 'Ampere-Magnus EX-Glacial White', 'Ampere-Magnus EX-Graphite Black', '', 'Ampere-Magnus EX-Metallic Red', 'Ampere-Magnus EX-Ocean Blue', '', '', '', '', '', '', ''
   ),
   (
-    19, 19, '../../../assets/images/2W/PraisePro/Color', '', '', '', 'Okinawa-PrasePro-Sparkle Black', '', 'Okinawa-PrasePro-Glosy Red Black', 'Okinawa-PrasePro-Sparkle Blue', '', '', '', 'Okinawa-PrasePro-Seafoam Green/Okinawa-PrasePro-Military Green', '', 'Okinawa-PrasePro-Sun Orange', 'Okinawa-PrasePro-Mocha Brown'
+    19, 19, '../../../assets/images/2W/Okinawa/PraisePro/Color', '', '', '', 'Okinawa-PrasePro-Sparkle Black', '', 'Okinawa-PrasePro-Glosy Red Black', 'Okinawa-PrasePro-Sparkle Blue', '', '', '', 'Okinawa-PrasePro-Seafoam Green/Okinawa-PrasePro-Military Green', '', 'Okinawa-PrasePro-Sun Orange', 'Okinawa-PrasePro-Mocha Brown'
   ),
   (
     20, 20, '../../../assets/images/2W/Oben/Rorr/Color', '', '', '', '', '', 'Oben-Rorr-Electric Red', '', '', 'Oben-Rorr-Voltaic Yellow', '', '', '', '', ''
@@ -415,40 +415,31 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER //
-
+DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GetTwimagedataByTWId`(
-   IN Id INT
+	IN Id Int
 )
 BEGIN
-   SELECT 
-     Id, 
-     TW_Ref_ID, 
-     Path,  
-     CONCAT(Path, '/', Grey1, '.jpeg') AS Grey,  
-     CONCAT(Path, '/', Grey2, '.jpeg') AS Grey2,  
-     CONCAT(Path, '/', White, '.jpeg') AS White,  
-     CONCAT(Path, '/', Black1, '.jpeg') AS Black,  
-     CONCAT(Path, '/', Black2, '.jpeg') AS Blacklight,  
-     CONCAT(Path, '/', Red, '.jpeg') AS Red,  
-     CONCAT(Path, '/', Blue, '.jpeg') AS Blue,  
-     CONCAT(Path, '/', Silver, '.jpeg') AS Silver,  
-     CONCAT(Path, '/', Yellow, '.jpeg') AS Yellow,  
-     CONCAT(Path, '/', Pink, '.jpeg') AS Pink,  
-     CONCAT(Path, '/', Green, '.jpeg') AS Green,  
-     CONCAT(Path, '/', Gerua, '.jpeg') AS Saffron,  
-     CONCAT(Path, '/', Orange, '.jpeg') AS Orange,  
-     CONCAT(Path, '/', Bronze, '.jpeg') AS Bronze  
-   FROM twimagedata
-   WHERE TW_Ref_ID = Id;
-END //
 
+	SELECT Id, TW_Ref_ID, Path, 
+    CONCAT(Path,'/',Grey1 ,'.jpeg') Grey, 
+    CONCAT(Path,'/',Grey2 ,'.jpeg') Grey2, 
+    CONCAT(Path,'/',White ,'.jpeg') White, 
+    CONCAT(Path,'/',Black1 ,'.jpeg') Black, 
+    CONCAT(Path,'/',Black2 ,'.jpeg') Blacklight, 
+    CONCAT(Path,'/',Red ,'.jpeg') Red, 
+    CONCAT(Path,'/',Blue ,'.jpeg') Blue, 
+    CONCAT(Path,'/',Silver ,'.jpeg') Silver, 
+    CONCAT(Path,'/',Yellow ,'.jpeg') Yellow, 
+    CONCAT(Path,'/',Pink ,'.jpeg') Pink, 
+    CONCAT(Path,'/',Green ,'.jpeg') Green, 
+    CONCAT(Path,'/',Gerua ,'.jpeg') Saffron, 
+    CONCAT(Path,'/',Orange ,'.jpeg') Orange, 
+    CONCAT(Path,'/',Bronze ,'.jpeg') Bronze  FROM twimagedata
+    Where TW_Ref_ID = Id; 
+    
+END ;;
 DELIMITER ;
-
-
-
-
-
 
 
 
@@ -578,8 +569,9 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+-- DROP procedure GetTwimageTabNameByTWId;
+
 DELIMITER ;;
-DROP procedure GetTwimageTabNameByTWId;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GetTwowheelerdataByTWId`(
 	IN Id Int
 )
@@ -646,16 +638,18 @@ BEGIN
 END ;;
 DELIMITER ;
 
+
+
+
+
+
  
  -- Table for Main image--
  
- use weev;
-SHOW TABLES FROM weev;
 
-DROP table main_image;
+-- DROP table main_image;
 
 CREATE TABLE `main_image` (
-  -- `TWId` int NOT NULL,
   `TW_Ref_ID` int NOT NULL,
 `Path` varchar(255) DEFAULT NULL,
   `Image1` int DEFAULT NULL,
@@ -716,7 +710,52 @@ VALUES
 
 SELECT * FROM weev.main_image;
 -- drop table main_image;-- 
+
+
 -- Table for Main image--
+
+
+use weev;
+DELIMITER $$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetmainimagebyTWID`(
+    IN Id INT
+)
+BEGIN
+    SELECT 
+        TW_Ref_ID, 
+        Path, 
+        CONCAT(Path, '/', Image1, '.jpeg') AS Image1, 
+        CONCAT(Path, '/', Image2, '.jpeg') AS Image2, 
+        CONCAT(Path, '/', Image3, '.jpeg') AS Image3, 
+        CONCAT(Path, '/', Image4, '.jpeg') AS Image4, 
+        CONCAT(Path, '/', Image5, '.jpeg') AS Image5, 
+        CONCAT(Path, '/', Image6, '.jpeg') AS Image6, 
+        CONCAT(Path, '/', Image7, '.jpeg') AS Image7, 
+        CONCAT(Path, '/', Image8, '.jpeg') AS Image8, 
+        CONCAT(Path, '/', Image9, '.jpeg') AS Image9, 
+        CONCAT(Path, '/', Image10, '.jpeg') AS Image10, 
+        CONCAT(Path, '/', Image11, '.jpeg') AS Image11, 
+        CONCAT(Path, '/', Image12, '.jpeg') AS Image12, 
+        CONCAT(Path, '/', Image13, '.jpeg') AS Image13, 
+        CONCAT(Path, '/', Image14, '.jpeg') AS Image14, 
+        CONCAT(Path, '/', Image15, '.jpeg') AS Image15, 
+        CONCAT(Path, '/', Image16, '.jpeg') AS Image16, 
+        CONCAT(Path, '/', Image17, '.jpeg') AS Image17, 
+        CONCAT(Path, '/', Image18, '.jpeg') AS Image18, 
+        CONCAT(Path, '/', Image19, '.jpeg') AS Image19, 
+        CONCAT(Path, '/', Image20, '.jpeg') AS Image20
+    FROM weev.main_image 
+    WHERE 
+        TW_Ref_ID = Id;
+END$$
+
+DELIMITER ;
+
+
+
+
+
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
