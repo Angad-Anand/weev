@@ -1,5 +1,5 @@
-import { Component,OnInit } from '@angular/core';
-import { Router ,ActivatedRoute} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { VehiclesService } from 'src/app/modules/_services/vehicles.service';
 import { ProductListModel } from 'src/app/modules/auth/_models/product.model';
 import { CommonModule } from '@angular/common';
@@ -7,33 +7,35 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-vehiclecolorpage',
   templateUrl: './vehiclecolorpage.component.html',
-  styleUrls: ['./vehiclecolorpage.component.scss']
+  styleUrls: ['./vehiclecolorpage.component.scss'],
 })
 export class VehicleColorPageComponent {
   productListModel: ProductListModel | undefined;
   productID: number = 0;
   productlist: Array<ProductListModel> = new Array<ProductListModel>();
   imagePaths: string[] = [];
-  currentIndex: number = 0; // {{ edit_3 }}: Track the current index of the carousel
+  colorimagePaths: string[] = [];
+  currentIndexImage: number = 0; // {{ edit_3 }}: Track the current index of the carousel
+  currentIndexColor: number = 0; // {{ edit_3 }}: Track the current index of the carousel
 
-  
-  constructor( 
+  constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private vehiclesService: VehiclesService,
-  ) { 
+    private vehiclesService: VehiclesService
+  ) {
     this.route.params.subscribe((params) => (this.productID = params['twId']));
   }
 
   ngOnInit(): void {
     this.productListModel = Object.assign({}, EMPTY_Application);
     // this.imagePaths = [
-    //   'assets/path/to/image1.png', 
-    //   'assets/path/to/image2.png', 
-    //   'assets/path/to/image3.png', 
+    //   'assets/path/to/image1.png',
+    //   'assets/path/to/image2.png',
+    //   'assets/path/to/image3.png',
     // ];
     if (this.productID != 0 || this.productID != undefined) {
       this.getProductDataWithID(+this.productID);
+      this.getTabNameWithID(+this.productID);
     }
   }
 
@@ -68,28 +70,51 @@ export class VehicleColorPageComponent {
         this.productListModel = this.productlist;
         this.imagePaths = [
           this.productListModel?.path ?? '',
-          "assets/images/pr4.png",
-          "assets/images/pr2.png",
-          "assets/images/pr2.png",
-          "assets/images/pr2.png",
-          "assets/images/pr2.png",
-          "assets/images/pr2.png",
+          'assets/images/pr4.png',
+          'assets/images/pr2.png',
+          'assets/images/pr2.png',
+          'assets/images/pr2.png',
+          'assets/images/pr2.png',
+          'assets/images/pr2.png',
         ];
-        console.log(this.productListModel);
       });
   }
 
+  tabs: Array<any> = new Array<any>();
+  ImgName: Array<any> = new Array<any>();
+  CllOutResult?: string;
+
+  getTabNameWithID(productID: any) {
+    this.vehiclesService.getTabNameWithID(productID).subscribe((response) => {
+      this.tabs = response.map((tab: string) => tab.toLowerCase()); 
+      console.log(this.tabs);
+      this.getImgNameWithID(+this.productID);
+    });
+  }
+  getImgNameWithID(productID: any) {
+    this.vehiclesService.getImgNameWithID(productID).subscribe((response) => {
+      this.ImgName = response;
+      this.colorimagePaths = this.tabs.map(tab => this.ImgName[tab]); 
+      console.log(this.colorimagePaths);
+    });
+  }
 
   onDetails() {
-    this.router.navigate(["/Selection", this.productID]);
+    this.router.navigate(['/Selection', this.productID]);
   }
 
-  prevSlide() { // {{ edit_4 }}: Method to go to the previous slide
-      this.currentIndex = (this.currentIndex > 0) ? this.currentIndex - 1 : this.imagePaths.length - 1;
+  prevSlideImage() {
+    this.currentIndexImage =
+      this.currentIndexImage > 0
+        ? this.currentIndexImage - 1
+        : this.imagePaths.length - 1;
   }
 
-  nextSlide() { // {{ edit_5 }}: Method to go to the next slide
-      this.currentIndex = (this.currentIndex < this.imagePaths.length - 1) ? this.currentIndex + 1 : 0;
+  nextSlideImage() {
+    this.currentIndexImage =
+      this.currentIndexImage < this.imagePaths.length - 1
+        ? this.currentIndexImage + 1
+        : 0;
   }
 
   private keyDisplayMap: { [key: string]: string } = {
@@ -246,8 +271,6 @@ export class VehicleColorPageComponent {
     bootSpace: (value) => `${value} liters`,
   };
 }
-
-
 
 const EMPTY_Application: ProductListModel = {
   twId: 0,

@@ -135,16 +135,23 @@
   padding: 0px 5px 0px 5px;
 }
 
+$carousel-width: 1000px;
 .color_container {
   margin-top: 20px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.image_container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-$carousel-width: 1000px;
-
-.carousel {
+.carousel-color {
   width: $carousel-width;
   display: flex;
   justify-content: center;
@@ -160,6 +167,7 @@ $carousel-width: 1000px;
 
 .carousel-inner {
   position: relative;
+  padding: 0;
 }
 
 .carousel-inner div {
@@ -172,11 +180,10 @@ $carousel-width: 1000px;
 
 .carousel-controls {
   position: absolute; 
-  top: 45%; 
   width: $carousel-width;
   display: flex; 
   justify-content: space-between; 
-  transform: translateY(-50%); 
+  // transform: translateY(-50%); 
 }
 
 .carousel-button {
@@ -193,7 +200,6 @@ $carousel-width: 1000px;
   border: none;
 }
 
-
 .prev-button {
   margin-right: 10px; 
 }
@@ -203,23 +209,26 @@ $carousel-width: 1000px;
 }
 
 .thumbnail-container {
+  margin-top: 20px;
+  padding-bottom: 10px;
+  width: $carousel-width;
   display: flex;
   flex-direction: row;
-  margin-top: 10px;
   overflow-y: hidden;
   overflow-x: auto;
   scrollbar-width: none;
-  height: auto;
+  // height: auto;
 }
 
 .thumbnail {
-  margin-left: 5px;
-  margin-right: 5px;
+  // margin-left: 5px;
+  margin-right: 10px;
 }
 
 .thumbnail-image {
-  width: 200px;
-  height: 130px;
+  width: 150px;
+  height: 100px;
   object-fit: cover;
   border-radius: 10px;
 }
+

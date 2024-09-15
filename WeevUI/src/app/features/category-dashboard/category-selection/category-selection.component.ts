@@ -120,7 +120,7 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
         this.fetchData();
         this.selectedRating = this.productListModel?.ourRating ?? 0;
         this.unSelectRating = this.countRating - this.selectedRating;
-        // this.getTabNameWithID(productID);
+        this.getTabNameWithID(productID);
       });
   }
 
@@ -213,17 +213,12 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
     console.log(this.nextproductlist); // Logs all product models after the loop
   }
 
-  // getTabNameWithID(productID: any) {
-  //   this.vehiclesService.getTabNameWithID(productID).subscribe((response) => {
-  //     this.tabs = response;
-  //     if (this.tabs[0] != 'No_Result') {
-  //       this.CllOutResult = this.productListModel?.path?.toString();
-  //     } else {
-  //       this.tabs[0] = 'Default';
-  //       this.CllOutResult = 'assets/images/pr4.png';
-  //     }
-  //   });
-  // }
+  getTabNameWithID(productID: any) {
+    this.vehiclesService.getTabNameWithID(productID).subscribe((response) => {
+      this.tabs = response;
+      
+    });
+  }
   // getImgNameWithID(productID: any) {
   //   this.vehiclesService.getImgNameWithID(productID).subscribe((response) => {
   //     this.ImgName = response;

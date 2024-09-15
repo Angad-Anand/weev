@@ -30,27 +30,44 @@
             </div>
         </div>
     </div>
+    <!-- images  -->
     <div class="color_container">
-        <div id="colorCarousel" class="carousel">
+        <div id="colorCarousel" class="carousel-color">
             <div class="carousel-inner">
-                <div *ngFor="let imagePath of imagePaths; let i = index" [class.active]="i === currentIndex" >
+                <div *ngFor="let imagePath of imagePaths; let i = index" [class.active]="i === currentIndexImage">
                     <img [src]="imagePath" alt="Vehicle Image" class="carousel-image">
                 </div>
             </div>
             <div class="carousel-controls">
-                <button class="carousel-button prev-button" (click)="prevSlide()"><img src="assets/svg/Back.svg" alt=""></button>
-                <button class="carousel-button next-button" (click)="nextSlide()"><img src="assets/svg/Back.svg" alt="" style="transform: rotate(180deg);"></button>
+                <button class="carousel-button prev-button" (click)="prevSlideImage()"><img src="assets/svg/Back.svg"
+                        alt=""></button>
+                <button class="carousel-button next-button" (click)="nextSlideImage()"><img src="assets/svg/Back.svg" alt=""
+                        style="transform: rotate(180deg);"></button>
             </div>
-            <div class="thumbnail-container"> 
-                <div *ngFor="let imagePath of imagePaths; let i = index" class="thumbnail"
-                     (click)="currentIndex = i" 
-                     [class.selected]="i === currentIndex"
-                     [style.opacity]="i === currentIndex ? '1' : '0.5'"
-                     [style.transition]="'opacity 0.3s ease'"> 
-                    <img [src]="imagePath" alt="Thumbnail" class="thumbnail-image">
+        </div>
+        <div class="thumbnail-container">
+            <div *ngFor="let imagePath of imagePaths; let i = index" class="thumbnail" (click)="currentIndexImage = i"
+                [class.selected]="i === currentIndexImage" [style.opacity]="i === currentIndexImage ? '1' : '0.5'"
+                [style.transition]="'opacity 0.3s ease'">
+                <img [src]="imagePath" alt="Thumbnail" class="thumbnail-image">
+            </div>
+        </div>
+    </div> 
+    <!-- color -->
+    <div class="image_container">
+        <div id="imageCarousel" class="carousel-image">
+            <div class="carousel-inner">
+                <div *ngFor="let imagePath of colorimagePaths; let i = index" [class.active]="i === currentIndexColor">
+                    <img [src]="imagePath" alt="Vehicle Image" class="carousel-image">
                 </div>
             </div>
-            
+        </div>
+        <div class="thumbnail-container">
+            <div *ngFor="let imagePath of colorimagePaths; let i = index" class="thumbnail" (click)="currentIndexColor = i"
+                [class.selected]="i === currentIndexColor" [style.opacity]="i === currentIndexColor ? '1' : '0.5'"
+                [style.transition]="'opacity 0.3s ease'">
+                <img [src]="imagePath" alt="Thumbnail" class="thumbnail-image">
+            </div>
         </div>
     </div>
 </div>
