@@ -2,9 +2,9 @@
    <div class="category_containers">
       <div class="category_navbar">
          <div class="active" >{{productListModel?.manufacturer}} {{productListModel?.model}}</div>
-         <div>Specs</div>
-         <div (click)="scrollToSection()">Varients</div>
-         <div>Images</div>
+         <div (click)="onSpecs()">Specs</div>
+         <div (click)="scrollToVariants()">Varients</div>
+         <div (click)="onImages()">Images</div>
          <div (click)="onColors()">Colors</div>
          <!-- angad anand -->
       </div>
@@ -25,14 +25,12 @@
                         4<br>Colors
                      </div>
                   </div>
-                  <div class="thumbnail" (click)="onColors()">
+                  <div class="thumbnail" (click)="onImages()">
                      <img src="{{productListModel?.path}}" alt="" style="width: 100%; height: 100%; object-fit: cover; filter: blur(1px);">
                      <div class="text-content">
                         24<br>Images
                      </div>
                   </div>
-
-
                </div>
             </div>
          </div>
@@ -47,8 +45,6 @@
                </div>
             </div>
             <div class="details">
-               <!-- Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-               Ipsum has been the industry's standard dummy text ever since the 1500s, when an  -->
                {{productListModel?.additionalFeatures}}
             </div>
             <div class="price">Price: Rs. {{productListModel?.exShowroomPrice}}</div>
@@ -90,8 +86,6 @@
                   </div>
                </div>
             </div>
-
-            <button class="link_button specs_button">See all specs &#10145;</button>
          </div>
 
          <div class="booking">
@@ -109,7 +103,7 @@
             <button class="standard_button booking_button">Interested in Model</button>
          </div>
       </div>
-      <div class="variants-container" #variantsContainer>
+      <div class="variants-container" id="variantsContainer">
          <h2 class="variants-title">{{productListModel?.manufacturer}} {{productListModel?.model}}s Varients</h2>
          <table class="variants-table">
             <thead>
@@ -132,7 +126,6 @@
             </tbody>
          </table>
       </div>
-
       <div class="spec-container">
          <h2 class="modelspecs_title">{{productListModel?.manufacturer}} {{productListModel?.model}}'s Model Specifications</h2>
          <div class="table">
@@ -143,7 +136,7 @@
                </div>
             </div>
          </div>
-         <a href="#" class="view-all-specs">View all Specs &#10145;</a>
+         <a (click)="onSpecs()" class="view-all-specs">View all Specs &#10145;</a>
       </div>
       <div class="spec-container">
          <h2 class="modelspecs_title">{{productListModel?.manufacturer}} {{productListModel?.model}} 's Model Features</h2>
@@ -155,7 +148,7 @@
                </div>
             </div>
          </div>
-         <a href="#" class="view-all-specs">View all Specs &#10145;</a>
+         <a (click)="onSpecs()" class="view-all-specs">View all Specs &#10145;</a>
       </div>
       <div class="otherModels">
          <div class="otherModels-title">Other Models like {{productListModel?.manufacturer}} {{productListModel?.model}}</div>

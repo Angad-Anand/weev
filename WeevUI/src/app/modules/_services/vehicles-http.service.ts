@@ -38,6 +38,14 @@ export class VehiclesHttpService {
        headers: headers,
      });
   }
+  getAllImageNameWithID(token: string,twId:any): Observable<any> {
+    
+    let headers = new HttpHeaders();   
+    headers.append('Authorization', `Bearer ${token}`);       
+     return this.http.get<any>(`${LAPI_URL}/TwoMainimagedata/${twId}`, {
+       headers: headers,
+     });
+  }
 
   getImgNameWithID(token: string,twId:any): Observable<any> {
     

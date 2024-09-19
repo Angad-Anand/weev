@@ -1,40 +1,31 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, ChangeDetectorRef, } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { VehiclesService } from 'src/app/modules/_services/vehicles.service';
 import { ProductListModel } from 'src/app/modules/auth/_models/product.model';
-import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-vehiclecolorpage',
-  templateUrl: './vehiclecolorpage.component.html',
-  styleUrls: ['./vehiclecolorpage.component.scss'],
+  selector: 'app-vehicleallspecs',
+  templateUrl: './vehichleAllSpecs.component.html',
+  styleUrls: ['./vehichleAllSpecs.component.scss'],
 })
-export class VehicleColorPageComponent {
-  @ViewChild('thumbnailContainer', { static: false })
-  thumbnailContainer!: ElementRef;
+export class VehicleAllSpecsComponent {
   productListModel: ProductListModel | undefined;
   productID: number = 0;
   productlist: Array<ProductListModel> = new Array<ProductListModel>();
-  imagePaths: string[] = [];
-  AllMainImg: string[] = [];
-  colorimagePaths: {colorPath : string, colorName : string}[]=[];
-  currentIndexImage: number = 0;
-  currentIndexColor: number = 0;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private vehiclesService: VehiclesService
+    private vehiclesService: VehiclesService,
+    private cd: ChangeDetectorRef,
   ) {
     this.route.params.subscribe((params) => (this.productID = params['twId']));
   }
-
   ngOnInit(): void {
+    window.scrollTo(0, 0); // Scroll to top
     this.productListModel = Object.assign({}, EMPTY_Application);
     if (this.productID != 0 || this.productID != undefined) {
       this.getProductDataWithID(+this.productID);
-      this.getAllImageNameWithID(+this.productID);
-      this.getTabNameWithID(+this.productID);
     }
   }
 
@@ -69,96 +60,12 @@ export class VehicleColorPageComponent {
         this.productListModel = this.productlist;
       });
   }
-  
 
-  tabs: Array<any> = new Array<any>();
-  ImgName: Array<any> = new Array<any>();
-  CllOutResult?: string;
-  imageNames: string[] = Array.from({ length: 20 }, (_, i) => `image${i + 1}`);
-  getAllImageNameWithID(productID: any) {
-    this.vehiclesService
-      .getAllImageNameWithID(productID)
-      .subscribe((response) => {
-        this.AllMainImg = response;
-        // this.imagePaths = this.AllMainImg.filter((img: any) => img.tW_Ref_ID === undefined).map((img: string) => img);
-        this.imagePaths = this.imageNames.map(
-          (name) =>
-            String(this.AllMainImg[name as keyof typeof this.AllMainImg]) || ''
-        );
-        // console.log(this.AllMainImg);
-        // console.log(this.imagePaths);
-      });
-  }
-
-  getTabNameWithID(productID: any) {
-    this.vehiclesService.getTabNameWithID(productID).subscribe((response) => {
-      this.tabs = response.map((tab: string) => tab.toLowerCase());
-      // console.log(this.tabs);
-      this.getImgNameWithID(+this.productID);
-    });
-  }
-  
-  getImgNameWithID(productID: any) {
-    this.vehiclesService.getImgNameWithID(productID).subscribe((response) => {
-      this.ImgName = response;
-      this.colorimagePaths = this.tabs.map((tab) => ({
-        colorPath: this.ImgName[tab],
-        colorName: tab 
-      }));
-
-      // console.log(this.colorimagePaths);
-    });
-  }
-
+ 
   onDetails() {
     this.router.navigate(['/Selection', this.productID]);
   }
 
-  prevSlideImage() {
-    this.currentIndexImage =
-      this.currentIndexImage > 0
-        ? this.currentIndexImage - 1
-        : this.imagePaths.length - 1;
-    this.scrollThumbnails(this.currentIndexImage);
-  }
-
-  nextSlideImage() {
-    this.currentIndexImage =
-      this.currentIndexImage < this.imagePaths.length - 1
-        ? this.currentIndexImage + 1
-        : 0;
-    this.scrollThumbnails(this.currentIndexImage);
-  }
-
-  visibleThumbnails = 2; // Number of thumbnails visible at a time
-  scrollThumbnails(currentIndex: number) {
-    const thumbnailWidth = 110;
-    const container = this.thumbnailContainer.nativeElement;
-
-    // Check if the current index is out of view
-    if (currentIndex >= this.visibleThumbnails) {
-      const scrollAmount =
-        thumbnailWidth * (currentIndex - this.visibleThumbnails + 1);
-      container.scrollTo({ left: scrollAmount, behavior: 'smooth' });
-    } else {
-      container.scrollTo({ left: 0, behavior: 'smooth' });
-    }
-  }
-
-  onColor(){
-    const imageContainer = document.getElementById('image_container');
-        if (imageContainer) {
-          imageContainer.scrollIntoView({ behavior: 'smooth' });
-          console.log('scrolling');
-        }
-  }
-  
-  onSpecs() {
-    this.twId = this.productID;
-    this.router.navigate(['/Selection', this.twId, 'Specs']);
-  }
-
-  twId: number = 0;
   onVarient() {
     this.twId = this.productID;
     this.router.navigate(['/Selection', this.twId]).then(() => {
@@ -166,13 +73,52 @@ export class VehicleColorPageComponent {
         const variants_Container = document.getElementById('variantsContainer');
         if (variants_Container) {
           variants_Container.scrollIntoView({ behavior: 'smooth' });
-          console.log('scrolling');
+          // console.log('scrolling');
         } else {
           console.error('variantsContainer not found');
         }
-      }, 100); 
+      }, 100);
     });
   }
+
+  onImages() {
+    this.twId = this.productID;
+    this.router.navigate(['/Selection', this.twId, 'Colors']);
+  }
+
+  twId: number = 0;
+  onColors() {
+    this.twId = this.productID;
+    this.router.navigate(['/Selection', this.twId, 'Colors']).then(() => {
+      setTimeout(() => {
+        const imageContainer = document.getElementById('image_container');
+        if (imageContainer) {
+          imageContainer.scrollIntoView({ behavior: 'smooth' });
+          // console.log('scrolling');
+        }
+      }, 200); // Set timeout to 500 milliseconds
+    });
+  }
+
+  getProductSpecs(): Array<{ key: string; value: any }> {
+    const excludedKeys = ['path', 'twId']; // Define keys to exclude
+
+    // Iterate over all keys in productListModel except those in excludedKeys
+    return Object.keys(this.productListModel || {})
+      .filter(key => !excludedKeys.includes(key)) // Exclude keys in excludedKeys
+      .map((key) => {
+        const value = this.productListModel?.[key as keyof ProductListModel];
+        return value !== undefined && value !== '' && value !== null
+          ? {
+              key: this.keyDisplayMap[key] || key, // Use mapped key or original key
+              value: value, // Use the transformed value directly
+            }
+          : null;
+      })
+      .filter((item): item is { key: string; value: any } => item !== null); // Type guard to filter out null values
+  }
+
+  
 
   private keyDisplayMap: { [key: string]: string } = {
     manufacturer: 'Manufacturer',

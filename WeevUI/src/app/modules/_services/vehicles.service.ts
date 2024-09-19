@@ -86,6 +86,21 @@ constructor(
       finalize(() => this.isLoadingSubject.next(false))
     );
   }
+  getAllImageNameWithID(twId:any): Observable<any> {
+    const auth = this.getAuthFromLocalStorage();
+    if (!auth ) {
+      return of(undefined);
+    }
+    this.isLoadingSubject.next(true);
+    return this.vehiclesHttpService.getAllImageNameWithID(auth,twId)
+    .pipe(
+      map((TwoWheeler: any) => {
+        
+        return TwoWheeler;
+      }),
+      finalize(() => this.isLoadingSubject.next(false))
+    );
+  }
   getImgNameWithID(twId:any): Observable<any> {
     const auth = this.getAuthFromLocalStorage();
     if (!auth ) {

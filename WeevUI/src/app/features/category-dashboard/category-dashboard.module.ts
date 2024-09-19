@@ -6,14 +6,16 @@ import { CategoryRoutingModule } from './category-routing.module';
 import { CategorySelectionComponent } from './category-selection/category-selection.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { VehicleColorPageComponent } from './category-selection/VehicleColorPage/vehiclecolorpage.component';
-// import { VehicleColorPageComponent } from '../category-dashboard/category-selection/VehicleColorPage/VehicleColorPage.component'; // Add this line
+import { VehicleAllSpecsComponent } from './category-selection/VehicleAllSpecs/vehichleAllSpecs.component';
+
 
 @NgModule({
   declarations: [
     DashboardComponent,
     BikesDetailsComponent,
     CategorySelectionComponent,
-    VehicleColorPageComponent
+    VehicleColorPageComponent,
+    VehicleAllSpecsComponent
   ],
   imports: [
     CommonModule,

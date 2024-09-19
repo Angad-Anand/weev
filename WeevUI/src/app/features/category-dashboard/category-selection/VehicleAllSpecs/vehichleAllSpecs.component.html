@@ -1,0 +1,44 @@
+<div class="category">
+    <div class="category_containers">
+        <div class="category_navbar">
+            <div (click)="onDetails()">{{productListModel?.manufacturer}} {{productListModel?.model}}</div>
+            <div class="active">Specs</div>
+            <div (click)="onVarient()">Varients</div>
+            <div (click)="onImages()">Images</div>
+            <div (click)="onColors()">Colors</div>
+        </div>
+    </div>
+    <div class="mainDetails">
+        <div class="gallery-container">
+            <div class="main-image-container">
+                <img src="{{productListModel?.path}}" alt="" onerror="this.src='assets/images/pr4.png';">
+            </div>
+        </div>
+        <div class="description">
+            <div class="title">
+                <h1>Specifications of {{productListModel?.manufacturer}} {{productListModel?.model}}</h1>
+            </div>
+            <!-- <div class="details">
+                {{ getTruncatedFeatures(productListModel?.additionalFeatures) }}
+            </div> -->
+            <div class="price">Price: Rs. {{productListModel?.exShowroomPrice}}</div>
+            <div class="status">Booking Status: <div class="currentStatus">Available</div>
+            </div>
+            <div>
+                Colours : 4
+            </div>
+        </div>
+    </div>
+    <div class="spec-container">
+        <h2 class="modelspecs_title">{{productListModel?.manufacturer}} {{productListModel?.model}} 's Model
+            Specifications</h2>
+        <div class="table">
+            <div *ngFor="let entry of getProductSpecs()">
+                <div class="spec-row">
+                    <div class="spec-label">{{ entry.key }} :</div>
+                    <div class="spec-value" style="white-space: pre-line;">{{ entry.value }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

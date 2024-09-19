@@ -20,6 +20,7 @@ export class BikesDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.title == 'Bikes') this.getTwoWheelerData();
+    window.scrollTo(0, 0); // Scroll to top
   }
   getTwoWheelerData() {
     this.vehiclesService.getTwoWheelerData().subscribe((response) => {

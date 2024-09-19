@@ -25,10 +25,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CategorySelectionComponent implements OnInit, AfterViewChecked {
   @ViewChild('scrollMe') private myScrollContainer?: ElementRef;
-  @ViewChild('variantsContainer') variantsContainer!: ElementRef;
-
-  scrollToSection() {
-    this.variantsContainer.nativeElement.scrollIntoView({ behavior: 'smooth' });
+  
+  scrollToVariants() {
+    const variants_Container = document.getElementById('variantsContainer');
+    variants_Container!.scrollIntoView({ behavior: 'smooth' });
   }
 
   popup = false;
@@ -80,6 +80,7 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
   }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0); // Scroll to top
     this.scrollToBottom();
     this.route.params.subscribe((params) => {
       this.productID = params['twId'];
@@ -115,7 +116,7 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
         const transformedResponse = this.transformResponse(response); // Transform the response
         this.productlist = transformedResponse; // Assign transformed response
         this.productListModel = this.productlist;
-        console.log(this.productListModel);
+        // console.log(this.productListModel);
 
         this.fetchData();
         this.selectedRating = this.productListModel?.ourRating ?? 0;
@@ -159,7 +160,7 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
   }
 
   getforVarientsData() {
-    console.log(this.variantsList);
+    // console.log(this.variantsList);
 
     // Ensure variant list is processed sequentially
     this.variantsList.forEach((variantId) => {
@@ -173,18 +174,15 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
     }
     
     onVarientClick(item: any) {
-      console.log(item.twId);
-      this.loading = true; // Set loading to true
+      this.loading = true; 
       
-      window.scrollTo(0, 0); // Scroll to top
-  
-      // Show loader and redirect after 3 seconds
+      window.scrollTo(0, 0); 
       setTimeout(() => {
         this.router.navigate(["/Selection", item.twId]).then(() => {
           this.loading = false; // Reset loading after navigation
           this.cd.detectChanges(); // Force change detection after navigation
         });
-      }, 500); // 3000 milliseconds = 3 seconds
+      }, 500);
     }
 
 
@@ -210,7 +208,7 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
         });
     });
 
-    console.log(this.nextproductlist); // Logs all product models after the loop
+    // console.log(this.nextproductlist); 
   }
 
   getTabNameWithID(productID: any) {
@@ -234,18 +232,18 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
     }
   }
 
-  public open(modal: any): void {
-    const name = { type: 'Customeenquiry', value: 'vinay' };
-    this.dialogService
-      .openModal('Custome Enquiry', name, CustomerEnquiriesComponent)
-      .pipe(takeWhile(() => true))
-      .subscribe((customeData: any) => {
-        if (!!customeData) {
-          console.log(customeData);
-          this.authService.Customerenquiries(customeData);
-        }
-      });
-  }
+  // public open(modal: any): void {
+  //   const name = { type: 'Customeenquiry', value: 'vinay' };
+  //   this.dialogService
+  //     .openModal('Custome Enquiry', name, CustomerEnquiriesComponent)
+  //     .pipe(takeWhile(() => true))
+  //     .subscribe((customeData: any) => {
+  //       if (!!customeData) {
+  //         // console.log(customeData);
+  //         this.authService.Customerenquiries(customeData);
+  //       }
+  //     });
+  // }
 
   ////////////////
   keySpecs: any[] = [];
@@ -364,10 +362,27 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
   }
 
   twId: number = 0;
-  onColors() {
-    // console.log(twId);
+  onImages() {
     this.twId = this.productID;
     this.router.navigate(['/Selection', this.twId, 'Colors']);
+    window.scrollTo(0, 0);
+  }
+
+  onColors() {
+    this.twId = this.productID;
+    this.router.navigate(['/Selection', this.twId, 'Colors']).then(() => {
+      setTimeout(() => {
+        const imageContainer = document.getElementById('image_container');
+        if (imageContainer) {
+          imageContainer.scrollIntoView({ behavior: 'smooth' });
+          // console.log('scrolling');
+        }
+      }, 200); // Set timeout to 500 milliseconds
+    });
+  }
+  onSpecs() {
+    this.twId = this.productID;
+    this.router.navigate(['/Selection', this.twId, 'Specs']);
   }
 
   private keyDisplayMap: { [key: string]: string } = {
