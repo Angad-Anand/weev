@@ -25,6 +25,10 @@ const routes: Routes = [
         path: 'Selection/:twId',
         component: CategorySelectionComponent
       },   
+      // {
+      //   path: 'Selection/:twId',
+      //   component: VehicleColorPageComponent
+      // },   
       {
         path: 'Selection/:twId/Colors',
         component: VehicleColorPageComponent

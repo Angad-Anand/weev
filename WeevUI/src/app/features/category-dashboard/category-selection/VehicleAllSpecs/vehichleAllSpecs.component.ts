@@ -266,8 +266,15 @@ export class VehicleAllSpecsComponent {
     suspensionRear: (value) => `${value}`,
     brakesFront: (value) => `${value}`,
     brakesRear: (value) => `${value}`,
-    tyreSize: (value) => `${value}`,
-    wheelSize: (value) => `${value}`,
+    tyreSize: (value: string) => {
+      const sizes = value.split(',').map((size: string) => size.trim());
+      return sizes.join('\n');
+    },
+    wheelSize: (value: string) => {
+      const sizes = value.split(',').map((size: string) => size.trim());
+      return sizes.join('\n');
+    },
+    // wheelSize: (value) => `${value}`,
     wheelsType: (value) => `${value}`,
     bodyType: (value) => `${value}`,
     dimensionsAndCapacity: (value) => `${value}`,

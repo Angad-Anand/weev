@@ -37,10 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{4616CE1E-F8C7-42DC-BEE0-281867517CCA}|WeevServices.csproj|e:\\codefolder\\weev\\weevservices\\models\\vehiclesquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4616CE1E-F8C7-42DC-BEE0-281867517CCA}|WeevServices.csproj|solutionrelative:models\\vehiclesquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4616CE1E-F8C7-42DC-BEE0-281867517CCA}|WeevServices.csproj|e:\\codefolder\\weev\\weevservices\\weevservices.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}",
-      "RelativeMoniker": "D:0:0:{4616CE1E-F8C7-42DC-BEE0-281867517CCA}|WeevServices.csproj|solutionrelative:weevservices.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,31 +46,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RefreshToken.cs",
-              "DocumentMoniker": "E:\\codefolder\\Weev\\WeevServices\\Models\\RefreshToken.cs",
-              "RelativeDocumentMoniker": "Models\\RefreshToken.cs",
-              "ToolTip": "E:\\codefolder\\Weev\\WeevServices\\Models\\RefreshToken.cs",
-              "RelativeToolTip": "Models\\RefreshToken.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-08T09:00:57.515Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UserModel.cs",
-              "DocumentMoniker": "E:\\codefolder\\Weev\\WeevServices\\Models\\UserModel.cs",
-              "RelativeDocumentMoniker": "Models\\UserModel.cs",
-              "ToolTip": "E:\\codefolder\\Weev\\WeevServices\\Models\\UserModel.cs",
-              "RelativeToolTip": "Models\\UserModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-08T09:00:23.452Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{26341fe2-71dd-46fd-bb1b-2e51a92a0d64}"
             },
             {
               "$type": "Document",
@@ -132,10 +108,34 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "E:\\codefolder\\Weev\\WeevServices\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAAAC8AAAAAAAAA",
+              "ViewState": "AQIAACQAAAAAAAAAAAAAACkAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-04T09:17:39.693Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserModel.cs",
+              "DocumentMoniker": "E:\\codefolder\\Weev\\WeevServices\\Models\\UserModel.cs",
+              "RelativeDocumentMoniker": "Models\\UserModel.cs",
+              "ToolTip": "E:\\codefolder\\Weev\\WeevServices\\Models\\UserModel.cs",
+              "RelativeToolTip": "Models\\UserModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-08T09:00:23.452Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RefreshToken.cs",
+              "DocumentMoniker": "E:\\codefolder\\Weev\\WeevServices\\Models\\RefreshToken.cs",
+              "RelativeDocumentMoniker": "Models\\RefreshToken.cs",
+              "ToolTip": "E:\\codefolder\\Weev\\WeevServices\\Models\\RefreshToken.cs",
+              "RelativeToolTip": "Models\\RefreshToken.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-08T09:00:57.515Z"
             },
             {
               "$type": "Document",
@@ -148,17 +148,6 @@
               "ViewState": "AQIAABIAAAAAAAAAAAAowAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-08T09:02:20.832Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "WeevServices",
-              "DocumentMoniker": "E:\\codefolder\\Weev\\WeevServices\\WeevServices.csproj",
-              "RelativeDocumentMoniker": "WeevServices.csproj",
-              "ToolTip": "E:\\codefolder\\Weev\\WeevServices\\WeevServices.csproj",
-              "RelativeToolTip": "WeevServices.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-08-04T09:17:39.645Z"
             },
             {
               "$type": "Document",

@@ -16,16 +16,15 @@
         </div>
         <div class="description">
             <div class="title">
-                <h1>Images of {{productListModel?.manufacturer}} {{productListModel?.model}}</h1>
+                <div>Images of {{productListModel?.manufacturer}} {{productListModel?.model}}</div>
             </div>
             <div class="details">
                 {{ getTruncatedFeatures(productListModel?.additionalFeatures) }}
             </div>
-
             <div class="price">Price: Rs. {{productListModel?.exShowroomPrice}}</div>
             <div class="status">Booking Status: <div class="currentStatus">Available</div>
             </div>
-            <div>
+            <div class="color">
                 Colours : 4
             </div>
         </div>
@@ -56,9 +55,9 @@
         </div>
     </div>
     <!-- color -->
-    <div class="image_container" id="image_container">
-        <div id="imageCarousel" class="carousel-image" >
-            <div class="carousel-inner" >
+    <div class="color_container" id="image_container">
+        <div id="colorCarousel" class="carousel-image">
+            <div class="carousel-inner">
                 <div *ngFor="let imagePath of colorimagePaths; let i = index" [class.active]="i === currentIndexColor">
                     <img [src]="imagePath.colorPath" alt="Vehicle Image" class="carousel-image">
                     <!-- <div class="color-name">
@@ -67,15 +66,16 @@
                 </div>
             </div>
         </div>
-        <div class="thumbnail-container image-thumbnail">
-            <div *ngFor="let imagePath of colorimagePaths; let i = index" class="thumbnail " 
-                (click)="currentIndexColor = i" [class.selected]="i === currentIndexColor"
-                [style.opacity]="i === currentIndexColor ? '1' : '0.5'" [style.transition]="'opacity 0.3s ease'">
-                <img [src]="imagePath.colorPath" alt="Thumbnail" class="thumbnail-image">
-                <div class="color-name" >
-                    {{imagePath.colorName}}
+        <div class="thumbnail-container-wrapper">
+            <div class="thumbnail-container">
+                <div *ngFor="let imagePath of colorimagePaths; let i = index" class="thumbnail "
+                    (click)="currentIndexColor = i" [class.selected]="i === currentIndexColor"
+                    [style.opacity]="i === currentIndexColor ? '1' : '0.5'" [style.transition]="'opacity 0.3s ease'">
+                    <img [src]="imagePath.colorPath" alt="Thumbnail" class="thumbnail-image">
+                    <div class="color-name">
+                        {{imagePath.colorName}}
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
