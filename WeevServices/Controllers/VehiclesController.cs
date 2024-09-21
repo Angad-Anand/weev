@@ -78,6 +78,18 @@ namespace WeevServices.Controllers
                 return new NotFoundResult();
             return new OkObjectResult(result);
         }
+        //name of the images present
+        [Route("TwoMainimagedataAll/{id}")]
+        [HttpGet]
+        public async Task<IActionResult> GetAllMainImgPath(int id)
+        {
+            await Db.Connection.OpenAsync();
+            var query = new VehiclesQuery(Db);
+            var result = await query.FindAllMainImgAsync(id);
+            if (result is null)
+                return new NotFoundResult();
+            return new OkObjectResult(result);
+        }
 
         [Route("TwoImageTabName/{id}")]
         [HttpGet]

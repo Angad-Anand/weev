@@ -1,27 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "E:\\codefolder\\Weev\\WeevServices\\WeevServices.csproj": {}
+    "D:\\weev\\WeevServices\\WeevServices.csproj": {}
   },
   "projects": {
-    "E:\\codefolder\\Weev\\WeevServices\\WeevServices.csproj": {
+    "D:\\weev\\WeevServices\\WeevServices.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\codefolder\\Weev\\WeevServices\\WeevServices.csproj",
+        "projectUniqueName": "D:\\weev\\WeevServices\\WeevServices.csproj",
         "projectName": "WeevServices",
-        "projectPath": "E:\\codefolder\\Weev\\WeevServices\\WeevServices.csproj",
-        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "E:\\codefolder\\Weev\\WeevServices\\obj\\",
+        "projectPath": "D:\\weev\\WeevServices\\WeevServices.csproj",
+        "packagesPath": "C:\\Users\\Abhyudya\\.nuget\\packages\\",
+        "outputPath": "D:\\weev\\WeevServices\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Abhyudya\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -86,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
