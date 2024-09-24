@@ -33,8 +33,8 @@
     <div class="color_container">
         <div id="colorCarousel" class="carousel-color">
             <div class="carousel-inner">
-                <div *ngFor="let imagePath of imagePaths; let i = index" [class.active]="i === currentIndexImage">
-                    <img [src]="imagePath" alt="Vehicle Image" class="carousel-image">
+                <div *ngFor="let imagePath of ReqimagePaths; let i = index" [class.active]="i === currentIndexImage">
+                    <img [src]="imagePath.imagePath" alt="Vehicle Image" class="carousel-image">
                 </div>
             </div>
             <div class="carousel-controls">
@@ -46,16 +46,17 @@
         </div>
         <div class="thumbnail-container-wrapper">
             <div class="thumbnail-container" #thumbnailContainer>
-                <div *ngFor="let imagePath of imagePaths; let i = index" class="thumbnail"
+                <div *ngFor="let imagePath of ReqimagePaths; let i = index" class="thumbnail"
                     (click)="currentIndexImage = i; scrollThumbnails(i)" [class.selected]="i === currentIndexImage"
                     [style.opacity]="i === currentIndexImage ? '1' : '0.5'" [style.transition]="'opacity 0.3s ease'">
-                    <img [src]="imagePath" alt="Thumbnail" class="thumbnail-image">
+                    <img [src]="imagePath.imagePath" alt="Thumbnail" class="thumbnail-image">
                 </div>
             </div>
         </div>
     </div>
     <!-- color -->
     <div class="color_container" id="image_container">
+        <div class="color-title">Color Options For {{productListModel?.manufacturer}} {{productListModel?.model}}</div>
         <div id="colorCarousel" class="carousel-image">
             <div class="carousel-inner">
                 <div *ngFor="let imagePath of colorimagePaths; let i = index" [class.active]="i === currentIndexColor">

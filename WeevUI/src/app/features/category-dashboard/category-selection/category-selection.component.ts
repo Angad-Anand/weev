@@ -80,7 +80,7 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
   }
 
   ngOnInit(): void {
-    window.scrollTo(0, 0); // Scroll to top
+    window.scrollTo(0, 0); 
     this.scrollToBottom();
     this.route.params.subscribe((params) => {
       this.productID = params['twId'];

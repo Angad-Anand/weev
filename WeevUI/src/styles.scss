@@ -6,10 +6,9 @@
 @import "../src/assets/scss/variables";
 @import "../src/assets/scss/mixins";
 @import "../src/assets/scss/common";
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-
-*{
+* {
   font-family: Roboto;
 }
 
@@ -21,8 +20,6 @@
     background: url(assets/images/bannermob.png) no-repeat center bottom;
   }
 }
-
-
 
 header {
   nav {
@@ -37,7 +34,8 @@ header {
     @include mobile {
       height: 60px;
       padding: 0px 10px;
-      border-bottom: 1px solid $lorng;   margin-bottom: 0px;
+      border-bottom: 1px solid $lorng;
+      margin-bottom: 0px;
     }
     .leftarea {
       @include flbox($align: center);
@@ -70,38 +68,46 @@ header {
     .searcharea {
       position: relative;
       .searchinput {
-          width: 200px;
-          height: 45px;
-          @media (max-width: 768px) {
-              width: 90%;
-          }
-          border-radius: 30px;
+        width: 200px;
+        height: 45px;
+        @media (max-width: 768px) {
+          width: 90%;
+        }
+        border-radius: 30px;
+        border: 1px solid $dorng;
+        padding: 10px 20px 10px 60px;
+        line-height: 40px;
+        @include transition();
+        &:before {
+          content: "\f002";
+          margin-left: 9px;
+          margin-right: 6px;
+        }
+        &:hover,
+        &:focus {
+          width: 500px;
           border: 1px solid $dorng;
-          padding: 10px 20px 10px 60px;
-          line-height: 40px;     @include transition();
-          &:before {
-              content: "\f002";
-              margin-left: 9px;
-              margin-right: 6px;
-          }
-          &:hover, &:focus{width: 500px;  border: 1px solid $dorng;   @include transition();}
+          @include transition();
+        }
       }
       .icon {
-          position: absolute;
-          top: 50%;
-          left: 20px;
-          pointer-events: none;
-          -webkit-transform: translateY(-43%) scaleX(-1);
-          transform: translateY(-43%) scaleX(-1);
-          color: $dorng;
-          font-size: 30px;
-          line-height: 20px;
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        pointer-events: none;
+        -webkit-transform: translateY(-43%) scaleX(-1);
+        transform: translateY(-43%) scaleX(-1);
+        color: $dorng;
+        font-size: 30px;
+        line-height: 20px;
       }
-      @include mobile { display: none;}
+      @include mobile {
+        display: none;
+      }
     }
     .rightarea {
       display: block;
-     
+
       ul {
         @include flbox($align: center);
         margin: 0;
@@ -135,18 +141,17 @@ header {
           @include mobile {
             padding: 0 20px !important;
             &:last-child {
-                padding: 0 0 0 20px !important;
-              }
+              padding: 0 0 0 20px !important;
+            }
             a {
-                img {
-                  height: 20px;
-                }
+              img {
+                height: 20px;
               }
+            }
           }
         }
       }
     }
-    
   }
 }
 .searchcontainer {
@@ -188,7 +193,7 @@ header {
       height: 2px;
       background: white;
       transform: rotate(45deg);
-      transition: all .5s;
+      transition: all 0.5s;
     }
     &::after {
       content: "";
@@ -202,7 +207,7 @@ header {
       height: 18px;
       border-radius: 50%;
       border: 2px solid white;
-      transition: all .5s;
+      transition: all 0.5s;
     }
   }
   input {
@@ -222,8 +227,7 @@ header {
     text-shadow: 0 0 10px $dorng;
     padding: 0 80px 0 20px;
     border-radius: 30px;
-    box-shadow: 0 0 15px 0 $dorng,
-                0 20px 25px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 15px 0 $dorng, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
     // box-shadow: inset 0 0 25px 0 rgba(0, 0, 0, 0.5);
     transition: all 1s;
     opacity: 0;
@@ -242,8 +246,6 @@ header {
       right: -250px;
       background: #151515;
       z-index: 6;
-    
-    
     }
     &::placeholder {
       color: white;
@@ -262,7 +264,7 @@ header {
   position: relative;
 
   @include desktop {
-    height:570px;
+    height: 570px;
   }
   @include smdp {
     padding: 10px 0;
@@ -278,7 +280,7 @@ header {
   .bannerarea {
     @include flbox($direction: column, $justify: center);
     width: 600px;
-    height:580px;
+    height: 580px;
     position: relative;
     z-index: 1;
     h1 {
@@ -314,14 +316,12 @@ header {
         line-height: 50px;
         font-size: 28px;
       }
-     
-     
     }
     @include mobile {
       width: $fwidth;
       text-align: center;
       height: 120px;
-      background:  $lorng1;
+      background: $lorng1;
       h4 {
         margin: 5px 0px 10px 0px;
         line-height: 20px;
@@ -333,10 +333,12 @@ header {
         line-height: 48px;
         font-size: 42px;
       }
-      p, button{ display:none}
+      p,
+      button {
+        display: none;
+      }
     }
   }
-  
 }
 
 .playallst {
@@ -355,13 +357,14 @@ main {
     margin: 0 0 60px;
     position: relative;
     @include flbox($direction: column, $justify: center);
-    &:nth-child(1)  {
+    &:nth-child(1) {
       margin: 0 0 35px;
       .line {
         margin: 0 auto !important;
       }
     }
-    &:nth-child(2) {margin: 0 0 60px;
+    &:nth-child(2) {
+      margin: 0 0 60px;
       .line {
         margin: 45px auto 0;
       }
@@ -372,89 +375,103 @@ main {
       }
     }
     h3 {
-        color: $dorng;
-        font-weight: 400;
-        font-size: $head2;
-        margin: 0 0 20px ;
-        line-height: 24px;
+      color: $dorng;
+      font-weight: 400;
+      font-size: $head2;
+      margin: 0 0 20px;
+      line-height: 24px;
+    }
+    @include mobile {
+      &:nth-child(2) {
+        margin: 0 0 35px;
       }
-      @include mobile { &:nth-child(2) {margin: 0 0 35px;
-       
-      }}
+    }
     .categoryarea {
-        @extend .container;
-        @include flbox($justify: center);
-    
-     
+      @extend .container;
+      @include flbox($justify: center);
+
       .category1 {
         width: 30%;
-     margin:0 2%;
-     .imgbox{   width: 100%;position: relative;
-     img {
-      display: block;
-      width: 100%;
-      height: auto;
-   
-  }
-  .olay {
-      position: absolute; 
-      bottom: 0; 
-      background: rgb(0, 0, 0);
-      background: rgba(0, 0, 0, 0.5); /* Black see-through */
-      color: #f1f1f1; 
-      width: 100%;
-      transition: .5s ease;
-      opacity:0;
-      color: white;
-      font-size: 20px;
-      padding: 20px;
-      text-align: center;
-      height: 100%;
-      @include flbox($direction: column, $align:center, $justify: center);
-    }
-&:hover{
-.olay {opacity: 1;}
-}}
+        margin: 0 2%;
+        .imgbox {
+          width: 100%;
+          position: relative;
+          img {
+            display: block;
+            width: 100%;
+            height: auto;
+          }
+          .olay {
+            position: absolute;
+            bottom: 0;
+            background: rgb(0, 0, 0);
+            background: rgba(0, 0, 0, 0.5); /* Black see-through */
+            color: #f1f1f1;
+            width: 100%;
+            transition: 0.5s ease;
+            opacity: 0;
+            color: white;
+            font-size: 20px;
+            padding: 20px;
+            text-align: center;
+            height: 100%;
+            @include flbox(
+              $direction: column,
+              $align: center,
+              $justify: center
+            );
+          }
+          &:hover {
+            .olay {
+              opacity: 1;
+            }
+          }
+        }
 
-@include mobile { 
-  width: 45%;}
+        @include mobile {
+          width: 45%;
+        }
       }
     }
     .newvehiclearea {
       @include flbox($justify: space-between, $wrap: wrap);
       @extend .container;
       h3 {
-          width: 100%;
+        width: 100%;
       }
       .vehiclbox {
         width: 22%;
-        margin: 0px 0 50px 0;position: relative;
+        margin: 0px 0 50px 0;
+        position: relative;
         @include flbox($direction: column);
         img {
-            display: block;
-            width: 100%;
-            height: auto;
-         
+          display: block;
+          max-width: 100%;
+          max-height: 200px;
+          min-height: 200px;
+          object-fit: cover;
         }
         .olay {
-            position: absolute; 
-            bottom: 0; 
-            background: rgb(0, 0, 0);
-            background: rgba(0, 0, 0, 0.5); /* Black see-through */
-            color: #f1f1f1; 
-            width: 100%;
-            transition: .5s ease;
-            opacity:0;
-            color: white;
-            font-size: 20px;
-            padding: 20px;
-            text-align: center;
-            height: 100%;
-            @include flbox($direction: column, $align:center, $justify: center);
+          position: absolute;
+          bottom: 0;
+          background: rgb(0, 0, 0);
+          background: rgba(0, 0, 0, 0.5); /* Black see-through */
+          color: #f1f1f1;
+          width: 100%;
+          transition: 0.5s ease;
+          opacity: 0;
+          color: white;
+          font-size: 20px;
+          padding: 20px;
+          text-align: center;
+          height: 100%;
+          @include flbox($direction: column, $align: center, $justify: center);
+        }
+        &:hover {
+          .olay {
+            opacity: 1;
           }
-          &:hover{
-                .olay {opacity: 1;}
-                }
+        }
 
         h4 {
           font-size: $head3;
@@ -463,22 +480,25 @@ main {
         p {
           font-size: $normal;
         }
-        @include mobile { 
-
+        @include mobile {
           width: 30%;
-          &:nth-child(7), &:nth-child(8){ display: none;}
-            h4, p {
-                display: none;
-              }
-
+          h4,
+          p {
+            display: none;
+          }
         }
       }
-      @include mobile {  h3 {
-        width: 100%; text-align: center; line-height: 40px;margin-bottom: 10px;
-    }}
-
-
+      @include mobile {
+        h3 {
+          width: 100%;
+          text-align: center;
+          line-height: 40px;
+          margin-bottom: 10px;
+        }
+      }
     }
+
+
     .headarea {
       @include flbox($direction: column, $align: center);
       text-align: center;
@@ -497,9 +517,6 @@ main {
         margin-bottom: 20px;
       }
     }
-  
-    
-   
 
     .blogarea {
       @include flbox($justify: center, $align: center);
@@ -519,60 +536,58 @@ main {
         display: block;
         @include flbox($justify: center, $align: center);
         @include mobile {
-            width: 100%;
+          width: 100%;
         }
         .floatbox {
-        border:1px solid $lorng;
-        @include box($pad: 20px 30px, $marg: 0, $back: $white, $width: 350px);
-        position: absolute;
-        text-align: center;
-        min-width: 350px;
-        @include flbox($direction: column, $justify: center, $align: center);
-       
-        h5 {
-          font-size: $normal;
-          margin: 0px 0px 15px;
-        }
-        h4 {
-          margin: 0px 0px 25px;
-        }
-        .imgstyle {
-          max-width: 270px;
-          width: 85%;
-          margin: 0px 0px 25px;
-        }
-        @include tab {
-          @include box(
-            $radius: 10px,
-            $pad: 20px 20px,
-            $marg: 20px 0 20px,
-            $width: 310px
-          );
-        }
-        @include mobile {
-          @include box($radius: 10px, $pad: 20px 20px, $marg: 20px 0 20px);
-          min-width:95%;
-          position: relative;
-          left: 0;
-          h4 {
-            margin: 0px 0px 20px;
-            font-weight: 600;
-          }
+          border: 1px solid $lorng;
+          @include box($pad: 20px 30px, $marg: 0, $back: $white, $width: 350px);
+          position: absolute;
+          text-align: center;
+          min-width: 350px;
+          @include flbox($direction: column, $justify: center, $align: center);
+
           h5 {
             font-size: $normal;
-            margin: 01px 0px 10px;
+            margin: 0px 0px 15px;
+          }
+          h4 {
+            margin: 0px 0px 25px;
           }
           .imgstyle {
-            width: 75%;
+            max-width: 270px;
+            width: 85%;
+            margin: 0px 0px 25px;
+          }
+          @include tab {
+            @include box(
+              $radius: 10px,
+              $pad: 20px 20px,
+              $marg: 20px 0 20px,
+              $width: 310px
+            );
+          }
+          @include mobile {
+            @include box($radius: 10px, $pad: 20px 20px, $marg: 20px 0 20px);
+            min-width: 95%;
+            position: relative;
+            left: 0;
+            h4 {
+              margin: 0px 0px 20px;
+              font-weight: 600;
+            }
+            h5 {
+              font-size: $normal;
+              margin: 01px 0px 10px;
+            }
+            .imgstyle {
+              width: 75%;
+            }
           }
         }
       }
-      }
-      
-     
-    
+
       .blogbox {
-        @include flbox($justify: center, $align: center, $direction:column);
+        @include flbox($justify: center, $align: center, $direction: column);
         width: 70%;
         h2 {
           width: 650px;
@@ -679,9 +694,8 @@ main {
         margin: 0 0 45px 0;
       }
       h3 {
-       
         font-size: $head4;
-      
+
         line-height: 20px;
       }
       .headarea {
@@ -701,16 +715,11 @@ main {
         margin: 0 auto;
       }
     }
-  
-
- 
-
-
   }
 
   .blogsec {
     height: 500px;
-    margin:  0 0 60px;
+    margin: 0 0 60px;
     @include flbox($justify: center);
     @include mobile {
       margin: 0 0 35px;
@@ -723,7 +732,7 @@ main {
     @include mobile {
       background: url(assets/images/bg.png) no-repeat right bottom;
       background-size: 100%;
-      }
+    }
   }
   .techsection {
     background: none;
@@ -736,115 +745,116 @@ main {
     max-width: 100%;
     position: relative;
     &:after {
-        bottom: -4px;
-        left: -30px;
-        @extend .dotsbg;
+      bottom: -4px;
+      left: -30px;
+      @extend .dotsbg;
     }
     &:before {
-        top: -30px;
-        right: -30px;
-        @extend .dotsbg;
-        transform: rotate(180deg);
+      top: -30px;
+      right: -30px;
+      @extend .dotsbg;
+      transform: rotate(180deg);
     }
     @include tab {
-        &:after {
-            left: -20px;
-        }
-        &:before {
-            right: -20px;
-        }
+      &:after {
+        left: -20px;
+      }
+      &:before {
+        right: -20px;
+      }
     }
     .crareadesktop {
-        .carousel {
-            width: 100%;
-            z-index: 1;
-            .carousel-inner {
-                .carousel-item {
-                    .tesarea {
-                        @include flbox($justify: space-between);
-                        padding: 15px;
-                    }
-                }
+      .carousel {
+        width: 100%;
+        z-index: 1;
+        .carousel-inner {
+          .carousel-item {
+            .tesarea {
+              @include flbox($justify: space-between);
+              padding: 15px;
             }
+          }
         }
+      }
     }
     .tarea {
-        @include flbox( $align: stretch, $justify: space-between);
-        padding: 0px;
+      @include flbox($align: stretch, $justify: space-between);
+      padding: 0px;
     }
     @include mobile {
-        max-width: 400px;
-        &:before {
-            top: 0px;
-            right: 0px;
+      max-width: 400px;
+      &:before {
+        top: 0px;
+        right: 0px;
+      }
+      &:after {
+        bottom: 25px;
+        left: 3px;
+      }
+      .crarea {
+        display: block;
+        .carousel {
+          width: 100%;
+          z-index: 1;
         }
-        &:after {
-            bottom: 25px;
-            left: 3px;
-        }
-        .crarea {
-            display: block;
-            .carousel {
-                width: 100%;
-                z-index: 1;
-            }
-        }
-        .tarea {
-            @include flbox( $direction: column, $align: center, $justify: center);
-            padding: 10px 10px 20px;
-        }
+      }
+      .tarea {
+        @include flbox($direction: column, $align: center, $justify: center);
+        padding: 10px 10px 20px;
+      }
     }
     .testimonbox {
-        @extend .box;
-        @include flbox( $direction: column, $align: center, $justify: flex-start);
-        @include box($pad: 0px, $marg: 0, $width: 28%, );
-        min-height: 350px;
-        position: relative;
-        text-align: center;
-        z-index: 1;
-        .projectimg {
-            width: 100%;
-            border-radius: 0px;
-            margin-bottom: 10px;
-        }
-        .testimonialimg {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-        }
+      @extend .box;
+      @include flbox($direction: column, $align: center, $justify: flex-start);
+      @include box($pad: 0px, $marg: 0, $width: 28%);
+      min-height: 350px;
+      position: relative;
+      text-align: center;
+      z-index: 1;
+      .projectimg {
+        width: 100%;
+        border-radius: 0px;
+        margin-bottom: 10px;
+      }
+      .testimonialimg {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+      }
+      h4 {
+        color: $black;
+        font-size: $large;
+        margin: 25px 0 15p 0;
+      }
+      span {
+        color: $black1;
+        font-size: $normal;
+        line-height: 30px;
+        padding: 0px 15px 15px;
+      }
+      @include tab {
+        @include box($pad: 15px 10px, $marg: 0, $width: 30%);
         h4 {
-            color: $black;
-            font-size: $large;
-            margin: 25px 0 15p 0;
+          color: $black;
+          font-size: 15px;
+          margin: 15px 0 10px 0;
         }
         span {
-            color: $black1;
-            font-size: $normal;
-            line-height: 30px; padding:0px 15px 15px;
+          font-size: 13px;
+          line-height: 22px;
         }
-        @include tab {
-            @include box($pad: 15px 10px, $marg: 0, $width: 30%, );
-            h4 {
-                color: $black;
-                font-size: 15px;
-                margin: 15px 0 10px 0;
-            }
-            span {
-                font-size: 13px;
-                line-height: 22px;
-            }
+      }
+      @include mobile {
+        @include box($pad: 15px, $marg: 0, $width: 100%);
+        max-width: 350px;
+        margin: 0px auto 20px auto !important;
+        max-width: 350px;
+        h4 {
+          margin: 10px 0;
         }
-        @include mobile {
-            @include box($pad: 15px, $marg: 0, $width: 100%, );
-            max-width: 350px;
-            margin: 0px auto 20px auto  !important;
-            max-width: 350px;
-            h4 {
-                margin: 10px 0;
-            }
-        }
+      }
     }
-}
+  }
 }
 
 .overlay {
@@ -1003,11 +1013,13 @@ footer {
   .footerbox {
     @extend .container;
     @include flbox($align: start, $justify: space-between);
-   
+
     .queryarea {
       width: 30%;
       position: relative;
-      @include mobile {  width: 100%;}
+      @include mobile {
+        width: 100%;
+      }
       .querybox {
         width: 100%;
         border: 1px solid $lorng;
@@ -1061,13 +1073,33 @@ footer {
         width: 100%;
         margin-top: 20px;
         padding: 20px 0;
-        @include flbox($justify: space-between, $align:center);
+        @include flbox($justify: space-between, $align: center);
         border-top: 1px solid rgba(1, 211, 241, 0.2);
         border-bottom: 1px solid rgba(1, 211, 241, 0.2);
-        .socialbx{
-          @include flbox($justify: left, $align:center);
-        a {
-          margin-right: 30px;
+        .socialbx {
+          @include flbox($justify: left, $align: center);
+          a {
+            margin-right: 30px;
+            svg {
+              width: 30px;
+              height: 30px;
+              outline: none;
+              fill: rgba($lorng, 0.8);
+              &:hover {
+                animation-name: rotateIn;
+                fill: $white;
+              }
+            }
+            &:last-child {
+              margin: 0 !important;
+            }
+          }
+        }
+        .callbx {
+          @include flbox($align: center, $justify: center);
+          border: 1px solid $lorng;
+          padding: 5px 8px;
+          border-radius: 20px;
           svg {
             width: 30px;
             height: 30px;
@@ -1078,57 +1110,53 @@ footer {
               fill: $white;
             }
           }
-          &:last-child{ margin: 0 !important;}
-        }
-      
-      }
-        .callbx{   @include flbox( $align:center, $justify:center );
-          border:1px solid $lorng; padding: 5px 8px; border-radius: 20px;
-            svg {
-                width: 30px;
-                height: 30px;
-                outline: none;
-                fill: rgba($lorng, 0.8);
-                &:hover {
-                  animation-name: rotateIn;
-                  fill: $white;
-                }
-              }
-              span{ color:$white}
+          span {
+            color: $white;
+          }
         }
         @include mobile {
           border-bottom: 1px solid rgba($lorng, 0.3);
           border-top: 1px solid rgba($lorng, 0.3);
-          @include flbox($justify: space-between, $align:center);
+          @include flbox($justify: space-between, $align: center);
           margin-top: 10px;
           padding: 8px 0;
-          .socialbx{
-            a{margin-right: 20px;
-              svg{width: 25px; height: 25px;}
+          .socialbx {
+            a {
+              margin-right: 20px;
+              svg {
+                width: 25px;
+                height: 25px;
+              }
             }
           }
-          .callbx{ font-size: 13px;}
+          .callbx {
+            font-size: 13px;
+          }
         }
       }
     }
-    @include mobile { @include flbox($justify: center, $direction:column);
-        width: 100%;
-        .linkarea, .queryarea {width: 100%;}
-  }
-  .disclaimerarea {
-    width: 100%;
-    margin-top: 10px;
-    text-align: center;
-    span {
-      font-size: 13px;
-      color: $white;
-      margin: 10px 0;
-    }
     @include mobile {
+      @include flbox($justify: center, $direction: column);
+      width: 100%;
+      .linkarea,
+      .queryarea {
+        width: 100%;
+      }
+    }
+    .disclaimerarea {
+      width: 100%;
+      margin-top: 10px;
       text-align: center;
+      span {
+        font-size: 13px;
+        color: $white;
+        margin: 10px 0;
+      }
+      @include mobile {
+        text-align: center;
+      }
     }
   }
-}
 }
 /* The Modal (background) */
 
@@ -1155,7 +1183,7 @@ footer {
 //   // width: 90%;
 //   // height: 50%;
 //   overflow: auto;
-  
+
 // }
 /* Modal Content */
 
@@ -1283,60 +1311,72 @@ img.hover-shadow {
 .clr {
   clear: both;
 }
-.carousel{margin-bottom:50px}
-.carousel-item{
-width:100%;
-.carouselinnerbx{
-    
-    width:100%;
+.carousel {
+  margin-bottom: 50px;
+}
+.carousel-item {
+  width: 100%;
+  .carouselinnerbx {
+    width: 100%;
     @include flbox($justify: space-between);
-    .carousel-caption{
-   
-        color:$black !important;
-        position: relative;
-        @include flbox($justify:center , $align:left, $direction:column);
-        @include position($position:relative, $right:5%, $top:0, $left:5%, $bottom:0);
-    width: 600px;
-    height:500px;
-    position: relative;
-    z-index: 1;
- 
-    padding:0;
-    margin:0;
-    text-align: left;
-    h1 {
-      margin: 0 0 10px 0;
-      color: $black;
-      font-size: 56px;
-      line-height: 80px;
-      font-weight: 600;
-    }
-    h4 {
-      margin: 0px 0px 10px;
-      @extend .sectiontitle;
-    }
-    p {
-      margin: 15px 0px;
-      font-size: 16px;
-      line-height: 30px;
-      color: $black1;
-    }
-   button{width: 190px;}
-    }
-    img{height:475px !important; margin-right: 25px;}
+    .carousel-caption {
+      color: $black !important;
+      position: relative;
+      @include flbox($justify: center, $align: left, $direction: column);
+      @include position(
+        $position: relative,
+        $right: 5%,
+        $top: 0,
+        $left: 5%,
+        $bottom: 0
+      );
+      width: 600px;
+      height: 500px;
+      position: relative;
+      z-index: 1;
 
+      padding: 0;
+      margin: 0;
+      text-align: left;
+      h1 {
+        margin: 0 0 10px 0;
+        color: $black;
+        font-size: 56px;
+        line-height: 80px;
+        font-weight: 600;
+      }
+      h4 {
+        margin: 0px 0px 10px;
+        @extend .sectiontitle;
+      }
+      p {
+        margin: 15px 0px;
+        font-size: 16px;
+        line-height: 30px;
+        color: $black1;
+      }
+      button {
+        width: 190px;
+      }
+    }
+    img {
+      height: 475px !important;
+      margin-right: 25px;
+    }
 
-@include mobile {
-    padding: 0px 0;
-    height: 345px;
-    background-size: auto; 
-    @include flbox($justify: center, $direction:column);
-    .carousel-caption{
-        width:100%;
+    @include mobile {
+      padding: 0px 0;
+      height: 345px;
+      background-size: auto;
+      @include flbox($justify: center, $direction: column);
+      .carousel-caption {
+        width: 100%;
         width: $fwidth;
         text-align: center;
         height: 120px;
-        background:  $lorng1;left:0 !important; right: 0 !important;
+        background: $lorng1;
+        left: 0 !important;
+        right: 0 !important;
         h4 {
           margin: 5px 0px 10px 0px;
           line-height: 20px;
@@ -1348,92 +1388,119 @@ width:100%;
           line-height: 42px;
           font-size: 34px;
         }
-        p, button{ display:none}
+        p,
+        button {
+          display: none;
+        }
+      }
+      img {
+        width: 100% !important;
+      }
     }
-    img{width:100% !important;}
   }
-}
 }
 .carousel-inner img {
-    width: auto;
-    height:auto;
+  width: auto;
+  height: auto;
+}
+.carousel-indicators {
+  bottom: -50px;
+
+  li {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+
+    box-sizing: content-box;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+
+    margin-right: 15px;
+    margin-left: 15px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: $dorng;
+    background-clip: padding-box;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    opacity: 0.5;
+    transition: opacity 0.6s ease;
   }
-  .carousel-indicators{
-    bottom: -50px;
-    
-    li{ width: 20px; height: 20px; border-radius: 50%; 
-    
-        box-sizing: content-box;
-        -ms-flex: 0 1 auto;
-        flex: 0 1 auto;
-      
-        margin-right: 15px;
-        margin-left: 15px;
-        text-indent: -999px;
-        cursor: pointer;
-        background-color: $dorng;
-        background-clip: padding-box;
-        border-top: 10px solid transparent;
-        border-bottom: 10px solid transparent;
-        opacity: .5;
-        transition: opacity .6s ease;
-    
+
+  @include mobile {
+    bottom: -18px;
+    li {
+      width: 15px;
+      height: 15px;
     }
-
-@include mobile  {  bottom: -18px;
-li{width: 15px; height: 15px;}
-
-}
   }
-  .carousel-control-prev, .carousel-control-next{ 
-   
-    color:$dorng ; width:5%;
-    .carousel-control-prev-icon, .carousel-control-next-icon{
- background: none;
-     background-image:none !important;
-svg{ width: 25px; height: 25px;fill:$dorng  ;
-    @include mobile  {
-        fill:$white }
 }
+.carousel-control-prev,
+.carousel-control-next {
+  color: $dorng;
+  width: 5%;
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background: none;
+    background-image: none !important;
+    svg {
+      width: 25px;
+      height: 25px;
+      fill: $dorng;
+      @include mobile {
+        fill: $white;
+      }
+    }
+  }
+  @include mobile {
+    height: 40%;
+    top: 50%;
+  }
 }
-@include mobile  {
-    height:40%; top:50%;}
-}
- 
+
 .ntab {
-  overflow: hidden; width: 100%;
+  overflow: hidden;
+  width: 100%;
   border-bottom: 1px solid $dorng;
   background-color: #fff;
-  li{width: 50%;
- .btst {
-  background-color: inherit;
-  float: left;
-  outline: none;
-  cursor: pointer;
-  padding: 10px 16px;
-  transition: 0.3s;
-  font-size: 17px;color: $dorng  !important;
-  border:1px solid $dorng; border-radius: 0 !important;
-  border-bottom: none; width: 100%;
-&:hover {
-  background-color: $dorng;color:$white;
+  li {
+    width: 50%;
+    .btst {
+      background-color: inherit;
+      float: left;
+      outline: none;
+      cursor: pointer;
+      padding: 10px 16px;
+      transition: 0.3s;
+      font-size: 17px;
+      color: $dorng !important;
+      border: 1px solid $dorng;
+      border-radius: 0 !important;
+      border-bottom: none;
+      width: 100%;
+      &:hover {
+        background-color: $dorng;
+        color: $white;
+      }
+    }
+    .active {
+      background-color: $dorng !important;
+      color: $white !important;
+    }
+  }
 }
-}.active {
-  background-color: $dorng  !important;
-  color:$white !important;
-}
-}}
 
 .tabcontent {
   display: none;
-  padding: 25px 0  10px 0;
+  padding: 25px 0 10px 0;
   border-top: none;
 }
 
-.headingarea{
+.headingarea {
   @extend .container;
   @include flbox($direction: column, $justify: left);
-  h1{font-weight: 500;
+  h1 {
+    font-weight: 500;
     line-height: 42px;
     text-align: left;
     color: $dorng;
@@ -1441,37 +1508,44 @@ svg{ width: 25px; height: 25px;fill:$dorng  ;
     position: relative;
     z-index: 9;
     padding: 0px 0px 15px 0px;
-    text-align: left;}
-    .pagesub {
-      margin: 0 0 25px 0;
-      color: #8E8A8A; line-height: 32px;
+    text-align: left;
   }
-.breadcrumb {
-  color: #777;
-  margin: 0px 0 15px 0;
-  padding: 0;
-  background: none;
-  font-weight: normal;
-  li{  @include flbox($align: center);
-  a {
-      color: $orng;
+  .pagesub {
+    margin: 0 0 25px 0;
+    color: #8e8a8a;
+    line-height: 32px;
   }
-  span{ color: $black1; font-family: 'Lato', sans-serif; font-weight: 400;}
-}}
+  .breadcrumb {
+    color: #777;
+    margin: 0px 0 15px 0;
+    padding: 0;
+    background: none;
+    font-weight: normal;
+    li {
+      @include flbox($align: center);
+      a {
+        color: $orng;
+      }
+      span {
+        color: $black1;
+        font-family: "Lato", sans-serif;
+        font-weight: 400;
+      }
+    }
+  }
 
-.breadcrumb>li+li:before {
-  content: "\f105";
-  padding: 0 8px;
-  color: #777;
-}
+  .breadcrumb > li + li:before {
+    content: "\f105";
+    padding: 0 8px;
+    color: #777;
+  }
 
-@include mobile { 
-
- margin: 20px 0 0 0;
- .breadcrumb { margin: 0;}
-   
-
-}
+  @include mobile {
+    margin: 20px 0 0 0;
+    .breadcrumb {
+      margin: 0;
+    }
+  }
 }
 
 // .landingarea {
@@ -1487,22 +1561,20 @@ svg{ width: 25px; height: 25px;fill:$dorng  ;
 //     img {
 //         width: 100%;
 //         height: auto;
-     
+
 //     }
- 
+
 //     .infobx {
-//         position: absolute; 
+//         position: absolute;
 //         top: 5px; left: 5px;
-//         background: rgba(0, 0, 0, 0.7); 
-        
+//         background: rgba(0, 0, 0, 0.7);
+
 //         width: 50%;
-        
+
 //         padding:5px 5px ;
 //         text-align: center;
 //         min-height: 90px;
 //         @include flbox($direction: column, $align: flex-start, $justify: left);
-      
-     
 
 //     h4 {
 //       font-size: $head4;color: white;
@@ -1517,40 +1589,36 @@ svg{ width: 25px; height: 25px;fill:$dorng  ;
 //   }
 //   }
 //   .icobx {
-//     position: absolute; 
+//     position: absolute;
 //     top: 8px; right:8px;
-    
+
 //     width: 120px;
-    
+
 //     text-align: center;
 //     min-height: 100px;
 //     @include flbox( $align: flex-start, $justify: space-between);
-  
- 
 
 // .share{ background-color: $white ; border-radius: 50%;
-// width: 45px; height: 45px;  @include flbox( $align: center, $justify:center );    
+// width: 45px; height: 45px;  @include flbox( $align: center, $justify:center );
 //  background: url(assets/images/share.svg) no-repeat center center  $white; background-size: 50%;@include transition();
 // &:hover{background: url(assets/images/share-o.svg) no-repeat center center  $white;background-size: 50%;@include transition(); }
 // }
 // .heart{ background-color: $white ; border-radius: 50%;
-//   width: 45px; height: 45px;  @include flbox( $align: center, $justify:center );    
+//   width: 45px; height: 45px;  @include flbox( $align: center, $justify:center );
 //    background: url(assets/images/heart.svg) no-repeat center center  $white; background-size: 50%;@include transition();
 //    &:hover{background: url(assets/images/hearto.svg) no-repeat center center  $white;background-size:50%;@include transition(); }
 //   }
 // }
-//     @include mobile { 
+//     @include mobile {
 
 //       width:100%;
 //    margin: 0 0 20px;
-       
 
 //     }
 //   }
 //   @include mobile {  h3 {
 //     width: 100%; text-align: center; line-height: 40px;margin-bottom: 10px;
 // }}
-
 
 // }
 
@@ -1639,18 +1707,18 @@ svg{ width: 25px; height: 25px;fill:$dorng  ;
 
 @include mobile {
   .landingarea {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
-.boxDiv{
-  width:20%;
+.boxDiv {
+  width: 20%;
 
-background-color:whitesmoke;
-border-color: #e9ecef;
-  margin:auto;
-  position:relative;
-  transition:width 2s;
+  background-color: whitesmoke;
+  border-color: #e9ecef;
+  margin: auto;
+  position: relative;
+  transition: width 2s;
 }

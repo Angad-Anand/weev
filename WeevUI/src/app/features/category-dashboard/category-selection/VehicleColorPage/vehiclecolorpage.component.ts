@@ -15,9 +15,9 @@ export class VehicleColorPageComponent {
   productListModel: ProductListModel | undefined;
   productID: number = 0;
   productlist: Array<ProductListModel> = new Array<ProductListModel>();
-  imagePaths: string[] = [];
-  AllMainImg: string[] = [];
-  colorimagePaths: {colorPath : string, colorName : string}[]=[];
+
+  colorimagePaths: { colorPath: string; colorName: string }[] = [];
+  ReqimagePaths: { imagePath: string}[] = [];
   currentIndexImage: number = 0;
   currentIndexColor: number = 0;
 
@@ -33,8 +33,8 @@ export class VehicleColorPageComponent {
     this.productListModel = Object.assign({}, EMPTY_Application);
     if (this.productID != 0 || this.productID != undefined) {
       this.getProductDataWithID(+this.productID);
-      this.getAllImageNameWithID(+this.productID);
       this.getTabNameWithID(+this.productID);
+      this.getAllTabNameWithID(+this.productID);
     }
   }
 
@@ -64,32 +64,40 @@ export class VehicleColorPageComponent {
     this.vehiclesService
       .getProductDataWithID(productID)
       .subscribe((response) => {
-        const transformedResponse = this.transformResponse(response); 
-        this.productlist = transformedResponse; 
+        const transformedResponse = this.transformResponse(response);
+        this.productlist = transformedResponse;
         this.productListModel = this.productlist;
       });
   }
-  
+  //image path
+  imagetabs: Array<any> = new Array<any>();
+  imagePaths: Array<any> = new Array<any>();
 
-  tabs: Array<any> = new Array<any>();
-  ImgName: Array<any> = new Array<any>();
-  CllOutResult?: string;
-  imageNames: string[] = Array.from({ length: 20 }, (_, i) => `image${i + 1}`);
+  getAllTabNameWithID(productID: any) {
+    this.vehiclesService
+      .getAllTabNameWithID(productID)
+      .subscribe((response) => {
+        this.imagetabs = response.map((tab: string) => tab.toLowerCase());
+        console.log(this.imagetabs);
+        this.getAllImageNameWithID(+this.productID);
+      });
+  }
+
   getAllImageNameWithID(productID: any) {
     this.vehiclesService
       .getAllImageNameWithID(productID)
       .subscribe((response) => {
-        this.AllMainImg = response;
-        // this.imagePaths = this.AllMainImg.filter((img: any) => img.tW_Ref_ID === undefined).map((img: string) => img);
-        this.imagePaths = this.imageNames.map(
-          (name) =>
-            String(this.AllMainImg[name as keyof typeof this.AllMainImg]) || ''
-        );
-        // console.log(this.AllMainImg);
-        // console.log(this.imagePaths);
+        this.imagePaths = response;
+        this.ReqimagePaths = this.imagetabs.map((tab) => ({
+          imagePath:this.imagePaths[tab],  
+        }));
+        console.log(this.ReqimagePaths);
       });
   }
 
+  //color path
+  tabs: Array<any> = new Array<any>();
+  ImgName: Array<any> = new Array<any>();
   getTabNameWithID(productID: any) {
     this.vehiclesService.getTabNameWithID(productID).subscribe((response) => {
       this.tabs = response.map((tab: string) => tab.toLowerCase());
@@ -97,13 +105,13 @@ export class VehicleColorPageComponent {
       this.getImgNameWithID(+this.productID);
     });
   }
-  
+
   getImgNameWithID(productID: any) {
     this.vehiclesService.getImgNameWithID(productID).subscribe((response) => {
       this.ImgName = response;
       this.colorimagePaths = this.tabs.map((tab) => ({
         colorPath: this.ImgName[tab],
-        colorName: tab 
+        colorName: tab,
       }));
 
       // console.log(this.colorimagePaths);
@@ -115,18 +123,16 @@ export class VehicleColorPageComponent {
   }
 
   prevSlideImage() {
+    // Ensure currentIndexImage wraps around correctly
     this.currentIndexImage =
-      this.currentIndexImage > 0
-        ? this.currentIndexImage - 1
-        : this.imagePaths.length - 1;
+      (this.currentIndexImage - 1 + this.imagePaths.length) % this.imagePaths.length;
     this.scrollThumbnails(this.currentIndexImage);
   }
 
   nextSlideImage() {
+    // Ensure currentIndexImage wraps around correctly
     this.currentIndexImage =
-      this.currentIndexImage < this.imagePaths.length - 1
-        ? this.currentIndexImage + 1
-        : 0;
+      (this.currentIndexImage + 1) % this.imagePaths.length;
     this.scrollThumbnails(this.currentIndexImage);
   }
 
@@ -145,14 +151,14 @@ export class VehicleColorPageComponent {
     }
   }
 
-  onColor(){
+  onColor() {
     const imageContainer = document.getElementById('image_container');
-        if (imageContainer) {
-          imageContainer.scrollIntoView({ behavior: 'smooth' });
-          console.log('scrolling');
-        }
+    if (imageContainer) {
+      imageContainer.scrollIntoView({ behavior: 'smooth' });
+      console.log('scrolling');
+    }
   }
-  
+
   onSpecs() {
     this.twId = this.productID;
     this.router.navigate(['/Selection', this.twId, 'Specs']);
@@ -170,7 +176,7 @@ export class VehicleColorPageComponent {
         } else {
           console.error('variantsContainer not found');
         }
-      }, 100); 
+      }, 100);
     });
   }
 

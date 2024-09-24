@@ -550,7 +550,7 @@
   font-weight: 700;
 }
 
-.mainDetails .description .title h1 {
+.mainDetails .description .title .title-text {
   color: #000;
   font-family: Inter;
   font-size: 35px;
@@ -622,7 +622,7 @@
 .tabs {
   display: flex;
   margin: 0px 10px 0px 10px;
-  height: 50px;
+  // height: 50px;
   justify-content: left;
   border-bottom: 1px solid #ddd;
 }
@@ -650,7 +650,7 @@
   color: #e65100;
   text-decoration: underline;
   text-decoration-thickness: 3px;
-  text-underline-offset: 16px;
+  text-underline-offset: 20px;
 }
 
 .tabcontent {
@@ -1044,6 +1044,7 @@
     width: 100%;
     margin-left: 0px;
     margin-bottom: 14px;
+    padding-bottom: 10px;
   }
 
   .mainDetails .description > div {
@@ -1051,6 +1052,7 @@
     font-weight: 400;
     margin-left: 14px;
     margin-right: 14px;
+  
   }
 
   .mainDetails .description .title {
@@ -1058,8 +1060,8 @@
     justify-content: space-between;
   }
 
-  .mainDetails .description .title h1 {
-    font-size: 14px;
+  .mainDetails .description .title .title-text{
+    font-size: 16px;
     letter-spacing: 0px;
   }
 
@@ -1094,23 +1096,24 @@
   }
 
   .tabs {
-    margin-bottom: 0px;
-    height: 38px;
+    margin-bottom: 15px;
+    // height: 38px;
     border-bottom: 1px solid #c1c1c1;
   }
 
   .tablinks {
-    font-size: 12px;
+    font-size: 15px;
+
   }
 
   .tabs .active {
     font-weight: 700;
-    text-underline-offset: 12px;
+    text-underline-offset: 15;
   }
 
   .grid-container {
     grid-template-columns: repeat(1, 1fr);
-    font-size: 12px;
+    font-size: 14px;
     margin: 5px 17px 10px 17px;
   }
 
@@ -1122,9 +1125,13 @@
   .booking {
     width: 100%;
     margin-left: 0px;
-    margin-top: 15px;
-    padding-bottom: 20px;
+    margin-top: 10px;
     height: auto;
+    padding: 0 10px 20px 10px;
+  }
+
+  .booking-title{
+    margin: 0 10px;
   }
 
   .booking_button {
@@ -1135,20 +1142,21 @@
   .variants-container {
     max-width: 100%;
     margin-top: 20px;
-    padding: 0 0;
+    padding: 0 10px;
+
   }
 
   .variants-title {
-    font-size: 12px;
+    font-size: 16px;
     padding-left: 12px;
   }
 
   .variants-table thead th {
-    font-size: 12px;
+    font-size: 15px;
   }
 
   .variants-table tbody tr {
-    font-size: 12px;
+    font-size: 15px;
   }
 
   /* model specs  */
@@ -1163,6 +1171,7 @@
   .table{
     grid-template-columns: repeat(1, 1fr);
   }
+
   .spec-row {
     flex-direction: row;
     margin-bottom: 0px;
@@ -1178,6 +1187,7 @@
 
   .otherModels {
     width: 100%;
+    margin-left: 10px;
   }
 
   .otherModels-title {
@@ -1185,12 +1195,12 @@
   }
 
   .model {
-    width: 160px;
+    width: 200px;
     height: auto;
   }
 
   .model img {
-    width: 150px;
+    width: 180px;
     height: 110px;
   }
 

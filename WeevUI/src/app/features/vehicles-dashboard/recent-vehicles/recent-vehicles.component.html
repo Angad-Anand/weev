@@ -1,40 +1,26 @@
 <section>
-            <div class="newvehiclearea">
-                <h3>Recent Vehicles</h3>
-               <div class="vehiclbox">
-                  <img src="assets/images/pr1.png" alt="" class="image">
-                  <div class="olay">Kia EV6</div>
-               
-                
-               </div>
-               <div class="vehiclbox">
-                  <img src="assets/images/pr2.png" alt=""class="image">
-                  <div class="olay">Kia EV6</div>
-               </div>
-               <div class="vehiclbox">
-                  <img src="assets/images/pr3.png" alt=""class="image">
-                  <div class="olay">Kia EV6</div>
-               </div>
-               <div class="vehiclbox">
-                  <img src="assets/images/pr4.png" alt=""class="image">
-                  <div class="olay">Kia EV6</div>
-               </div>
-               <div class="vehiclbox">
-                  <img src="assets/images/pr3.png" alt=""class="image">
-                  <div class="olay">Kia EV6</div>
-               </div>
-               <div class="vehiclbox">
-                  <img src="assets/images/pr6.png" alt=""class="image">
-                  <div class="olay">Kia EV6</div>
-               </div>
-               <div class="vehiclbox">
-                  <img src="assets/images/pr2.png" alt=""class="image">
-                  <div class="olay">Kia EV6</div>
-               </div>
-               <div class="vehiclbox">
-                  <img src="assets/images/pr6.png" alt=""class="image">
-                  <div class="olay">Kia EV6</div>
-               </div>
-            </div>
-            <div class="line"><a href="">more</a></div>
-         </section>
+   <div class="newvehiclearea">
+      <h3>Recent Vehicles</h3>
+
+
+      <!-- <div class="vehicleBox" *ngFor="let Cll of filteredtwowheelerlist">
+         <img src="{{Cll.path}}" alt="" onerror="this.src='assets/images/pr1.png';" class="image"
+            (click)="onSelect(Cll.twId)">
+         <div class="infobox" (click)="onSelect(Cll.twId)">
+            <h4>{{Cll.manufacturer}} {{Cll.model}}</h4>
+            <p>Rs. {{Cll.exShowroomPrice}} *</p>
+            <span>
+               <img src="assets/images/star-g.svg"
+                  *ngFor="let item of [].constructor(Cll.selectedRating); let i = index">
+               <img src="assets/images/star-w.svg"
+                  *ngFor="let item of [].constructor(Cll.unSelectRating); let i = index">
+            </span>
+         </div>
+      </div> -->
+      <div class="vehiclbox" *ngFor="let Cll of filteredtwowheelerlist" (click)="onSelect(Cll.twId)">
+         <img src="{{Cll.path}}" alt="" class="image">
+         <div class="olay">{{Cll.manufacturer}} {{Cll.model}}</div>
+      </div>
+   </div>
+   <div class="line"><a href="">more</a></div>
+</section>

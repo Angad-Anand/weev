@@ -12,6 +12,7 @@ USE `weev`;
 /*!50503 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
+/*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
@@ -640,38 +641,34 @@ DELIMITER ;
 
 
 
-
-
-
  
  -- Table for Main image--
- 
-
--- DROP table main_image;
+use weev;
+DROP table main_image;
 
 CREATE TABLE `main_image` (
-  `TW_Ref_ID` int NOT NULL,
+`TW_Ref_ID` int NOT NULL,
 `Path` varchar(255) DEFAULT NULL,
-  `Image1` int DEFAULT NULL,
-  `Image2` int DEFAULT NULL,
-  `Image3` int DEFAULT NULL,
-  `Image4` int DEFAULT NULL,
-  `Image5` int DEFAULT NULL,
-  `Image6` int DEFAULT NULL,
-  `Image7` int DEFAULT NULL,
-  `Image8` int DEFAULT NULL,
-  `Image9` int DEFAULT NULL,
-  `Image10` int DEFAULT NULL,
-  `Image11` int DEFAULT NULL,
-  `Image12` int DEFAULT NULL,
-  `Image13` int DEFAULT NULL,
-  `Image14` int DEFAULT NULL,
-  `Image15` int DEFAULT NULL,
-  `Image16` int DEFAULT NULL,
-  `Image17` int DEFAULT NULL,
-  `Image18` int DEFAULT NULL,
-  `Image19` int DEFAULT NULL,
-  `Image20` int DEFAULT NULL,
+  `Image1` varchar(20) DEFAULT NULL,
+  `Image2` varchar(20) DEFAULT NULL,
+  `Image3` varchar(20) DEFAULT NULL,
+  `Image4` varchar(20) DEFAULT NULL,
+  `Image5` varchar(20) DEFAULT NULL,
+  `Image6` varchar(20) DEFAULT NULL,
+  `Image7` varchar(20) DEFAULT NULL,
+  `Image8` varchar(20) DEFAULT NULL,
+  `Image9` varchar(20) DEFAULT NULL,
+  `Image10` varchar(20) DEFAULT NULL,
+  `Image11` varchar(20) DEFAULT NULL,
+  `Image12` varchar(20) DEFAULT NULL,
+  `Image13` varchar(20) DEFAULT NULL,
+  `Image14` varchar(20) DEFAULT NULL,
+  `Image15` varchar(20) DEFAULT NULL,
+  `Image16` varchar(20) DEFAULT NULL,
+  `Image17` varchar(20) DEFAULT NULL,
+  `Image18` varchar(20) DEFAULT NULL,
+  `Image19` varchar(20) DEFAULT NULL,
+  `Image20` varchar(20) DEFAULT NULL,
   
   PRIMARY KEY (`TW_Ref_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -679,45 +676,58 @@ CREATE TABLE `main_image` (
 -- Populating the table with integer values ranging from 1 to 25
 INSERT INTO `main_image` 
 VALUES
-( 1, '../../../assets/images/2W/ola/S1 air//Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'),
-( 2, '../../../assets/images/2W/ola/S1/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'),
-( 3, '../../../assets/images/2W/ola/S1 Pro/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'),
-( 4, '../../../assets/images/2W/Ather/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'),
-( 5, '../../../assets/images/2W/Ather/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'),
-( 6, '../../../assets/images/2W/TVS/iQube/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'),
-( 7, '../../../assets/images/2W/TVS/iQube/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'),
-( 8, '../../../assets/images/2W/TVS/iQube/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'),
-( 9, '../../../assets/images/2W/Revolt/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'),
-( 10,'../../../assets/images/2W/Bajaj/Chetak Premium/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'),
-( 11, '../../../assets/images/2W/Bajaj/Chetak Premium 2023/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'),
-( 12, '../../../assets/images/2W/Hero/Vida/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'),
-( 13, '../../../assets/images/2W/Hero/Vida/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'),
+( 1, '../../../assets/images/2W/ola/S1 air/Images', '1', '2', '3', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 2, '../../../assets/images/2W/ola/S1/Images', '1', '2', '3', '4', '5', '6', '7', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 3, '../../../assets/images/2W/ola/S1 Pro/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '', '', '', ''),
+( 4, '../../../assets/images/2W/Ather/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '', '', '', '', '', '', '', '', '', '', ''),
+( 5, '../../../assets/images/2W/Ather/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '', '', '', '', '', '', '', '', '', '', ''),
+( 6, '../../../assets/images/2W/TVS/iQube/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '', '', '', '', '', '', ''),
+( 7, '../../../assets/images/2W/TVS/iQube/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '', '', '', '', '', '', ''),
+( 8, '../../../assets/images/2W/TVS/iQube/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '', '', '', '', '', '', ''),
+( 9, '../../../assets/images/2W/Revolt/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '', '', '', '', '', '', '', ''),
+( 10,'../../../assets/images/2W/Bajaj/Chetak Premium/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '', '', '', '', '', '', '', '', '', ''),
+( 11, '../../../assets/images/2W/Bajaj/Chetak Premium 2023/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '', '', '', '', '', '', ''),
+( 12, '../../../assets/images/2W/Hero/Vida/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '', '', '', '', '', ''),
+( 13, '../../../assets/images/2W/Hero/Vida/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '', '', '', '', '', ''),
 ( 14, '../../../assets/images/2W/Simple/One/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'),
 ( 15, '../../../assets/images/2W/Simple/One/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'),
-( 16, '../../../assets/images/2W/Torq/Kartos/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'),
-( 17, '../../../assets/images/2W/Torq/Kartos/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'),
-( 18, '../../../assets/images/2W/Ampere/Magnus EX/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'),
-( 19, '../../../assets/images/2W/Okinawa/PraisePro/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'),
-( 20, '../../../assets/images/2W/Oben/Rorr/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'),
-( 21, '../../../assets/images/2W/Kabira Mobility/KM 4000/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'),
-( 22, '../../../assets/images/2W/Odysse/Evoqis/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'),
-( 23, '../../../assets/images/2W/Kabira Mobility/KM 3000/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'),
-( 24, '../../../assets/images/2W/Atumobile/Atum Vader/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'),
+( 16, '../../../assets/images/2W/Torq/Kartos/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '', '', '', '', '', '', '', '', ''),
+( 17, '../../../assets/images/2W/Torq/Kartos/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '', '', '', '', '', '', '', '', ''),
+( 18, '../../../assets/images/2W/Ampere/Magnus EX/Images', '1', '2', '3', '4', '5', '6', '7', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 19, '../../../assets/images/2W/Okinawa/PraisePro/Images', '1', '2', '3', '4', '5', '6', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 20, '../../../assets/images/2W/Oben/Rorr/Images', '1', '2', '3', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 21, '../../../assets/images/2W/Kabira Mobility/KM 4000/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '', '', '', '', '', '', '', '', '', '', ''),
+( 22, '../../../assets/images/2W/Odysse/Evoqis/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 23, '../../../assets/images/2W/Kabira Mobility/KM 3000/Images', '1', '2', '3', '4', '5', '6', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 24, '../../../assets/images/2W/Atumobile/Atum Vader/Images', '1', '2', '', '', '', '', '', '','','', '', '', '', '', '', '', '', '', '', ''),
 ( 25, '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'),
-( 26, '../../../assets/images/2W/Atumobile/Atum 1.0/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'),
-( 27, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20');
-
-
+( 26, '../../../assets/images/2W/Atumobile/Atum 1.0/Images', '1', '2', '3', '4', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 27, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 28, '../../../assets/images/2W/Pure/eTryst 7g/Images', '1', '2', '3', '4', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 29, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 30, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 31, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 32, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 33, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 34, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 35, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 36, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 37, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 38, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 39, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 40, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 41, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 42, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 43, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 44, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 45, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 46, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
 SELECT * FROM weev.main_image;
 -- drop table main_image;-- 
-
-
 -- Table for Main image--
 
-
-use weev;
 DELIMITER $$
-
+-- drop procedure  GetmainimagebyTWID;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GetmainimagebyTWID`(
     IN Id INT
 )
@@ -725,37 +735,130 @@ BEGIN
     SELECT 
         TW_Ref_ID, 
         Path, 
-        CONCAT(Path, '/', Image1, '.jpeg') AS Image1, 
-        CONCAT(Path, '/', Image2, '.jpeg') AS Image2, 
-        CONCAT(Path, '/', Image3, '.jpeg') AS Image3, 
-        CONCAT(Path, '/', Image4, '.jpeg') AS Image4, 
-        CONCAT(Path, '/', Image5, '.jpeg') AS Image5, 
-        CONCAT(Path, '/', Image6, '.jpeg') AS Image6, 
-        CONCAT(Path, '/', Image7, '.jpeg') AS Image7, 
-        CONCAT(Path, '/', Image8, '.jpeg') AS Image8, 
-        CONCAT(Path, '/', Image9, '.jpeg') AS Image9, 
-        CONCAT(Path, '/', Image10, '.jpeg') AS Image10, 
-        CONCAT(Path, '/', Image11, '.jpeg') AS Image11, 
-        CONCAT(Path, '/', Image12, '.jpeg') AS Image12, 
-        CONCAT(Path, '/', Image13, '.jpeg') AS Image13, 
-        CONCAT(Path, '/', Image14, '.jpeg') AS Image14, 
-        CONCAT(Path, '/', Image15, '.jpeg') AS Image15, 
-        CONCAT(Path, '/', Image16, '.jpeg') AS Image16, 
-        CONCAT(Path, '/', Image17, '.jpeg') AS Image17, 
-        CONCAT(Path, '/', Image18, '.jpeg') AS Image18, 
-        CONCAT(Path, '/', Image19, '.jpeg') AS Image19, 
-        CONCAT(Path, '/', Image20, '.jpeg') AS Image20
+        CONCAT(Path, '/', Image1, '.jpeg')Image1, 
+        CONCAT(Path, '/', Image2, '.jpeg')Image2, 
+        CONCAT(Path, '/', Image3, '.jpeg')Image3, 
+        CONCAT(Path, '/', Image4, '.jpeg')Image4, 
+        CONCAT(Path, '/', Image5, '.jpeg')Image5, 
+        CONCAT(Path, '/', Image6, '.jpeg')Image6, 
+        CONCAT(Path, '/', Image7, '.jpeg') Image7, 
+        CONCAT(Path, '/', Image8, '.jpeg') Image8, 
+        CONCAT(Path, '/', Image9, '.jpeg') Image9, 
+        CONCAT(Path, '/', Image10, '.jpeg') Image10, 
+        CONCAT(Path, '/', Image11, '.jpeg') Image11, 
+        CONCAT(Path, '/', Image12, '.jpeg') Image12, 
+        CONCAT(Path, '/', Image13, '.jpeg')  Image13, 
+        CONCAT(Path, '/', Image14, '.jpeg') Image14, 
+        CONCAT(Path, '/', Image15, '.jpeg') Image15, 
+        CONCAT(Path, '/', Image16, '.jpeg') Image16, 
+        CONCAT(Path, '/', Image17, '.jpeg') Image17, 
+        CONCAT(Path, '/', Image18, '.jpeg') Image18, 
+        CONCAT(Path, '/', Image19, '.jpeg') Image19, 
+        CONCAT(Path, '/', Image20, '.jpeg') Image20
     FROM weev.main_image 
     WHERE 
         TW_Ref_ID = Id;
 END$$
 
+-- drop PROCEDURE Getmainimagebyid;
+DELIMITER $$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE`Getmainimagebyid`
+(
+IN Id INT
+)
+BEGIN
+    DECLARE ColumnNames TEXT;
+    SELECT COALESCE(GROUP_CONCAT(col_name), 'No_Result') INTO ColumnNames
+    FROM (
+
+ SELECT 'Image1' AS col_name, COUNT(DISTINCT Image1) AS count
+        FROM main_image
+        WHERE Image1 != '' AND TW_Ref_ID = Id
+        UNION
+ SELECT 'Image2' AS col_name, COUNT(DISTINCT Image2) AS count
+        FROM main_image
+        WHERE Image2 != '' AND TW_Ref_ID = Id
+        UNION
+ SELECT 'Image3' AS col_name, COUNT(DISTINCT Image3) AS count
+        FROM main_image
+        WHERE Image3 != '' AND TW_Ref_ID = Id
+        UNION
+ SELECT 'Image4' AS col_name, COUNT(DISTINCT Image4) AS count
+        FROM main_image
+        WHERE Image4 != '' AND TW_Ref_ID = Id
+        UNION
+ SELECT 'Image5' AS col_name, COUNT(DISTINCT Image5) AS count
+        FROM main_image
+        WHERE Image5 != '' AND TW_Ref_ID = Id
+        UNION
+ SELECT 'Image6' AS col_name, COUNT(DISTINCT Image6) AS count
+        FROM main_image
+        WHERE Image6 != '' AND TW_Ref_ID = Id
+        UNION
+ SELECT 'Image7' AS col_name, COUNT(DISTINCT Image7) AS count
+        FROM main_image
+        WHERE Image7 != '' AND TW_Ref_ID = Id
+        UNION
+ SELECT 'Image8' AS col_name, COUNT(DISTINCT Image8) AS count
+        FROM main_image
+        WHERE Image8 != '' AND TW_Ref_ID = Id
+        UNION
+ SELECT 'Image9' AS col_name, COUNT(DISTINCT Image9) AS count
+        FROM main_image
+        WHERE Image9 != '' AND TW_Ref_ID = Id
+        UNION
+ SELECT 'Image10' AS col_name, COUNT(DISTINCT Image10) AS count
+        FROM main_image
+        WHERE Image10 != '' AND TW_Ref_ID = Id
+        UNION
+ SELECT 'Image11' AS col_name, COUNT(DISTINCT Image11) AS count
+        FROM main_image
+        WHERE Image11 != '' AND TW_Ref_ID = Id
+        UNION 
+SELECT 'Image12' AS col_name, COUNT(DISTINCT Image12) AS count
+        FROM main_image
+        WHERE Image12 != '' AND TW_Ref_ID = Id
+        UNION 
+SELECT 'Image13' AS col_name, COUNT(DISTINCT Image13) AS count
+        FROM main_image
+        WHERE Image13 != '' AND TW_Ref_ID = Id
+        UNION 
+SELECT 'Image14' AS col_name, COUNT(DISTINCT Image14) AS count
+        FROM main_image
+        WHERE Image14 != '' AND TW_Ref_ID = Id
+        UNION 
+SELECT 'Image15' AS col_name, COUNT(DISTINCT Image15) AS count
+        FROM main_image
+        WHERE Image15 != '' AND TW_Ref_ID = Id
+        UNION 
+SELECT 'Image16' AS col_name, COUNT(DISTINCT Image16) AS count
+        FROM main_image
+        WHERE Image16 != '' AND TW_Ref_ID = Id
+        UNION 
+SELECT 'Image17' AS col_name, COUNT(DISTINCT Image17) AS count
+        FROM main_image
+        WHERE Image17 != '' AND TW_Ref_ID = Id
+        UNION 
+SELECT 'Image18' AS col_name, COUNT(DISTINCT Image18) AS count
+        FROM main_image
+        WHERE Image18 != '' AND TW_Ref_ID = Id
+        UNION 
+SELECT 'Image19' AS col_name, COUNT(DISTINCT Image19) AS count
+        FROM main_image
+        WHERE Image19 != '' AND TW_Ref_ID = Id
+        UNION 
+SELECT 'Image20' AS col_name, COUNT(DISTINCT Image20) AS count
+        FROM main_image
+        WHERE Image20 != '' AND TW_Ref_ID = Id
+        )
+        AS a
+    WHERE count > 0;
+
+    SELECT ColumnNames;
+END$$
+
 DELIMITER ;
-
-
-
-
-
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;

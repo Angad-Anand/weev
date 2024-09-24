@@ -1,7 +1,7 @@
 <div class="category">
    <div class="category_containers">
       <div class="category_navbar">
-         <div class="active" >{{productListModel?.manufacturer}} {{productListModel?.model}}</div>
+         <div class="active">{{productListModel?.manufacturer}} {{productListModel?.model}}</div>
          <div (click)="onSpecs()">Specs</div>
          <div (click)="scrollToVariants()">Varients</div>
          <div (click)="onImages()">Images</div>
@@ -12,160 +12,162 @@
          <div class="loader"></div>
       </div>
       <div *ngIf="!loading" class="MainDetails">
-      <div class="mainDetails">
-         <div class="gallery-container">
-            <div class="main-image-container">
-               <img src="{{productListModel?.path}}" alt="" onerror="this.src='assets/images/pr4.png';">
-            </div>
-            <div class="thumbnails-container">
-               <div class="thumbnails">
-                  <div class="thumbnail" (click)="onColors()">
-                     <img src="{{productListModel?.path}}" alt="" style="width: 100%; height: 100%; object-fit: cover; filter: blur(1px);">
-                     <div class="text-content">
-                        4<br>Colors
+         <div class="mainDetails">
+            <div class="gallery-container">
+               <div class="main-image-container">
+                  <img src="{{productListModel?.path}}" alt="" onerror="this.src='assets/images/pr4.png';">
+               </div>
+               <div class="thumbnails-container">
+                  <div class="thumbnails">
+                     <div class="thumbnail" (click)="onColors()">
+                        <img src="{{productListModel?.path}}" alt=""
+                           style="width: 100%; height: 100%; object-fit: cover; filter: blur(1px);">
+                        <div class="text-content">
+                           4<br>Colors
+                        </div>
+                     </div>
+                     <div class="thumbnail" (click)="onImages()">
+                        <img src="{{productListModel?.path}}" alt=""
+                           style="width: 100%; height: 100%; object-fit: cover; filter: blur(1px);">
+                        <div class="text-content">
+                           24<br>Images
+                        </div>
                      </div>
                   </div>
-                  <div class="thumbnail" (click)="onImages()">
-                     <img src="{{productListModel?.path}}" alt="" style="width: 100%; height: 100%; object-fit: cover; filter: blur(1px);">
-                     <div class="text-content">
-                        24<br>Images
+               </div>
+            </div>
+            <div class="description">
+               <div class="title">
+                  <div class="title-text">{{productListModel?.manufacturer}} {{productListModel?.model}}</div>
+                  <div class="rating">
+                     <img src="assets/images/star-g.svg"
+                        *ngFor="let item of [].constructor(productListModel?.ourRating); let i = index">
+                     <img src="assets/images/star-w.svg"
+                        *ngFor="let item of [].constructor(unSelectRating); let i = index">
+                  </div>
+               </div>
+               <div class="details">
+                  {{productListModel?.additionalFeatures}}
+               </div>
+               <div class="price">Price: Rs. {{productListModel?.exShowroomPrice}}</div>
+               <div class="status">Booking Status: <div class="currentStatus">Available</div>
+               </div>
+               <div>
+                  Colours : 4
+               </div>
+            </div>
+         </div>
+         <div class="specs_booking">
+            <div class="specs">
+               <div class="tabs">
+                  <button class="tablinks" [class.active]="activeTab === 'KeySpecs'" (click)="onTabClick('KeySpecs')">
+                     Key Specs
+                  </button>
+                  <button class="tablinks" [class.active]="activeTab === 'AppFeatures'"
+                     (click)="onTabClick('AppFeatures')">
+                     App Features
+                  </button>
+               </div>
+
+               <div id="KeySpecs" class="tabcontent" *ngIf="activeTab === 'KeySpecs'">
+                  <div class="grid-container">
+                     <div class="grid-item" *ngFor="let item of keySpecs">
+                        <img [src]="item.icon" [alt]="item.label" />
+                        <span>{{ item.label }}:</span>
+                        <span>{{ item.value }}</span>
+                     </div>
+                  </div>
+               </div>
+
+               <div id="AppFeatures" class="tabcontent" *ngIf="activeTab === 'AppFeatures'">
+                  <div class="grid-container">
+                     <div class="grid-item" *ngFor="let item of appFeatures">
+                        <img [src]="item.icon" [alt]="item.label" />
+                        <span>{{ item.label }}:</span>
+                        <span>{{ item.value }}</span>
                      </div>
                   </div>
                </div>
             </div>
-         </div>
-         <div class="description">
-            <div class="title">
-               <h1>{{productListModel?.manufacturer}} {{productListModel?.model}}</h1>
-               <div class="rating">
-                  <img src="assets/images/star-g.svg"
-                     *ngFor="let item of [].constructor(productListModel?.ourRating); let i = index">
-                  <img src="assets/images/star-w.svg"
-                     *ngFor="let item of [].constructor(unSelectRating); let i = index">
-               </div>
-            </div>
-            <div class="details">
-               {{productListModel?.additionalFeatures}}
-            </div>
-            <div class="price">Price: Rs. {{productListModel?.exShowroomPrice}}</div>
-            <div class="status">Booking Status: <div class="currentStatus">Available</div>
-            </div>
-            <div>
-               Colours : 4
+
+            <div class="booking">
+               <h1 class="booking-title">Booking details</h1>
+               <table>
+                  <tr>
+                     <td>Availablity : </td>
+                     <td>Available</td>
+                  </tr>
+                  <tr>
+                     <td>Booking Amount : </td>
+                     <td>{{productListModel?.bookingPrice}}Lakh</td>
+                  </tr>
+               </table>
+               <button class="standard_button booking_button">Interested in {{productListModel?.manufacturer}} {{productListModel?.model}}</button>
             </div>
          </div>
-      </div>
-      <div class="specs_booking">
-         <div class="specs">
-            <div class="tabs">
-               <button class="tablinks" [class.active]="activeTab === 'KeySpecs'" (click)="onTabClick('KeySpecs')">
-                  Key Specs
-               </button>
-               <button class="tablinks" [class.active]="activeTab === 'AppFeatures'"
-                  (click)="onTabClick('AppFeatures')">
-                  App Features
-               </button>
-            </div>
-
-            <div id="KeySpecs" class="tabcontent" *ngIf="activeTab === 'KeySpecs'">
-               <div class="grid-container">
-                  <div class="grid-item" *ngFor="let item of keySpecs">
-                     <img [src]="item.icon" [alt]="item.label" />
-                     <span>{{ item.label }}:</span>
-                     <span>{{ item.value }}</span>
-                  </div>
-               </div>
-            </div>
-
-            <div id="AppFeatures" class="tabcontent" *ngIf="activeTab === 'AppFeatures'">
-               <div class="grid-container">
-                  <div class="grid-item" *ngFor="let item of appFeatures">
-                     <img [src]="item.icon" [alt]="item.label" />
-                     <span>{{ item.label }}:</span>
-                     <span>{{ item.value }}</span>
-                  </div>
-               </div>
-            </div>
-         </div>
-
-         <div class="booking">
-            <h1 class="booking-title">Booking details</h1>
-            <table>
-               <tr>
-                  <td>Availablity : </td>
-                  <td>Available</td>
-               </tr>
-               <tr>
-                  <td>Booking Amount : </td>
-                  <td>{{productListModel?.bookingPrice}}Lakh</td>
-               </tr>
+         <div class="variants-container" id="variantsContainer">
+            <h2 class="variants-title">{{productListModel?.manufacturer}} {{productListModel?.model}}'s Varients</h2>
+            <table class="variants-table">
+               <thead>
+                  <tr>
+                     <th>Variants</th>
+                     <th>Specifications</th>
+                     <th>Price</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr *ngFor="let item of varientList" (click)="onVarientClick(item)">
+                     <td>{{item.manufacturer}} {{item.model}} {{item.variant}}</td>
+                     <td>
+                        <div class="specs-container">
+                           <span>{{item.chargingTime}}, {{item.rangeOfVehicle}}</span>
+                        </div>
+                     </td>
+                     <td>{{item.exShowroomPrice}}</td>
+                  </tr>
+               </tbody>
             </table>
-            <button class="standard_button booking_button">Interested in Model</button>
          </div>
-      </div>
-      <div class="variants-container" id="variantsContainer">
-         <h2 class="variants-title">{{productListModel?.manufacturer}} {{productListModel?.model}}s Varients</h2>
-         <table class="variants-table">
-            <thead>
-               <tr>
-                  <th>Variants</th>
-                  <th>Specifications</th>
-                  <th>Price</th>
-               </tr>
-            </thead>
-            <tbody>
-               <tr *ngFor="let item of varientList" (click)="onVarientClick(item)">
-                  <td>{{item.manufacturer}} {{item.model}} {{item.variant}}</td>
-                  <td>
-                     <div class="specs-container">
-                        <span>{{item.chargingTime}}, {{item.rangeOfVehicle}}</span>
-                     </div>
-                  </td>
-                  <td>{{item.exShowroomPrice}}</td>
-               </tr>
-            </tbody>
-         </table>
-      </div>
-      <div class="spec-container">
-         <h2 class="modelspecs_title">{{productListModel?.manufacturer}} {{productListModel?.model}}'s Model Specifications</h2>
-         <div class="table">
-            <div *ngFor="let entry of getProductSpecs()">
-               <div class="spec-row">
-                  <div class="spec-label">{{ entry.key }} :</div>
-                  <div class="spec-value" style="white-space: pre-line;">{{ entry.value }}</div>
+         <div class="spec-container">
+            <h2 class="modelspecs_title">{{productListModel?.manufacturer}} {{productListModel?.model}}'s Specifications</h2>
+            <div class="table">
+               <div *ngFor="let entry of getProductSpecs()">
+                  <div class="spec-row">
+                     <div class="spec-label">{{ entry.key }} :</div>
+                     <div class="spec-value" style="white-space: pre-line;">{{ entry.value }}</div>
+                  </div>
                </div>
             </div>
+            <a (click)="onSpecs()" class="view-all-specs">View all Specs &#10145;</a>
          </div>
-         <a (click)="onSpecs()" class="view-all-specs">View all Specs &#10145;</a>
-      </div>
-      <div class="spec-container">
-         <h2 class="modelspecs_title">{{productListModel?.manufacturer}} {{productListModel?.model}} 's Model Features</h2>
-         <div class="table">
-            <div *ngFor="let entry of getProductFeatures()">
-               <div class="spec-row">
-                  <div class="spec-label">{{ entry.key }} :</div>
-                  <div class="spec-value" style="white-space: pre-line;">{{ entry.value }}</div>
+         <div class="spec-container">
+            <h2 class="modelspecs_title">{{productListModel?.manufacturer}} {{productListModel?.model}}'s Features</h2>
+            <div class="table">
+               <div *ngFor="let entry of getProductFeatures()">
+                  <div class="spec-row">
+                     <div class="spec-label">{{ entry.key }} :</div>
+                     <div class="spec-value" style="white-space: pre-line;">{{ entry.value }}</div>
+                  </div>
                </div>
             </div>
+            <a (click)="onSpecs()" class="view-all-specs">View all Specs &#10145;</a>
          </div>
-         <a (click)="onSpecs()" class="view-all-specs">View all Specs &#10145;</a>
-      </div>
-      <div class="otherModels">
-         <div class="otherModels-title">Other Models like {{productListModel?.manufacturer}} {{productListModel?.model}}</div>
-         <div class="models">
-            <div class="model" *ngFor="let model of nextproductlist" (click)="onVarientClick(model)">
-               <img src="{{model.path}}" alt="Product Image" onerror="this.src='assets/images/pr4.png';">
-               <div class="card-content">
-                  <h3>{{ model.manufacturer }} {{ model.model }}</h3>
-                  <img class="favorite-icon" src="assets/images/heart.svg" alt="">
-                  <p>Price: ₹{{ model.exShowroomPrice }}</p>
-                  <p>Colors: 4</p>
-                  <button class="view-button">View</button>
+         <div class="otherModels">
+            <div class="otherModels-title">Other Models like {{productListModel?.manufacturer}}
+               {{productListModel?.model}}</div>
+            <div class="models">
+               <div class="model" *ngFor="let model of nextproductlist" (click)="onVarientClick(model)">
+                  <img src="{{model.path}}" alt="Product Image" onerror="this.src='assets/images/pr4.png';">
+                  <div class="card-content">
+                     <h3>{{ model.manufacturer }} {{ model.model }}</h3>
+                     <p>Price: ₹{{ model.exShowroomPrice }}</p>
+                     <p>Colors: 4</p>
+                     <button class="view-button">View</button>
+                  </div>
                </div>
             </div>
          </div>
       </div>
-   </div>
    </div>
 </div>
 

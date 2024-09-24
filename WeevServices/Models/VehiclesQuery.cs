@@ -168,6 +168,22 @@ namespace WeevServices.Models
             return result.Count > 0 ? result[0] : null;
         }
 
+        //name of the images present
+        public async Task<List<string>> FindAllMainImgAsync(int twId)
+        {
+            using var connectionString = Db.Connection;
+            MySqlCommand cmd = new MySqlCommand("Getmainimagebyid", connectionString);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new MySqlParameter
+            {
+                ParameterName = "@id",
+                DbType = DbType.Int32,
+                Value = twId,
+            });
+            var result = await ReadAllTabNameTaskAsync(await cmd.ExecuteReaderAsync());
+            return result.Count > 0 ? result : null;
+        }
+
         private async Task<List<Twoimagedata>> ReadAllImgTaskAsync(DbDataReader reader)
         {
             DataTable dt = new DataTable();

@@ -102,7 +102,6 @@
   margin: 0;
 }
 
-
 .mainDetails .description .details {
   color: #666;
   text-align: justify;
@@ -146,6 +145,17 @@ $colorContainerPadding: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   padding: 20px;
+}
+
+.color_container .color-title {
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+  width: inherit;
+  padding-left: 10px;
+  color: #e65118; 
 }
 
 .carousel-color {
@@ -240,7 +250,7 @@ $colorContainerPadding: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
-.color-name{
+.color-name {
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -250,8 +260,7 @@ $colorContainerPadding: 20px;
   text-align: center;
 }
 
-
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 600px) {
   .category {
     margin-left: 0;
     margin-right: 0;
@@ -276,17 +285,13 @@ $colorContainerPadding: 20px;
     display: block;
     padding: 0;
     display: flex;
-    flex-direction: row; 
-    align-items: center; 
+    flex-direction: row;
+    align-items: center;
     padding-left: 10px;
   }
 
-  .gallery-container{
+  .gallery-container {
     flex-direction: column;
-  }
-
-  .mainDetails .main-image-container {
-    
   }
 
   .mainDetails .main-image-container img {
@@ -362,11 +367,11 @@ $colorContainerPadding: 20px;
     padding-right: 0px;
   }
 
-.carousel-inner img{
-  width: 100vw;
-  height: 330px;
-  object-fit: cover;
-}
+  .carousel-inner img {
+    width: 100vw;
+    height: 330px;
+    object-fit: cover;
+  }
 
   .carousel-image {
     width: 100%;
@@ -383,7 +388,7 @@ $colorContainerPadding: 20px;
     height: 30px;
     padding: 0px;
   }
-  
+
   .prev-button {
     margin-left: 0px;
   }
@@ -397,7 +402,7 @@ $colorContainerPadding: 20px;
     margin-top: 10px;
   }
 
-  .thumbnail-image{
+  .thumbnail-image {
     width: 130px;
     height: 80px;
   }
@@ -410,10 +415,8 @@ $colorContainerPadding: 20px;
     padding-right: 0px;
   }
 
-  .carousel-image{
+  .carousel-image {
     width: 100%;
     height: auto;
   }
-
-  
 }
