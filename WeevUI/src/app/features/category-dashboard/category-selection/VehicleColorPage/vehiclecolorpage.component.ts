@@ -19,7 +19,7 @@ export class VehicleColorPageComponent {
   colorimagePaths: { colorPath: string; colorName: string }[] = [];
   ReqimagePaths: { imagePath: string}[] = [];
   currentIndexImage: number = 0;
-  currentIndexColor: number = 0;
+  currentIndexColor: number =0;
 
   constructor(
     private router: Router,

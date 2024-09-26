@@ -25,7 +25,7 @@ export class RecentVehiclesComponent implements OnInit {
     this.vehiclesService.getTwoWheelerData().subscribe((response) => {
       this.twowheelerlist = response;
       // Limit to 8 items
-      const topVariants = this.twowheelerlist.filter(item => item.variantType === "Top").slice(0, 8);
+      const topVariants = this.twowheelerlist.filter(item => item.variantType === "Top").slice(0, 7);
       this.filteredtwowheelerlist.push(...topVariants);
       
       for (var i = 0; i < this.filteredtwowheelerlist.length; i++) {

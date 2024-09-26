@@ -1,4 +1,4 @@
-import { Component, ChangeDetectorRef, } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { VehiclesService } from 'src/app/modules/_services/vehicles.service';
 import { ProductListModel } from 'src/app/modules/auth/_models/product.model';
@@ -17,7 +17,7 @@ export class VehicleAllSpecsComponent {
     private router: Router,
     private route: ActivatedRoute,
     private vehiclesService: VehiclesService,
-    private cd: ChangeDetectorRef,
+    private cd: ChangeDetectorRef
   ) {
     this.route.params.subscribe((params) => (this.productID = params['twId']));
   }
@@ -55,13 +55,12 @@ export class VehicleAllSpecsComponent {
     this.vehiclesService
       .getProductDataWithID(productID)
       .subscribe((response) => {
-        const transformedResponse = this.transformResponse(response); 
-        this.productlist = transformedResponse; 
+        const transformedResponse = this.transformResponse(response);
+        this.productlist = transformedResponse;
         this.productListModel = this.productlist;
       });
   }
 
- 
   onDetails() {
     this.router.navigate(['/Selection', this.productID]);
   }
@@ -100,12 +99,37 @@ export class VehicleAllSpecsComponent {
     });
   }
 
-  getProductSpecs(): Array<{ key: string; value: any }> {
-    const excludedKeys = ['path', 'twId']; // Define keys to exclude
+  getOverviewSpecs(): Array<{ key: string; value: any }> {
+    // const excludedKeys = ['path', 'twId']; // Define keys to exclude
 
-    // Iterate over all keys in productListModel except those in excludedKeys
-    return Object.keys(this.productListModel || {})
-      .filter(key => !excludedKeys.includes(key)) // Exclude keys in excludedKeys
+    // // Iterate over all keys in productListModel except those in excludedKeys
+    // return Object.keys(this.productListModel || {})
+    //   .filter(key => !excludedKeys.includes(key)) // Exclude keys in excludedKeys
+    //   .map((key) => {
+    //     const value = this.productListModel?.[key as keyof ProductListModel];
+    //     return value !== undefined && value !== '' && value !== null
+    //       ? {
+    //           key: this.keyDisplayMap[key] || key, // Use mapped key or original key
+    //           value: value, // Use the transformed value directly
+    //         }
+    //       : null;
+    //   })
+    //   .filter((item): item is { key: string; value: any } => item !== null); // Type guard to filter out null values
+    const selectedKeys = [
+      'manufacturer',
+      'model',
+      'variant',
+      'variantType',
+      'exShowroomPrice',
+      'maxSpeed',
+      'chargingTime',
+      'conditionOfVehicle',
+      'accelration0To60kmph',
+      'accelration0To40kmph',
+      'category',
+    ];
+
+    return selectedKeys
       .map((key) => {
         const value = this.productListModel?.[key as keyof ProductListModel];
         return value !== undefined && value !== '' && value !== null
@@ -118,7 +142,169 @@ export class VehicleAllSpecsComponent {
       .filter((item): item is { key: string; value: any } => item !== null); // Type guard to filter out null values
   }
 
+  getBookingDetailSpecs(): Array<{ key: string; value: any }> {
+    const selectedKeys = [
+      'available',
+      'offlineOronline',
+      'bookingSite',
+      'bookingPrice',
+    ];
+
+    return selectedKeys
+      .map((key) => {
+        const value = this.productListModel?.[key as keyof ProductListModel];
+        return value !== undefined && value !== '' && value !== null
+          ? {
+              key: this.keyDisplayMap[key] || key, // Use mapped key or original key
+              value: value, // Use the transformed value directly
+            }
+          : null;
+      })
+      .filter((item): item is { key: string; value: any } => item !== null); // Type guard to filter out null values
+  }
+
+  getPowerAndBatterySpecs(): Array<{ key: string; value: any }> {
+    const selectedKeys = [
+      'continuousPower',
+      'motorPower',
+      'rangeOfVehicle',
+      'batteryType',
+      'batteryCapacity',
+      'chargingTime0To80Perc',
+      'chargingTime0To100Perc',
+      'chargingAtHome',
+      'noOfBatteries',
+      'swappableBattery',
+    ];
+
+    return selectedKeys
+      .map((key) => {
+        const value = this.productListModel?.[key as keyof ProductListModel];
+        return value !== undefined && value !== '' && value !== null
+          ? {
+              key: this.keyDisplayMap[key] || key, // Use mapped key or original key
+              value: value, // Use the transformed value directly
+            }
+          : null;
+      })
+      .filter((item): item is { key: string; value: any } => item !== null); // Type guard to filter out null values
+  }
+
+  getFeaturesSpecs(): Array<{ key: string; value: any }> {const selectedKeys = [
+    'instrumentConsole',
+    'bluetoothConnectivity',
+    'navigation',
+    'geoFencing',
+    'antiTheftAlarm',
+    'usbchargingPort',
+    'underseatStorage',
+    'distanceToEmptyIndicator',
+    'chargerOutputMin',
+    'chargerOutputMax',
+    'chargingPoint',
+    'fastCharging',
+    'fastChargingTimeUpto80Perc',
+    'ridingModes',
   
+  ];
+
+  return selectedKeys
+    .map((key) => {
+      const value = this.productListModel?.[key as keyof ProductListModel];
+      return value !== undefined && value !== '' && value !== null
+        ? {
+            key: this.keyDisplayMap[key] || key, // Use mapped key or original key
+            value: value, // Use the transformed value directly
+          }
+        : null;
+    })
+    .filter((item): item is { key: string; value: any } => item !== null); // Type guard to filter out null values
+  }
+
+  getAdditionalFeaturesSpecs(): Array<{ key: string; value: any }> {const selectedKeys = [
+    'callOrsmsalerts',
+    'musicControl',
+    'centralLocking',
+    'cruiseControl',
+    'externalSpeakers',
+    'speedometer',
+    'tripmeter',
+    'Odometer',
+    'carryHook',  
+    'abstractrtificialExhaustSoundSystem',
+    'internetConnectivity',
+    'operatingSystem',
+    'processor',
+    'mobileApplication',
+     'chargingStationLocater',
+    'gradeability',
+    'clock',
+    'lowBatteryIndicator',
+  ];
+
+  return selectedKeys
+    .map((key) => {
+      const value = this.productListModel?.[key as keyof ProductListModel];
+      return value !== undefined && value !== '' && value !== null
+        ? {
+            key: this.keyDisplayMap[key] || key, // Use mapped key or original key
+            value: value, // Use the transformed value directly
+          }
+        : null;
+    })
+    .filter((item): item is { key: string; value: any } => item !== null); // Type guard to filter out null values
+  }
+
+  getSpecificationsSpecs(): Array<{ key: string; value: any }> {const selectedKeys = [
+    'bodyType',
+    'dimensionsAndCapacity',
+    'bootSpace',
+    'width',
+    'length',
+    'height',
+    'saddleHeight',
+    'groundClearance',
+    'wheelbase',
+    'kerbWeight',
+    'loadCarryingCapacity',
+    'turnSignalLamp',
+    'drls',
+    'topSpeed',
+    'motorType',
+    'motorWarrantyForMonths',
+    'motorWarrantyForKm',
+    'driveType',
+    'batteryWarrantyForMonth',
+    'batteryWarrantyForKm',
+    'waterProofRating',
+    'suspensionFront',
+    'suspensionRear',
+    'brakesFront',
+    'brakesRear',
+    'tyreSize',
+    'wheelSize',
+    'wheelsType',
+  ];
+
+  return selectedKeys
+    .map((key) => {
+      const value = this.productListModel?.[key as keyof ProductListModel];
+      return value !== undefined && value !== '' && value !== null
+        ? {
+            key: this.keyDisplayMap[key] || key, // Use mapped key or original key
+            value: value, // Use the transformed value directly
+          }
+        : null;
+    })
+    .filter((item): item is { key: string; value: any } => item !== null); // Type guard to filter out null values
+  }
+
+
+
+
+
+
+
 
   private keyDisplayMap: { [key: string]: string } = {
     manufacturer: 'Manufacturer',
