@@ -21,14 +21,14 @@ const routes: Routes = [
         path: 'Cars',
         component: BikesDetailsComponent
       },
-      // {
-      //   path: 'Selection/:twId',
-      //   component: CategorySelectionComponent
-      // },   
       {
         path: 'Selection/:twId',
-        component: VehicleAllSpecsComponent
+        component: CategorySelectionComponent
       },   
+      // {
+      //   path: 'Selection/:twId',
+      //   component: VehicleColorPageComponent
+      // },   
       {
         path: 'Selection/:twId/Colors',
         component: VehicleColorPageComponent
