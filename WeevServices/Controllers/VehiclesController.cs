@@ -92,6 +92,19 @@ namespace WeevServices.Controllers
             return new OkObjectResult(result);
         }
 
+        //bikeorscooter
+        [Route("TwoWheelerType/{Vehicle}")]
+        [HttpGet]
+        public async Task<IActionResult> GetVehicleOne(string Vehicle)
+        {
+            await Db.Connection.OpenAsync();
+            var query = new VehiclesQuery(Db);
+            var result = await query.FindOneVehicleAsync(Vehicle);
+            if (result is null)
+                return new NotFoundResult();
+            return new OkObjectResult(result);
+        }
+
         [Route("TwoImageTabName/{id}")]
         [HttpGet]
         public async Task<IActionResult> GetOneImgTabName(int id)

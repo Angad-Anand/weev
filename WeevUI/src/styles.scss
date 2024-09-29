@@ -10,6 +10,7 @@
 
 * {
   font-family: Roboto;
+  // outline: 1px solid red;  
 }
 
 .homebg {
@@ -1623,96 +1624,6 @@ img.hover-shadow {
 
 // }
 
-.landingarea {
-  @extend .container;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-  justify-content: center;
-  width: 100%;
-  padding: 20px;
-}
-
-.vehicleBox {
-  @include position(relative);
-  @include box-shadow(0 4px 20px rgba(0, 0, 0, 0.1));
-  @include border-radius(15px);
-  overflow: hidden;
-  width: 100%;
-  @include transition;
-  @include box(null, null, null, #fff);
-}
-
-.vehicleBox:hover {
-  transform: scale(1.05);
-  @include box-shadow(0 8px 30px rgba(0, 0, 0, 0.2));
-}
-
-.vehicleBox img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-}
-
-.infobox {
-  padding: 20px;
-  @include transition;
-}
-
-.infobox h4 {
-  font-size: 1.4em;
-  margin: 0;
-}
-
-.infobox p {
-  color: #27ae60;
-  font-size: 1.2em;
-  margin: 10px 0;
-}
-
-.infobox span {
-  display: flex;
-  margin: 10px 0;
-}
-
-.infobox span img {
-  width: 16px;
-  height: 16px;
-  margin-right: 5px;
-}
-
-.icobx {
-  @include position(absolute, 10px, 10px);
-  gap: 10px;
-  @include flbox(row, null, null, null);
-}
-
-.icobx a {
-  @include box(null, 50%, 8px, rgba(255, 255, 255, 0.8));
-  cursor: pointer;
-  @include transition;
-  @include flbox(row, null, center, center);
-  width: 30px;
-  height: 30px;
-}
-
-.icobx a img {
-  width: 16px;
-  height: 16px;
-}
-
-.icobx a:hover {
-  background-color: rgba(255, 255, 255, 1);
-  transform: scale(1.1);
-}
-
-@include mobile {
-  .landingarea {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-}
 
 .boxDiv {
   width: 20%;

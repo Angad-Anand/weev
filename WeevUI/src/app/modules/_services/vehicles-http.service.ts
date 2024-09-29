@@ -66,6 +66,14 @@ export class VehiclesHttpService {
      });
   }
 
+  getTwoWheelerDataByType(token: string,Vehicle:string): Observable<any> {
+    let headers = new HttpHeaders();    
+    headers.append('Authorization', `Bearer ${token}`);       
+     return this.http.get<any>(`${LAPI_URL}/TwoWheelerType/${Vehicle}`, {
+       headers: headers,
+     });
+  }
+
   Customerenquiries(UserRegister:any): Observable<any> {    
           
      return this.http.post<any>(`${LAPI_URL}/Customerenquiries`,UserRegister);

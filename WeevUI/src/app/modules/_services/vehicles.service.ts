@@ -134,6 +134,20 @@ constructor(
       finalize(() => this.isLoadingSubject.next(false))
     );
   }
+//bike or scooter
+  getTwoWheelerDataByType(Vehicle:string): Observable<any> {
+    const auth = this.getAuthFromLocalStorage();
+    if (!auth ) {
+      return of(undefined);
+    }
+    this.isLoadingSubject.next(true);
+    return this.vehiclesHttpService.getTwoWheelerDataByType(auth,Vehicle)
+    .pipe(
+      map((TwoWheeler: any) => {return TwoWheeler;
+      }),
+      finalize(() => this.isLoadingSubject.next(false))
+    );
+  }
   
   private getAuthFromLocalStorage(): string {
     try {      

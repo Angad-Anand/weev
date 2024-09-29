@@ -52,6 +52,22 @@ namespace WeevServices.Models
             command.CommandType = CommandType.StoredProcedure;
             return await ReadAllTaskAsync(await command.ExecuteReaderAsync());
         }
+
+        //bikeor scooter
+        public async Task<List<TwoWheeler>> FindOneVehicleAsync(string Vehicle)
+        {
+            using var connectionString = Db.Connection;
+            MySqlCommand cmd = new MySqlCommand("GetTwowheelerdataByVehicleType", connectionString);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new MySqlParameter
+            {
+                ParameterName = "@Vehicle",
+                DbType = DbType.String,
+                Value = Vehicle,
+            });
+            var result = await ReadAllTaskAsync(await cmd.ExecuteReaderAsync());
+            return await ReadAllTaskAsync(await cmd.ExecuteReaderAsync());
+        }
         private async Task<List<VehiclesModels>> ReadAllAsync(DbDataReader reader)
         {           
             var posts = new List<VehiclesModels>();

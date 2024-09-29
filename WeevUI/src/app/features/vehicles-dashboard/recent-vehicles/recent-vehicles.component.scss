@@ -1,0 +1,146 @@
+
+
+.recent-vehicles-container {
+    max-width: 100%;
+    margin-left: 16%;
+    margin-right: 16%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #E65100;
+    margin-top: 20px;
+    padding-bottom: 20px;
+
+    // justify-content: center;
+    // align-items: center;
+}
+
+.recent-vehicles-title{
+    font-size: 25px;
+    color: #E65100;
+    font-weight: 600;
+    text-align: start;
+    padding-left: 20px;
+}
+
+.landingarea {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(250px, 1fr));
+    gap: 20px;
+    row-gap: 10px;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .vehicleBox {
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    width: 100%;
+    transition: all 0.5s ease;
+    background: #fff;
+  }
+  
+  .vehicleBox:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .vehicleBox img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .infobox {
+    padding: 10px 0 10px 10px;
+    transition: all 0.5s ease;
+  }
+  
+  .vehicle-title {
+    font-size: 20px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .infobox p {
+    color: #27ae60;
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+    // margin: 10px 0;
+  }
+  
+  .infobox span {
+    display: flex;
+    margin: 5px 10px 5px 0;
+  }
+  
+  .infobox span img {
+    width: 12px;
+    height: 12px;
+    margin-right: 3px;
+  }
+  
+.viewAll{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.olay{
+    width: auto;
+    background-color: #E35000;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+  
+  @media (max-width: 768px) {
+
+    .recent-vehicles-container{
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+
+    .recent-vehicles-title{
+        font-size: 20px;
+        padding-left: 0px;
+        padding-left: 10px;
+    }
+  
+    .landingarea {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(200px, 1fr));
+      gap: 10px;    
+      flex-direction: column;
+      align-items: center;
+
+    }
+
+    .vehicleBox{
+        width: 200px;
+    }
+
+    .vehicleBox img{
+      height: 100px;
+    }
+    .vehicle-title{
+        font-size: 16px;
+    }
+
+    .infobox p{
+        font-size: 13px;
+    }
+
+    .infobox span img {
+        width: 10px;
+        height: 10px;
+    }
+
+  }
+  

@@ -125,16 +125,27 @@ export class VehicleColorPageComponent {
   prevSlideImage() {
     // Ensure currentIndexImage wraps around correctly
     this.currentIndexImage =
-      (this.currentIndexImage - 1 + this.imagePaths.length) % this.imagePaths.length;
+      (this.currentIndexImage - 1 + this.ReqimagePaths.length) % this.ReqimagePaths.length;
     this.scrollThumbnails(this.currentIndexImage);
   }
 
   nextSlideImage() {
     // Ensure currentIndexImage wraps around correctly
     this.currentIndexImage =
-      (this.currentIndexImage + 1) % this.imagePaths.length;
+      (this.currentIndexImage + 1) % this.ReqimagePaths.length;
     this.scrollThumbnails(this.currentIndexImage);
   }
+  // prevSlideColor() {
+  //   // Ensure currentIndexImage wraps around correctly
+  //   this.currentIndexColor =
+  //     (this.currentIndexColor - 1 + this.colorimagePaths.length) % this.colorimagePaths.length;
+  // }
+
+  // nextSlideColor() {
+  //   // Ensure currentIndexImage wraps around correctly
+  //   this.currentIndexColor =
+  //     (this.currentIndexColor + 1) % this.colorimagePaths.length;
+  // }
 
   visibleThumbnails = 2; // Number of thumbnails visible at a time
   scrollThumbnails(currentIndex: number) {

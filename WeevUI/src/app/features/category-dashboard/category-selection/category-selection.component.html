@@ -117,7 +117,14 @@
                </thead>
                <tbody>
                   <tr *ngFor="let item of varientList" (click)="onVarientClick(item)">
-                     <td>{{item.manufacturer}} {{item.model}} {{item.variant}}</td>
+                     <td>
+                        <ng-container *ngIf="item.twId === productListModel?.twId; else normalText">
+                            <strong>{{item.manufacturer}} {{item.model}} {{item.variant}}</strong>
+                        </ng-container>
+                        <ng-template #normalText>
+                            {{item.manufacturer}} {{item.model}} {{item.variant}}
+                        </ng-template>
+                    </td>
                      <td>
                         <div class="specs-container">
                            <span>{{item.chargingTime}}, {{item.rangeOfVehicle}}</span>
@@ -159,10 +166,8 @@
                <div class="model" *ngFor="let model of nextproductlist" (click)="onVarientClick(model)">
                   <img src="{{model.path}}" alt="Product Image" onerror="this.src='assets/images/pr4.png';">
                   <div class="card-content">
-                     <h3>{{ model.manufacturer }} {{ model.model }}</h3>
+                     <div class="title">{{ model.manufacturer }} {{ model.model }}</div>
                      <p>Price: ₹{{ model.exShowroomPrice }}</p>
-                     <p>Colors: 4</p>
-                     <button class="view-button">View</button>
                   </div>
                </div>
             </div>
