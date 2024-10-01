@@ -22,239 +22,239 @@
   }
 }
 
-header {
-  nav {
-    @extend .container;
-    @include flbox($wrap: nowrap, $justify: space-between, $align: center);
-    padding: 0px 20px;
-    height: 80px;
-    position: relative;
-    z-index: 1;
-    border-bottom: 1px solid $lorng;
-    margin-bottom: 30px;
-    @include mobile {
-      height: 60px;
-      padding: 0px 10px;
-      border-bottom: 1px solid $lorng;
-      margin-bottom: 0px;
-    }
-    .leftarea {
-      @include flbox($align: center);
-      .hamburger {
-        width: 22px;
-        max-height: 20px;
-        margin-right: 20px;
-        outline: none;
-        cursor: pointer;
-        fill: $gray;
-        display: none;
-        @include mobile {
-          display: block;
-        }
-      }
-      a {
-        outline: none;
-        cursor: pointer;
-        .logo {
-          width: 125px;
-          height: auto;
+// header {
+//   nav {
+//     @extend .container;
+//     @include flbox($wrap: nowrap, $justify: space-between, $align: center);
+//     padding: 0px 20px;
+//     height: 80px;
+//     position: relative;
+//     z-index: 1;
+//     border-bottom: 1px solid $lorng;
+//     margin-bottom: 30px;
+//     @include mobile {
+//       height: 60px;
+//       padding: 0px 10px;
+//       border-bottom: 1px solid $lorng;
+//       margin-bottom: 0px;
+//     }
+//     .leftarea {
+//       @include flbox($align: center);
+//       .hamburger {
+//         width: 22px;
+//         max-height: 20px;
+//         margin-right: 20px;
+//         outline: none;
+//         cursor: pointer;
+//         fill: $gray;
+//         display: none;
+//         @include mobile {
+//           display: block;
+//         }
+//       }
+//       a {
+//         outline: none;
+//         cursor: pointer;
+//         .logo {
+//           width: 125px;
+//           height: auto;
 
-          @include mobile {
-            width: 120px;
-            height: 40px;
-          }
-        }
-      }
-    }
-    .searcharea {
-      position: relative;
-      .searchinput {
-        width: 200px;
-        height: 45px;
-        @media (max-width: 768px) {
-          width: 90%;
-        }
-        border-radius: 30px;
-        border: 1px solid $dorng;
-        padding: 10px 20px 10px 60px;
-        line-height: 40px;
-        @include transition();
-        &:before {
-          content: "\f002";
-          margin-left: 9px;
-          margin-right: 6px;
-        }
-        &:hover,
-        &:focus {
-          width: 500px;
-          border: 1px solid $dorng;
-          @include transition();
-        }
-      }
-      .icon {
-        position: absolute;
-        top: 50%;
-        left: 20px;
-        pointer-events: none;
-        -webkit-transform: translateY(-43%) scaleX(-1);
-        transform: translateY(-43%) scaleX(-1);
-        color: $dorng;
-        font-size: 30px;
-        line-height: 20px;
-      }
-      @include mobile {
-        display: none;
-      }
-    }
-    .rightarea {
-      display: block;
+//           @include mobile {
+//             width: 120px;
+//             height: 40px;
+//           }
+//         }
+//       }
+//     }
+//     .searcharea {
+//       position: relative;
+//       .searchinput {
+//         width: 200px;
+//         height: 45px;
+//         @media (max-width: 768px) {
+//           width: 90%;
+//         }
+//         border-radius: 30px;
+//         border: 1px solid $dorng;
+//         padding: 10px 20px 10px 60px;
+//         line-height: 40px;
+//         @include transition();
+//         &:before {
+//           content: "\f002";
+//           margin-left: 9px;
+//           margin-right: 6px;
+//         }
+//         &:hover,
+//         &:focus {
+//           width: 500px;
+//           border: 1px solid $dorng;
+//           @include transition();
+//         }
+//       }
+//       .icon {
+//         position: absolute;
+//         top: 50%;
+//         left: 20px;
+//         pointer-events: none;
+//         -webkit-transform: translateY(-43%) scaleX(-1);
+//         transform: translateY(-43%) scaleX(-1);
+//         color: $dorng;
+//         font-size: 30px;
+//         line-height: 20px;
+//       }
+//       @include mobile {
+//         display: none;
+//       }
+//     }
+//     .rightarea {
+//       display: block;
 
-      ul {
-        @include flbox($align: center);
-        margin: 0;
-        li {
-          margin: 0px;
-          list-style: none;
-          padding: 0 55px;
-          line-height: 18px;
-          &:first-child {
-            padding: 0 55px 0 0;
-          }
-          &:last-child {
-            border-left: none;
-            padding: 0 0 0 55px;
-          }
-          a {
-            @include transition();
-            text-transform: uppercase;
-            img {
-              height: 25px;
-            }
-          }
+//       ul {
+//         @include flbox($align: center);
+//         margin: 0;
+//         li {
+//           margin: 0px;
+//           list-style: none;
+//           padding: 0 55px;
+//           line-height: 18px;
+//           &:first-child {
+//             padding: 0 55px 0 0;
+//           }
+//           &:last-child {
+//             border-left: none;
+//             padding: 0 0 0 55px;
+//           }
+//           a {
+//             @include transition();
+//             text-transform: uppercase;
+//             img {
+//               height: 25px;
+//             }
+//           }
 
-          @include smdp {
-            padding: 0px 8px;
-          }
-          @include tab {
-            padding: 0px 8px;
-          }
+//           @include smdp {
+//             padding: 0px 8px;
+//           }
+//           @include tab {
+//             padding: 0px 8px;
+//           }
 
-          @include mobile {
-            padding: 0 20px !important;
-            &:last-child {
-              padding: 0 0 0 20px !important;
-            }
-            a {
-              img {
-                height: 20px;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-.searchcontainer {
-  position: absolute;
-  margin: auto;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 300px;
-  height: 100px;
-  .search {
-    position: absolute;
-    margin: auto;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 45px;
-    height: 45px;
-    background: $orng;
-    border-radius: 50%;
-    transition: all 1s;
-    z-index: 4;
-    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.4);
-    // box-shadow: 0 0 25px 0 crimson;
-    &:hover {
-      cursor: pointer;
-    }
-    &::before {
-      content: "";
-      position: absolute;
-      margin: auto;
-      top: 17px;
-      right: 0;
-      bottom: 0;
-      left: 15px;
-      width: 12px;
-      height: 2px;
-      background: white;
-      transform: rotate(45deg);
-      transition: all 0.5s;
-    }
-    &::after {
-      content: "";
-      position: absolute;
-      margin: auto;
-      top: -5px;
-      right: 0;
-      bottom: 0;
-      left: -5px;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      border: 2px solid white;
-      transition: all 0.5s;
-    }
-  }
-  input {
-    position: absolute;
-    margin: auto;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 50px;
-    height: 50px;
-    outline: none;
-    border: none;
-    // border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    background: $orng;
-    color: white;
-    text-shadow: 0 0 10px $dorng;
-    padding: 0 80px 0 20px;
-    border-radius: 30px;
-    box-shadow: 0 0 15px 0 $dorng, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
-    // box-shadow: inset 0 0 25px 0 rgba(0, 0, 0, 0.5);
-    transition: all 1s;
-    opacity: 0;
-    z-index: 5;
-    font-weight: bolder;
-    letter-spacing: 0.1em;
-    &:hover {
-      cursor: pointer;
-    }
-    &:focus {
-      width: 300px;
-      opacity: 1;
-      cursor: text;
-    }
-    &:focus ~ .search {
-      right: -250px;
-      background: #151515;
-      z-index: 6;
-    }
-    &::placeholder {
-      color: white;
-      opacity: 0.5;
-      font-weight: bolder;
-    }
-  }
-}
+//           @include mobile {
+//             padding: 0 20px !important;
+//             &:last-child {
+//               padding: 0 0 0 20px !important;
+//             }
+//             a {
+//               img {
+//                 height: 20px;
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+// .searchcontainer {
+//   position: absolute;
+//   margin: auto;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   width: 300px;
+//   height: 100px;
+//   .search {
+//     position: absolute;
+//     margin: auto;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//     width: 45px;
+//     height: 45px;
+//     background: $orng;
+//     border-radius: 50%;
+//     transition: all 1s;
+//     z-index: 4;
+//     box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.4);
+//     // box-shadow: 0 0 25px 0 crimson;
+//     &:hover {
+//       cursor: pointer;
+//     }
+//     &::before {
+//       content: "";
+//       position: absolute;
+//       margin: auto;
+//       top: 17px;
+//       right: 0;
+//       bottom: 0;
+//       left: 15px;
+//       width: 12px;
+//       height: 2px;
+//       background: white;
+//       transform: rotate(45deg);
+//       transition: all 0.5s;
+//     }
+//     &::after {
+//       content: "";
+//       position: absolute;
+//       margin: auto;
+//       top: -5px;
+//       right: 0;
+//       bottom: 0;
+//       left: -5px;
+//       width: 18px;
+//       height: 18px;
+//       border-radius: 50%;
+//       border: 2px solid white;
+//       transition: all 0.5s;
+//     }
+//   }
+//   input {
+//     position: absolute;
+//     margin: auto;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//     width: 50px;
+//     height: 50px;
+//     outline: none;
+//     border: none;
+//     // border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+//     background: $orng;
+//     color: white;
+//     text-shadow: 0 0 10px $dorng;
+//     padding: 0 80px 0 20px;
+//     border-radius: 30px;
+//     box-shadow: 0 0 15px 0 $dorng, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+//     // box-shadow: inset 0 0 25px 0 rgba(0, 0, 0, 0.5);
+//     transition: all 1s;
+//     opacity: 0;
+//     z-index: 5;
+//     font-weight: bolder;
+//     letter-spacing: 0.1em;
+//     &:hover {
+//       cursor: pointer;
+//     }
+//     &:focus {
+//       width: 300px;
+//       opacity: 1;
+//       cursor: text;
+//     }
+//     &:focus ~ .search {
+//       right: -250px;
+//       background: #151515;
+//       z-index: 6;
+//     }
+//     &::placeholder {
+//       color: white;
+//       opacity: 0.5;
+//       font-weight: bolder;
+//     }
+//   }
+// }
 // login-page style
 .headbanner {
   @extend .container;

@@ -9,16 +9,18 @@ import { AuthService } from 'src/app/modules/auth/_services/auth.service';
 export class HeaderComponent implements OnInit {
   token: any; 
   isLogin:boolean=false;
+
+
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.token=localStorage.getItem("token"); 
-    if(this.token =="" || this.token ==undefined){
-      this.authService.logout();  
-      this.isLogin=true;
-    }else{
-      this.isLogin=false;
-    }
+    // this.token=localStorage.getItem("token"); 
+    // if(this.token =="" || this.token ==undefined){
+    //   this.authService.logout();  
+    //   this.isLogin=true;
+    // }else{
+    //   this.isLogin=false;
+    // }
   }
 
   // onSubmit(isLogin:boolean) {
@@ -27,5 +29,8 @@ export class HeaderComponent implements OnInit {
   //     this.authService.logout();       
   //   }
   // }
+
+
+
 
 }
