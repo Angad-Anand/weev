@@ -6,22 +6,16 @@
          </a>
       </div>
       <div class="rightarea">
-         <div class="search-box" >
-            <div class="search-text-box">
-               <input class="search-txt" type="text" placeholder="Type to search" >
-               <button class="search-btn" >
-                  <img src="assets/images/search.svg" alt="Search Icon" width="24" height="24">
-               </button>
-            </div>
-            <div class="suggested-search"> 
-               <div class="suggested-search-item">item 1</div>
-               <div class="suggested-search-item">item 2</div>
-               <div class="suggested-search-item">item 3</div>
+         <div class="search-box">
+            <input type="text" placeholder="Search..." [(ngModel)]="searchTerm" (input)="showSuggestions()" (click)="search();"/>
+            <button (click)="search();">
+               <img src="assets/images/search.svg" alt="Search" />
+            </button>
+            <div *ngIf="suggestionsVisible" class="suggestions">
+               <div *ngFor="let suggestion of filteredSuggestions" (click)="selectSuggestion(suggestion.twId)">{{ suggestion.manufacturer }} {{ suggestion.model }} {{ suggestion.variant }}</div>
             </div>
          </div>
-         
       </div>
-
    </div>
 </div>
 

@@ -22,6 +22,7 @@ import { VehicleAllSpecsComponent } from './category-selection/VehicleAllSpecs/v
     FormsModule,
     ReactiveFormsModule,
     CategoryRoutingModule,
+    FormsModule
   ],
 })
 export class CategoryDashboardModule {}
