@@ -16,7 +16,6 @@ export class RecentVehiclesComponent implements OnInit {
     console.log(this.router.url);
   }
 
-
   ngOnInit(): void {
     this.getTwoWheelerData();
     window.scrollTo(0, 0); // Scroll to top
@@ -47,9 +46,8 @@ export class RecentVehiclesComponent implements OnInit {
       }
     });
   }  
+
   onSelect(twId: any) {
-    // console.log(twId);
     this.router.navigate(['/Selection', twId]);
   }
-
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef ,HostListener} from '@angular/core';
 import { Router } from '@angular/router';
 import { VehiclesService } from 'src/app/modules/_services/vehicles.service';
 
@@ -19,6 +19,10 @@ export class BikesDetailsComponent implements OnInit {
   loading: boolean = false; 
   activeFilter: string = 'all'; // Track active filter
 
+
+  itemsToShow: number = 20; // Number of items to show initially
+  private loadingMore: boolean = false;
+
   constructor(
     private router: Router,
     public vehiclesService: VehiclesService,
@@ -33,6 +37,23 @@ export class BikesDetailsComponent implements OnInit {
     if (this.title == 'Bikes') this.getTwoWheelerData();
 
     window.scrollTo(0, 0); // Scroll to top
+    this.loadMoreItems();
+  }
+
+  loadMoreItems() {
+    this.filteredtwowheelerlist = this.filteredtwowheelerlist.slice(0, this.itemsToShow);
+  }
+  @HostListener('window:scroll', [])
+  onScroll() {
+    const pos = window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000; // Trigger when near bottom
+    if (pos && !this.loadingMore) {
+      this.loadingMore = true; // Set loading flag
+      setTimeout(() => {
+        this.itemsToShow += 8; // Increase the number of items to show
+        this.loadMoreItems(); // Load more items
+        this.loadingMore = false; // Reset loading flag
+      }, 1000); // 1 second delay
+    }
   }
 
   getTwoWheelerData() {

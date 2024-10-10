@@ -12,7 +12,8 @@
                <img src="assets/images/search.svg" alt="Search" />
             </button>
             <div *ngIf="suggestionsVisible" class="suggestions">
-               <div *ngFor="let suggestion of filteredSuggestions" (click)="selectSuggestion(suggestion.twId)">{{ suggestion.manufacturer }} {{ suggestion.model }} {{ suggestion.variant }}</div>
+               <div *ngIf="suggestionTitleVisible" class="suggestion-title">Top vehicles</div>
+               <div *ngFor="let suggestion of filteredSuggestions" (click)="selectSuggestion(suggestion.twId)" class="suggestion-item">{{ suggestion.manufacturer }} {{ suggestion.model }} {{ suggestion.variant }}</div>
             </div>
          </div>
       </div>

@@ -14,6 +14,7 @@ import { CustomerEnquiriesComponent } from './component/customer-enquiries/custo
 import { BsModalService, ModalModule } from 'ngx-bootstrap/modal';
 import { SearchPipePipe } from './search-pipe.pipe';
 import { LocationStrategy, HashLocationStrategy, PathLocationStrategy } from '@angular/common';
+import { MobileHeaderComponent } from './component/mobile-header/mobileHeader.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { LocationStrategy, HashLocationStrategy, PathLocationStrategy } from '@a
     OnlyNumberDirective,
     EmailValidatorDirective,
     CustomerEnquiriesComponent,
-    SearchPipePipe
+    SearchPipePipe,
+    MobileHeaderComponent
   ],
   imports: [
     BrowserModule,

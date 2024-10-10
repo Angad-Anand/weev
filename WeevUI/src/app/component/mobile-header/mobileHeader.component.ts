@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { VehiclesService } from 'src/app/modules/_services/vehicles.service';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+  selector: 'app-mobile-header',
+  templateUrl: './mobileHeader.component.html',
+  styleUrls: ['./mobileHeader.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class MobileHeaderComponent implements OnInit {
   token: any;
   isLogin: boolean = false;
 
@@ -35,17 +35,17 @@ export class HeaderComponent implements OnInit {
     const searchBox = document.querySelector('.search-box');
 
     if (searchBox && !searchBox.contains(target)) {
-      this.suggestionsVisible = false; // Hide suggestions when clicking outside
+      this.suggestionsVisible = false; 
+      this.resetLayout();// Hide suggestions when clicking outside
     }
   }
 
   showSuggestions() {
     this.filteredSuggestions = this.suggestions.filter(suggestion =>
       suggestion.manufacturer.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
-      suggestion.model.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+      suggestion.model.toLowerCase().includes(this.searchTerm.toLowerCase())||
       suggestion.variant.toLowerCase().includes(this.searchTerm.toLowerCase())
     ).slice(0, 10);
-    
     this.suggestionsVisible = this.filteredSuggestions.length > 0; // Show if there are filtered suggestions
     this.suggestionTitleVisible = this.searchTerm.length === 0; // Hide title if there is input
   }
@@ -56,7 +56,6 @@ export class HeaderComponent implements OnInit {
 
   search() {
     this.showSuggestions();
-      
   }
 
   getTwoWheelerData() {
@@ -74,6 +73,23 @@ export class HeaderComponent implements OnInit {
 
   onSelect(twId: any) {
     this.router.navigate(['/Selection', twId]);
+  }
+
+  isSearchBoxActive: boolean = false;
+
+  resetLayout() {
+    this.renderer.setStyle(document.querySelector('.leftarea'), 'width', '15%');
+    this.renderer.setStyle(document.querySelector('.leftarea'), 'display', 'flex');
+    this.renderer.setStyle(document.querySelector('.rightarea'), 'width', '75%');
+    this.renderer.setStyle(document.querySelector('.search-box'), 'width', '100%');
+  }
+
+  onSearchBoxClick() {
+    this.search();
+    this.isSearchBoxActive = true; // Set to true when search box is clicked
+    this.renderer.setStyle(document.querySelector('.leftarea'), 'display', 'none');
+    this.renderer.setStyle(document.querySelector('.rightarea'), 'width', '100%');
+    this.renderer.setStyle(document.querySelector('.search-box'), 'width', '100%');
   }
 }
 

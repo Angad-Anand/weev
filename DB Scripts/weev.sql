@@ -90,7 +90,7 @@ LOCK TABLES twimagedata WRITE;
 INSERT INTO `twimagedata` 
 VALUES
   (
-1, 1,'../../../assets/images/2W/ola/S1 air/Color','ola-S1 air-White','', '', 'ola-S1 air-Jet Black', '','', 'ola-S1 air-Neo Mint', 'ola-S1 air-Liquid Silver', '', '', '', '', '', ''
+1, 1,'../../../assets/images/2W/ola/S1 air/Color','','', 'ola-S1 air-White', 'ola-S1 air-Jet Black', '','', 'ola-S1 air-Neo Mint', 'ola-S1 air-Liquid Silver', '', '', '', '', '', ''
   ),
   (
     2, 2, '../../../assets/images/2W/ola/S1/Color', '','ola-S1-Anthracite Grey', '', 'ola-S1-Porcelain White', '', '', 'ola-S1-Coral Glam', '', '', '', '', '', '', ''
@@ -101,11 +101,11 @@ VALUES
   ),
   (
     4, 4, 
-    '../../../assets/images/2W/Ather/Color','Ather-Lunar Grey', 'Ather-Space Grey', 'Ather-Still white', 'Ather-Cosmic Black', '', 'Ather-True Red', '', '', '', '', 'Ather-Salt Green', '', '', ''
+    '../../../assets/images/2W/Ather/Color','Ather-Space Grey', 'Ather-Lunar Grey', 'Ather-Still white', 'Ather-Cosmic Black', '', 'Ather-True Red', '', '', '', '', 'Ather-Salt Green', '', '', ''
   ),
   (
     5, 5, 
-    '../../../assets/images/2W/Ather/Color', 'Ather-Lunar Grey', 'Ather-Space Grey', 'Ather-Still white', 'Ather-Cosmic Black', '', 'Ather-True Red', '', '', '', '', 'Ather-Salt Green', '', '', ''
+    '../../../assets/images/2W/Ather/Color', 'Ather-Space Grey', 'Ather-Lunar Grey', 'Ather-Still white', 'Ather-Cosmic Black', '', 'Ather-True Red', '', '', '', '', 'Ather-Salt Green', '', '', ''
   ),
   (
     6, 6, 
@@ -124,10 +124,10 @@ VALUES
     '../../../assets/images/2W/Revolt/Color', 'Revolt-Mist Grey', '', '', 'Revolt-Comic Black', '', 'Revolt-Rebel Red', '', '', '', '', '', '', '', ''
   ),
   (
-    10, 10, '../../../src/assets/images/2W/Bajaj/Chetak Premium/Color', 'Bajaj-Chetak Premium-Hazelnut', '', '', 'Bajaj-Chetak Premium-Brooklun Black', '', '', 'Bajaj-Chetak Premium-Indigo Metallic', '', '', '', '', '', '', ''
+    10, 10, '../../../assets/images/2W/Bajaj/Chetak Premium/Color', 'Bajaj-Chetak Premium-Hazel nut', '', '', 'Bajaj-Chetak Premium-Brooklun Black', '', '', 'Bajaj-Chetak Premium-Indigo Metallic', '', '', '', '', '', '', ''
   ),
   (
-    11, 11, '../../../assets/images/2W/Bajaj/Chetak Premium 2023/Color', 'Bajaj-Chetak Premium 2023-Matte Coarse Grey', '', '', '', '', '', 'Bajaj-Chetak Premium 2023-Matte Carebbean Blue', '', '', '', '', '', '', ''
+    11, 11, '../../../assets/images/2W/Bajaj/Chetak Premium 2023/Color', 'Bajaj-Chetak Premium 2023-Matte Coarse Grey', '', 'Bajaj-Chetak Premium 2023-Satin Black', '', 'Bajaj-Chetak Premium 2023-Velluto Russo', '', 'Bajaj-Chetak Premium 2023-Matte Carebbean Blue', '', '', '', '', '', '', ''
   ),
   (
     12, 12, '../../../assets/images/2W/Hero/Vida/Color', '', '', 'Hero -Vida-White', '', '', 'Hero -Vida-Red', '', '', '', '', '', '', 'Hero -Vida-Orange', ''  ),
@@ -137,7 +137,7 @@ VALUES
     14, 14, '../../../assets/images/2W/Simple/One/Color', '', '', 'Simple-One-azure- grace white', 'Simple-One-brazen black', '', 'Simple-One-azure- namma red', 'Simple-One-azure- blue', '','', '', '', '', '', ''
   ),
   (
-    15, 15, '../../../assets/images/2W/Simple/One/Color', 'Simple-One-azure- grace white','', '',  'Simple-One-brazen black', '', 'Simple-One-azure- namma red', 'Simple-One-azure- blue', '', '', '', '', '', '', ''
+    15, 15, '../../../assets/images/2W/Simple/One/Color', '','', 'Simple-One-azure- grace white',  'Simple-One-brazen black', '', 'Simple-One-azure- namma red', 'Simple-One-azure- blue', '', '', '', '', '', '', ''
   ),
   (
     16, 16, '../../../assets/images/2W/Torq/Kartos/Color', '', '', 'Torq-Kartos-white', 'Torq-Kartos-black', '', 'Torq-Kartos-red', 'Torq-Kartos-blue', '', '', '', '', '', '', ''
@@ -146,7 +146,7 @@ VALUES
     17, 17, '../../../assets/images/2W/Torq/Kartos/Color', '', '', 'Torq-Kartos-white', 'Torq-Kartos-black', '', 'Torq-Kartos-red', 'Torq-Kartos-blue', '', '', '', '', '', '', ''
   ),
   (
-    18, 18, '../../../assets/images/2W/Ampere/MagnusEX/Color', 'Ampere-Magnus EX-Galactic Grey', '', 'Ampere-Magnus EX-Glacial White', 'Ampere-Magnus EX-Graphite Black', '', 'Ampere-Magnus EX-Metallic Red', 'Ampere-Magnus EX-Ocean Blue', '', '', '', '', '', '', ''
+    18, 18, '../../../assets/images/2W/Ampere/Magnus EX/Color', 'Ampere-Magnus EX-Galactic Grey', '', 'Ampere-Magnus EX-Glacial White', 'Ampere-Magnus EX-Graphite Black', '', 'Ampere-Magnus EX-Metallic Red', 'Ampere-Magnus EX-Ocean Blue', '', '', '', '', '', '', ''
   ),
   (
     19, 19, '../../../assets/images/2W/Okinawa/PraisePro/Color', '', '', '', 'Okinawa-PrasePro-Sparkle Black', '', 'Okinawa-PrasePro-Glosy Red Black', 'Okinawa-PrasePro-Sparkle Blue', '', '', '', 'Okinawa-PrasePro-Seafoam Green/Okinawa-PrasePro-Military Green', '', 'Okinawa-PrasePro-Sun Orange', 'Okinawa-PrasePro-Mocha Brown'
@@ -173,46 +173,42 @@ VALUES
     26, 26, '../../../assets/images/2W/Atumobile/Atum 1.0/Color', 'Atumobile-Atum 1.0-Grey', '', 'Atumobile-Atum 1.0-White', 'Atumobile-Atum 1.0-Black', '', 'Atumobile-Atum 1.0-Red', 'Atumobile-Atum 1.0-Blue', '', '', '', '', '', '', ''
   ),
   (
-    27, 27, '../../../assets/images/2W/Pure/eTryst 350/Color', 'Pure-eTryst 350-Punch Black', '', '', '',  '', '', '', '', '', '', '', '', '', ''
+    27, 27, '../../../assets/images/2W/Pure/eTryst 350/Color', '', '', '', 'Pure-eTryst 350-Punch Black',  '', 'Pure-eTryst 350-Tan Red', 'Pure-eTryst 350-Sea Blue', '', '', '', '', '', '', ''
   ),
    (
-    28, 28, '../../../assets/images/2W/Pure/eTryst 350/Color', 'Pure-eTryst 350-Punch Black', '', '', '',  '', '', '', '', '', '', '', '', '', ''
+    28, 28, '../../../assets/images/2W/Pure/epluto 7g/Color', 'Pure-epluto 7g-Active Grey', '', 'Pure-epluto 7g-Pearly White', 'Pure-epluto 7g-Shadow Black',  '', 'Pure-epluto 7g-Ruby Red', 'Pure-epluto 7g-Electronic Blue', '', 'Pure-epluto 7g-Stripling Yellow', '', '', '', '', ''
   ),
    (
-    29, 29, '../../../assets/images/2W/Pure/eTryst 350/Color', 'Pure-eTryst 350-Punch Black', '', '', '',  '', '', '', '', '', '', '', '', '', ''
+    29, 29, '../../../assets/images/2W/Pure/Neo Entrance/Color', '', '', '', '',  '', '', '', '', '', '', '', '', '', ''
   ),
    (
-    30, 30, '../../../assets/images/2W/Pure/eTryst 350/Color', 'Pure-eTryst 350-Punch Black', '', '', '',  '', '', '', '', '', '', '', '', '', ''
+    30, 30, '../../../assets/images/2W/Okinawa/Okhi 90/Color', 'Okinawa-Okhi 90-Grey', '', 'Okinawa-Okhi 90-White', '',  '', 'Okinawa-Okhi 90-Red', 'Okinawa-Okhi 90-Blue', '', '', '', '', '', '', ''
   ),
    (
-    31, 31, '../../../assets/images/2W/Pure/eTryst 350/Color', 'Pure-eTryst 350-Punch Black', '', '', '',  '', '', '', '', '', '', '', '', '', ''
+    31, 31, '../../../assets/images/2W/Hop/OXO/Color', 'Hop-OXO-Twilight Grey', '', '', 'Hop-OXO-True Black',  '', 'Hop-OXO-Candy Red', 'Hop-OXO-Magnetic Blue', '', 'Hop-OXO-Electric Yellow', '', '', '', '', ''
   ), (
-    32, 32, '../../../assets/images/2W/Pure/eTryst 350/Color', 'Pure-eTryst 350-Punch Black', '', '', '',  '', '', '', '', '', '', '', '', '', ''
+    32, 32, '../../../assets/images/2W/Hop/OXO/Pro/Color', '', '', '', '',  '', '', '', '', '', '', '', '', '', ''
   ),(
-    33, 33, '../../../assets/images/2W/Pure/eTryst 350/Color', 'Pure-eTryst 350-Punch Black', '', '', '',  '', '', '', '', '', '', '', '', '', ''
+    33, 33, '../../../assets/images/2W/Ultraviolette/F77/Color', 'Ultraviolette-F77-Airstrike', '', '', 'Ultraviolette-F77-Shadow',  '', 'Ultraviolette-F77-Laser', '', '', '', '', '', '', '', ''
   ), 
-    (34, 34, '../../../assets/images/2W/Pure/eTryst 350/Color', 'Pure-eTryst 350-Punch Black', '', '', '',  '', '', '', '', '', '', '', '', '', ''
-  ),(
-    35, 35, '../../../assets/images/2W/Pure/eTryst 350/Color', 'Pure-eTryst 350-Punch Black', '', '', '',  '', '', '', '', '', '', '', '', '', ''
-  ),(
-    36, 36, '../../../assets/images/2W/Pure/eTryst 350/Color', 'Pure-eTryst 350-Punch Black', '', '', '',  '', '', '', '', '', '', '', '', '', ''
+    (34, 34, '../../../assets/images/2W/Ultraviolette/F77/Color', 'Ultraviolette-F77-Airstrike', '', '', 'Ultraviolette-F77-Shadow',  '', 'Ultraviolette-F77-Laser', '', '', '', '', '', '', '', ''
+  ),
+    (35, 35, '../../../assets/images/2W/Ultraviolette/F77 Limited/Color', '', '', '', '',  '', '', '', '', '', '', '', '', '', ''
+  ),
+  (
+    36, 36, '../../../assets/images/2W/Okinawa/iPraise+/Color', '', '', '', 'Okinava-iPraise+ -Black',  'Okinava-iPraise+ -Liquid Metal', 'Okinava-iPraise+ -Red', 'Okinava-iPraise+ -Ocean Blue', '', '', 'Okinava-iPraise+ -Electric Mauve Purple', 'Okinava-iPraise+ -Electric Green', '', '', ''
   ), (
-    37, 37, '../../../assets/images/2W/Pure/eTryst 350/Color', 'Pure-eTryst 350-Punch Black', '', '', '',  '', '', '', '', '', '', '', '', '', ''
+    37, 37, '../../../assets/images/2W/Okaya/Faast F4/Color', 'Okaya-FaastF4-Metallic Grey', '', 'Okaya-FaastF4-Metallic White', 'Okaya-FaastF4-Metallic Black',  '', 'Okaya-FaastF4-Mettalic Red', 'Okaya-FaastF4-Metallic Cyan', 'Okaya-FaastF4-Metallic Silver', '', '', 'Okaya-FaastF4-Matte Green', '', '', ''
   ), (
-    38, 38, '../../../assets/images/2W/Pure/eTryst 350/Color', 'Pure-eTryst 350-Punch Black', '', '', '',  '', '', '', '', '', '', '', '', '', ''
+    38, 38, '../../../assets/images/2W/One Electric/Kridn/Color', '', '', '', '',  '', 'One Electric-Kridn-Red', '', '', '', '', '', '', '', ''
   ), (
-    39, 39, '../../../assets/images/2W/Pure/eTryst 350/Color', 'Pure-eTryst 350-Punch Black', '', '', '',  '', '', '', '', '', '', '', '', '', ''
+    39, 39, '../../../assets/images/2W/Rowwet/Trono/Color', 'Rowwet-Trono-Grey', '', '', '',  '', '', '', '', '', '', '', '', '', ''
   ), (
-    40, 40, '../../../assets/images/2W/Pure/eTryst 350/Color', 'Pure-eTryst 350-Punch Black', '', '', '',  '', '', '', '', '', '', '', '', '', ''
+    40, 40, '../../../assets/images/2W/River/Indie/Color', '', '', '', '',  '', 'River-Indie-Summer Red', 'River-Indie-Monsoon Blue', '', 'River-Indie-Spring Yellow', '', '', '', '', ''
   );
 
 /*!40000 ALTER TABLE `twimagedata` ENABLE KEYS */;
 UNLOCK TABLES;
-
-
-
-
-
 
 
 
@@ -356,16 +352,16 @@ INSERT INTO `twowheelerdata` VALUES
 (24,'Atumobile','Atum Vader','','Top',99999,65,198,'',0.000,0.000,'High Speed','Yes','','site',0,0.000,2.700,100,'Lithium Ion',2.300,0,0,'NA',0,'Yes','NA','NA','NA','NA','NA','NA',25,'NA',1.400,0.000,'Yes','NA','0','Yes','Speed Modes - (3 - L,M,H ), Kill Switch, Combination Switch, Brake Lever cut-off Switch, Charger cut-off sensor','NA','NA','NA','NA','NA','Digital','Digital','Digital','NA','','NA','NA','NA','NA','NA',7,'NA','Yes','Electric Bikes, Cafe Racer Bikes','','NA',700,2020,1030,809,230,1350,100.000,0,'LED','NA',65,'BLDC',0,0,'Hub Motor',0,0,'NA','Telescopic, 31mm Conventional Fork','Twin Shock Aborber, Gas Filled With Canister','Drum','Drum','Front :-100/90-17 Rear :-100/90-17','Front :-431.8 mm,Rear :-431.8 mm','Spoke',4,"Bike"),
 (25,'Benling','Believe','','Top',97520,75,0,'',0.000,0.000,'High Speed','No','','',0,3.000,3.200,120,'Lithium-Ion',3.200,0,0,'NA',0,'Yes','Digital','NA','NA','NA','Yes','Yes',0,'NA',0.000,0.000,'NA','NA','0','Yes','Parking Assist, Smart Break Down Assist','NA','NA','NA','NA','NA','Digital','Digital','NA','NA','','NA','NA','NA','NA','NA',18,'NA','NA','Electric Bikes','','NA',690,1800,1140,0,160,1420,0.000,248,'LED','NA',75,'BLDC',0,0,'NA',36,50000,'NA','Telescopic','Telescopic','Disc','Disc','Front :-90/90-12 Rear :-90/90-12','Front :-304.8 mm,Rear :-304.8 mm','Alloy',3,"Scooter"),
 (26,'Atumobile','Atum 1.0','','Top',59999,25,192,'',0.000,0.000,'Ristricted Speed','','Online','site',1019,0.000,2.500,0,'Lithium Ion',1.248,0,0,'NA',0,'Yes','Digital','NA','NA','NA','NA','NA',14,'NA',0.336,0.000,'NA','NA','0','NA','Charger Warranty - 1 Year','NA','NA','NA','NA','NA','Digital','Digital','NA','NA','','NA','NA','NA','NA','NA',0,'NA','NA','Electric Bikes','','NA',0,0,0,750,280,0,51.000,0,'LED','NA',25,'NA',12,0,'Hub Motor',24,0,'NA','NA','NA','Disc','Disc','Front :-4.00-20, Rear :-4.00-20','Front :-508 mm,Rear :-508 mm','Spoke',4,"Bike"),
-(27,'Pure EV','eTryst 350','','TopTop',154999,85,360,'',0.000,0.000,'High Speed','Enquiry only','','',0,3.000,4.000,140,'Lithium Ion',3.500,0,0,'NA',0,'NA','NA','NA','NA','NA','NA','NA',0,'NA',0.672,0.000,'NA','NA','0','Yes','Ride Mode - Drive 60 kmph | Cross Over 75 kmph | Thrill 85 kmph, Controller - 72 V 4 Vector Looped, BMS - Active Balance 100 A','NA','NA','Yes','NA','NA','Digital','Digital','Digital','NA','','NA','NA','NA','NA','NA',16,'Yes','NA','Electric Bikes','','NA',0,2040,0,770,180,1375,120.000,150,'LED','Yes',85,'BLDC',0,0,'Hub Motor',0,0,'NA','Hydraulic Dual Suspension','Hydraulic Dual Suspension','Disc','Disc','Front :-2.75-18, Rear :-3.00-17','Front :-457.2 mm,Rear :-431.8 mm','Alloy',3,"Bike"),
+(27,'Pure EV','eTryst 350','','Top',154999,85,360,'',0.000,0.000,'High Speed','Enquiry only','','',0,3.000,4.000,140,'Lithium Ion',3.500,0,0,'NA',0,'NA','NA','NA','NA','NA','NA','NA',0,'NA',0.672,0.000,'NA','NA','0','Yes','Ride Mode - Drive 60 kmph | Cross Over 75 kmph | Thrill 85 kmph, Controller - 72 V 4 Vector Looped, BMS - Active Balance 100 A','NA','NA','Yes','NA','NA','Digital','Digital','Digital','NA','','NA','NA','NA','NA','NA',16,'Yes','NA','Electric Bikes','','NA',0,2040,0,770,180,1375,120.000,150,'LED','Yes',85,'BLDC',0,0,'Hub Motor',0,0,'NA','Hydraulic Dual Suspension','Hydraulic Dual Suspension','Disc','Disc','Front :-2.75-18, Rear :-3.00-17','Front :-457.2 mm,Rear :-431.8 mm','Alloy',3,"Bike"),
 (28,'Pure EV','Epluto 7G','','Top',92999,60,240,'',0.000,0.000,'High Speed','Enquiry only','','',0,1.500,2.200,123,'Lithium Ion',2.500,0,0,'NA',0,'Yes','Digital','NA','NA','NA','Yes','NA',0,'NA',0.806,0.000,'Yes','NA','0','NA','Anti-theft Smart Lock, Controller - 60V 20 Tube Vector Looped, Battery Casing - Metallic, Cells - NMC 18650 3C Ultra Performance, BMS - Smart Active Balance 50A, Twist Throttle, Reflector, Left and Right Blinkers, Ladies Footrest','NA','NA','NA','NA','NA','Digital','Digital','Digital','NA','','NA','NA','NA','NA','NA',12,'NA','Yes','Electric Bikes','','NA',0,0,0,0,0,0,79.000,180,'LED','NA',60,'BLDC',0,0,'Hub motor',0,0,'NA','NA','NA','Disc','Drum','Front :-90/100-10 Rear :-3.00-10','Front :-254 mm,Rear :-254 mm','Alloy',3,"Bike"),
 (29,'Pure EV','Neo Etrance','','Top',87999,60,240,'',0.000,0.000,'High Speed','Enquiry only','','',0,0.000,2.200,120,'Lithium-ion',2.500,0,0,'NA',0,'NA','NA','NA','NA','NA','NA','NA',0,'NA',0.000,0.000,'Yes','NA','0','NA','Regenerative Braking, Reflector, Blinkers','NA','NA','NA','NA','NA','Digital','NA','NA','NA','','NA','NA','NA','NA','NA',12,'NA','Yes','Electric Bikes','','NA',0,0,0,0,0,0,0.000,150,'LED','NA',60,'BLDC',0,0,'Hub Motor',0,0,'NA','Telescopic','NA','Disc','Drum','Front :-: 90/100-10, Rear :-3.00-10','Front :-254 mm,Rear :-254 mm','Cast Alloy',3,"Scooter"),
 (30,'Okinawa','Okhi90','','Top',186006,90,330,'',0.000,0.000,'','','','',500,0.000,3.800,160,'Lithium Ion ( Detachable Battery )',3.600,60,0,'NA',0,'NA','Digital','Bluetooth,WiFi','Yes','NA','Yes','Yes',40,'NA',0.000,0.000,'Yes','NA','0','NA','E-ABS, Brake Lever - Aluminium Lever, Outer Appearance- Garnish – Chrome Plated, Parking Mode, Real-Time Asset Tracking, Find my device, Driver Behavior, Micro Charger with Auto Cut, ICAT/ARAI Approved - Yes','Yes','NA','NA','NA','NA','Digital','Digital','Digital','NA','','Yes','NA','NA','Yes','NA',12,'Yes','Yes','Electric Bikes','','Yes',710,2220,1160,900,175,1520,0.000,250,'LED','Yes',90,'NA',0,0,'Hub Motor',0,0,'NA','Hydraulic Telescopic','Double shocker with dual tube technology','Disc','Disc','Front :-100/80-16 Rear :-120/80','Front :-406.4 mm,Rear :-','Alloy',3,"Bike"),
-(31,'Hop','Exo','','Base',147024,90,0,'',0.000,0.000,'High speed','Yes','Online','Site',999,3.000,5.200,135,'Lithium-ion',3.750,240,300,'NA',0,'NA','Digital','Bluetooth','Yes','NA','Yes','Yes',0,'NA',0.850,0.000,'Yes','Yes','0','Yes','Riding Mode - Eco | Power | Sports, E-ABS, Park Assist, Helmet reminder','NA','NA','NA','NA','NA','Digital','Digital','Digital','NA','','NA','NA','NA','NA','NA',15,'Yes','Yes','Electric Bikes','','NA',793,2100,1065,780,180,0,140.000,250,'LED','Yes',90,'BLDC Hub motor',36,0,'Hub Motor',48,50000,'IP 67','Upright Telescopic Forks','Hydraulic spring loaded shock absorber','Disc','Disc','Front :-90/90-18 Rear :-130/70-17','Front :-457.2 mm,Rear :-431.8 mm','Alloy',4,"Scooter"),
-(32,'Hop','Exo','Pro','Top',149024,0,0,'',0.000,0.000,'High speed','Yes','Online','Site',999,3.000,5.200,150,'Lithium-ion',3.750,240,300,'NA',0,'NA','Digital','Bluetooth','Yes','NA','Yes','Yes',0,'NA',0.850,0.000,'Yes','Yes','0','Yes','Riding Mode - Eco | Power | Sports, E-ABS, Park Assist, Helmet reminder','NA','NA','NA','NA','NA','Digital','Digital','Digital','NA','','NA','NA','NA','NA','NA',18,'Yes','Yes','Electric Bikes','','NA',793,2100,1065,780,180,0,140.000,250,'LED','Yes',90,'BLDC Hub motor',36,0,'Hub Motor',48,50000,'IP 67','Upright Telescopic Forks','Hydraulic spring loaded shock absorber','Disc','Disc','Front :-90/90-18 Rear :-130/70-17','Front :-457.2 mm,Rear :-431.8 mm','Alloy',4,"Scooter"),
+(31,'Hop','OXO','','Base',147024,90,0,'',0.000,0.000,'High speed','Yes','Online','Site',999,3.000,5.200,135,'Lithium-ion',3.750,240,300,'NA',0,'NA','Digital','Bluetooth','Yes','NA','Yes','Yes',0,'NA',0.850,0.000,'Yes','Yes','0','Yes','Riding Mode - Eco | Power | Sports, E-ABS, Park Assist, Helmet reminder','NA','NA','NA','NA','NA','Digital','Digital','Digital','NA','','NA','NA','NA','NA','NA',15,'Yes','Yes','Electric Bikes','','NA',793,2100,1065,780,180,0,140.000,250,'LED','Yes',90,'BLDC Hub motor',36,0,'Hub Motor',48,50000,'IP 67','Upright Telescopic Forks','Hydraulic spring loaded shock absorber','Disc','Disc','Front :-90/90-18 Rear :-130/70-17','Front :-457.2 mm,Rear :-431.8 mm','Alloy',4,"Scooter"),
+(32,'Hop','OXO','Pro','Top',149024,0,0,'',0.000,0.000,'High speed','Yes','Online','Site',999,3.000,5.200,150,'Lithium-ion',3.750,240,300,'NA',0,'NA','Digital','Bluetooth','Yes','NA','Yes','Yes',0,'NA',0.850,0.000,'Yes','Yes','0','Yes','Riding Mode - Eco | Power | Sports, E-ABS, Park Assist, Helmet reminder','NA','NA','NA','NA','NA','Digital','Digital','Digital','NA','','NA','NA','NA','NA','NA',18,'Yes','Yes','Electric Bikes','','NA',793,2100,1065,780,180,0,140.000,250,'LED','Yes',90,'BLDC Hub motor',36,0,'Hub Motor',48,50000,'IP 67','Upright Telescopic Forks','Hydraulic spring loaded shock absorber','Disc','Disc','Front :-90/90-18 Rear :-130/70-17','Front :-457.2 mm,Rear :-431.8 mm','Alloy',4,"Scooter"),
 (33,'Ultraviolette','F77','ORIGNAL','Base',380000,140,300,'',3.400,0.000,'High speed','Yes','Online','Site',0,0.000,27.000,176,'Lithium-ion',7.100,0,300,'NA',3,'Yes','Digital','Bluetooth,WiFi','Yes','Yes','NA','Yes',0,'NA',0.000,0.000,'Yes','Yes','0','Yes','Ride Modes - Glide | Combat | Ballistic, Park Assist, SRB7 Battery Pack, Battery Management System, IEC 62196-6 Charging Port, Throttle Control, Up To 75 km Of Range Per Hour Of Charge, Ambient Light Sensor, Headlight Auto On/Off, GNSS enabled real-time position and velocity discovery, Maps with real-time traffic information, Vehicle Locator, Ride History & Ride Analytics, Temperature, Voltage and Current Sensors with Active Tracking and Efficiency Mapping across the Vehicle, Sensor Fusion technology using 9- axis Inertial Measurement Unit (IMU) along with built-in accelerometer, gyroscope & magnetometer Shock and Impact sensors for Fall and Crash Detection Error reporting through Ultraviolette Smartphone App , LTE connectivity with integrated eSIM, WLAN, GPS/GLONASS, Hazard Lights, Lockdown Mode, Fall & Crash Sensor, Emergency Contact Alert','Yes','Yes','NA','NA','Yes','Digital','Digital','Digital','NA','Yes','Yes','UV Automotive Linux OS','NA','Yes','NA',0,'Yes','Yes','Electric Bikes, Sports Bikes','','NA',0,0,0,800,160,1340,197.000,0,'LED','NA',140,'Permanent Magnet AC Motor',0,0,'Chain Drive',36,30000,'IP67 ( Battery )','Upside-down Telescopic fork with a diameter of 41 mm','Monoshock - preload adjustable','Disc','Disc','Front :-110/70-17 Rear :-150/60-17','Front :-431.8 mm,Rear :-431.8 mm','Alloy',4,"Scooter"),
 (34,'Ultraviolette','F77','RECON','Top',455000,147,300,'',3.100,0.000,'High speed','Yes','Online','Site',0,0.000,29.000,261,'Lithium-ion',10.300,0,300,'NA',3,'Yes','Digital','Bluetooth,WiFi','Yes','Yes','NA','Yes',0,'NA',0.000,0.000,'Yes','Yes','0','Yes','Ride Modes - Glide | Combat | Ballistic, Park Assist, SRB10 Battery Pack, Battery Management System, IEC 62196-6 Charging Port, Throttle Control, Up To 75 km Of Range Per Hour Of Charge, Ambient Light Sensor, Headlight Auto On/Off, GNSS enabled real-time position and velocity discovery, Maps with real-time traffic information, Vehicle Locator, Ride History & Ride Analytics, Temperature, Voltage and Current Sensors with Active Tracking and Efficiency Mapping across the Vehicle, Sensor Fusion technology using 9- axis Inertial Measurement Unit (IMU) along with built-in accelerometer, gyroscope & magnetometer Shock and Impact sensors for Fall and Crash Detection Error reporting through Ultraviolette Smartphone App , LTE connectivity with integrated eSIM, WLAN, GPS/GLONASS, Hazard Lights, Lockdown Mode, Fall & Crash Sensor, Emergency Contact Alert','Yes','Yes','NA','NA','Yes','Digital','Digital','Digital','NA','Yes','Yes','UV Automotive Linux OS','NA','Yes','NA',0,'Yes','Yes','Electric Bikes, Sports Bikes','','NA',0,0,0,800,160,1340,207.000,0,'LED','NA',147,'Permanent Magnet AC Motor',0,0,'Chain Drive',60,50000,'IP67 ( Battery )','Upside-down Telescopic fork with a diameter of 41 mm','Monoshock - preload adjustable','Disc','Disc','Front :-110/70-17 Rear :-150/60-17','Front :-431.8 mm,Rear :-431.8 mm','Alloy',4,"Scooter"),
 (35,'Ultraviolette','F77 Limited','','Top',550000,152,300,'',2.900,0.000,'High speed','Sold Out','','',0,0.000,32.000,261,'Lithium-ion',10.300,0,300,'NA',3,'Yes','Digital','Bluetooth,WiFi','Yes','Yes','NA','Yes',0,'NA',0.000,0.000,'Yes','Yes','0','Yes','Ride Modes - Glide | Combat | Ballistic, Park Assist, SRB10 Battery Pack, Battery Management System, IEC 62196-6 Charging Port, Throttle Control, Up To 75 km Of Range Per Hour Of Charge, Ambient Light Sensor, Headlight Auto On/Off, GNSS enabled real-time position and velocity discovery, Maps with real-time traffic information, Vehicle Locator, Ride History & Ride Analytics, Temperature, Voltage and Current Sensors with Active Tracking and Efficiency Mapping across the Vehicle, Sensor Fusion technology using 9- axis Inertial Measurement Unit (IMU) along with built-in accelerometer, gyroscope & magnetometer Shock and Impact sensors for Fall and Crash Detection Error reporting through Ultraviolette Smartphone App , LTE connectivity with integrated eSIM, WLAN, GPS/GLONASS, Hazard Lights, Lockdown Mode, Fall & Crash Sensor, Emergency Contact Alert , Aero Wheel Disc, Lever Guard','Yes','Yes','NA','NA','Yes','Digital','Digital','Digital','NA','Yes','Yes','UV Automotive Linux OS','NA','Yes','NA',0,'Yes','Yes','Electric Bikes, Sports Bikes','','NA',0,0,0,800,160,1340,207.000,0,'LED','NA',152,'Permanent Magnet AC Motor',0,0,'Chain Drive',96,100000,'IP67 ( Battery )','Upside-down Telescopic fork with a diameter of 41 mm','Monoshock - preload adjustable','Disc','Disc','Front :-110/70-17 Rear :-150/60-17','Front :-431.8 mm,Rear :-431.8 mm','Alloy',4,"Scooter"),
-(36,'Okinawa','Praise+','','Top',145965,58,270,'',0.000,0.000,'High speed','Yes','Online','Site',2000,1.000,2.500,139,'Lithium Ion',3.300,0,0,'NA',0,'NA','Digital','NA','Yes','NA','Yes','NA',0,'NA',0.000,0.000,'Yes','NA','0','NA','Road Side Assistance, ARAI/ICAT Approved, Micro- Charger with Auto Cut Function, E-ABS (Electronic- Assisted Braking System), Brake Lever - CNC Machined with Lever Adjustment','NA','NA','NA','NA','NA','Digital','Digital','NA','NA','NA','NA','NA','NA','Yes','NA',7,'Digital','Yes','Electric Bikes','','NA',745,1970,1165,800,175,0,0.000,150,'LED','Yes',58,'BLDC',0,0,'Belt Drive',0,0,'NA','Hydraulic Telescopic','Double shocker with dual tube technology','Disc','Disc','Front :-90/90-12 Rear :-90/90-12','Front :-304.8 mm,Rear :-304.8 mm','Alloy',3,"Scooter"),
+(36,'Okinawa','iPraise+','','Top',145965,58,270,'',0.000,0.000,'High speed','Yes','Online','Site',2000,1.000,2.500,139,'Lithium Ion',3.300,0,0,'NA',0,'NA','Digital','NA','Yes','NA','Yes','NA',0,'NA',0.000,0.000,'Yes','NA','0','NA','Road Side Assistance, ARAI/ICAT Approved, Micro- Charger with Auto Cut Function, E-ABS (Electronic- Assisted Braking System), Brake Lever - CNC Machined with Lever Adjustment','NA','NA','NA','NA','NA','Digital','Digital','NA','NA','NA','NA','NA','NA','Yes','NA',7,'Digital','Yes','Electric Bikes','','NA',745,1970,1165,800,175,0,0.000,150,'LED','Yes',58,'BLDC',0,0,'Belt Drive',0,0,'NA','Hydraulic Telescopic','Double shocker with dual tube technology','Disc','Disc','Front :-90/90-12 Rear :-90/90-12','Front :-304.8 mm,Rear :-304.8 mm','Alloy',3,"Scooter"),
 (37,'Okaya','Faast','','Top',109000,70,330,'',0.000,0.000,'','Yes','Online','Site',2500,1.200,2.000,0,'Lithium Ion',4.400,0,0,'NA',2,'Yes','Digital','NA','NA','NA','Yes','NA',0,'NA',0.000,0.000,'Yes','Yes','0','Sports,Yes','Motor Lock, Drive Modes - Eco | City | Sports, Walk Assist','NA','NA','Yes','NA','NA','Digital','Digital','NA','NA','NA','NA','NA','NA','NA','NA',9,'NA','NA','Electric Bikes','','NA',710,1280,710,0,195,0,0.000,0,'LED','Yes',70,'BLDC',36,0,'Hub Motor',36,0,'NA','Telescopic','Spring Loaded','Drum','Drum','NA','Front :-304.8 mm,Rear :-304.8 mm','NA',3,"Scooter"),
 (38,'One Electric Motorcycles','KRIDN','','Top',135000,95,0,'',8.000,0.000,'High Speed','','','',0,0.000,5.500,110,'Lithium Ion',3.000,0,0,'NA',0,'NA','Digital','NA','NA','NA','NA','NA',0,'NA',0.000,0.000,'NA','NA','0','NA','GPS/App Connect-Optional','NA','NA','NA','NA','NA','Digital','NA','Digital','NA','NA','NA','NA','NA','NA','NA',0,'NA','NA','Electric Bikes','','NA',0,0,0,0,0,0,0.000,0,'NA','Yes',95,'NA',0,0,'NA',0,0,'NA','Telescopic Hydrolic','Hydraulic','Disc','Disc','Front :-80/100-17, Rear :- 120/80-16','Front :-431.8 mm,Rear :-406.4 mm','Alloy',3,"Scooter"),
 (39,'Rowwet','Trono','','Top',0,100,180,'',0.000,0.000,'High Speed','No','','',0,0.000,3.700,100,'Lithium Ion',3.000,0,0,'NA',0,'NA','Digital','NA','NA','NA','NA','Yes',0,'NA',0.000,0.000,'NA','NA','0','NA','NA','NA','NA','NA','NA','NA','Digital','Digital','Digital','NA','NA','NA','NA','NA','NA','NA',0,'NA','NA','Electric Bikes, Sports Bikes','NA','NA',0,0,0,0,0,0,0.000,0,'LED','NA',100,'NA',0,0,'Hub Motor',0,0,'NA','NA','NA','Disc','Disc','NA','NA','Alloy',2,"Scooter"),
@@ -453,7 +449,7 @@ BEGIN
 
 	SELECT Id, TW_Ref_ID, Path, 
     CONCAT(Path,'/',Grey1 ,'.jpeg') Grey, 
-    CONCAT(Path,'/',Grey2 ,'.jpeg') Grey2, 
+    CONCAT(Path,'/',Grey2 ,'.jpeg') Greylight, 
     CONCAT(Path,'/',White ,'.jpeg') White, 
     CONCAT(Path,'/',Black1 ,'.jpeg') Black, 
     CONCAT(Path,'/',Black2 ,'.jpeg') Blacklight, 
@@ -502,7 +498,7 @@ BEGIN
         FROM twimagedata
         WHERE Grey1 != '' AND TW_Ref_ID = Id
         UNION
-        SELECT 'light Grey' AS col_name, COUNT(DISTINCT Grey2) AS count
+        SELECT 'Greylight' AS col_name, COUNT(DISTINCT Grey2) AS count
         FROM twimagedata
         WHERE Grey2 != '' AND TW_Ref_ID = Id
         UNION
@@ -537,6 +533,10 @@ BEGIN
         SELECT 'Pink' AS col_name, COUNT(DISTINCT Pink) AS count
         FROM twimagedata
         WHERE Pink != '' AND TW_Ref_ID = Id
+        UNION
+         SELECT 'Green' AS col_name, COUNT(DISTINCT Green) AS count
+        FROM twimagedata
+        WHERE Green != '' AND TW_Ref_ID = Id
         UNION
         SELECT 'Saffron' AS col_name, COUNT(DISTINCT Gerua) AS count
         FROM twimagedata
@@ -656,28 +656,10 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `GetTwowheelerdataByVehicleType`(
 	IN Vehicle VARCHAR(255)
 )
 BEGIN
-	SELECT TWId, Manufacturer, Model, Variant, VariantType, ExShowroomPrice, MaxSpeed,
-           ChargingTime, ConditionOfVehicle, Accelration0To60kmph, Accelration0To40kmph, 
-           Category, Available, OfflineOROnline, BookingSite, BookingPrice, ContinuousPower, 
-           MotorPower, RangeOfVehicle, BatteryType, BatteryCapacity, ChargingTime0To80Perc, 
-           ChargingTime0To100Perc, ChargingAtHome, NoOfBatteries, SwappableBattery, InstrumentConsole, 
-           BluetoothConnectivity, Navigation, GeoFencing, AntiTheftAlarm, USBChargingPort, 
-           UnderseatStorage, DistanceToEmptyIndicator, ChargerOutputMin, ChargerOutputMax, ChargingPoint, 
-           FastCharging, FastChargingTimeUpto80Perc, RidingModes, AdditionalFeatures, CallORSMSAlerts, MusicControl,
-           CentralLocking, CruiseControl, ExternalSpeakers, Speedometer, Tripmeter, Odometer, CarryHook, 
-           ArtificialExhaustSoundSystem, InternetConnectivity, OperatingSystem, Processor, MobileApplication, 
-           ChargingStationLocater, Gradeability, Clock, LowBatteryIndicator, BodyType, DimensionsAndCapacity, 
-           BootSpace, Width, Length, Height, SaddleHeight, GroundClearance, Wheelbase, KerbWeight, LoadCarryingCapacity,
-           TurnSignalLamp, DRLs, TopSpeed, MotorType, MotorWarrantyForMonths, MotorWarrantyForKm, DriveType, 
-           BatteryWarrantyForMonths, BatteryWarrantyForKm, WaterProofRating, SuspensionFront,
-           SuspensionRear, BrakesFront, BrakesRear, TyreSize, WheelSize, WheelsType, OurRating, VehicleType,
-           CONCAT(twi.Path, '/', twi.Image1, '.jpeg') AS Path
-    FROM twowheelerdata twd
-    INNER JOIN main_image twi
-    ON twd.TWId = twi.TW_Ref_ID
-    WHERE twd.VehicleType = Vehicle;
-    
-END
+	SELECT * 
+ 	FROM twowheelerdata
+	WHERE VehicleType = Vehicle;
+END;;
 
 DELIMITER ;
 
@@ -775,24 +757,24 @@ VALUES
 ( 25, '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'),
 ( 26, '../../../assets/images/2W/Atumobile/Atum 1.0/Images', '1', '2', '3', '4', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
 ( 27, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-( 28, '../../../assets/images/2W/Pure/eTryst 7g/Images', '1', '2', '3', '4', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-( 29, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-( 30, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-( 31, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-( 32, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-( 33, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-( 34, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-( 35, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-( 36, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-( 37, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-( 38, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-( 39, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-( 40, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-( 41, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-( 42, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-( 43, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-( 44, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-( 45, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 28, '../../../assets/images/2W/Pure/epluto 7g/Images', '1', '2', '3', '4', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 29, '../../../assets/images/2W/Pure/Neo Entrance/Images', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 30, '../../../assets/images/2W/Okinawa/Okhi 90/Images', '1', '2', '3', '4', '5', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 31, '../../../assets/images/2W/Hop/OXO/Images', '1', '2', '3', '4', '5', '6', '7', '8', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 32, '../../../assets/images/2W/Hop/OXO/Pro/Images', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 33, '../../../assets/images/2W/Ultraviolette/F77/Images', '1', '2', '3', '4', '5', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 34, '../../../assets/images/2W/Ultraviolette/F77/Images', '1', '2', '3', '4', '5', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 35, '../../../assets/images/2W/Ultraviolette/F77 Limited/Images', '1', '2', '3', '4', '5', '6', '7', '8', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 36, '../../../assets/images/2W/Okinawa/iPraise+/Images', '1', '2', '3', '4', '5', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 37, '../../../assets/images/2W/Okaya/Faast F4/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 38, '../../../assets/images/2W/One Electric/Kridn/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 39, '../../../assets/images/2W/Rowwet/Trono/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 40, '../../../assets/images/2W/River/Indie/Images', '1', '2', '3', '4', '5', '6', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 41, '', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 42, '', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 43, '', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 44, '', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 45, '', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
 ( 46, '../../../assets/images/2W/Pure/eTryst 350/Images', '1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
 SELECT * FROM weev.main_image;
 -- drop table main_image;-- 

@@ -23,11 +23,11 @@
 </section>
 
 <div class="bikes-landingarea">
-   <div class="filter-buttons">
+   <!-- <div class="filter-buttons">
       <button (click)="filterByType('all')" [class.active]="activeFilter === 'all'">All</button>
       <button (click)="filterByType('bike')" [class.active]="activeFilter === 'bike'">Bike</button>
       <button (click)="filterByType('scooter')" [class.active]="activeFilter === 'scooter'">Scooter</button>
-   </div>
+   </div> -->
    <div *ngIf="loading" class="loading">
       <div class="loader"></div>
    </div>
@@ -37,7 +37,7 @@
             (click)="onSelect(Cll.twId)">
          <div class="infobox" (click)="onSelect(Cll.twId)">
             <h4>{{Cll.manufacturer}} {{Cll.model}}</h4>
-            <p>Rs. {{Cll.exShowroomPrice}} *</p>
+            <p>Rs. {{Cll.exShowroomPrice}}</p>
             <span>
                <img src="assets/images/star-g.svg"
                   *ngFor="let item of [].constructor(Cll.selectedRating); let i = index">
@@ -47,7 +47,6 @@
          </div>
       </div>
    </div>
-   <div class="line"><a href="">more</a></div>
 </div>
 
 <!-- <div class="icobx">

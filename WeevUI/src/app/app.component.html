@@ -1,4 +1,5 @@
-<app-header></app-header>
+<app-header *ngIf="isDesktopMode()"></app-header>
+<app-mobile-header *ngIf="!isDesktopMode()"></app-mobile-header>
 <main>  
 <router-outlet></router-outlet>
 </main>
