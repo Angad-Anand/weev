@@ -13,6 +13,10 @@ export class VehicleAllSpecsComponent {
   productID: number = 0;
   productlist: Array<ProductListModel> = new Array<ProductListModel>();
 
+  activeTab: string = '';
+  loading: boolean = false;
+  loadingTimeout: any;
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -20,13 +24,23 @@ export class VehicleAllSpecsComponent {
     private cd: ChangeDetectorRef
   ) {
     this.route.params.subscribe((params) => (this.productID = params['twId']));
+    this.activeTab = 'specs';
   }
   ngOnInit(): void {
     window.scrollTo(0, 0); // Scroll to top
+    this.startLoading();
     this.productListModel = Object.assign({}, EMPTY_Application);
     if (this.productID != 0 || this.productID != undefined) {
       this.getProductDataWithID(+this.productID);
     }
+  }
+
+  startLoading() {
+    this.loading = true;
+    this.loadingTimeout = setTimeout(() => {
+      this.loading = false;
+      this.cd.detectChanges(); // Force change detection after navigation
+    }, 500);
   }
 
   getTruncatedFeatures(features: string | undefined): string {
@@ -52,6 +66,7 @@ export class VehicleAllSpecsComponent {
   }
 
   getProductDataWithID(productID: any) {
+    this.startLoading();
     this.vehiclesService
       .getProductDataWithID(productID)
       .subscribe((response) => {

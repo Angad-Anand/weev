@@ -1,14 +1,11 @@
 <div class="category">
     <div class="category_containers">
-        <div class="category_navbar">
-            <div (click)="onDetails()">{{productListModel?.model}}</div>
-            <div (click)="onSpecs()">Specs</div>
-            <div (click)="onVarient()">Varients</div>
-            <div class="active">Images</div>
-            <div (click)="onColor()">Colors</div>
-        </div>
+        <app-categorynavbar [activeTab]="activeTab"></app-categorynavbar>
     </div>
-    <div class="mainDetails">
+    <div *ngIf="loading" class="loading">
+        <div class="loader"></div>
+     </div>
+    <div *ngIf="!loading" class="mainDetails">
         <div class="gallery-container">
             <div class="main-image-container">
                 <img src="{{productListModel?.path}}" alt="" onerror="this.src='assets/images/pr4.png';">
@@ -24,13 +21,13 @@
             <div class="price">Price: Rs. {{productListModel?.exShowroomPrice}}</div>
             <div class="status">Booking Status: <div class="currentStatus">Available</div>
             </div>
-            <div class="color">
+            <!-- <div class="color">
                 Colours : 4
-            </div>
+            </div> -->
         </div>
     </div>
     <!-- images  -->
-    <div class="color_container">
+    <div *ngIf="!loading" class="color_container">
         <div id="colorCarousel" class="carousel-color">
             <div class="carousel-inner">
                 <div *ngFor="let imagePath of ReqimagePaths; let i = index" [class.active]="i === currentIndexImage">
@@ -55,7 +52,7 @@
         </div>
     </div>
     <!-- color -->
-    <div class="color_container" id="image_container">
+    <div *ngIf="!loading" class="color_container" id="image_container">
         <div class="color-title">Color Options For {{productListModel?.manufacturer}} {{productListModel?.model}}</div>
         <div id="colorCarousel" class="carousel-image">
             <div class="carousel-inner">
@@ -70,11 +67,11 @@
                         alt="" style="transform: rotate(180deg);"></button>
             </div> -->
         </div>
-        <div class="thumbnail-container-wrapper" >
+        <div class="thumbnail-container-wrapper">
             <div class="thumbnail-container">
                 <div *ngFor="let imagePath of colorimagePaths; let i = index" class="thumbnail "
                     (click)="currentIndexColor = i" [class.selected]="i === currentIndexColor"
-                    [style.opacity]="i === currentIndexColor ? '1' : '0.5'" [style.transition]="'opacity 0.3s ease'" >
+                    [style.opacity]="i === currentIndexColor ? '1' : '0.5'" [style.transition]="'opacity 0.3s ease'">
                     <img [src]="imagePath.colorPath" alt="Thumbnail" class="thumbnail-image">
                     <div class="color-name">
                         {{imagePath.colorName}}

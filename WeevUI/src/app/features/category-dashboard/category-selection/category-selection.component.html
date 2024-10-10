@@ -1,13 +1,6 @@
 <div class="category">
    <div class="category_containers">
-      <div class="category_navbar">
-         <div class="active">{{productListModel?.model}}</div>
-         <div (click)="onSpecs()">Specs</div>
-         <div (click)="scrollToVariants()">Varients</div>
-         <div (click)="onImages()">Images</div>
-         <div (click)="onColors()">Colors</div>
-         <!-- angad anand -->
-      </div>
+      <app-categorynavbar></app-categorynavbar>
       <div *ngIf="loading" class="loading">
          <div class="loader"></div>
       </div>
@@ -23,14 +16,14 @@
                         <img src="{{productListModel?.path}}" alt=""
                            style="width: 100%; height: 100%; object-fit: cover; filter: blur(1px);">
                         <div class="text-content">
-                           4<br>Colors
+                           {{colorCount}}<br>Colors
                         </div>
                      </div>
                      <div class="thumbnail" (click)="onImages()">
                         <img src="{{productListModel?.path}}" alt=""
                            style="width: 100%; height: 100%; object-fit: cover; filter: blur(1px);">
                         <div class="text-content">
-                           24<br>Images
+                           {{imageCount}}<br>Images
                         </div>
                      </div>
                   </div>
@@ -52,9 +45,9 @@
                <div class="price">Price: Rs. {{productListModel?.exShowroomPrice}}</div>
                <div class="status">Booking Status: <div class="currentStatus">Available</div>
                </div>
-               <div>
+               <!-- <div>
                   Colours : 4
-               </div>
+               </div> -->
             </div>
          </div>
          <div class="specs_booking">
@@ -99,10 +92,10 @@
                   </tr>
                   <tr>
                      <td>Booking Amount : </td>
-                     <td>{{productListModel?.bookingPrice}}Lakh</td>
+                     <td>{{productListModel?.bookingPrice}}</td>
                   </tr>
                </table>
-               <button class="standard_button booking_button">Interested in {{productListModel?.manufacturer}} {{productListModel?.model}}</button>
+               <button class="standard_button booking_button">Interested in {{productListModel?.model}}</button>
             </div>
          </div>
          <div class="variants-container" id="variantsContainer">

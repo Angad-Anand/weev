@@ -39,14 +39,27 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+   specificTwIds: Array<any> = [34,3,8,5,21]; 
+
   showSuggestions() {
-    this.filteredSuggestions = this.suggestions.filter(suggestion =>
-      suggestion.manufacturer.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
-      suggestion.model.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
-      suggestion.variant.toLowerCase().includes(this.searchTerm.toLowerCase())
-    ).slice(0, 10);
-    
-    this.suggestionsVisible = this.filteredSuggestions.length > 0; // Show if there are filtered suggestions
+    if (this.searchTerm) { // Check if there is a searchTerm
+      this.filteredSuggestions = this.suggestions.filter(suggestion =>
+        suggestion.manufacturer.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+        suggestion.model.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+        suggestion.variant.toLowerCase().includes(this.searchTerm.toLowerCase())
+      )
+      this.suggestionsVisible = this.filteredSuggestions.length > 0; // Show if there are filtered suggestions
+    } else {
+      // Filter suggestions based on specific twIds when there is no searchTerm
+      this.filteredSuggestions = this.suggestions.filter(suggestion =>
+        this.specificTwIds.includes(suggestion.twId)
+      );
+      // Sort filtered suggestions based on the order of specificTwIds
+      this.filteredSuggestions.sort((a, b) => {
+        return this.specificTwIds.indexOf(a.twId) - this.specificTwIds.indexOf(b.twId);
+      })
+      this.suggestionsVisible = this.filteredSuggestions.length > 0; // Show if there are filtered suggestions
+    }
     this.suggestionTitleVisible = this.searchTerm.length === 0; // Hide title if there is input
   }
 
@@ -56,7 +69,7 @@ export class HeaderComponent implements OnInit {
 
   search() {
     this.showSuggestions();
-      
+
   }
 
   getTwoWheelerData() {

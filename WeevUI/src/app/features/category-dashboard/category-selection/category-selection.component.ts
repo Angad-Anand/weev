@@ -25,7 +25,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CategorySelectionComponent implements OnInit, AfterViewChecked {
   @ViewChild('scrollMe') private myScrollContainer?: ElementRef;
-  
+
   scrollToVariants() {
     const variants_Container = document.getElementById('variantsContainer');
     variants_Container!.scrollIntoView({ behavior: 'smooth' });
@@ -49,6 +49,7 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
   isShowEngineTransmission: boolean = false;
   isShowFeatures: boolean = false;
 
+  twId: number = 0;
   productID: number = 0;
   productlist: Array<ProductListModel> = new Array<ProductListModel>();
   tabs: Array<any> = new Array<any>();
@@ -65,6 +66,7 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
   warranty: number = 0;
   title: string = '';
   loading: boolean = false; // Add loading state
+  loadingTimeout: any;
 
   constructor(
     private modal: UntypedFormBuilder,
@@ -80,7 +82,8 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
   }
 
   ngOnInit(): void {
-    window.scrollTo(0, 0); 
+    window.scrollTo(0, 0);
+    this.startLoading();
     this.scrollToBottom();
     this.route.params.subscribe((params) => {
       this.productID = params['twId'];
@@ -93,7 +96,16 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
       this.getOtherModelswithID(+this.productID);
       this.getTwoWheelerData();
       this.getforVarientsData();
+      this.getAllTabNameWithID(+this.productID);
     }
+  }
+
+  startLoading() {
+    this.loading = true;
+    this.loadingTimeout = setTimeout(() => {
+      this.loading = false;
+      this.cd.detectChanges(); // Force change detection after navigation
+    }, 500);
   }
 
   ngAfterViewChecked() {
@@ -170,21 +182,20 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
           const transformedResponse = this.transformResponse(response);
           this.varientList.push(transformedResponse); // Store transformed response
         });
-      });
-    }
-    
-    onVarientClick(item: any) {
-      this.loading = true; 
-      
-      window.scrollTo(0, 0); 
-      setTimeout(() => {
-        this.router.navigate(["/Selection", item.twId]).then(() => {
-          this.loading = false; // Reset loading after navigation
-          this.cd.detectChanges(); // Force change detection after navigation
-        });
-      }, 500);
-    }
+    });
+  }
 
+  onVarientClick(item: any) {
+    this.loading = true;
+
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      this.router.navigate(['/Selection', item.twId]).then(() => {
+        this.loading = false; // Reset loading after navigation
+        this.cd.detectChanges(); // Force change detection after navigation
+      });
+    }, 510);
+  }
 
   getOtherModelswithID(productID: any) {
     const generateRandomOffsets = (count: number, min: number, max: number) => {
@@ -208,15 +219,10 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
         });
     });
 
-    // console.log(this.nextproductlist); 
+    // console.log(this.nextproductlist);
   }
 
-  getTabNameWithID(productID: any) {
-    this.vehiclesService.getTabNameWithID(productID).subscribe((response) => {
-      this.tabs = response;
-      
-    });
-  }
+  
   // getImgNameWithID(productID: any) {
   //   this.vehiclesService.getImgNameWithID(productID).subscribe((response) => {
   //     this.ImgName = response;
@@ -361,7 +367,25 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
       .filter((item): item is { key: string; value: any } => item !== null); // Type guard to filter out null values
   }
 
-  twId: number = 0;
+  imageCount: number = 0;
+  getAllTabNameWithID(productID: any) {
+    this.vehiclesService
+      .getAllTabNameWithID(productID)
+      .subscribe((response) => {
+        this.imageCount = response.length;
+        // console.log(this.imageCount);
+      });
+  }
+
+  colorCount: number = 0;
+  getTabNameWithID(productID: any) {
+    this.vehiclesService.getTabNameWithID(productID).subscribe((response) => {
+      this.colorCount = response.length;
+      // console.log(this.colorCount);
+    });
+  }
+
+
   onImages() {
     this.twId = this.productID;
     this.router.navigate(['/Selection', this.twId, 'Colors']);
@@ -377,7 +401,7 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
           imageContainer.scrollIntoView({ behavior: 'smooth' });
           // console.log('scrolling');
         }
-      }, 200); // Set timeout to 500 milliseconds
+      }, 510); // Set timeout to 500 milliseconds
     });
   }
   onSpecs() {
@@ -487,7 +511,7 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
       `${(value / 60).toFixed(2)} hours (0-80%)`,
     chargingTime0To100Perc: (value) =>
       `${(value / 60).toFixed(2)} hours (0-100%)`,
-    bookingPrice: (value) => `${value} ₹`,
+    bookingPrice: (value) => `₹ ${value}`,
     accelration0To60kmph: (value) => `${value} sec (0-60 km/h)`,
     accelration0To40kmph: (value) => `${value} sec (0-40 km/h)`,
     continuousPower: (value) => `${value} kW`,

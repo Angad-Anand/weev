@@ -7,6 +7,7 @@ import { CategorySelectionComponent } from './category-selection/category-select
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { VehicleColorPageComponent } from './category-selection/VehicleColorPage/vehiclecolorpage.component';
 import { VehicleAllSpecsComponent } from './category-selection/VehicleAllSpecs/vehichleAllSpecs.component';
+import { CategorynavbarComponent } from './category-selection/categorynavbar/categorynavbar.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { VehicleAllSpecsComponent } from './category-selection/VehicleAllSpecs/v
     BikesDetailsComponent,
     CategorySelectionComponent,
     VehicleColorPageComponent,
-    VehicleAllSpecsComponent
+    VehicleAllSpecsComponent,
+    CategorynavbarComponent
   ],
   imports: [
     CommonModule,

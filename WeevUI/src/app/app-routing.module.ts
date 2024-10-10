@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 
 import {CategorySelectionComponent} from './features/category-dashboard/category-selection/category-selection.component';
+
 // import { DashboardComponent } from './features/category-dashboard/dashboard/dashboard.component';
 
 
@@ -19,11 +20,6 @@ const routes: Routes = [
     loadChildren: () => import('./features/vehicles-dashboard/vehicles-dashboard.module')
     .then(m => m.VehiclesDashboardModule)
   },
-  // {
-  //   path: '',
-  //   loadChildren: () => import('./features/category-dashboard/category-selection/category-selection.component')
-  //   .then(m => m.CategorySelectionComponent)
-  // },
 ];
 
 @NgModule({
@@ -33,7 +29,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes, { useHash: true })
   ],
   bootstrap: [AppComponent],
-  //imports: [RouterModule.forRoot(routes, { useHash: true })],
+  // imports: [RouterModule.forRoot(routes, { useHash: true })],
     exports: [RouterModule]
 })
 export class AppRoutingModule { }

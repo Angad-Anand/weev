@@ -7,13 +7,22 @@
       </div>
       <div class="rightarea">
          <div class="search-box">
-            <input type="text" placeholder="Search..." [(ngModel)]="searchTerm" (input)="showSuggestions()" (click)="search();"/>
+            <input type="text" placeholder="Search..." [(ngModel)]="searchTerm" (input)="showSuggestions()"
+               (click)="search();" />
             <button (click)="search();">
                <img src="assets/images/search.svg" alt="Search" />
             </button>
             <div *ngIf="suggestionsVisible" class="suggestions">
-               <div *ngIf="suggestionTitleVisible" class="suggestion-title">Top vehicles</div>
-               <div *ngFor="let suggestion of filteredSuggestions" (click)="selectSuggestion(suggestion.twId)" class="suggestion-item">{{ suggestion.manufacturer }} {{ suggestion.model }} {{ suggestion.variant }}</div>
+               <!-- <div *ngIf="suggestionTitleVisible" class="suggestion-title">Top vehicles</div> -->
+               <div *ngFor="let suggestion of filteredSuggestions" (click)="selectSuggestion(suggestion.twId)"
+                  class="suggestion-item">
+                  <div class="trending-icon" *ngIf="specificTwIds.includes(suggestion.twId)">
+                     <img src="assets/svg/trending.svg" />
+                  </div>
+                  <div class="suggestion-text">
+                     {{ suggestion.manufacturer }} {{ suggestion.model }} {{ suggestion.variant }}
+                  </div>
+               </div>
             </div>
          </div>
       </div>

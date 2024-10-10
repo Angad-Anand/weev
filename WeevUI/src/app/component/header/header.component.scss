@@ -59,6 +59,8 @@
   text-transform: uppercase;
 }
 
+
+
 .header .nav .rightarea .search-box .suggestions {
   position: absolute;
   top: 100%;
@@ -87,6 +89,12 @@
   font-size: 14px;
   padding: 10px 5px 10px 20px;
   border-bottom: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+}
+
+.header .nav .rightarea .search-box .suggestion-item .trending-icon {
+  margin-right: 10px;
 }
 
 .header .nav .rightarea .search-box .suggestion-item:hover {

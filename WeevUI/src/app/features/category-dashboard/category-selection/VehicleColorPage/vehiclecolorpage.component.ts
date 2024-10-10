@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { VehiclesService } from 'src/app/modules/_services/vehicles.service';
 import { ProductListModel } from 'src/app/modules/auth/_models/product.model';
@@ -21,21 +21,40 @@ export class VehicleColorPageComponent {
   currentIndexImage: number = 0;
   currentIndexColor: number =0;
 
+  activeTab: string = '';
+
+  loading: boolean = false;
+  loadingTimeout: any;
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private vehiclesService: VehiclesService
+    private vehiclesService: VehiclesService,
+    private cd: ChangeDetectorRef
   ) {
     this.route.params.subscribe((params) => (this.productID = params['twId']));
+    this.activeTab = 'images';
   }
 
+
   ngOnInit(): void {
+    this.startLoading();
     this.productListModel = Object.assign({}, EMPTY_Application);
     if (this.productID != 0 || this.productID != undefined) {
       this.getProductDataWithID(+this.productID);
       this.getTabNameWithID(+this.productID);
       this.getAllTabNameWithID(+this.productID);
     }
+
+  }
+
+
+  startLoading() {
+    this.loading = true;
+    this.loadingTimeout = setTimeout(() => {
+      this.loading = false;
+      this.cd.detectChanges(); // Force change detection after navigation
+    }, 500);
   }
 
   getTruncatedFeatures(features: string | undefined): string {
@@ -61,6 +80,7 @@ export class VehicleColorPageComponent {
   }
 
   getProductDataWithID(productID: any) {
+    this.startLoading();
     this.vehiclesService
       .getProductDataWithID(productID)
       .subscribe((response) => {

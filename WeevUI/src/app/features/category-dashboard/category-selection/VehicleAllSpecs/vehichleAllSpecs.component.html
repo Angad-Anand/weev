@@ -1,14 +1,11 @@
 <div class="category">
     <div class="category_containers">
-        <div class="category_navbar">
-            <div (click)="onDetails()">{{productListModel?.model}}</div>
-            <div class="active">Specs</div>
-            <div (click)="onVarient()">Varients</div>
-            <div (click)="onImages()">Images</div>
-            <div (click)="onColors()">Colors</div>
-        </div>
+        <app-categorynavbar [activeTab]="activeTab"></app-categorynavbar>
     </div>
-    <div class="mainDetails">
+    <div *ngIf="loading" class="loading">
+        <div class="loader"></div>
+     </div>
+    <div *ngIf="!loading" class="mainDetails">
         <div class="gallery-container">
             <div class="main-image-container">
                 <img src="{{productListModel?.path}}" alt="" onerror="this.src='assets/images/pr4.png';">
@@ -24,12 +21,12 @@
             <div class="price">Price: Rs. {{productListModel?.exShowroomPrice}}</div>
             <div class="status">Booking Status: <div class="currentStatus">Available</div>
             </div>
-            <div class="color">
+            <!-- <div class="color">
                 Colours : 4
-            </div>
+            </div> -->
         </div>
     </div>
-    <div class="spec-container">
+    <div *ngIf="!loading" class="spec-container">
         <h2 class="modelspecs_title">Overview
         </h2>
         <div class="table">
@@ -41,7 +38,7 @@
             </div>
         </div>
     </div>
-    <div class="spec-container">
+    <!-- <div *ngIf="!loading" class="spec-container">
         <h2 class="modelspecs_title">Booking Detail
         </h2>
         <div class="table">
@@ -52,8 +49,8 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="spec-container">
+    </div> -->
+    <div *ngIf="!loading" class="spec-container">
         <h2 class="modelspecs_title">Power and Battery
         </h2>
         <div class="table">
@@ -65,7 +62,7 @@
             </div>
         </div>
     </div>
-    <div class="spec-container">
+    <div *ngIf="!loading" class="spec-container">
         <h2 class="modelspecs_title">Features
         </h2>
         <div class="table">
@@ -77,7 +74,7 @@
             </div>
         </div>
     </div>
-    <div class="spec-container">
+    <div *ngIf="!loading" class="spec-container">
         <h2 class="modelspecs_title">Additional Features
         </h2>
         <div class="table">
@@ -89,7 +86,7 @@
             </div>
         </div>
     </div>
-    <div class="spec-container">
+    <div *ngIf="!loading" class="spec-container">
         <h2 class="modelspecs_title">Specifications
         </h2>
         <div class="table">
