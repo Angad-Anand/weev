@@ -60,12 +60,12 @@
                     <img [src]="imagePath.colorPath" alt="Vehicle Image" class="carousel-image">
                 </div>
             </div>
-            <!-- <div class="carousel-controls">
+            <div class="carousel-controls" style="position: relative; top: -50%;" [ngStyle]="{'display': isMobileView ? 'none' : 'relative'}">
                 <button class="carousel-button prev-button" (click)="prevSlideColor()"><img src="assets/svg/Back.svg"
                         alt=""></button>
                 <button class="carousel-button next-button" (click)="nextSlideColor()"><img src="assets/svg/Back.svg"
                         alt="" style="transform: rotate(180deg);"></button>
-            </div> -->
+            </div>
         </div>
         <div class="thumbnail-container-wrapper">
             <div class="thumbnail-container">

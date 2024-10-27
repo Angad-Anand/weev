@@ -1,0 +1,171 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.container {
+  margin: auto;
+  height: auto;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: 70% 30%; /* 70% for content, 30% for sidebar */
+  gap: 20px;
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+ 
+}
+
+p {
+  text-align: justify;
+  margin: 0; /* Ensure consistent spacing for paragraphs */
+}
+
+header {
+  text-align: center;
+  padding: 30px 0;
+}
+
+header h1 {
+  font-size: 2.5em;
+  color: #e65100;
+}
+
+.introduction {
+  padding: 15px;
+}
+
+.introduction h2 {
+  color: black;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+article {
+  margin: 20px 0;
+}
+
+article h3 {
+  color: black;
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+article p {
+  line-height: 1.6;
+  font-size: 1.1em;
+}
+
+.box {
+  width: 100%; /* Ensure full width within the grid */
+  background-color: #f8f8f8; /* Light background color */
+  border: 1px solid #ddd;
+  padding: 5%;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.vehicleBox {
+  position: relative;
+  border-radius: 15px;
+  margin: 10px;
+  overflow: hidden;
+  width: 90%;
+  transition: transform 0.3s ease; /* Smoother hover effect */
+  background: #fff;
+}
+
+.vehicleBox:hover {
+  transform: scale(1.05); /* Slightly larger hover effect */
+}
+
+.vehicleBox img {
+  width: 100%;
+  height: 200px; /* Set a fixed height for consistent layout */
+  object-fit: cover;
+}
+
+.infobox {
+  padding: 10px; /* Add padding for better content spacing */
+  transition: all 0.5s ease;
+}
+
+.vehicle-title {
+  font-size: 18px; /* Adjust font size for better readability */
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.infobox p {
+  color: #27ae60;
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.infobox span {
+  display: flex;
+  margin: 5px 0;
+}
+
+.infobox span img {
+  width: 14px; /* Slightly increase star size */
+  height: 14px;
+  margin-right: 3px;
+}
+
+/* Adjust grid for better structure */
+.grid-layout {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  gap: 0px 30px;
+  // height: 100%;
+}
+
+
+.sidebar
+{
+  position: sticky;
+}
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .grid-layout {
+    display: block; /* Stack content and sidebar vertically on mobile */
+  }
+
+  header h1 {
+    font-size: 2em;
+  }
+
+  .introduction h2 {
+    font-size: 1.5em;
+  }
+
+  article h3 {
+    font-size: 1.3em;
+  }
+
+  .vehicleBox img {
+    height: auto; /* Adjust image height on smaller screens */
+  }
+
+  .infobox p {
+    font-size: 14px; /* Smaller font size on mobile */
+  }
+
+  .infobox span img {
+    width: 12px; /* Adjust star size for smaller screens */
+    height: 12px;
+  }
+  
+}

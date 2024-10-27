@@ -4,20 +4,19 @@ import { ICustomerenquiries } from 'src/app/_models/IUserRegistration.models';
 import { AuthService } from 'src/app/modules/auth/_services/auth.service';
 import { emailValidator } from 'src/app/utils/email-validator.directive';
 import { onlyNumber } from 'src/app/utils/only-number.directive';
-
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-vehicles-dashboard',
   templateUrl: './vehicles-dashboard.component.html',
-  styleUrls: ['./vehicles-dashboard.component.scss']
+  styleUrls: ['./vehicles-dashboard.component.scss'],
 })
 export class VehiclesDashboardComponent implements OnInit {
   popup = false;
-  submitedPopup=false;
+  submitedPopup = false;
   reactiveForm!: FormGroup;
   userForm: ICustomerenquiries;
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private router: Router) {
     this.userForm = {} as ICustomerenquiries;
   }
 
@@ -27,7 +26,7 @@ export class VehiclesDashboardComponent implements OnInit {
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(45),
-      ]),      
+      ]),
       email: new FormControl(this.userForm.email, [
         Validators.required,
         Validators.minLength(1),
@@ -37,11 +36,12 @@ export class VehiclesDashboardComponent implements OnInit {
       mobile: new FormControl(this.userForm.mobile, [
         Validators.required,
         Validators.minLength(10),
-        Validators.maxLength(10),  
-        onlyNumber(),      
+        Validators.maxLength(10),
+        onlyNumber(),
       ]),
-      
     });
+
+    setInterval(() => this.nextSlide(), 5000);
   }
 
   get username() {
@@ -69,23 +69,52 @@ export class VehiclesDashboardComponent implements OnInit {
     console.info('Name:', this.userForm.username);
     console.info('mobile:', this.userForm.mobile);
     console.info('Email:', this.userForm.email);
-    this.authService.Customerenquiries(this.userForm); 
+    this.authService.Customerenquiries(this.userForm);
     this.reactiveForm.reset();
-    this.popup=false;
-    this.submitedPopup=true;
+    this.popup = false;
+    this.submitedPopup = true;
   }
-  public open(modal: any): void {    
-    if(!this.popup){
-      this.popup=true;      
+  public open(modal: any): void {
+    if (!this.popup) {
+      this.popup = true;
+    } else {
+      this.popup = false;
     }
-    else {
-      this.popup=false;
-    }
-   this.submitedPopup=false;
+    this.submitedPopup = false;
   }
 
-  public CSubmit(): void {    
-    this.getRegistration();  
+  public CSubmit(): void {
+    this.getRegistration();
   }
-     
+
+  currentSlide = 0;
+
+  carouselItems = [
+    {
+      title: 'Our Top Bikes',
+      image: 'assets/images/ultravoillet.png',
+      type: 'Bikes',
+    },
+    {
+      title: 'Our Top Scooters',
+      image: 'assets/images/ola s1 pro.png',
+      type: 'Scooters',
+    },
+  ];
+
+  nextSlide() {
+    this.currentSlide = (this.currentSlide + 1) % this.carouselItems.length;
+  }
+
+  prevSlide() {
+    this.currentSlide =
+      (this.currentSlide - 1 + this.carouselItems.length) %
+      this.carouselItems.length;
+  }
+
+  navigateToCategory(type: string) {
+    this.router.navigate(['/Bikes',type]);
+  }
+
+
 }

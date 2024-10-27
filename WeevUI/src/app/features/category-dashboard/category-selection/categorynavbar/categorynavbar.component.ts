@@ -52,16 +52,22 @@ export class CategorynavbarComponent implements OnInit {
 
   onVarient() {
     this.twId = this.productID;
+    const timeoutDuration = this.activeTab === 'model' ? 0 : 510; 
     this.router.navigate(['/Selection', this.twId]).then(() => {
       setTimeout(() => {
         const variants_Container = document.getElementById('variantsContainer');
         if (variants_Container) {
+          this.activeTab = 'varients'; // Change activeTab to 'varients'
           variants_Container.scrollIntoView({ behavior: 'smooth' });
           console.log('scrolling');
+          setTimeout(() => {
+            this.activeTab = 'model'; // Change it back to 'model' after a delay
+          }, 200);
         } else {
           console.error('variantsContainer not found');
         }
-      }, 510);
+
+      }, timeoutDuration);
     });
   }
 
@@ -73,6 +79,7 @@ export class CategorynavbarComponent implements OnInit {
 
   onColors() {
    this.twId = this.productID;
+   const timeoutDuration = this.activeTab === 'model' ? 0 : 510; 
     this.router.navigate(['/Selection', this.twId, 'Colors']).then(() => {
       setTimeout(() => {
         const imageContainer = document.getElementById('image_container');
@@ -80,7 +87,7 @@ export class CategorynavbarComponent implements OnInit {
           imageContainer.scrollIntoView({ behavior: 'smooth' });
           // console.log('scrolling');
         }
-      }, 510); // Set timeout to 500 milliseconds
+      }, timeoutDuration); // Set timeout to 500 milliseconds
     });
   }
 }

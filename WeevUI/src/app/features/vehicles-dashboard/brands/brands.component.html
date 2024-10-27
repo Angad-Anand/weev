@@ -1,0 +1,13 @@
+<div class="brands-container">
+  <div class="brands-header">
+    <div>Brands</div>
+  </div>
+  <div class="brands-content">
+    <div class="brands-list">
+      <div class="brand-item" *ngFor="let brand of brands" (click)="navigateToBrand(brand.name)">
+        <img [src]="brand.image" alt="Brand 1">
+        <div class="brand-name">{{brand.name}}</div>
+      </div>    
+    </div>
+  </div>
+</div>

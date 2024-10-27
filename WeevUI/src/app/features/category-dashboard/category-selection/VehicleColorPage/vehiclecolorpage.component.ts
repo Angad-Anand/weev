@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, ChangeDetectorRef, HostListener } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { VehiclesService } from 'src/app/modules/_services/vehicles.service';
 import { ProductListModel } from 'src/app/modules/auth/_models/product.model';
@@ -26,6 +26,8 @@ export class VehicleColorPageComponent {
   loading: boolean = false;
   loadingTimeout: any;
 
+  isMobileView: boolean = false;
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -34,6 +36,16 @@ export class VehicleColorPageComponent {
   ) {
     this.route.params.subscribe((params) => (this.productID = params['twId']));
     this.activeTab = 'images';
+    this.checkMobileView(window.innerWidth);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) { // Explicitly define the type of event
+    const target = event.target as Window; // Cast the target to Window
+    this.checkMobileView(target.innerWidth);
+  }
+  checkMobileView(width: number) {
+    this.isMobileView = width < 768; // Adjust the width threshold as needed
   }
 
 
@@ -155,17 +167,17 @@ export class VehicleColorPageComponent {
       (this.currentIndexImage + 1) % this.ReqimagePaths.length;
     this.scrollThumbnails(this.currentIndexImage);
   }
-  // prevSlideColor() {
-  //   // Ensure currentIndexImage wraps around correctly
-  //   this.currentIndexColor =
-  //     (this.currentIndexColor - 1 + this.colorimagePaths.length) % this.colorimagePaths.length;
-  // }
+  prevSlideColor() {
+    // Ensure currentIndexImage wraps around correctly
+    this.currentIndexColor =
+      (this.currentIndexColor - 1 + this.colorimagePaths.length) % this.colorimagePaths.length;
+  }
 
-  // nextSlideColor() {
-  //   // Ensure currentIndexImage wraps around correctly
-  //   this.currentIndexColor =
-  //     (this.currentIndexColor + 1) % this.colorimagePaths.length;
-  // }
+  nextSlideColor() {
+    // Ensure currentIndexImage wraps around correctly
+    this.currentIndexColor =
+      (this.currentIndexColor + 1) % this.colorimagePaths.length;
+  }
 
   visibleThumbnails = 2; // Number of thumbnails visible at a time
   scrollThumbnails(currentIndex: number) {
@@ -209,6 +221,8 @@ export class VehicleColorPageComponent {
         }
       }, 100);
     });
+
+    
   }
 
   private keyDisplayMap: { [key: string]: string } = {

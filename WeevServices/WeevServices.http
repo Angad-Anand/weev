@@ -1,0 +1,5 @@
+﻿@WeevServices_HostAddress = https://localhost:7243
+
+GET {{WeevServices_HostAddress}}/api/vehicles/TwoImagedata/0
+
+###

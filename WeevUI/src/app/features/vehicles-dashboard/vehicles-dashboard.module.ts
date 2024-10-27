@@ -13,6 +13,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from 'src/app/modules/auth/_services/auth-interceptor';
 import { AuthService } from 'src/app/modules/auth/_services/auth.service';
 import { AuthGuardService } from 'src/app/modules/auth/_services/auth-guard.service';
+import { BrandsComponent } from './brands/brands.component';
 // import { VehicleColorPageComponent } from '../category-dashboard/category-selection/VehicleColorPage/VehicleColorPage.component'; // Add this line
 
 
@@ -28,6 +29,7 @@ import { AuthGuardService } from 'src/app/modules/auth/_services/auth-guard.serv
     SerachMeComponent,
     BlogsComponent,
     LoginComponent,
+    BrandsComponent
   ],
   imports: [
     CommonModule,FormsModule, ReactiveFormsModule,

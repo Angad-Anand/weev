@@ -1,108 +1,123 @@
-<section>
-    <div class="headbanner  ">
-        <div id="demo" class="carousel slide" data-ride="carousel">
-            <ul class="carousel-indicators">
-              <li data-target="#demo" data-slide-to="0" class="active"></li>
-              <li data-target="#demo" data-slide-to="1"></li>
-              <li data-target="#demo" data-slide-to="2"></li>
-            </ul>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="carouselinnerbx"> <div class="carousel-caption">
-                    <h4 data-aos="zoom-in-down">Electric Vehicles
-                    </h4>
-                    <h1 data-aos="fade-up">The Future Is Here  
-                    </h1>
-                    <p>Electric Vehicle News- Electric Car, Electric Trucks, Electric Scooters, 
-                       Electric Bikes and other EV news.
-                    </p>
-                    <button class="btorng" >Know More</button>
-                </div>   <img src="assets/images/bannerdesktop.png" class="desbar" alt=""  height="">
-                <img src="assets/images/bannermob.png" class="mbar" alt=" "  height="">
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="carouselinnerbx"><div class="carousel-caption">
-                    <h4 data-aos="zoom-in-down">Electric Vehicles
-                    </h4>
-                  <h1>The Future Is  Chicago</h1>
-                  <p>Electric Vehicle News- Electric Car, Electric Trucks, Electric Scooters, 
-                    Electric Bikes and other EV news.
-                 </p>
-                 <button class="btorng" >Know More</button>
-                </div> <img src="assets/images/bannerdesktop2.png" class="desbar" alt="Chicago" height="500">
-                <img src="assets/images/bannermob1.png" class="mbar" alt=" "  height="">
-                   </div> 
-              </div>
-              <div class="carousel-item">
-                <div class="carouselinnerbx">
-                 <div class="carousel-caption">
-                    <h4 data-aos="zoom-in-down">Electric Vehicles
-                    </h4>
-                  <h1>The Future Is  New York</h1>
-                  <p>Electric Vehicle News- Electric Car, Electric Trucks, Electric Scooters, 
-                    Electric Bikes and other EV news.
-                 </p>
-                 <button class="btorng" >Know More</button>
-                </div>    <img src="assets/images/bannerdesktop3.png" class="desbar" alt="New York"  height="500">
-                <img src="assets/images/bannermob2.png" class="mbar" alt=" "  height=""></div>
-              
-              </div>
-            </div>
-            <a class="carousel-control-prev"  data-slide="prev">
-              <span class="carousel-control-prev-icon">
-                 <svg class="wow animated">
-                <use xlink:href="#arrow1"></use>
-             </svg></span>
-            </a>
-            <a class="carousel-control-next"  data-slide="next">
-              <span class="carousel-control-next-icon"> 
-                <svg class="wow animated">
-                <use xlink:href="#arrow"></use>
-             </svg></span>
-            </a>
+<div class="carousel-container">
+  <div class="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item" *ngFor="let item of carouselItems; let i = index" [class.active]="i === currentSlide">
+        <div class="banner-content">
+          <div class="banner-title" [ngClass]="{'left-align': i === 0, 'right-align': i === 1}">
+            {{ item.title }}
+            <button class="book-now-button" (click)="navigateToCategory(item.type)">See All {{ item.type }}</button>
           </div>
-    
-    </div>
-    <div class="line"></div>
-    
- </section>
-
-  <div *ngIf="popup" class=window__container>
-    <div class="modal-header">
-      <h4 class="modal-title" >Customer enquiries</h4>
-      <button type="button" class="btn-close" (click)="popup = false"></button>
-    </div>
-    
-    <div class="modal-body">
-      <form [formGroup]="reactiveForm" #form="ngForm"  >
-        <div class="form-group">
-          
-          <label for="username">User name</label>
-
-          <input type="text" id="username" name="username" formControlName="username" 
-          placeholder="Your name" required minlength="1" maxlength="50"
-           class="form-control form-control-sm" 
-           [class.is-invalid]="username.invalid && (username.dirty || username.touched)">
-          <div *ngIf="username.invalid && (username.dirty || username.touched)"
-           class="invalid-feedback">
-            <div *ngIf="username.errors?.['required']">
-              This field is required.
-            </div>
-            <div *ngIf="username.errors?.['minlength']">
-              This field must have at least 3 character.
-            </div>
-            <div *ngIf="username.errors?.['maxlength']">
-              This field must have at most 45 characters.
-            </div>
-        
-       </div>
+          <div class="banner-image">
+            <img [src]="item.image" alt="{{ item.title }}">
+          </div>
         </div>
-       <div class="form-group">        
+      </div>
+    </div>
+    <button class="carousel-control-prev" (click)="prevSlide()">&#10094;</button>
+    <button class="carousel-control-next" (click)="nextSlide()">&#10095;</button>
+  </div>
+</div>
+
+  <!-- <div class="headbanner  ">
+    <div id="demo" class="carousel slide" data-ride="carousel">
+      <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+      </ul>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="carouselinnerbx">
+            <div class="carousel-caption">
+              <h4 data-aos="zoom-in-down">Electric Vehicles
+              </h4>
+              <h1 data-aos="fade-up">The Future Is Here
+              </h1>
+              <p>Electric Vehicle News- Electric Car, Electric Trucks, Electric Scooters,
+                Electric Bikes and other EV news.
+              </p>
+              <button class="btorng">Know More</button>
+            </div> <img src="assets/images/bannerdesktop.png" class="desbar" alt="" height="">
+            <img src="assets/images/bannermob.png" class="mbar" alt=" " height="">
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="carouselinnerbx">
+            <div class="carousel-caption">
+              <h4 data-aos="zoom-in-down">Electric Vehicles
+              </h4>
+              <h1>The Future Is Chicago</h1>
+              <p>Electric Vehicle News- Electric Car, Electric Trucks, Electric Scooters,
+                Electric Bikes and other EV news.
+              </p>
+              <button class="btorng">Know More</button>
+            </div> <img src="assets/images/bannerdesktop2.png" class="desbar" alt="Chicago" height="500">
+            <img src="assets/images/bannermob1.png" class="mbar" alt=" " height="">
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="carouselinnerbx">
+            <div class="carousel-caption">
+              <h4 data-aos="zoom-in-down">Electric Vehicles
+              </h4>
+              <h1>The Future Is New York</h1>
+              <p>Electric Vehicle News- Electric Car, Electric Trucks, Electric Scooters,
+                Electric Bikes and other EV news.
+              </p>
+              <button class="btorng">Know More</button>
+            </div> <img src="assets/images/bannerdesktop3.png" class="desbar" alt="New York" height="500">
+            <img src="assets/images/bannermob2.png" class="mbar" alt=" " height="">
+          </div>
+
+        </div>
+      </div>
+      <a class="carousel-control-prev" data-slide="prev">
+        <span class="carousel-control-prev-icon">
+          <svg class="wow animated">
+            <use xlink:href="#arrow1"></use>
+          </svg></span>
+      </a>
+      <a class="carousel-control-next" data-slide="next">
+        <span class="carousel-control-next-icon">
+          <svg class="wow animated">
+            <use xlink:href="#arrow"></use>
+          </svg></span>
+      </a>
+    </div>
+  </div> -->
+<!-- <div *ngIf="popup" class=window__container>
+  <div class="modal-header">
+    <h4 class="modal-title">Customer enquiries</h4>
+    <button type="button" class="btn-close" (click)="popup = false"></button>
+  </div>
+
+  <div class="modal-body">
+    <form [formGroup]="reactiveForm" #form="ngForm">
+      <div class="form-group">
+
+        <label for="username">User name</label>
+
+        <input type="text" id="username" name="username" formControlName="username" placeholder="Your name" required
+          minlength="1" maxlength="50" class="form-control form-control-sm"
+          [class.is-invalid]="username.invalid && (username.dirty || username.touched)">
+        <div *ngIf="username.invalid && (username.dirty || username.touched)" class="invalid-feedback">
+          <div *ngIf="username.errors?.['required']">
+            This field is required.
+          </div>
+          <div *ngIf="username.errors?.['minlength']">
+            This field must have at least 3 character.
+          </div>
+          <div *ngIf="username.errors?.['maxlength']">
+            This field must have at most 45 characters.
+          </div>
+
+        </div>
+      </div>
+      <div class="form-group">
         <label for="mobile">Mobile </label>
-        <input type="text" id="mobile" name="mobile" formControlName="mobile" 
-        placeholder="98" required minlength="10" maxlength="10" 
-        class="form-control form-control-sm" [class.is-invalid]="mobile.invalid && (mobile.dirty || mobile.touched)">
+        <input type="text" id="mobile" name="mobile" formControlName="mobile" placeholder="98" required minlength="10"
+          maxlength="10" class="form-control form-control-sm"
+          [class.is-invalid]="mobile.invalid && (mobile.dirty || mobile.touched)">
         <div *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)" class="invalid-feedback">
           <div *ngIf="mobile.errors?.['required']">
             This field is required.
@@ -113,19 +128,20 @@
           <div *ngIf="mobile.errors?.['maxlength']">
             This field must have at most 10 characters.
           </div>
-          <div *ngIf="!mobile.errors?.['required'] && !mobile.errors?.['minlength'] && !mobile.errors?.['maxlength'] && mobile.errors?.['onlyNumber']">
+          <div
+            *ngIf="!mobile.errors?.['required'] && !mobile.errors?.['minlength'] && !mobile.errors?.['maxlength'] && mobile.errors?.['onlyNumber']">
             Invalid Mobile format.
           </div>
-       
-       </div>
-      
-       </div>     
 
-       <div class="form-group">
+        </div>
+
+      </div>
+
+      <div class="form-group">
         <label for="email">Email </label>
-        <input type="email" id="email" name="email" formControlName="email" 
-        placeholder="your-name@provider.com" required minlength="1" maxlength="250" 
-        class="form-control form-control-sm" [class.is-invalid]="email.invalid && (email.dirty || email.touched)">
+        <input type="email" id="email" name="email" formControlName="email" placeholder="your-name@provider.com"
+          required minlength="1" maxlength="250" class="form-control form-control-sm"
+          [class.is-invalid]="email.invalid && (email.dirty || email.touched)">
         <div *ngIf="email.invalid && (email.dirty || email.touched)" class="invalid-feedback">
           <div *ngIf="email.errors?.['required']">
             This field is required.
@@ -136,32 +152,33 @@
           <div *ngIf="email.errors?.['maxlength']">
             This field must have at most 50 characters.
           </div>
-          <div *ngIf="!email.errors?.['required'] && !email.errors?.['minlength'] && !email.errors?.['maxlength'] && email.errors?.['emailValidator']">
+          <div
+            *ngIf="!email.errors?.['required'] && !email.errors?.['minlength'] && !email.errors?.['maxlength'] && email.errors?.['emailValidator']">
             Invalid email format.
           </div>
-        
-       </div>
-       </div>
-      </form>
-    </div>
-    <div class="modal-footers" *ngIf="reactiveForm.valid">
-      <button class="btorng"  type="button" (click)="CSubmit()">Save</button>
-    </div>
+
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footers" *ngIf="reactiveForm.valid">
+    <button class="btorng" type="button" (click)="CSubmit()">Save</button>
+  </div>
+</div>
+
+<div *ngIf="submitedPopup" class=window__container>
+  <div class="modal-header">
+    <button type="button" class="btn-close" (click)="submitedPopup = false"></button>
   </div>
 
-  <div *ngIf="submitedPopup" class=window__container>
-    <div class="modal-header">
-      <button type="button" class="btn-close" (click)="submitedPopup = false"></button>
-    </div>
-    
-    <div class="modal-body">
-      <form >
-       <div class="form-group">
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
         <h4>Request submitted successfully</h4>
-       </div>
-      </form>
-    </div>
-    <div class="modal-footers">
-      
-    </div>
+      </div>
+    </form>
   </div>
+  <div class="modal-footers">
+
+  </div>
+</div> -->

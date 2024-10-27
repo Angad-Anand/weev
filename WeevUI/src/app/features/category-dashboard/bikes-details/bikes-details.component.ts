@@ -1,5 +1,10 @@
-import { Component, OnInit, ChangeDetectorRef ,HostListener} from '@angular/core';
-import { Router } from '@angular/router';
+import {
+  Component,
+  OnInit,
+  ChangeDetectorRef,
+  HostListener,
+} from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { VehiclesService } from 'src/app/modules/_services/vehicles.service';
 
 @Component({
@@ -16,9 +21,8 @@ export class BikesDetailsComponent implements OnInit {
 
   filteredtwowheelerlist: Array<any> = new Array<any>();
 
-  loading: boolean = false; 
+  loading: boolean = false;
   activeFilter: string = 'all'; // Track active filter
-
 
   itemsToShow: number = 20; // Number of items to show initially
   private loadingMore: boolean = false;
@@ -26,26 +30,36 @@ export class BikesDetailsComponent implements OnInit {
   constructor(
     private router: Router,
     public vehiclesService: VehiclesService,
-    private cd: ChangeDetectorRef
+    private cd: ChangeDetectorRef,
+    private route: ActivatedRoute
   ) {
-    console.log(this.router.url);
+    // console.log(this.router.url);
     this.title = this.router.url.replace('/', '');
     // this.title.replace("/",'');
   }
-
+  brand: string = '';
   ngOnInit(): void {
-    if (this.title == 'Bikes') this.getTwoWheelerData();
+    this.route.params.subscribe((params: any) => {
+      console.log('Route parameters:', params); // Log all parameters
+      this.brand = params['Brand']; // This should match the route parameter name
+      console.log(`Brand received: ${this.brand}`); // Debugging line
+  });
+    this.getTwoWheelerData();
 
     window.scrollTo(0, 0); // Scroll to top
     this.loadMoreItems();
   }
 
   loadMoreItems() {
-    this.filteredtwowheelerlist = this.filteredtwowheelerlist.slice(0, this.itemsToShow);
+    this.filteredtwowheelerlist = this.filteredtwowheelerlist.slice(
+      0,
+      this.itemsToShow
+    );
   }
   @HostListener('window:scroll', [])
   onScroll() {
-    const pos = window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000; // Trigger when near bottom
+    const pos =
+      window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000; // Trigger when near bottom
     if (pos && !this.loadingMore) {
       this.loadingMore = true; // Set loading flag
       setTimeout(() => {
@@ -59,7 +73,22 @@ export class BikesDetailsComponent implements OnInit {
   getTwoWheelerData() {
     this.vehiclesService.getTwoWheelerData().subscribe((response) => {
       this.allTwoWheelerList = response;
-      this.filterByType('all'); // Set default filter to 'all'
+      if (this.title == 'Bikes') {
+        this.filterByType('all');
+        this.title = 'All Vehicles';
+      }
+      if (this.title == 'Bikes/Bikes') {
+        this.filterByType('bike');
+        this.title = 'Bikes';
+      }
+      if (this.title == 'Bikes/Scooters') {
+        this.filterByType('scooter');
+        this.title = 'Scooters';
+      }
+      if (this.brand) {
+        this.filterByType('Brand');
+        this.title = this.brand;
+      }
       // console.log(this.allTwoWheelerList);
     });
 
@@ -79,7 +108,7 @@ export class BikesDetailsComponent implements OnInit {
   }
 
   filterByType(type: string) {
-    this.activeFilter = type; 
+    this.activeFilter = type;
     this.loading = true;
     setTimeout(() => {
       this.filteredtwowheelerlist = [];
@@ -102,6 +131,14 @@ export class BikesDetailsComponent implements OnInit {
           }
         }
       }
+      else if (type === 'Brand') {
+        for (var i = 0; i < this.allTwoWheelerList.length; i++) {
+          if (this.allTwoWheelerList[i].manufacturer === this.brand) {
+            this.filteredtwowheelerlist.push(this.allTwoWheelerList[i]);
+          }
+        }
+        console.log(this.filteredtwowheelerlist);
+      }
       for (var i = 0; i < this.filteredtwowheelerlist.length; i++) {
         this.filteredtwowheelerlist[i] = Object.assign(
           {},
@@ -114,7 +151,7 @@ export class BikesDetailsComponent implements OnInit {
       }
       this.loading = false; // Reset loading state after filtering
       this.cd.detectChanges(); // Force change detection after navigation
-    }, 500); 
+    }, 500);
   }
   // manufacturer + model //exShowroomPrice //
 

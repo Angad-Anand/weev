@@ -5,6 +5,7 @@ import {
   ViewChild,
   OnInit,
   ChangeDetectorRef,
+  HostListener,
 } from '@angular/core';
 import { UntypedFormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
@@ -80,6 +81,7 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
   ) {
     this.route.params.subscribe((params) => (this.productID = params['twId']));
   }
+  
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
@@ -99,6 +101,9 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
       this.getAllTabNameWithID(+this.productID);
     }
   }
+
+
+  
 
   startLoading() {
     this.loading = true;
@@ -743,3 +748,4 @@ const EMPTY_Application: ProductListModel = {
 //     this.isShowFeatures = true;
 //   }
 // }
+

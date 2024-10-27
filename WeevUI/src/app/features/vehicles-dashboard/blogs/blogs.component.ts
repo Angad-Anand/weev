@@ -18,5 +18,13 @@ export class BlogsComponent implements OnInit {
   blog(){
     this.router.navigate(['/Blog']);
   }
+  blog2(){
+    this.router.navigate(['/Blog2']);
+  }
+blog3()
+{
+  this.router.navigate(['/Blog3']);
+}
+
 
 }
