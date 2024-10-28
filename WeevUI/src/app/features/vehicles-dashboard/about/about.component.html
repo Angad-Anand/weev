@@ -1,0 +1,43 @@
+<div class="about-container">
+    <section class="about-header">
+      <h1>About Us</h1>
+      <p>Driving the Future of Sustainable Mobility</p>
+    </section>
+  
+    <section class="about-content">
+      <h2>Our Mission</h2>
+      <p>
+        We are committed to revolutionizing the automotive industry by providing a streamlined, reliable, and eco-friendly platform for buying electric vehicles. Our mission is to empower customers with information, access, and options to make informed decisions in their transition to electric mobility.
+      </p>
+  
+      <h2>What We Do</h2>
+      <p>
+        At <strong>Electric Rides Marketplace</strong>, we offer a comprehensive selection of electric vehicles from various trusted manufacturers. From two-wheelers to luxury cars, our platform is designed to help you explore, compare, and purchase the perfect EV to suit your needs.
+      </p>
+  
+      <h2>Our Vision</h2>
+      <p>
+        We envision a world where sustainable mobility is accessible to everyone. By simplifying the buying process, providing quality assurance, and ensuring transparency, we aim to become the most trusted destination for purchasing electric vehicles.
+      </p>
+  
+      <h2>Why Choose Us?</h2>
+      <ul>
+        <li>Wide range of EVs from leading brands</li>
+        <li>Expert advice and customer support</li>
+        <li>Transparent pricing and financing options</li>
+        <li>Secure and user-friendly platform</li>
+      </ul>
+    </section>
+  
+    <section class="about-team">
+      <h2>Meet the Team</h2>
+      <div class="team-grid">
+        <div *ngFor="let member of teamMembers" class="team-member">
+          <img [src]="member.imageUrl" [alt]="member.name" />
+          <h3>{{ member.name }}</h3>
+          <p>{{ member.role }}</p>
+        </div>
+      </div>
+    </section>
+  </div>
+  

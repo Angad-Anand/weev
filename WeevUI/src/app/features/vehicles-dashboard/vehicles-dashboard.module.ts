@@ -14,6 +14,7 @@ import { AuthInterceptor } from 'src/app/modules/auth/_services/auth-interceptor
 import { AuthService } from 'src/app/modules/auth/_services/auth.service';
 import { AuthGuardService } from 'src/app/modules/auth/_services/auth-guard.service';
 import { BrandsComponent } from './brands/brands.component';
+import { ElectricVehicleBlogComponent } from './blogs/electric-vehicle-blog/electric-vehicle-blog.component';
 // import { VehicleColorPageComponent } from '../category-dashboard/category-selection/VehicleColorPage/VehicleColorPage.component'; // Add this line
 
 
@@ -29,7 +30,8 @@ import { BrandsComponent } from './brands/brands.component';
     SerachMeComponent,
     BlogsComponent,
     LoginComponent,
-    BrandsComponent
+    BrandsComponent,
+    ElectricVehicleBlogComponent
   ],
   imports: [
     CommonModule,FormsModule, ReactiveFormsModule,

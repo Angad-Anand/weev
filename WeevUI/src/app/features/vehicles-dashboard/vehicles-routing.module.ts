@@ -5,9 +5,10 @@ import { BikesDetailsComponent } from '../category-dashboard/bikes-details/bikes
 import { CategorySelectionComponent } from '../category-dashboard/category-selection/category-selection.component';
 import { VehicleColorPageComponent } from '../category-dashboard/category-selection/VehicleColorPage/vehiclecolorpage.component';
 import { VehicleAllSpecsComponent } from '../category-dashboard/category-selection/VehicleAllSpecs/vehichleAllSpecs.component';
-import { ElectricVehicleBlogComponent } from '../electric-vehicle-blog/electric-vehicle-blog.component';
+import { ElectricVehicleBlogComponent } from './blogs/electric-vehicle-blog/electric-vehicle-blog.component';
 import { ElectricVehicleBlogComponent2 } from './blogs/electric-vehicle-blog-2/electric-vehicle-blog-2.component';
 import { ElectricVehicleBlogComponent3 } from './blogs/electric-vehicle-blog-3/electric-vehicle-blog-3.component';
+import { AboutComponent } from './about/about.component';
 // import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
@@ -60,6 +61,10 @@ const routes: Routes = [
   {
     path: 'Bikes/:type',
     component: BikesDetailsComponent,
+  },
+  {
+    path: 'About',
+    component: AboutComponent,
   },
   //     {
   //   path:'Login',

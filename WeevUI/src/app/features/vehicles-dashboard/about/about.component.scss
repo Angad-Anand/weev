@@ -1,0 +1,47 @@
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .about-header {
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .about-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .about-content {
+    margin: 20px 0;
+    line-height: 1.6;
+  }
+  
+  .about-team {
+    margin-top: 40px;
+  }
+  
+  .team-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .team-member {
+    text-align: center;
+    width: 30%;
+  }
+  
+  .team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+  
+  .team-member h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+  }
+  
