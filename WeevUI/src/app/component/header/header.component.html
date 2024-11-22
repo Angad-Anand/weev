@@ -2,13 +2,13 @@
    <div class="nav">
       <div class="leftarea">
          <a routerLink="/home">
-            <img class="logo" src="assets/images/evlogo.svg" />
+            <img class="logo" src="assets/images/logo.svg" />
          </a>
       </div>
       <div class="rightarea">
          <div class="search-box">
             <input type="text" placeholder="Search..." [(ngModel)]="searchTerm" (input)="showSuggestions()"
-               (click)="search();" />
+               (click)="search();"/>
             <button (click)="search();">
                <img src="assets/images/search.svg" alt="Search" />
             </button>

@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 import { VehiclesService } from 'src/app/modules/_services/vehicles.service';
 
 @Component({
@@ -138,8 +139,9 @@ As the EV market continues to grow, job creation and economic benefits are unfol
   twowheelerlist: Array<any> = new Array<any>();
   toptwowheelerlist: Array<any> = new Array<any>();
   recenttwowheelerlist: Array<any> = new Array<any>();
+  brands: any[] = [];
 
-  constructor(private router: Router, public vehiclesService: VehiclesService){
+  constructor(private http: HttpClient, private router: Router, public vehiclesService: VehiclesService){
 
   }
 
@@ -149,7 +151,11 @@ As the EV market continues to grow, job creation and economic benefits are unfol
   ngOnInit(): void {
     this.getTwoWheelerData();
     window.scrollTo(0, 0); // Scroll to top
-   
+    
+    this.http.get<any[]>('assets/json/brands.json').subscribe(data => {
+      this.brands = data;
+    //   console.log(this.brands);
+    });
 
     // const stickyElement = document.querySelector('.sticky') as HTMLElement;
     // this.stickyOffSet=stickyElement.offsetTop;
@@ -161,7 +167,10 @@ As the EV market continues to grow, job creation and economic benefits are unfol
   //   this.isSticky=window.pageYOffset>this.stickyOffSet;
   // }
   
-
+  navigateToBrand(Brand: string) {
+    console.log(`Navigating to brand: ${Brand}`); // Debugging line
+    this.router.navigate(['/Bikes', Brand]); // Ensure this matches the route configuration
+}
  
   getTwoWheelerData() {
     this.vehiclesService.getTwoWheelerData().subscribe((response) => {

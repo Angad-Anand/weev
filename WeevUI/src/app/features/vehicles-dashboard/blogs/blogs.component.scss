@@ -1,86 +1,95 @@
 /* WeevUI/src/app/features/vehicles-dashboard/blogs/blogs.component.scss */
 .blogssec {
-    margin-top: 20px;
-    // width: 100%;
-    margin-left: 16%;
-    margin-right: 16%;
+  margin-top: 20px;
+  // width: 100%;
+  margin-left: 16%;
+  margin-right: 16%;
 }
 
-.blogssec-title{
-    font-size: 25px;
-    padding-left: 20px;
-    color: #E65100;
-    font-weight: 600;
+.blogssec-title {
+  font-size: 25px;
+  padding-left: 20px;
+  color: #6305a8;
+  font-weight: 600;
 }
 
-.blogcards{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.blogcards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .blog-card {
-    border-radius: 8px;
-    overflow: hidden;
-    width: 400px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    margin: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 400px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin: 20px;
 }
 
 .blog-image {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .blog-content {
-    padding: 15px;
+  padding: 15px;
 }
 
 .blog-title {
-    font-size: 20px;
-    font-weight: 600;
-    margin: 0;
-    padding-bottom: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  padding-bottom: 10px;
 }
 
-.blog-author, .blog-date {
-    font-size: 12px;
-    color: #666;
+.blog-author,
+.blog-date {
+  font-size: 12px;
+  color: #666;
 }
 
 .blog-excerpt {
-    margin: 20px 0;
+  margin: 20px 0;
 }
 
 .read-more {
-    display: inline-block;
-    color: #007bff;
-    text-decoration: none;
+  display: inline-block;
+  color: #8c38d0;
+  text-decoration: none;
 }
 
 .blog-tags {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .tag {
-    background-color: #e0e0e0;
-    border-radius: 5px;
-    padding: 5px 10px;
-    margin-right: 5px;
+  background-color: #fdc9fd;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-right: 5px;
+  color: #b65ffa;
+  font-weight: 400;
 }
 
 @media (max-width: 768px) {
-
-    .blogssec{
-        margin-left: 0;
-        margin-right: 0;
-    }
-.blogcards{
+    // *{
+    //     outline: 1px solid green;
+    // }
+  .blogssec {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .blogcards {
     flex-direction: column;
-}
+    max-width: 100%;
+  }
 
-.blogssec-title{
+  .blog-card{
+    width: 95%;
+  }
+
+  .blogssec-title {
     font-size: 20px;
-}
-
+  }
 }

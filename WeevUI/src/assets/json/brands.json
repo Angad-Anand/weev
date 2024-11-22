@@ -2,6 +2,10 @@
     { "name": "Ola", "image": "assets/images/brands/ola.jpg" },
     { "name": "Ather", "image": "assets/images/brands/ather.jpeg" },
     { "name": "Revolt", "image": "assets/images/brands/revolt.png" },
-    { "name": "Bajaj", "image": "assets/images/brands/bajaj.png" }
-    
+    { "name": "Bajaj", "image": "assets/images/brands/bajaj.png" },
+    { "name": "Hero", "image": "assets/images/brands/hero.png" },
+    { "name": "Simple", "image": "assets/images/brands/simple.png" },
+    { "name": "Torq", "image": "assets/images/brands/torq.png" },
+    { "name": "Ampere", "image": "assets/images/brands/ampere.png" },
+    { "name": "Okinawa", "image": "assets/images/brands/okinawa.png" }
 ]

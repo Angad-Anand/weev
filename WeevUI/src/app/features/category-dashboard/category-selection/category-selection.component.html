@@ -40,11 +40,13 @@
                   </div>
                </div>
                <div class="details">
-                  {{productListModel?.additionalFeatures}}
+                  <!-- {{productListModel?.additionalFeatures}} -->
+                  This variant of {{productListModel?.manufacturer}} {{productListModel?.model}} has a battery capacity of {{productListModel?.batteryCapacity}} and charges in {{productListModel?.chargingTime0To80Perc}}. It offers a maximum range of {{productListModel?.rangeOfVehicle}} and a max speed of {{productListModel?.maxSpeed}}.
+
                </div>
                <div class="price">Price: Rs. {{productListModel?.exShowroomPrice}}</div>
-               <div class="status">Booking Status: <div class="currentStatus">Available</div>
-               </div>
+               <!-- <div class="status">Booking Status: <div class="currentStatus">Available</div>
+               </div> -->
                <!-- <div>
                   Colours : 4
                </div> -->
@@ -56,10 +58,10 @@
                   <button class="tablinks" [class.active]="activeTab === 'KeySpecs'" (click)="onTabClick('KeySpecs')">
                      Key Specs
                   </button>
-                  <button class="tablinks" [class.active]="activeTab === 'AppFeatures'"
+                  <!-- <button class="tablinks" [class.active]="activeTab === 'AppFeatures'"
                      (click)="onTabClick('AppFeatures')">
                      App Features
-                  </button>
+                  </button> -->
                </div>
 
                <div id="KeySpecs" class="tabcontent" *ngIf="activeTab === 'KeySpecs'">
@@ -72,7 +74,7 @@
                   </div>
                </div>
 
-               <div id="AppFeatures" class="tabcontent" *ngIf="activeTab === 'AppFeatures'">
+               <!-- <div id="AppFeatures" class="tabcontent" *ngIf="activeTab === 'AppFeatures'">
                   <div class="grid-container">
                      <div class="grid-item" *ngFor="let item of appFeatures">
                         <img [src]="item.icon" [alt]="item.label" />
@@ -80,7 +82,7 @@
                         <span>{{ item.value }}</span>
                      </div>
                   </div>
-               </div>
+               </div> -->
             </div>
 
             <div class="booking">

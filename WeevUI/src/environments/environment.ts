@@ -6,8 +6,8 @@ export const environment = {
   production: true,
   // appVersion: 'v876demo1',
   // USERDATA_KEY: 'authf876fc9a5f55',
-  //  localApiUrl: 'https://localhost:7243/api'
-  localApiUrl: 'https://192.168.1.2:7243/api'
+   localApiUrl: 'https://localhost:7243/api'
+  // localApiUrl: 'https://192.168.1.25:7243/api'
   // localApiUrl: `http://api.weev.co.in/api`
 };
 

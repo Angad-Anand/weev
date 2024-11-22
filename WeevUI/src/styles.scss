@@ -10,6 +10,7 @@
 
 * {
   font-family: Roboto;
+  // font-family: 'Nunito', sans-serif;
   // outline: 1px solid red;  
 }
 
@@ -1072,7 +1073,8 @@ main {
 
 footer {
   width: 100%;
-  @extend .orange-bg;
+  // @extend .orange-bg;
+  background: #575760;
   margin-top: 100px;
   @include flbox($direction: column);
   .footerbox {

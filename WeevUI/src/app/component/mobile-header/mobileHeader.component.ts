@@ -96,7 +96,7 @@ export class MobileHeaderComponent implements OnInit {
   resetLayout() {
     this.renderer.setStyle(document.querySelector('.leftarea'), 'width', '15%');
     this.renderer.setStyle(document.querySelector('.leftarea'), 'display', 'flex');
-    this.renderer.setStyle(document.querySelector('.rightarea'), 'width', '75%');
+    this.renderer.setStyle(document.querySelector('.rightarea'), 'width', '40%');
     this.renderer.setStyle(document.querySelector('.search-box'), 'width', '100%');
   }
 
