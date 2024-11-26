@@ -1,4 +1,7 @@
 <!-- <app-login></app-login> -->
+<div class="arrow" [ngClass]="{'visible': isVisible}" (click)="scrollToTop()">
+    <img src="assets/images/arrow.svg" alt="" >
+</div>
 <app-vehicles-dashboard></app-vehicles-dashboard>
 <!-- <app-vehicles-category></app-vehicles-category> -->
 <app-recent-vehicles></app-recent-vehicles>

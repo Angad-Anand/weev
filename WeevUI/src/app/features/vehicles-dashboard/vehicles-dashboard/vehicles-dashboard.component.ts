@@ -113,7 +113,7 @@ export class VehiclesDashboardComponent implements OnInit {
   }
 
   navigateToCategory(type: string) {
-    this.router.navigate(['/Bikes',type]);
+    this.router.navigate(['/Bikes/Type/',type]);
   }
 
 

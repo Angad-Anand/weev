@@ -43,7 +43,7 @@ export class BikesDetailsComponent implements OnInit {
       console.log('Route parameters:', params); // Log all parameters
       this.brand = params['Brand']; // This should match the route parameter name
       console.log(`Brand received: ${this.brand}`); // Debugging line
-  });
+    });
     this.getTwoWheelerData();
 
     window.scrollTo(0, 0); // Scroll to top
@@ -56,19 +56,19 @@ export class BikesDetailsComponent implements OnInit {
       this.itemsToShow
     );
   }
-  @HostListener('window:scroll', [])
-  onScroll() {
-    const pos =
-      window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000; // Trigger when near bottom
-    if (pos && !this.loadingMore) {
-      this.loadingMore = true; // Set loading flag
-      setTimeout(() => {
-        this.itemsToShow += 8; // Increase the number of items to show
-        this.loadMoreItems(); // Load more items
-        this.loadingMore = false; // Reset loading flag
-      }, 1000); // 1 second delay
-    }
-  }
+  // @HostListener('window:scroll', [])
+  // onScroll() {
+  //   const pos =
+  //     window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000; // Trigger when near bottom
+  //   if (pos && !this.loadingMore) {
+  //     this.loadingMore = true; // Set loading flag
+  //     setTimeout(() => {
+  //       this.itemsToShow += 8; // Increase the number of items to show
+  //       this.loadMoreItems(); // Load more items
+  //       this.loadingMore = false; // Reset loading flag
+  //     }, 1000); // 1 second delay
+  //   }
+  // }
 
   getTwoWheelerData() {
     this.vehiclesService.getTwoWheelerData().subscribe((response) => {
@@ -77,11 +77,11 @@ export class BikesDetailsComponent implements OnInit {
         this.filterByType('all');
         this.title = 'All Vehicles';
       }
-      if (this.title == 'Bikes/Bikes') {
+      if (this.title == 'Bikes/Type/Bikes') {
         this.filterByType('bike');
         this.title = 'Bikes';
       }
-      if (this.title == 'Bikes/Scooters') {
+      if (this.title == 'Bikes/Type/Scooters') {
         this.filterByType('scooter');
         this.title = 'Scooters';
       }
@@ -93,7 +93,7 @@ export class BikesDetailsComponent implements OnInit {
     });
 
     this.vehiclesService
-      .getTwoWheelerDataByType('Bike')
+      .getTwoWheelerDataByType('bike')
       .subscribe((response) => {
         this.bikeList = response;
         // console.log(this.bikeList);
@@ -118,6 +118,7 @@ export class BikesDetailsComponent implements OnInit {
             this.filteredtwowheelerlist.push(this.allTwoWheelerList[i]);
           }
         }
+        console.log(this.filteredtwowheelerlist.length)
       } else if (type === 'bike') {
         for (var i = 0; i < this.bikeList.length; i++) {
           if (this.bikeList[i].variantType === 'Top') {
@@ -130,15 +131,14 @@ export class BikesDetailsComponent implements OnInit {
             this.filteredtwowheelerlist.push(this.scooterList[i]);
           }
         }
-      }
-      else if (type === 'Brand') {
+      } else if (type === 'Brand') {
         for (var i = 0; i < this.allTwoWheelerList.length; i++) {
           if (this.allTwoWheelerList[i].manufacturer === this.brand) {
             this.filteredtwowheelerlist.push(this.allTwoWheelerList[i]);
           }
         }
-        console.log(this.filteredtwowheelerlist);
       }
+      // console.log(this.filteredtwowheelerlist);
       for (var i = 0; i < this.filteredtwowheelerlist.length; i++) {
         this.filteredtwowheelerlist[i] = Object.assign(
           {},

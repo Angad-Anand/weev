@@ -55,11 +55,11 @@ const routes: Routes = [
     component: ElectricVehicleBlogComponent3,
   },
   { 
-    path: 'Bikes/:Brand', 
+    path: 'Bikes/Brand/:Brand', 
     component: BikesDetailsComponent 
   },
   {
-    path: 'Bikes/:type',
+    path: 'Bikes/Type/:type',
     component: BikesDetailsComponent,
   },
   {

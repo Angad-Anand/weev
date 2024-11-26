@@ -7,7 +7,7 @@ USE `weev`;
 -- Server version	8.0.36
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_CHARAtwimagedataCTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!50503 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
@@ -193,7 +193,7 @@ VALUES
   ), 
     (34, 34, '../../../assets/images/2W/Ultraviolette/F77/Color', 'Ultraviolette-F77-Airstrike', '', '', 'Ultraviolette-F77-Shadow',  '', 'Ultraviolette-F77-Laser', '', '', '', '', '', '', '', ''
   ),
-    (35, 35, '../../../assets/images/2W/Ultraviolette/F77 Limited/Color', '', '', '', '',  '', '', '', '', '', '', '', '', '', ''
+    (35, 35, '../../../assets/images/2W/Ultraviolette/F77 Limited/Color', 'Ultraviolette-F77-Airstrike', '', '', 'Ultraviolette-F77-Shadow',  '', 'Ultraviolette-F77-Laser', '', '', '', '', '', '', '', ''
   ),
   (
     36, 36, '../../../assets/images/2W/Okinawa/iPraise+/Color', '', '', '', 'Okinava-iPraise+ -Black',  'Okinava-iPraise+ -Liquid Metal', 'Okinava-iPraise+ -Red', 'Okinava-iPraise+ -Ocean Blue', '', '', 'Okinava-iPraise+ -Electric Mauve Purple', 'Okinava-iPraise+ -Electric Green', '', '', ''
@@ -356,8 +356,8 @@ INSERT INTO `twowheelerdata` VALUES
 (28,'Pure EV','Epluto 7G','','Top',92999,60,240,'',0.000,0.000,'High Speed','Enquiry only','','',0,1.500,2.200,123,'Lithium Ion',2.500,0,0,'NA',0,'Yes','Digital','NA','NA','NA','Yes','NA',0,'NA',0.806,0.000,'Yes','NA','0','NA','Anti-theft Smart Lock, Controller - 60V 20 Tube Vector Looped, Battery Casing - Metallic, Cells - NMC 18650 3C Ultra Performance, BMS - Smart Active Balance 50A, Twist Throttle, Reflector, Left and Right Blinkers, Ladies Footrest','NA','NA','NA','NA','NA','Digital','Digital','Digital','NA','','NA','NA','NA','NA','NA',12,'NA','Yes','Electric Bikes','','NA',0,0,0,0,0,0,79.000,180,'LED','NA',60,'BLDC',0,0,'Hub motor',0,0,'NA','NA','NA','Disc','Drum','Front :-90/100-10 Rear :-3.00-10','Front :-254 mm,Rear :-254 mm','Alloy',3,"Bike"),
 (29,'Pure EV','Neo Etrance','','Top',87999,60,240,'',0.000,0.000,'High Speed','Enquiry only','','',0,0.000,2.200,120,'Lithium-ion',2.500,0,0,'NA',0,'NA','NA','NA','NA','NA','NA','NA',0,'NA',0.000,0.000,'Yes','NA','0','NA','Regenerative Braking, Reflector, Blinkers','NA','NA','NA','NA','NA','Digital','NA','NA','NA','','NA','NA','NA','NA','NA',12,'NA','Yes','Electric Bikes','','NA',0,0,0,0,0,0,0.000,150,'LED','NA',60,'BLDC',0,0,'Hub Motor',0,0,'NA','Telescopic','NA','Disc','Drum','Front :-: 90/100-10, Rear :-3.00-10','Front :-254 mm,Rear :-254 mm','Cast Alloy',3,"Scooter"),
 (30,'Okinawa','Okhi90','','Top',186006,90,330,'',0.000,0.000,'','','','',500,0.000,3.800,160,'Lithium Ion ( Detachable Battery )',3.600,60,0,'NA',0,'NA','Digital','Bluetooth,WiFi','Yes','NA','Yes','Yes',40,'NA',0.000,0.000,'Yes','NA','0','NA','E-ABS, Brake Lever - Aluminium Lever, Outer Appearance- Garnish – Chrome Plated, Parking Mode, Real-Time Asset Tracking, Find my device, Driver Behavior, Micro Charger with Auto Cut, ICAT/ARAI Approved - Yes','Yes','NA','NA','NA','NA','Digital','Digital','Digital','NA','','Yes','NA','NA','Yes','NA',12,'Yes','Yes','Electric Bikes','','Yes',710,2220,1160,900,175,1520,0.000,250,'LED','Yes',90,'NA',0,0,'Hub Motor',0,0,'NA','Hydraulic Telescopic','Double shocker with dual tube technology','Disc','Disc','Front :-100/80-16 Rear :-120/80','Front :-406.4 mm,Rear :-','Alloy',3,"Bike"),
-(31,'Hop','OXO','','Base',147024,90,0,'',0.000,0.000,'High speed','Yes','Online','Site',999,3.000,5.200,135,'Lithium-ion',3.750,240,300,'NA',0,'NA','Digital','Bluetooth','Yes','NA','Yes','Yes',0,'NA',0.850,0.000,'Yes','Yes','0','Yes','Riding Mode - Eco | Power | Sports, E-ABS, Park Assist, Helmet reminder','NA','NA','NA','NA','NA','Digital','Digital','Digital','NA','','NA','NA','NA','NA','NA',15,'Yes','Yes','Electric Bikes','','NA',793,2100,1065,780,180,0,140.000,250,'LED','Yes',90,'BLDC Hub motor',36,0,'Hub Motor',48,50000,'IP 67','Upright Telescopic Forks','Hydraulic spring loaded shock absorber','Disc','Disc','Front :-90/90-18 Rear :-130/70-17','Front :-457.2 mm,Rear :-431.8 mm','Alloy',4,"Scooter"),
-(32,'Hop','OXO','Pro','Top',149024,0,0,'',0.000,0.000,'High speed','Yes','Online','Site',999,3.000,5.200,150,'Lithium-ion',3.750,240,300,'NA',0,'NA','Digital','Bluetooth','Yes','NA','Yes','Yes',0,'NA',0.850,0.000,'Yes','Yes','0','Yes','Riding Mode - Eco | Power | Sports, E-ABS, Park Assist, Helmet reminder','NA','NA','NA','NA','NA','Digital','Digital','Digital','NA','','NA','NA','NA','NA','NA',18,'Yes','Yes','Electric Bikes','','NA',793,2100,1065,780,180,0,140.000,250,'LED','Yes',90,'BLDC Hub motor',36,0,'Hub Motor',48,50000,'IP 67','Upright Telescopic Forks','Hydraulic spring loaded shock absorber','Disc','Disc','Front :-90/90-18 Rear :-130/70-17','Front :-457.2 mm,Rear :-431.8 mm','Alloy',4,"Scooter"),
+(31,'Hop','OXO','','Top',147024,90,0,'',0.000,0.000,'High speed','Yes','Online','Site',999,3.000,5.200,135,'Lithium-ion',3.750,240,300,'NA',0,'NA','Digital','Bluetooth','Yes','NA','Yes','Yes',0,'NA',0.850,0.000,'Yes','Yes','0','Yes','Riding Mode - Eco | Power | Sports, E-ABS, Park Assist, Helmet reminder','NA','NA','NA','NA','NA','Digital','Digital','Digital','NA','','NA','NA','NA','NA','NA',15,'Yes','Yes','Electric Bikes','','NA',793,2100,1065,780,180,0,140.000,250,'LED','Yes',90,'BLDC Hub motor',36,0,'Hub Motor',48,50000,'IP 67','Upright Telescopic Forks','Hydraulic spring loaded shock absorber','Disc','Disc','Front :-90/90-18 Rear :-130/70-17','Front :-457.2 mm,Rear :-431.8 mm','Alloy',4,"Scooter"),
+(32,'Hop','OXO','Pro','Base',149024,0,0,'',0.000,0.000,'High speed','Yes','Online','Site',999,3.000,5.200,150,'Lithium-ion',3.750,240,300,'NA',0,'NA','Digital','Bluetooth','Yes','NA','Yes','Yes',0,'NA',0.850,0.000,'Yes','Yes','0','Yes','Riding Mode - Eco | Power | Sports, E-ABS, Park Assist, Helmet reminder','NA','NA','NA','NA','NA','Digital','Digital','Digital','NA','','NA','NA','NA','NA','NA',18,'Yes','Yes','Electric Bikes','','NA',793,2100,1065,780,180,0,140.000,250,'LED','Yes',90,'BLDC Hub motor',36,0,'Hub Motor',48,50000,'IP 67','Upright Telescopic Forks','Hydraulic spring loaded shock absorber','Disc','Disc','Front :-90/90-18 Rear :-130/70-17','Front :-457.2 mm,Rear :-431.8 mm','Alloy',4,"Scooter"),
 (33,'Ultraviolette','F77','ORIGNAL','Base',380000,140,300,'',3.400,0.000,'High speed','Yes','Online','Site',0,0.000,27.000,176,'Lithium-ion',7.100,0,300,'NA',3,'Yes','Digital','Bluetooth,WiFi','Yes','Yes','NA','Yes',0,'NA',0.000,0.000,'Yes','Yes','0','Yes','Ride Modes - Glide | Combat | Ballistic, Park Assist, SRB7 Battery Pack, Battery Management System, IEC 62196-6 Charging Port, Throttle Control, Up To 75 km Of Range Per Hour Of Charge, Ambient Light Sensor, Headlight Auto On/Off, GNSS enabled real-time position and velocity discovery, Maps with real-time traffic information, Vehicle Locator, Ride History & Ride Analytics, Temperature, Voltage and Current Sensors with Active Tracking and Efficiency Mapping across the Vehicle, Sensor Fusion technology using 9- axis Inertial Measurement Unit (IMU) along with built-in accelerometer, gyroscope & magnetometer Shock and Impact sensors for Fall and Crash Detection Error reporting through Ultraviolette Smartphone App , LTE connectivity with integrated eSIM, WLAN, GPS/GLONASS, Hazard Lights, Lockdown Mode, Fall & Crash Sensor, Emergency Contact Alert','Yes','Yes','NA','NA','Yes','Digital','Digital','Digital','NA','Yes','Yes','UV Automotive Linux OS','NA','Yes','NA',0,'Yes','Yes','Electric Bikes, Sports Bikes','','NA',0,0,0,800,160,1340,197.000,0,'LED','NA',140,'Permanent Magnet AC Motor',0,0,'Chain Drive',36,30000,'IP67 ( Battery )','Upside-down Telescopic fork with a diameter of 41 mm','Monoshock - preload adjustable','Disc','Disc','Front :-110/70-17 Rear :-150/60-17','Front :-431.8 mm,Rear :-431.8 mm','Alloy',4,"Scooter"),
 (34,'Ultraviolette','F77','RECON','Top',455000,147,300,'',3.100,0.000,'High speed','Yes','Online','Site',0,0.000,29.000,261,'Lithium-ion',10.300,0,300,'NA',3,'Yes','Digital','Bluetooth,WiFi','Yes','Yes','NA','Yes',0,'NA',0.000,0.000,'Yes','Yes','0','Yes','Ride Modes - Glide | Combat | Ballistic, Park Assist, SRB10 Battery Pack, Battery Management System, IEC 62196-6 Charging Port, Throttle Control, Up To 75 km Of Range Per Hour Of Charge, Ambient Light Sensor, Headlight Auto On/Off, GNSS enabled real-time position and velocity discovery, Maps with real-time traffic information, Vehicle Locator, Ride History & Ride Analytics, Temperature, Voltage and Current Sensors with Active Tracking and Efficiency Mapping across the Vehicle, Sensor Fusion technology using 9- axis Inertial Measurement Unit (IMU) along with built-in accelerometer, gyroscope & magnetometer Shock and Impact sensors for Fall and Crash Detection Error reporting through Ultraviolette Smartphone App , LTE connectivity with integrated eSIM, WLAN, GPS/GLONASS, Hazard Lights, Lockdown Mode, Fall & Crash Sensor, Emergency Contact Alert','Yes','Yes','NA','NA','Yes','Digital','Digital','Digital','NA','Yes','Yes','UV Automotive Linux OS','NA','Yes','NA',0,'Yes','Yes','Electric Bikes, Sports Bikes','','NA',0,0,0,800,160,1340,207.000,0,'LED','NA',147,'Permanent Magnet AC Motor',0,0,'Chain Drive',60,50000,'IP67 ( Battery )','Upside-down Telescopic fork with a diameter of 41 mm','Monoshock - preload adjustable','Disc','Disc','Front :-110/70-17 Rear :-150/60-17','Front :-431.8 mm,Rear :-431.8 mm','Alloy',4,"Scooter"),
 (35,'Ultraviolette','F77 Limited','','Top',550000,152,300,'',2.900,0.000,'High speed','Sold Out','','',0,0.000,32.000,261,'Lithium-ion',10.300,0,300,'NA',3,'Yes','Digital','Bluetooth,WiFi','Yes','Yes','NA','Yes',0,'NA',0.000,0.000,'Yes','Yes','0','Yes','Ride Modes - Glide | Combat | Ballistic, Park Assist, SRB10 Battery Pack, Battery Management System, IEC 62196-6 Charging Port, Throttle Control, Up To 75 km Of Range Per Hour Of Charge, Ambient Light Sensor, Headlight Auto On/Off, GNSS enabled real-time position and velocity discovery, Maps with real-time traffic information, Vehicle Locator, Ride History & Ride Analytics, Temperature, Voltage and Current Sensors with Active Tracking and Efficiency Mapping across the Vehicle, Sensor Fusion technology using 9- axis Inertial Measurement Unit (IMU) along with built-in accelerometer, gyroscope & magnetometer Shock and Impact sensors for Fall and Crash Detection Error reporting through Ultraviolette Smartphone App , LTE connectivity with integrated eSIM, WLAN, GPS/GLONASS, Hazard Lights, Lockdown Mode, Fall & Crash Sensor, Emergency Contact Alert , Aero Wheel Disc, Lever Guard','Yes','Yes','NA','NA','Yes','Digital','Digital','Digital','NA','Yes','Yes','UV Automotive Linux OS','NA','Yes','NA',0,'Yes','Yes','Electric Bikes, Sports Bikes','','NA',0,0,0,800,160,1340,207.000,0,'LED','NA',152,'Permanent Magnet AC Motor',0,0,'Chain Drive',96,100000,'IP67 ( Battery )','Upside-down Telescopic fork with a diameter of 41 mm','Monoshock - preload adjustable','Disc','Disc','Front :-110/70-17 Rear :-150/60-17','Front :-431.8 mm,Rear :-431.8 mm','Alloy',4,"Scooter"),
@@ -415,7 +415,7 @@ BEGIN
            BootSpace, Width, Length, Height, SaddleHeight, GroundClearance, Wheelbase, KerbWeight, LoadCarryingCapacity,
            TurnSignalLamp, DRLs, TopSpeed, MotorType, MotorWarrantyForMonths, MotorWarrantyForKm, DriveType, 
            BatteryWarrantyForMonths, BatteryWarrantyForKm, WaterProofRating, SuspensionFront,
-           SuspensionRear, BrakesFront, BrakesRear, TyreSize, WheelSize, WheelsType ,OurRating ,          
+           SuspensionRear, BrakesFront, BrakesRear, TyreSize, WheelSize, WheelsType ,OurRating ,VehicleType,        
            CONCAT(twi.Path,'/',twi.Image1 ,'.jpeg') Path
  	FROM twowheelerdata twd
     INNER JOIN main_image twi
@@ -621,7 +621,7 @@ BEGIN
            BootSpace, Width, Length, Height, SaddleHeight, GroundClearance, Wheelbase, KerbWeight, LoadCarryingCapacity,
            TurnSignalLamp, DRLs, TopSpeed, MotorType, MotorWarrantyForMonths, MotorWarrantyForKm, DriveType, 
            BatteryWarrantyForMonths, BatteryWarrantyForKm, WaterProofRating, SuspensionFront,
-           SuspensionRear, BrakesFront, BrakesRear, TyreSize, WheelSize, WheelsType ,OurRating ,           
+           SuspensionRear, BrakesFront, BrakesRear, TyreSize, WheelSize, WheelsType ,OurRating , VehicleType,         
  CONCAT(twi.Path, '/', twi.Image1, '.jpeg') AS Path
 FROM 
     twowheelerdata twd
@@ -657,7 +657,12 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `GetTwowheelerdataByVehicleType`(
 )
 BEGIN
 	SELECT * 
- 	FROM twowheelerdata
+ 	FROM twowheelerdata twd
+  INNER JOIN 
+    main_image twi
+ON 
+    twd.TWId = twi.TW_Ref_ID 
+    
 	WHERE VehicleType = Vehicle;
 END;;
 
@@ -761,7 +766,7 @@ VALUES
 ( 29, '../../../assets/images/2W/Pure/Neo Entrance/Images', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
 ( 30, '../../../assets/images/2W/Okinawa/Okhi 90/Images', '1', '2', '3', '4', '5', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
 ( 31, '../../../assets/images/2W/Hop/OXO/Images','1', '2', '3', '4', '5', '6', '7', '8', '', '', '', '', '', '', '', '', '', '', '', ''),
-( 32, '../../../assets/images/2W/Hop/OXO/Pro/Images', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+( 32, '../../../assets/images/2W/Hop/OXO/Pro/Images', '1','2', '3', '4', '5', '6', '7', '', '', '', '', '', '', '', '', '', '', '', '', ''),
 ( 33, '../../../assets/images/2W/Ultraviolette/F77/Images', '1', '2', '3', '4', '5', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
 ( 34, '../../../assets/images/2W/Ultraviolette/F77/Images', '1', '2', '3', '4', '5', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
 ( 35, '../../../assets/images/2W/Ultraviolette/F77 Limited/Images', '1', '2', '3', '4', '5', '6', '7', '8', '', '', '', '', '', '', '', '', '', '', '', ''),
@@ -779,6 +784,31 @@ VALUES
 SELECT * FROM weev.main_image;
 -- drop table main_image;-- 
 -- Table for Main image--
+UPDATE `main_image`
+SET `Image1` = NULL,
+    `Image2` = NULL,
+    `Image3` = NULL,
+    `Image3` = NULL,
+    `Image4` = NULL,
+    `Image4` = NULL,
+    `Image5` = NULL,
+    `Image6` = NULL,
+    `Image7` = NULL,
+    `Image8` = NULL,
+    `Image9` = NULL,
+    `Image10` = NULL,
+    `Image11` = NULL,
+    `Image12` = NULL,
+    `Image13` = NULL,
+    `Image14` = NULL,
+    `Image15` = NULL,
+    `Image16` = NULL,
+    `Image17` = NULL,
+    `Image18` = NULL,
+	`Image19` = NULL,
+    `Image20`= NULL
+
+WHERE `TW_Ref_ID` = 25;
 
 DELIMITER $$
 -- drop procedure  GetmainimagebyTWID;
@@ -814,7 +844,7 @@ BEGIN
         TW_Ref_ID = Id;
 END$$
 
--- drop PROCEDURE Getmainimagebyid;
+-- drop PROCEDURE Getmainimagebyid;GetTwowheelerdataByVehicleType
 DELIMITER $$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE`Getmainimagebyid`
@@ -926,6 +956,7 @@ DELIMITER ;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
 
 -- Dump completed on 2024-04-21  6:43:52
 -- drop procedure GetmainimagebyTWID;

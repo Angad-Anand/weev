@@ -169,7 +169,7 @@ As the EV market continues to grow, job creation and economic benefits are unfol
   
   navigateToBrand(Brand: string) {
     console.log(`Navigating to brand: ${Brand}`); // Debugging line
-    this.router.navigate(['/Bikes', Brand]); // Ensure this matches the route configuration
+    this.router.navigate(['/Bikes/Brand/', Brand]); // Ensure this matches the route configuration
 }
  
   getTwoWheelerData() {

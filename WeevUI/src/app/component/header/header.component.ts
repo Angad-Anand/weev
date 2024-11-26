@@ -75,7 +75,7 @@ export class HeaderComponent implements OnInit {
   getTwoWheelerData() {
     this.vehiclesService.getTwoWheelerData().subscribe((response) => {
       this.suggestions = response.map((item: any) => item);
-      console.log(this.suggestions);
+      // console.log(this.suggestions);
     });
   }
 
