@@ -11,7 +11,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
   gap: 20px;
-  width: 70%; /* Make the footer span the full width */
+  width: 80%; /* Make the footer span the full width */
   padding: 20px;
   color: #fff;
   padding: 10px;
@@ -19,7 +19,10 @@
   border-radius: 0; /* No rounded corners for a full-width look */
   box-shadow: none;/* Remove shadow for a cleaner look */
 }
-
+span
+{
+  color: red;
+}
 .footer-section {
   display: flex;
   flex-direction: column;
@@ -34,7 +37,7 @@
 .Brands h3 {
   margin-bottom: 15px;
   font-size: 1.5em;
-  border-bottom: 2px solid #fff;
+  // border-bottom: 2px solid #fff;
   padding-bottom: 5px;
 }
 
@@ -52,7 +55,7 @@
 .contact-form label {
   display: block;
   margin-bottom: 5px;
-  // display: none;
+  display: none;
 }
 
 .contact-form input,
@@ -99,7 +102,8 @@
 .nav-links a,
 .social-links a,
 .brand-links a {
-  color: #5768D4;
+   
+  color:#6305A8 ;
   font-weight: 500;
   text-decoration: none;
   transition: ease-in 0.2s;

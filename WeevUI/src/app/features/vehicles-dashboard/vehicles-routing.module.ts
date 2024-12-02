@@ -10,6 +10,7 @@ import { ElectricVehicleBlogComponent2 } from './blogs/electric-vehicle-blog-2/e
 import { ElectricVehicleBlogComponent3 } from './blogs/electric-vehicle-blog-3/electric-vehicle-blog-3.component';
 import { AboutComponent } from './about/about.component';
 // import { LoginComponent } from './login/login.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 const routes: Routes = [
   {
@@ -66,6 +67,10 @@ const routes: Routes = [
     path: 'About',
     component: AboutComponent,
   },
+  {
+    path:'PrivacyPolicy',
+    component:PrivacyPolicyComponent
+  },
   //     {
   //   path:'Login',
   //   component:LoginComponent
@@ -78,3 +83,4 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class VehiclesRoutingModule {}
+

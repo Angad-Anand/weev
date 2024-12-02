@@ -15,6 +15,7 @@ import { AuthService } from 'src/app/modules/auth/_services/auth.service';
 import { AuthGuardService } from 'src/app/modules/auth/_services/auth-guard.service';
 import { BrandsComponent } from './brands/brands.component';
 import { ElectricVehicleBlogComponent } from './blogs/electric-vehicle-blog/electric-vehicle-blog.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 // import { VehicleColorPageComponent } from '../category-dashboard/category-selection/VehicleColorPage/VehicleColorPage.component'; // Add this line
 
 
@@ -31,7 +32,8 @@ import { ElectricVehicleBlogComponent } from './blogs/electric-vehicle-blog/elec
     BlogsComponent,
     LoginComponent,
     BrandsComponent,
-    ElectricVehicleBlogComponent
+    ElectricVehicleBlogComponent,
+    PrivacyPolicyComponent
   ],
   imports: [
     CommonModule,FormsModule, ReactiveFormsModule,
