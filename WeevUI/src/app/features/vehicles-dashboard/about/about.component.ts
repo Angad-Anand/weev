@@ -12,23 +12,7 @@ import { VehiclesService } from 'src/app/modules/_services/vehicles.service';
 
 export class AboutComponent {
 
-  teamMembers = [
-    {
-      name: 'John Doe',
-      role: 'Founder & CEO',
-      imageUrl: 'assets/images/john.jpg'
-    },
-    {
-      name: 'Jane Smith',
-      role: 'Chief Technology Officer',
-      imageUrl: 'assets/images/jane.jpg'
-    },
-    {
-      name: 'Alice Brown',
-      role: 'Head of Marketing',
-      imageUrl: 'assets/images/alice.jpg'
-    }
-  ];
+  
 }
 
   

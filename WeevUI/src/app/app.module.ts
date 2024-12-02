@@ -19,6 +19,7 @@ import { BlogsComponent } from './features/vehicles-dashboard/blogs/blogs.compon
 import { ElectricVehicleBlogComponent } from './features/electric-vehicle-blog/electric-vehicle-blog.component';
 import { ElectricVehicleBlogComponent2 } from './features/vehicles-dashboard/blogs/electric-vehicle-blog-2/electric-vehicle-blog-2.component';
 import { ElectricVehicleBlogComponent3 } from './features/vehicles-dashboard/blogs/electric-vehicle-blog-3/electric-vehicle-blog-3.component';
+import { PrivacyPolicyComponent } from './features/vehicles-dashboard/privacy-policy/privacy-policy.component';
 
 
 @NgModule({
@@ -33,7 +34,7 @@ import { ElectricVehicleBlogComponent3 } from './features/vehicles-dashboard/blo
     MobileHeaderComponent,
     ElectricVehicleBlogComponent,
     ElectricVehicleBlogComponent2,
-    ElectricVehicleBlogComponent3
+    ElectricVehicleBlogComponent3,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +43,8 @@ import { ElectricVehicleBlogComponent3 } from './features/vehicles-dashboard/blo
     VehiclesDashboardModule,
     CategoryDashboardModule,
     FormsModule, ReactiveFormsModule,
-    ModalModule
+    ModalModule,
+    ReactiveFormsModule,
   ],
   // providers: [BsModalService, { provide: LocationStrategy, useClass: HashLocationStrategy }],
   providers: [BsModalService, { provide: LocationStrategy, useClass: PathLocationStrategy }],

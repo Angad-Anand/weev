@@ -1,47 +1,123 @@
-.about-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+/* General Styling for Desktop */
+.about-us-container {
+  background-image: url('../../../../assets/images/EV.png'); /* Relative path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-us-content{
+  width: 70%;
+}
+
+.about-us-header {
+  text-align: center;
+  color: white;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.about-us-header h1 {
+  font-size: 2.5em;
+  margin: 0 0 10px 0;
+  color: white;
+}
+
+.about-us-header p {
+  margin: 10px 0 0;
+  font-size: 1.2em;
+  color: white;
+}
+
+.mission-section,
+.vision-section {
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mission-section h2,
+.vision-section h2 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.mission-section p,
+.vision-section p {
+  line-height: 1.6;
+  font-size: 1.1em;
+  text-align: justify;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .about-us-container {
+    max-width: 95%; /* Adjust width for smaller screens */
+    padding: 15px;
+    background-position: center; /* Ensure image scales properly */
   }
-  
-  .about-header {
-    text-align: center;
-    padding: 20px 0;
+
+  .about-us-header h1 {
+    font-size: 2em; /* Reduce header size */
   }
-  
-  .about-header h1 {
-    font-size: 2.5rem;
+
+  .about-us-header p {
+    font-size: 1em; /* Reduce subtext size */
   }
-  
-  .about-content {
-    margin: 20px 0;
-    line-height: 1.6;
+
+  .mission-section,
+  .vision-section {
+    padding: 15px;
+    margin: 15px 0;
   }
-  
-  .about-team {
-    margin-top: 40px;
+
+  .mission-section h2,
+  .vision-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 8px;
   }
-  
-  .team-grid {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    flex-wrap: wrap;
+
+  .mission-section p,
+  .vision-section p {
+    font-size: 1em;
+    text-align: left; /* Align to the left for better readability on mobile */
   }
-  
-  .team-member {
-    text-align: center;
-    width: 30%;
+}
+
+/* Very Small Screens (Mobile Phones, up to 576px) */
+@media (max-width: 576px) {
+  .about-us-container {
+    padding: 10px;
   }
-  
-  .team-member img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+
+  .about-us-header h1 {
+    font-size: 1.8em; /* Further reduce header size */
   }
-  
-  .team-member h3 {
-    margin-top: 10px;
-    font-size: 1.5rem;
+
+  .about-us-header p {
+    font-size: 0.9em; /* Adjust subtext size */
   }
-  
+
+  .mission-section,
+  .vision-section {
+    padding: 10px;
+    margin: 10px 0;
+    box-shadow: none; /* Remove shadow for simplicity */
+  }
+
+  .mission-section h2,
+  .vision-section h2 {
+    font-size: 1.3em; /* Reduce title size */
+  }
+
+  .mission-section p,
+  .vision-section p {
+    font-size: 0.9em; /* Optimize text for small screens */
+  }
+}

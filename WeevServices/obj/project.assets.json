@@ -5054,27 +5054,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HP\\.nuget\\packages\\": {}
+    "C:\\Users\\Abhyudya\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\codefolder\\Weev\\WeevServices\\WeevServices.csproj",
+      "projectUniqueName": "C:\\Users\\Abhyudya\\Downloads\\weev\\WeevServices\\WeevServices.csproj",
       "projectName": "WeevServices",
-      "projectPath": "E:\\codefolder\\Weev\\WeevServices\\WeevServices.csproj",
-      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "E:\\codefolder\\Weev\\WeevServices\\obj\\",
+      "projectPath": "C:\\Users\\Abhyudya\\Downloads\\weev\\WeevServices\\WeevServices.csproj",
+      "packagesPath": "C:\\Users\\Abhyudya\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Abhyudya\\Downloads\\weev\\WeevServices\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Abhyudya\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -5138,7 +5136,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404\\RuntimeIdentifierGraph.json"
       }
     }
   }
