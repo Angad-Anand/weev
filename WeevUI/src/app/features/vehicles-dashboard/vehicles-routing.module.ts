@@ -11,6 +11,7 @@ import { ElectricVehicleBlogComponent3 } from './blogs/electric-vehicle-blog-3/e
 import { AboutComponent } from './about/about.component';
 // import { LoginComponent } from './login/login.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { BlogPageComponent } from './blog-page/blog-page.component';
 
 const routes: Routes = [
   {
@@ -70,6 +71,10 @@ const routes: Routes = [
   {
     path:'PrivacyPolicy',
     component:PrivacyPolicyComponent
+  },
+  {
+    path:'BlogPageComponent',
+    component:BlogPageComponent
   },
   //     {
   //   path:'Login',

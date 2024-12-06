@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 
 import {CategorySelectionComponent} from './features/category-dashboard/category-selection/category-selection.component';
+import { BlogPageComponent } from './features/vehicles-dashboard/blog-page/blog-page.component';
 
 // import { DashboardComponent } from './features/category-dashboard/dashboard/dashboard.component';
 
