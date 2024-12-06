@@ -8,7 +8,7 @@
 
 .about-us-section, .mission-section, .vision-section {
   width: 100%;
-  min-height: 300px; /* Adjust height as needed */
+  min-height: 700px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,6 +29,11 @@
 
 .vision-section {
   background: url('../../../../assets/images/EV.png') no-repeat center center/cover;
+
+}
+
+.about-us-header , .mission-header, .vision-header{
+  width: 50%;
 }
 
 /* Headings and text styling */
@@ -40,5 +45,11 @@ h1, h2 {
 p {
   font-size: 1.2rem;
   line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .about-us-section{
+    min-height: 300px;
+  }
 }
 

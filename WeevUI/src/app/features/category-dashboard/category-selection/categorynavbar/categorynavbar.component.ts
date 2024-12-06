@@ -79,16 +79,14 @@ export class CategorynavbarComponent implements OnInit {
 
   onColors() {
    this.twId = this.productID;
-   const timeoutDuration = this.activeTab === 'model' ? 0 : 510; 
-    this.router.navigate(['/Selection', this.twId, 'Colors']).then(() => {
-      setTimeout(() => {
-        const imageContainer = document.getElementById('image_container');
-        if (imageContainer) {
-          imageContainer.scrollIntoView({ behavior: 'smooth' });
-          // console.log('scrolling');
-        }
-      }, timeoutDuration); // Set timeout to 500 milliseconds
-    });
+   this.router.navigate(['/Selection', this.twId, 'Colors']).then(() => {
+    setTimeout(() => {
+      const imageContainer = document.getElementById('image_container');
+      if (imageContainer) {
+        imageContainer.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 510); 
+  });
   }
 }
 

@@ -2,14 +2,14 @@
   <!-- Display each visible blog -->
   <div class="blog" *ngFor="let blog of visibleBlogs">
     <h3>{{ blog.title }}</h3>
-    <section class="introduction">
+    <div class="introduction">
       <img [src]="blog.imageUrl" alt="{{ blog.title }}" class="blog-image">
 
       <h4>{{ blog.sectionTitle }}</h4>
       <p>{{ blog.content }}</p>
       <h4>{{ blog.heading }}</h4>
       <p>{{ blog.para }}</p>
-    </section>
+    </div>
 
     <!-- Image with overlay -->
     <div class="viewBlog" routerLink="/blog.id">
