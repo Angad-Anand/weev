@@ -6,9 +6,12 @@
   text-align: center;
 }
 
-.about-us-section, .mission-section, .vision-section {
-  width: 100%;
-  min-height: 700px;
+.about-us-section,
+.mission-section,
+.vision-section {
+  width: 100vw;
+  min-height: 85vh;
+  // min-height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,36 +23,56 @@
 }
 
 .about-us-section {
-  background: url('../../../../assets/images/about-us-ev.jpeg') no-repeat center center/cover;
+  background: url("../../../../assets/images/about-us-ev.jpeg") no-repeat center
+    center/cover;
 }
 
 .mission-section {
-  background: url('../../../../assets/images/mission-ev.jpeg') no-repeat center center/cover;
+  background: url("../../../../assets/images/mission-ev.jpeg") no-repeat center
+    center/cover;
 }
 
 .vision-section {
-  background: url('../../../../assets/images/EV.png') no-repeat center center/cover;
-
+  background: url("../../../../assets/images/EV.png") no-repeat center
+    center/cover;
 }
 
-.about-us-header , .mission-header, .vision-header{
-  width: 50%;
+.about-us-header,
+.mission-header,
+.vision-header {
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  padding: 50px;
+  height: 85vh;
+  border-radius: 20px;
+  // background-color: rgba(10, 25, 47, 0.5);
+  // backdrop-filter: blur(10px);
 }
 
 /* Headings and text styling */
-h1, h2 {
+h1,
+h2 {
   margin: 10px 0;
   font-size: 2rem;
+  position: absolute;
+  top: 20vh;
 }
 
 p {
   font-size: 1.2rem;
   line-height: 1.6;
+  position: absolute;
+  // top: 30vh;
+  bottom: 10vh;
 }
 
 @media (max-width: 768px) {
-  .about-us-section{
+  .about-us-section {
     min-height: 300px;
   }
 }
-
