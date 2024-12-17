@@ -109,8 +109,6 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
     }
   }
 
-
-
   // getTwoWheelerDatas() {
   //   this.vehiclesService.getTwoWheelerData()
   //     .subscribe((response) => {
@@ -134,8 +132,6 @@ export class CategorySelectionComponent implements OnInit, AfterViewChecked {
   //   }
   //     });
   // }
-
-
 
   startLoading() {
     this.loading = true;
