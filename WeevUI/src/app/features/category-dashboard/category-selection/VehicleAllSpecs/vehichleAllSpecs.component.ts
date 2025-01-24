@@ -73,6 +73,7 @@ export class VehicleAllSpecsComponent {
         const transformedResponse = this.transformResponse(response);
         this.productlist = transformedResponse;
         this.productListModel = this.productlist;
+        // console.log(this.productListModel)
       });
   }
 

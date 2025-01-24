@@ -1,0 +1,61 @@
+<!-- ek baar bani h jisme 4 6 predefined compare option dikhynge -->
+<div class="compare-suggest-container">
+  <div class="suggest-title">Popular Compares</div>
+  <div class="type-option-compare">
+    <div class="option" [ngClass]="{ active: activeType === 'bike' }" (click)="setActiveType('bike')">
+      Bike
+    </div>
+    <div class="option" [ngClass]="{ active: activeType === 'scooter' }" (click)="setActiveType('scooter')">
+      Scooter
+    </div>
+  </div>
+  <div class="suggestedVehicle">
+    <button class="arrow left-arrow" *ngIf="showLeftArrow" (click)="scroll('left')"><svg fill="#000000" height="30px"
+        width="30px" viewBox="0 0 330 330" transform="rotate(180)">
+        <g stroke-width="0"></g>
+        <g stroke-linecap="round" stroke-linejoin="round"></g>
+        <g>
+          <path
+            d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001 c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213 C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606 C255,161.018,253.42,157.202,250.606,154.389z">
+          </path>
+        </g>
+      </svg>
+    </button>
+    <div class="suggestcards" #suggestcards>
+      <div class="comparison-card" *ngFor="let card of comparisonCards[activeType]">
+        <div class="vehicle-container">
+          <div class="vehicle" *ngFor="let vehicle of card.vehicles">
+            <img [src]="vehicle.image" [alt]="vehicle.model">
+            <div class="details">
+              <div class="brand">{{ vehicle.brand }}</div>
+              <div class="detail">{{ vehicle.model }}</div>
+              <div class="detail">{{ vehicle.price }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="compare-button" (click)="CompareThis(card.vehicles[0].twId, card.vehicles[1].twId)">
+          {{ card.vehicles[0].model }} vs {{ card.vehicles[1].model }}
+        </div>
+      </div>
+    </div>
+    <button class="arrow right-arrow" *ngIf="showRightArrow" (click)="scroll('right')"><svg fill="#000000" height="30px"
+        width="30px" viewBox="0 0 330 330" transform="rotate(0)">
+        <g stroke-width="0"></g>
+        <g stroke-linecap="round" stroke-linejoin="round"></g>
+        <g>
+          <path
+            d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001 c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213 C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606 C255,161.018,253.42,157.202,250.606,154.389z">
+          </path>
+        </g>
+      </svg></button>
+  </div>
+  <div *ngIf="!isComparePage" class="view-compare-page"  (click)="compareRedirect()">Compare Different Vehicles of Your Choice <svg xmlns="http://www.w3.org/2000/svg"
+      width="24" height="24" viewBox="0 0 24 24" fill="#6A0DAD">
+      <g>
+        <path d="M12,2A10,10,0,1,0,22,12,10.011,10.011,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8.009,8.009,0,0,1,12,20Z" />
+        <polygon
+          points="13 13.586 13 8 11 8 11 13.586 8.707 11.293 7.293 12.707 12 17.414 16.707 12.707 15.293 11.293 13 13.586" />
+      </g>
+    </svg>
+  </div>
+</div>

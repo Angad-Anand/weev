@@ -12,6 +12,9 @@ import { AboutComponent } from './about/about.component';
 // import { LoginComponent } from './login/login.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { BlogPageComponent } from './blog-page/blog-page.component';
+import {VehicleComparisonComponent} from 'src/app/features/vehicle-comparison/vehiclecomparison.component';
+import {CompareMainComponent} from 'src/app/features/vehicle-comparison/CompareMainPage/CompareMainPage.component';
+
 
 const routes: Routes = [
   {
@@ -75,6 +78,14 @@ const routes: Routes = [
   {
     path:'BlogPageComponent',
     component:BlogPageComponent
+  },
+  {
+    path:'Compare',
+    component:VehicleComparisonComponent
+  },
+  {
+    path:'Compare/:twId1/:twId2',
+    component:CompareMainComponent
   },
   //     {
   //   path:'Login',

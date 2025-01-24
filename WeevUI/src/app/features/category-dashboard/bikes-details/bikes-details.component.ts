@@ -40,9 +40,9 @@ export class BikesDetailsComponent implements OnInit {
   brand: string = '';
   ngOnInit(): void {
     this.route.params.subscribe((params: any) => {
-      console.log('Route parameters:', params); // Log all parameters
+      // console.log('Route parameters:', params); // Log all parameters
       this.brand = params['Brand']; // This should match the route parameter name
-      console.log(`Brand received: ${this.brand}`); // Debugging line
+      // console.log(`Brand received: ${this.brand}`); // Debugging line
     });
     this.getTwoWheelerData();
 
@@ -92,19 +92,19 @@ export class BikesDetailsComponent implements OnInit {
       // console.log(this.allTwoWheelerList);
     });
 
-    this.vehiclesService
-      .getTwoWheelerDataByType('bike')
-      .subscribe((response) => {
-        this.bikeList = response;
-        // console.log(this.bikeList);
-      });
+    // this.vehiclesService
+    //   .getTwoWheelerDataByType('bike')
+    //   .subscribe((response) => {
+    //     this.bikeList = response;
+    //     // console.log(this.bikeList);
+    //   });
 
-    this.vehiclesService
-      .getTwoWheelerDataByType('Scooter')
-      .subscribe((response) => {
-        this.scooterList = response;
-        // console.log(this.scooterList);
-      });
+    // this.vehiclesService
+    //   .getTwoWheelerDataByType('Scooter')
+    //   .subscribe((response) => {
+    //     this.scooterList = response;
+    //     // console.log(this.scooterList);
+    //   });
   }
 
   filterByType(type: string) {
@@ -120,15 +120,15 @@ export class BikesDetailsComponent implements OnInit {
         }
         console.log(this.filteredtwowheelerlist.length)
       } else if (type === 'bike') {
-        for (var i = 0; i < this.bikeList.length; i++) {
-          if (this.bikeList[i].variantType === 'Top') {
-            this.filteredtwowheelerlist.push(this.bikeList[i]);
+        for (var i = 0; i < this.allTwoWheelerList.length; i++) {
+          if (this.allTwoWheelerList[i].variantType === 'Top' && this.allTwoWheelerList[i].vehicleType ==='Bike') {
+            this.filteredtwowheelerlist.push(this.allTwoWheelerList[i]);
           }
         }
       } else if (type === 'scooter') {
-        for (var i = 0; i < this.scooterList.length; i++) {
-          if (this.scooterList[i].variantType === 'Top') {
-            this.filteredtwowheelerlist.push(this.scooterList[i]);
+        for (var i = 0; i < this.allTwoWheelerList.length; i++) {
+          if (this.allTwoWheelerList[i].variantType === 'Top' && this.allTwoWheelerList[i].vehicleType ==='Scooter') {
+            this.filteredtwowheelerlist.push(this.allTwoWheelerList[i]);
           }
         }
       } else if (type === 'Brand') {
