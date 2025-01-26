@@ -1,77 +1,30 @@
-<!-- yhn p compare selection page 
- mtlb ki 2 4 vehicle select kro aur compare button dbao-->
 <div class="vehicleCompareContainer">
     <div class="CompareBanner">
-        <img src="assets\images\comparebanner.png" alt="">
+        <img src="assets/images/comparebanner.png" alt="Compare Banner">
     </div>
     <div class="compareSection">
         <div class="compare-container">
-            <div class="vehicle-card">
+            <div class="vehicle-card" *ngFor="let vehicle of vehicles; let i = index">
                 <div class="vehicle-icon">
-                    <img src="assets\images\bike1-svgrepo-com.svg" alt="">
+                    <img src="assets/images/bike1-svgrepo-com.svg" alt="Vehicle Icon">
                 </div>
                 <div class="vehicle-select-options">
-                    <select class="vehicle-select">
-                        <option>Select Make</option>
+                    <select class="vehicle-select" [(ngModel)]="vehicles[i].make" (change)="onMakeChange(i)">
+                        <option value="">Select Make</option>
+                        <option *ngFor="let make of makes" [value]="make">{{ make }}</option>
                     </select>
-                    <select class="vehicle-select">
-                        <option>Select Model</option>
+                    <select class="vehicle-select" [(ngModel)]="vehicles[i].model" (change)="onModelChange(i)">
+                        <option value="">Select Model</option>
+                        <option *ngFor="let model of models[i]" [value]="model">{{ model }}</option>
                     </select>
-                    <select class="vehicle-select">
-                        <option>Select Variant</option>
-                    </select>
-                </div>
-            </div>
-            <div class="vehicle-card">
-                <div class="vehicle-icon">
-                    <img src="assets\images\bike1-svgrepo-com.svg" alt="">
-                </div>
-                <div class="vehicle-select-options">
-                    <select class="vehicle-select">
-                        <option>Select Make</option>
-                    </select>
-                    <select class="vehicle-select">
-                        <option>Select Model</option>
-                    </select>
-                    <select class="vehicle-select">
-                        <option>Select Variant</option>
-                    </select>
-                </div>
-            </div>
-            <div class="vehicle-card">
-                <div class="vehicle-icon">
-                    <img src="assets\images\bike1-svgrepo-com.svg" alt="">
-                </div>
-                <div class="vehicle-select-options">
-                    <select class="vehicle-select">
-                        <option>Select Make</option>
-                    </select>
-                    <select class="vehicle-select">
-                        <option>Select Model</option>
-                    </select>
-                    <select class="vehicle-select">
-                        <option>Select Variant</option>
-                    </select>
-                </div>
-            </div>
-            <div class="vehicle-card">
-                <div class="vehicle-icon">
-                    <img src="assets\images\bike1-svgrepo-com.svg" alt="">
-                </div>
-                <div class="vehicle-select-options">
-                    <select class="vehicle-select">
-                        <option>Select Make</option>
-                    </select>
-                    <select class="vehicle-select">
-                        <option>Select Model</option>
-                    </select>
-                    <select class="vehicle-select">
-                        <option>Select Variant</option>
+                    <select class="vehicle-select" [(ngModel)]="vehicles[i].variant">
+                        <option value="">Select Variant</option>
+                        <option *ngFor="let variant of variants[i]" [value]="variant">{{ variant }}</option>
                     </select>
                 </div>
             </div>
         </div>
-        <button class="compare-button">Compare Models</button>
+        <button class="compare-button" (click)="compareVehicles()">Compare Models</button>
     </div>
     <app-CompareSuggestions></app-CompareSuggestions>
 </div>

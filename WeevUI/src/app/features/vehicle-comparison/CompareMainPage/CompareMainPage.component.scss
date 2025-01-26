@@ -1,0 +1,52 @@
+* {
+  outline: 1px solid green;
+}
+
+.main-compare-container {
+  max-width: 100%;
+  margin-left: 16%;
+  margin-right: 16%;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid rgb(99, 5, 168, 0.5);
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+.selected-options {
+  display: flex;
+  gap: 15px;
+}
+
+.selected-option {
+  width: 280px;
+}
+
+.selected-option img {
+  width: 250px;
+  border-radius: 15px;
+  max-height: 150px;
+  min-height: 150px;
+  margin: 0;
+}
+
+.selected-option-title {
+  color: #9813eb;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.varient-dropdown {
+  width: 90%;
+  height: 40px;
+  padding: 0px;
+  padding-left: 10px;
+  margin: 0px 0;
+  border-radius: 0px;
+  border: 1px solid #a084ca;
+  background: #f5e6ff;
+  color: black;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 15px;
+}
