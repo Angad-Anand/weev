@@ -1,30 +1,25 @@
 <div class="vehicleCompareContainer">
-    <div class="CompareBanner">
-        <img src="assets/images/comparebanner.png" alt="Compare Banner">
+  <div class="CompareBanner">
+    <img src="assets/images/comparebanner.png" alt="Compare Banner">
+  </div>
+  <div class="compare">
+    <div class="compareCardsContainer" [ngClass]="{'desktop': isDesktop, 'mobile': !isDesktop}">
+      <ng-container *ngFor="let card of cards; let i = index">
+        <CompareSelectedCard
+          *ngIf="card.title"
+          [cardData]="card"
+          (cardRemoved)="onCardRemoved($event, i)"
+        ></CompareSelectedCard>
+        <CompareEmptyCard
+          *ngIf="!card.title"
+          (vehicleSelected)="onVehicleSelected($event, i)"
+        ></CompareEmptyCard>
+      </ng-container>
     </div>
-    <div class="compareSection">
-        <div class="compare-container">
-            <div class="vehicle-card" *ngFor="let vehicle of vehicles; let i = index">
-                <div class="vehicle-icon">
-                    <img src="assets/images/bike1-svgrepo-com.svg" alt="Vehicle Icon">
-                </div>
-                <div class="vehicle-select-options">
-                    <select class="vehicle-select" [(ngModel)]="vehicles[i].make" (change)="onMakeChange(i)">
-                        <option value="">Select Make</option>
-                        <option *ngFor="let make of makes" [value]="make">{{ make }}</option>
-                    </select>
-                    <select class="vehicle-select" [(ngModel)]="vehicles[i].model" (change)="onModelChange(i)">
-                        <option value="">Select Model</option>
-                        <option *ngFor="let model of models[i]" [value]="model">{{ model }}</option>
-                    </select>
-                    <select class="vehicle-select" [(ngModel)]="vehicles[i].variant">
-                        <option value="">Select Variant</option>
-                        <option *ngFor="let variant of variants[i]" [value]="variant">{{ variant }}</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <button class="compare-button" (click)="compareVehicles()">Compare Models</button>
+    <div *ngIf="showMessage" class="message-bar">
+      Please select at least two vehicles to compare.
     </div>
-    <app-CompareSuggestions></app-CompareSuggestions>
+    <div class="compare-button" (click)="compareVehicles()">Compare Models</div>
+  </div>
+  <app-CompareSuggestions></app-CompareSuggestions>
 </div>

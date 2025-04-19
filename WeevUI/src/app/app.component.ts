@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GoogleAnalyticsService } from './modules/_services/google-analytics.service';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +11,7 @@ export class AppComponent {
 
   title = 'WEev';
 
-  constructor() {
+  constructor(private gaService: GoogleAnalyticsService, private router: Router) {
     // Observe window resize events
     const resizeObserver = new ResizeObserver(() => {
       if (this.isDesktopMode() !== this.previousMode) {
@@ -18,6 +20,14 @@ export class AppComponent {
       }
     });
     resizeObserver.observe(document.body); // Observe the body for size changes
+  }
+
+  ngOnInit() {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.gaService.trackEvent('page_view', { page_path: event.urlAfterRedirects });
+      }
+    });
   }
 
   previousMode: boolean = this.isDesktopMode(); // Store the initial mode

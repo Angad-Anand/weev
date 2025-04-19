@@ -5,9 +5,9 @@
     <div class="option" [ngClass]="{ active: activeType === 'bike' }" (click)="setActiveType('bike')">
       Bike
     </div>
-    <div class="option" [ngClass]="{ active: activeType === 'scooter' }" (click)="setActiveType('scooter')">
+    <!-- <div class="option" [ngClass]="{ active: activeType === 'scooter' }" (click)="setActiveType('scooter')">
       Scooter
-    </div>
+    </div> -->
   </div>
   <div class="suggestedVehicle">
     <button class="arrow left-arrow" *ngIf="showLeftArrow" (click)="scroll('left')"><svg fill="#000000" height="30px"
@@ -22,21 +22,50 @@
       </svg>
     </button>
     <div class="suggestcards" #suggestcards>
+      <div class="comparison-card" [class.empty-comparison-card]="!canCompare">
+        <div class="vehicle-container">
+          <ng-container *ngFor="let vehicle of emptyCardVehicles; let i = index">
+            <CompareSelectedCard *ngIf="vehicle" 
+              [cardData]="{
+                imageUrl: vehicle.imageUrl,
+                title: vehicle.title,
+                manufacturer: vehicle.manufacturer,
+                model: vehicle.model,
+                variant: vehicle.variant,
+                price: vehicle.price,
+                variants: [vehicle.variant]
+              }"
+              (cardRemoved)="removeVehicle(i)">
+            </CompareSelectedCard>
+            <CompareEmptyCard *ngIf="!vehicle" 
+              (vehicleSelected)="onVehicleSelected(i, $event)">
+            </CompareEmptyCard>
+          </ng-container>
+        </div>
+        <div class="compare-button" 
+             (click)="compareSelectedVehicles()" 
+             [class.disabled]="!canCompare">
+          {{ canCompare ? 
+             emptyCardVehicles[0]?.manufacturer + ' vs ' + emptyCardVehicles[1]?.manufacturer : 
+             'Compare Selected' }}
+        </div>
+      </div>
       <div class="comparison-card" *ngFor="let card of comparisonCards[activeType]">
         <div class="vehicle-container">
           <div class="vehicle" *ngFor="let vehicle of card.vehicles">
-            <img [src]="vehicle.image" [alt]="vehicle.model">
+            <img [src]="vehicle.image" [alt]="vehicle.model" (click)="goToVehicle(vehicle)">
             <div class="details">
-              <div class="brand">{{ vehicle.brand }}</div>
+              <div class="brand">{{ vehicle.manufacturer }}</div>
               <div class="detail">{{ vehicle.model }}</div>
               <div class="detail">{{ vehicle.price }}</div>
             </div>
           </div>
         </div>
-        <div class="compare-button" (click)="CompareThis(card.vehicles[0].twId, card.vehicles[1].twId)">
-          {{ card.vehicles[0].model }} vs {{ card.vehicles[1].model }}
+        <div class="compare-button" (click)="CompareThis(card.vehicles[0].productName, card.vehicles[1].productName)">
+          {{ card.vehicles[0].manufacturer }} vs {{ card.vehicles[1].manufacturer }}
         </div>
       </div>
+
     </div>
     <button class="arrow right-arrow" *ngIf="showRightArrow" (click)="scroll('right')"><svg fill="#000000" height="30px"
         width="30px" viewBox="0 0 330 330" transform="rotate(0)">

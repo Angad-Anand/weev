@@ -11,49 +11,52 @@ import { ProductListModel } from 'src/app/modules/auth/_models/product.model';
 export class CategorynavbarComponent implements OnInit {
 
     @Input() activeTab: string = 'model';
-
+    twowheelerlist: Array<any> = [];
   twId: number = 0;
   productID: number = 0;
+  productName: string ='';
   productListModel: ProductListModel | undefined;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private vehiclesService: VehiclesService
-  ) {}
+  ) {this.route.params.subscribe((params) => ( this.productName= params['twId']));
+  }
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
-    this.route.params.subscribe((params) => {
-      this.productID = params['twId'];
-      this.getProductDataWithID(this.productID); // Fetch data when twId changes
-    });
+    this.getTwoWheelerDatas();
+    
+  }
+  getTwoWheelerDatas() {
     this.productListModel = Object.assign({}, EMPTY_Application);
-    if (this.productID != 0 || this.productID != undefined) {
-      this.getProductDataWithID(+this.productID);
+    this.vehiclesService.getTwoWheelerData()
+      .subscribe((response) => {
+        this.twowheelerlist = response;
+        const twowheeler = this.twowheelerlist.find(i => i.manufacturer+'_'+i.model+'_'+i.variant === this.productName);
+        this.productID=twowheeler.twId;
+        this.productListModel =twowheeler;
+    
+      });
     }
-  }
-
-  getProductDataWithID(productID: number) {
-    this.vehiclesService.getProductDataWithID(productID).subscribe((data) => {
-      this.productListModel = data;
-    });
-  }
+  // getProductDataWithID(productID: number) {
+  //   this.vehiclesService.getProductDataWithID(productID).subscribe((data) => {
+  //     this.productListModel = data;
+  //   });
+  // }
 
 
   onModel() {
-    this.twId = this.productID;
-    this.router.navigate(['/Selection', this.twId]);
+    this.router.navigate(['/Selection', this.productName]);
   }
 
   onSpecs() {
-    this.twId = this.productID;
-    this.router.navigate(['/Selection', this.twId, 'Specs']);
+    this.router.navigate(['/Selection', this.productName, 'Specs']);
   }
 
   onVarient() {
-    this.twId = this.productID;
     const timeoutDuration = this.activeTab === 'model' ? 0 : 510; 
-    this.router.navigate(['/Selection', this.twId]).then(() => {
+    this.router.navigate(['/Selection', this.productName]).then(() => {
       setTimeout(() => {
         const variants_Container = document.getElementById('variantsContainer');
         if (variants_Container) {
@@ -72,14 +75,14 @@ export class CategorynavbarComponent implements OnInit {
   }
 
   onImages() {
-    this.twId = this.productID;
-    this.router.navigate(['/Selection', this.twId, 'Colors']);
+    
+    this.router.navigate(['/Selection', this.productName, 'Colors']);
     window.scrollTo(0, 0);
   }
 
   onColors() {
-   this.twId = this.productID;
-   this.router.navigate(['/Selection', this.twId, 'Colors']).then(() => {
+  
+   this.router.navigate(['/Selection', this.productName, 'Colors']).then(() => {
     setTimeout(() => {
       const imageContainer = document.getElementById('image_container');
       if (imageContainer) {

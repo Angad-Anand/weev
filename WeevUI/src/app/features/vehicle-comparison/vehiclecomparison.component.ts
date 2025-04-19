@@ -1,62 +1,70 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-vehicleComparison',
   templateUrl: './vehiclecomparison.component.html',
-  styleUrls: ['./vehiclecomparison.component.scss']
+  styleUrls: ['./vehiclecomparison.component.scss'],
 })
 export class VehicleComparisonComponent implements OnInit {
-  vehicles = [
-    { make: '', model: '', variant: '' },
-    { make: '', model: '', variant: '' },
-    { make: '', model: '', variant: '' },
-    { make: '', model: '', variant: '' }
-  ];
+  isDesktop = false;
+  cards: any[] = []; // Holds card data
+  showMessage = false; // To control the visibility of the message
 
-  makes: string[] = ['Make1', 'Make2', 'Make3'];
-  models: string[][] = [[], [], [], []];
-  variants: string[][] = [[], [], [], []]; 
-
-  constructor() {}
+  constructor(private router: Router) {
+    this.checkScreenWidth();
+  }
 
   ngOnInit(): void {
     window.scroll(0, 0);
+    // Initialize the cards array with empty objects
+    this.cards = this.isDesktop ? [{}, {}, {}, {}] : [{}, {}];
   }
 
-  onMakeChange(index: number): void {
-    // Fetch models based on the selected make
-    const selectedMake = this.vehicles[index].make;
-    this.models[index] = this.getModelsByMake(selectedMake); // Replace with service call if needed
-    this.variants[index] = []; // Reset variants when make changes
-    this.vehicles[index].model = '';
-    this.vehicles[index].variant = '';
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.checkScreenWidth();
   }
 
-  onModelChange(index: number): void {
-    // Fetch variants based on the selected model
-    const selectedModel = this.vehicles[index].model;
-    this.variants[index] = this.getVariantsByModel(selectedModel); // Replace with service call if needed
-    this.vehicles[index].variant = '';
+  checkScreenWidth() {
+    this.isDesktop = window.innerWidth > 768;
+    // Update the cards array based on screen size
+    this.cards = this.isDesktop ? [{}, {}, {}, {}] : [{}, {}];
   }
 
   compareVehicles(): void {
-    console.log('Comparing vehicles:', this.vehicles);
-    // Implement comparison logic here
-  }
-
-  getModelsByMake(make: string): string[] {
-    // Replace this logic with API call
-    if (make === 'Make1') return ['Model1A', 'Model1B'];
-    if (make === 'Make2') return ['Model2A', 'Model2B'];
-    return [];
-  }
-
-  getVariantsByModel(model: string): string[] {
-    // Replace this logic with API call
-    if (model === 'Model1A') return ['Variant1A1', 'Variant1A2'];
-    if (model === 'Model2A') return ['Variant2A1', 'Variant2A2'];
-    return [];
-  }
-
+    const selectedCards = this.cards.filter(card => card.title);
+    if (selectedCards.length < 2) {
+      this.showMessage = true;
+      return;
+    }
   
+    // Ensure we always have exactly 4 values
+    const twIds = Array(4).fill('NA').map((_, i) => {
+      if (i < this.cards.length && this.cards[i].manufacturer && this.cards[i].model) {
+        return `${this.cards[i].manufacturer}_${this.cards[i].model}_${this.cards[i].variant || ''}`;
+      }
+      return 'NA';
+    });
+  
+    this.router.navigate(['/Compare', ...twIds]);
+  }
+
+  // Method to handle vehicle selection from CompareEmptyCard
+  onVehicleSelected(vehicle: any, index: number) {
+    this.cards[index] = {
+      manufacturer: vehicle.manufacturer, 
+      model: vehicle.model, 
+      variant: vehicle.variant, 
+      title: `${vehicle.manufacturer} ${vehicle.model} ${vehicle.variant}`,
+      imageUrl: vehicle.path,
+      price: vehicle.price,
+      variants:[vehicle.variants]
+    };
+  }
+
+  // Method to handle card removal
+  onCardRemoved(cardData: any, index: number) {
+    this.cards[index] = {}; // Reset the card to empty
+  }
 }

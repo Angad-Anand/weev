@@ -13,7 +13,7 @@
     </section>
         <section class="introduction">
         <h2>{{ sectionTitle1 }}</h2>
-        <img src="assets/images/blogs/6.png" alt="Electric Vehicle" class="img-fluid rounded">
+        <img src="assets/images/blogs/14.jpg" alt="Electric Vehicle" class="img-fluid rounded">
          <article>
          <p>{{ subSection1.content }}</p>
          </article>
@@ -22,7 +22,7 @@
 
       <section class="introduction">
         <h2>{{ sectionTitle2 }}</h2>
-        <img src="assets/images/blogs/7.png" alt="Electric Vehicle" class="img-fluid rounded">
+        <img src="assets/images/blogs/15.jpg" alt="Electric Vehicle" class="img-fluid rounded">
       
          <article>
          <p>{{ subSection2.content }}</p>
@@ -31,7 +31,7 @@
 
       <section class="introduction">
         <h2>{{ sectionTitle3 }}</h2>
-        <img src="assets/images/blogs/8.png" alt="Electric Vehicle" class="img-fluid rounded">      
+        <img src="assets/images/blogs/16.jpg" alt="Electric Vehicle" class="img-fluid rounded">      
          <article>
          <p>{{ subSection3.content }}</p>
          </article>
@@ -39,7 +39,7 @@
 
       <section class="introduction">
         <h2>{{ sectionTitle4 }}</h2>
-        <img src="assets/images/blogs/9.png" alt="Electric Vehicle" class="img-fluid rounded">      
+        <img src="assets/images/blogs/17.jpg" alt="Electric Vehicle" class="img-fluid rounded">      
          <article>
          <p>{{ subSection4.content }}</p>
          </article>
@@ -47,7 +47,7 @@
 
       <section class="introduction">
         <h2>{{ sectionTitle5 }}</h2>
-        <img src="assets/images/blogs/10.png" alt="Electric Vehicle" class="img-fluid rounded">      
+        <img src="assets/images/blogs/18.jpg" alt="Electric Vehicle" class="img-fluid rounded">      
          <article>
          <p>{{ subSection5.content }}</p>
          </article>
@@ -55,7 +55,7 @@
 
       <section class="introduction">
         <h2>{{ sectionTitle6 }}</h2>
-        <img src="assets/images/blogs/11.png" alt="Electric Vehicle" class="img-fluid rounded">      
+        <img src="assets/images/blogs/19.jpg" alt="Electric Vehicle" class="img-fluid rounded">      
          <article>
          <p>{{ subSection6.content }}</p>
          </article>
@@ -63,7 +63,20 @@
   
     
     </div>
-  
+    <div class="sidebar"> <!-- Adjust height here -->
+      <div class="brands-container">
+        <div class="brands-header">
+          <div>Brands</div>
+        </div>
+        <div class="brands-content">
+          <div class="brands-list">
+            <div class="brand-item" *ngFor="let brand of brands" (click)="navigateToBrand(brand.name)">
+              <img [src]="brand.image">
+              <div class="brand-name">{{brand.name}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- Sticky Sidebar (Right Column - 30% width) -->
       <div class="sidebar">  <!-- Adjust height here -->
         <div class="sticky">
@@ -87,7 +100,7 @@
   
          
         </div>
-  
+        
       </div>
       </div>
     </div>

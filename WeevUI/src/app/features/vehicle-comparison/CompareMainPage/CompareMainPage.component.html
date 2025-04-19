@@ -1,36 +1,38 @@
 <div class="main-compare-container">
-    <div class="selected-options">
-        <div class="selected-option">
-            <img src="assets/images/2W/Revolt/Images/1.jpeg" alt="">
-            <div class="selected-option-title">{{[vehicleData['twId2'].model]}}</div>
-            <select class="varient-dropdown" id="">
-                <option>Varient 1</option>
-            </select>
-            <div class="selected-option-price">90000*</div>
+  <div class="compare-title">
+    {{ getComparisonTitle() }}
+  </div>
+  <div class="vehicle-cards">
+    <ng-container *ngFor="let data of vehicleDataObjects; let i = index">
+      <CompareSelectedCard *ngIf="data.model !== 'NA'" [cardData]="data" (cardRemoved)="onCardRemoved(data, i)">
+      </CompareSelectedCard>
+      <CompareEmptyCard *ngIf="data.model === 'NA'" (vehicleSelected)="onVehicleSelected($event, i)"></CompareEmptyCard>
+    </ng-container>
+  </div>
+  <div class="vehicle-compare-main">
+    <div class="vehicle-compare-section" *ngFor="let section of sections">
+      <div class="vehicle-compare-header" (click)="toggleSection(section)">
+        <span>{{ section.title }}</span>
+        <span class="vehicle-compare-arrow" [class.open]="section.open">
+          <svg width="21" height="21" viewBox="0 0 21 21" fill="none">
+            <path
+              d="M15.409 13.7282C15.6618 13.7282 15.8897 13.576 15.9864 13.3424C16.0831 13.1089 16.0297 12.84 15.8509 12.6613L10.8509 7.66129C10.7337 7.54404 10.5747 7.47821 10.409 7.47821C10.2432 7.47821 10.0842 7.54404 9.967 7.66129L4.967 12.6613C4.78825 12.84 4.73483 13.1089 4.83158 13.3424C4.92833 13.576 5.15616 13.7282 5.409 13.7282H15.409Z"
+              fill="#49007E" />
+          </svg>
+        </span>
+      </div>
+      <div class="vehicle-compare-content" [class.open]="section.open">
+        <div class="vehicle-compare-table">
+          <div *ngFor="let feature of section.features">
+            <div class="feature-header">{{ feature.key }}</div>
+            <div class="feature-values">
+              <div *ngFor="let value of feature.values; let i = index" class="feature-value">
+                {{ value === 'NA' ? '' : value }}
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="selected-option">
-            <img src="assets/images/2W/Revolt/Images/1.jpeg" alt="">
-            <div class="selected-option-title">{{[vehicleData['twId1'].model]}}</div>
-            <select class="varient-dropdown" id="">
-                <option>Varient 1</option>
-            </select>
-            <div class="selected-option-price">90000*</div>
-        </div>
-        <div class="selected-option">
-            <img src="assets/images/2W/Revolt/Images/1.jpeg" alt="">
-            <div class="selected-option-title">Revolt RV400</div>
-            <select class="varient-dropdown" id="">
-                <option>Varient 1</option>
-            </select>
-            <div class="selected-option-price">90000*</div>
-        </div>
-        <div class="selected-option">
-            <img src="assets/images/2W/Revolt/Images/1.jpeg" alt="">
-            <div class="selected-option-title">Revolt RV400</div>
-            <select class="varient-dropdown" id="">
-                <option>Varient 1</option>
-            </select>
-            <div class="selected-option-price">90000*</div>
-        </div>
+      </div>
     </div>
+  </div>
 </div>

@@ -84,8 +84,8 @@ const routes: Routes = [
     component:VehicleComparisonComponent
   },
   {
-    path:'Compare/:twId1/:twId2',
-    component:CompareMainComponent
+    path: 'Compare/:twId1/:twId2/:twId3/:twId4',
+    component: CompareMainComponent
   },
   //     {
   //   path:'Login',

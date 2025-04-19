@@ -11,8 +11,9 @@ import { ProductListModel } from 'src/app/modules/auth/_models/product.model';
 export class VehicleAllSpecsComponent {
   productListModel: ProductListModel | undefined;
   productID: number = 0;
+  productName: string = '';
   productlist: Array<ProductListModel> = new Array<ProductListModel>();
-
+  twowheelerlist: Array<any> = [];
   activeTab: string = '';
   loading: boolean = false;
   loadingTimeout: any;
@@ -23,16 +24,31 @@ export class VehicleAllSpecsComponent {
     private vehiclesService: VehiclesService,
     private cd: ChangeDetectorRef
   ) {
-    this.route.params.subscribe((params) => (this.productID = params['twId']));
+    this.route.params.subscribe(
+      (params) => (this.productName = params['twId'])
+    );
+    // console.log(this.productName,'specs');
     this.activeTab = 'specs';
   }
   ngOnInit(): void {
     window.scrollTo(0, 0); // Scroll to top
     this.startLoading();
+    this.getTwoWheelerDatas();
+  }
+
+  getTwoWheelerDatas() {
     this.productListModel = Object.assign({}, EMPTY_Application);
-    if (this.productID != 0 || this.productID != undefined) {
-      this.getProductDataWithID(+this.productID);
-    }
+    this.vehiclesService.getTwoWheelerData().subscribe((response) => {
+      this.twowheelerlist = response;
+      const twowheeler = this.twowheelerlist.find(
+        (i) =>
+          i.manufacturer + '_' + i.model + '_' + i.variant === this.productName
+      );
+      this.productID = twowheeler.twId;
+      const transformedResponse = this.transformResponse(twowheeler);
+      this.productListModel = transformedResponse;
+      console.log(this.productListModel);
+    });
   }
 
   startLoading() {
@@ -65,25 +81,23 @@ export class VehicleAllSpecsComponent {
     return transformedResponse;
   }
 
-  getProductDataWithID(productID: any) {
-    this.startLoading();
-    this.vehiclesService
-      .getProductDataWithID(productID)
-      .subscribe((response) => {
-        const transformedResponse = this.transformResponse(response);
-        this.productlist = transformedResponse;
-        this.productListModel = this.productlist;
-        // console.log(this.productListModel)
-      });
-  }
+  // getProductDataWithID(productID: any) {
+  //   this.startLoading();
+  //   this.vehiclesService
+  //     .getProductDataWithID(productID)
+  //     .subscribe((response) => {
+  // const transformedResponse = this.transformResponse(response);
+  // this.productlist = transformedResponse;
+  // this.productListModel = this.productlist;
+  //     });
+  // }
 
   onDetails() {
-    this.router.navigate(['/Selection', this.productID]);
+    this.router.navigate(['/Selection', this.productName]);
   }
 
   onVarient() {
-    this.twId = this.productID;
-    this.router.navigate(['/Selection', this.twId]).then(() => {
+    this.router.navigate(['/Selection', this.productName]).then(() => {
       setTimeout(() => {
         const variants_Container = document.getElementById('variantsContainer');
         if (variants_Container) {
@@ -97,40 +111,25 @@ export class VehicleAllSpecsComponent {
   }
 
   onImages() {
-    this.twId = this.productID;
-    this.router.navigate(['/Selection', this.twId, 'Colors']);
+    this.router.navigate(['/Selection', this.productName, 'Colors']);
   }
 
   twId: number = 0;
   onColors() {
-    this.twId = this.productID;
-    this.router.navigate(['/Selection', this.twId, 'Colors']).then(() => {
-      setTimeout(() => {
-        const imageContainer = document.getElementById('image_container');
-        if (imageContainer) {
-          imageContainer.scrollIntoView({ behavior: 'smooth' });
-          // console.log('scrolling');
-        }
-      }, 200); // Set timeout to 500 milliseconds
-    });
+    this.router
+      .navigate(['/Selection', this.productName, 'Colors'])
+      .then(() => {
+        setTimeout(() => {
+          const imageContainer = document.getElementById('image_container');
+          if (imageContainer) {
+            imageContainer.scrollIntoView({ behavior: 'smooth' });
+            // console.log('scrolling');
+          }
+        }, 200); // Set timeout to 500 milliseconds
+      });
   }
 
   getOverviewSpecs(): Array<{ key: string; value: any }> {
-    // const excludedKeys = ['path', 'twId']; // Define keys to exclude
-
-    // // Iterate over all keys in productListModel except those in excludedKeys
-    // return Object.keys(this.productListModel || {})
-    //   .filter(key => !excludedKeys.includes(key)) // Exclude keys in excludedKeys
-    //   .map((key) => {
-    //     const value = this.productListModel?.[key as keyof ProductListModel];
-    //     return value !== undefined && value !== '' && value !== null
-    //       ? {
-    //           key: this.keyDisplayMap[key] || key, // Use mapped key or original key
-    //           value: value, // Use the transformed value directly
-    //         }
-    //       : null;
-    //   })
-    //   .filter((item): item is { key: string; value: any } => item !== null); // Type guard to filter out null values
     const selectedKeys = [
       'manufacturer',
       'model',
@@ -206,121 +205,116 @@ export class VehicleAllSpecsComponent {
       .filter((item): item is { key: string; value: any } => item !== null); // Type guard to filter out null values
   }
 
-  getFeaturesSpecs(): Array<{ key: string; value: any }> {const selectedKeys = [
-    'instrumentConsole',
-    'bluetoothConnectivity',
-    'navigation',
-    'geoFencing',
-    'antiTheftAlarm',
-    'usbchargingPort',
-    'underseatStorage',
-    'distanceToEmptyIndicator',
-    'chargerOutputMin',
-    'chargerOutputMax',
-    'chargingPoint',
-    'fastCharging',
-    'fastChargingTimeUpto80Perc',
-    'ridingModes',
-  
-  ];
+  getFeaturesSpecs(): Array<{ key: string; value: any }> {
+    const selectedKeys = [
+      'instrumentConsole',
+      'bluetoothConnectivity',
+      'navigation',
+      'geoFencing',
+      'antiTheftAlarm',
+      'usbchargingPort',
+      'underseatStorage',
+      'distanceToEmptyIndicator',
+      'chargerOutputMin',
+      'chargerOutputMax',
+      'chargingPoint',
+      'fastCharging',
+      'fastChargingTimeUpto80Perc',
+      'ridingModes',
+    ];
 
-  return selectedKeys
-    .map((key) => {
-      const value = this.productListModel?.[key as keyof ProductListModel];
-      return value !== undefined && value !== '' && value !== null
-        ? {
-            key: this.keyDisplayMap[key] || key, // Use mapped key or original key
-            value: value, // Use the transformed value directly
-          }
-        : null;
-    })
-    .filter((item): item is { key: string; value: any } => item !== null); // Type guard to filter out null values
+    return selectedKeys
+      .map((key) => {
+        const value = this.productListModel?.[key as keyof ProductListModel];
+        return value !== undefined && value !== '' && value !== null
+          ? {
+              key: this.keyDisplayMap[key] || key, // Use mapped key or original key
+              value: value, // Use the transformed value directly
+            }
+          : null;
+      })
+      .filter((item): item is { key: string; value: any } => item !== null); // Type guard to filter out null values
   }
 
-  getAdditionalFeaturesSpecs(): Array<{ key: string; value: any }> {const selectedKeys = [
-    'callOrsmsalerts',
-    'musicControl',
-    'centralLocking',
-    'cruiseControl',
-    'externalSpeakers',
-    'speedometer',
-    'tripmeter',
-    'Odometer',
-    'carryHook',  
-    'abstractrtificialExhaustSoundSystem',
-    'internetConnectivity',
-    'operatingSystem',
-    'processor',
-    'mobileApplication',
-     'chargingStationLocater',
-    'gradeability',
-    'clock',
-    'lowBatteryIndicator',
-  ];
+  getAdditionalFeaturesSpecs(): Array<{ key: string; value: any }> {
+    const selectedKeys = [
+      'callOrsmsalerts',
+      'musicControl',
+      'centralLocking',
+      'cruiseControl',
+      'externalSpeakers',
+      'speedometer',
+      'tripmeter',
+      'Odometer',
+      'carryHook',
+      'abstractrtificialExhaustSoundSystem',
+      'internetConnectivity',
+      'operatingSystem',
+      'processor',
+      'mobileApplication',
+      'chargingStationLocater',
+      'gradeability',
+      'clock',
+      'lowBatteryIndicator',
+    ];
 
-  return selectedKeys
-    .map((key) => {
-      const value = this.productListModel?.[key as keyof ProductListModel];
-      return value !== undefined && value !== '' && value !== null
-        ? {
-            key: this.keyDisplayMap[key] || key, // Use mapped key or original key
-            value: value, // Use the transformed value directly
-          }
-        : null;
-    })
-    .filter((item): item is { key: string; value: any } => item !== null); // Type guard to filter out null values
+    return selectedKeys
+      .map((key) => {
+        const value = this.productListModel?.[key as keyof ProductListModel];
+        return value !== undefined && value !== '' && value !== null
+          ? {
+              key: this.keyDisplayMap[key] || key, // Use mapped key or original key
+              value: value, // Use the transformed value directly
+            }
+          : null;
+      })
+      .filter((item): item is { key: string; value: any } => item !== null); // Type guard to filter out null values
   }
 
-  getSpecificationsSpecs(): Array<{ key: string; value: any }> {const selectedKeys = [
-    'bodyType',
-    'dimensionsAndCapacity',
-    'bootSpace',
-    'width',
-    'length',
-    'height',
-    'saddleHeight',
-    'groundClearance',
-    'wheelbase',
-    'kerbWeight',
-    'loadCarryingCapacity',
-    'turnSignalLamp',
-    'drls',
-    'topSpeed',
-    'motorType',
-    'motorWarrantyForMonths',
-    'motorWarrantyForKm',
-    'driveType',
-    'batteryWarrantyForMonth',
-    'batteryWarrantyForKm',
-    'waterProofRating',
-    'suspensionFront',
-    'suspensionRear',
-    'brakesFront',
-    'brakesRear',
-    'tyreSize',
-    'wheelSize',
-    'wheelsType',
-  ];
+  getSpecificationsSpecs(): Array<{ key: string; value: any }> {
+    const selectedKeys = [
+      'bodyType',
+      'dimensionsAndCapacity',
+      'bootSpace',
+      'width',
+      'length',
+      'height',
+      'saddleHeight',
+      'groundClearance',
+      'wheelbase',
+      'kerbWeight',
+      'loadCarryingCapacity',
+      'turnSignalLamp',
+      'drls',
+      'topSpeed',
+      'motorType',
+      'motorWarrantyForMonths',
+      'motorWarrantyForKm',
+      'driveType',
+      'batteryWarrantyForMonth',
+      'batteryWarrantyForKm',
+      'waterProofRating',
+      'suspensionFront',
+      'suspensionRear',
+      'brakesFront',
+      'brakesRear',
+      'tyreSize',
+      'wheelSize',
+      'wheelsType',
+    ];
 
-  return selectedKeys
-    .map((key) => {
-      const value = this.productListModel?.[key as keyof ProductListModel];
-      return value !== undefined && value !== '' && value !== null
-        ? {
-            key: this.keyDisplayMap[key] || key, // Use mapped key or original key
-            value: value, // Use the transformed value directly
-          }
-        : null;
-    })
-    .filter((item): item is { key: string; value: any } => item !== null); // Type guard to filter out null values
+    return selectedKeys
+      .map((key) => {
+        const value = this.productListModel?.[key as keyof ProductListModel];
+        return value !== undefined && value !== '' && value !== null
+          ? {
+              key: this.keyDisplayMap[key] || key, // Use mapped key or original key
+              value: value, // Use the transformed value directly
+            }
+          : null;
+      })
+      .filter((item): item is { key: string; value: any } => item !== null); // Type guard to filter out null values
   }
-
-
-
-
-
-
-
 
   private keyDisplayMap: { [key: string]: string } = {
     manufacturer: 'Manufacturer',
@@ -415,38 +409,43 @@ export class VehicleAllSpecsComponent {
   };
 
   valueTransformMap: { [key: string]: (value: any) => string } = {
-    exShowroomPrice: (value) => `₹ ${value.toLocaleString('en-IN')}`,
-    maxSpeed: (value) => `${value} km/h`,
-    chargingTime: (value) => `${(value / 60).toFixed(2)} hours`,
-    batteryCapacity: (value) => `${value} kWh`,
+    exShowroomPrice: (value) =>
+      value === 'NA' ? value : `₹ ${value.toLocaleString('en-IN')}`,
+    maxSpeed: (value) => (value === 'NA' ? value : `${value} km/h`),
+    chargingTime: (value) =>
+      value === 'NA' ? value : `${(value / 60).toFixed(2)} hours`,
+    batteryCapacity: (value) => (value === 'NA' ? value : `${value} kWh`),
     chargingTime0To80Perc: (value) =>
-      `${(value / 60).toFixed(2)} hours (0-80%)`,
+      value === 'NA' ? value : `${(value / 60).toFixed(2)} hours (0-80%)`,
     chargingTime0To100Perc: (value) =>
-      `${(value / 60).toFixed(2)} hours (0-100%)`,
-    bookingPrice: (value) => `${value} ₹`,
-    accelration0To60kmph: (value) => `${value} sec (0-60 km/h)`,
-    accelration0To40kmph: (value) => `${value} sec (0-40 km/h)`,
-    continuousPower: (value) => `${value} kW`,
-    motorPower: (value) => `${value} kW`,
-    rangeOfVehicle: (value) => `${value} km`,
-    underseatStorage: (value) => `${value} liters`,
-    chargerOutputMin: (value) => `${value} kW`,
-    chargerOutputMax: (value) => `${value} kW`,
-    gradeability: (value) => `${value} degrees`,
-    width: (value) => `${value} mm`,
-    length: (value) => `${value} mm`,
-    height: (value) => `${value} mm`,
-    saddleHeight: (value) => `${value} mm`,
-    groundClearance: (value) => `${value} mm`,
-    wheelbase: (value) => `${value} mm`,
-    kerbWeight: (value) => `${value} kg`,
-    loadCarryingCapacity: (value) => `${value} kg`,
-    topSpeed: (value) => `${value} km/h`,
-    motorWarrantyForMonths: (value) => `${value} months`,
-    motorWarrantyForKm: (value) => `${value} km`,
-    batteryWarrantyForMonths: (value) => `${value} months`,
-    batteryWarrantyForKm: (value) => `${value} km`,
-    // ourRating: (value) => `${value}`,
+      value === 'NA' ? value : `${(value / 60).toFixed(2)} hours (0-100%)`,
+    bookingPrice: (value) => (value === 'NA' ? value : `${value} ₹`),
+    accelration0To60kmph: (value) =>
+      value === 'NA' ? value : `${value} sec (0-60 km/h)`,
+    accelration0To40kmph: (value) =>
+      value === 'NA' ? value : `${value} sec (0-40 km/h)`,
+    continuousPower: (value) => (value === 'NA' ? value : `${value} kW`),
+    motorPower: (value) => (value === 'NA' ? value : `${value} kW`),
+    rangeOfVehicle: (value) => (value === 'NA' ? value : `${value} km`),
+    underseatStorage: (value) => (value === 'NA' ? value : `${value} liters`),
+    chargerOutputMin: (value) => (value === 'NA' ? value : `${value} kW`),
+    chargerOutputMax: (value) => (value === 'NA' ? value : `${value} kW`),
+    gradeability: (value) => (value === 'NA' ? value : `${value} degrees`),
+    width: (value) => (value === 'NA' ? value : `${value} mm`),
+    length: (value) => (value === 'NA' ? value : `${value} mm`),
+    height: (value) => (value === 'NA' ? value : `${value} mm`),
+    saddleHeight: (value) => (value === 'NA' ? value : `${value} mm`),
+    groundClearance: (value) => (value === 'NA' ? value : `${value} mm`),
+    wheelbase: (value) => (value === 'NA' ? value : `${value} mm`),
+    kerbWeight: (value) => (value === 'NA' ? value : `${value} kg`),
+    loadCarryingCapacity: (value) => (value === 'NA' ? value : `${value} kg`),
+    topSpeed: (value) => (value === 'NA' ? value : `${value} km/h`),
+    motorWarrantyForMonths: (value) =>
+      value === 'NA' ? value : `${value} months`,
+    motorWarrantyForKm: (value) => (value === 'NA' ? value : `${value} km`),
+    batteryWarrantyForMonths: (value) =>
+      value === 'NA' ? value : `${value} months`,
+    batteryWarrantyForKm: (value) => (value === 'NA' ? value : `${value} km`),
     abstractrtificialExhaustSoundSystem: (value) => `${value}`,
     drls: (value) => `${value}`,
     turnSignalLamp: (value) => `${value}`,
@@ -476,7 +475,6 @@ export class VehicleAllSpecsComponent {
       const sizes = value.split(',').map((size: string) => size.trim());
       return sizes.join('\n');
     },
-    // wheelSize: (value) => `${value}`,
     wheelsType: (value) => `${value}`,
     bodyType: (value) => `${value}`,
     dimensionsAndCapacity: (value) => `${value}`,

@@ -1,61 +1,56 @@
-
-<div class="modal-dialog">
-  <div class="modal-content ">
-    <div class="modal-header">
-      <h4 class="modal-title sectiontitle " [innerHTML]="title"></h4>
-      <button type="button" class="btn-close"  aria-label="Close" 
-      (click)="closed()">
-    </button>
+<div class="customer-enquiry-dialog">
+  <div *ngIf="!formSubmitted" class="customer-enquiry-content">
+    <div class="customer-enquiry-header">
+      <h4 class="customer-enquiry-title" [innerHTML]="title"></h4>
+      <button type="button" class="customer-enquiry-close" aria-label="Close" (click)="closed()">
+        <img src="assets/images/plus-large-svgrepo-com.svg" alt="">
+      </button>
     </div>    
-    <form action="" class="form-style " [formGroup]="enquiriesForm" #form="ngForm">
-      <div class="modal-body">
+    <form action="" class="customer-enquiry-form form-style" [formGroup]="enquiriesForm" #form="ngForm">
+      <div class="customer-enquiry-body">
         <div class="form-group">          
-          <input type="text" id="username" name="username" formControlName="username" 
+          <input type="text" id="customer-username" name="username" formControlName="username" 
            required minlength="1" maxlength="50"
            class="form-control form-control-sm" 
            [class.is-invalid]="username.invalid && (username.dirty || username.touched)">
-           <label for="username"> User name</label>
+           <label for="customer-username">Enter your name</label>
           <div *ngIf="username.invalid && (username.dirty || username.touched)"
            class="invalid-feedback">
             <div *ngIf="username.errors?.['required']">
               This field is required.
             </div>
             <div *ngIf="username.errors?.['minlength']">
-              This field must have at least 3 character.
+              This field must have at least 3 characters.
             </div>
             <div *ngIf="username.errors?.['maxlength']">
               This field must have at most 45 characters.
             </div>
-        
-       </div>
-      
+          </div>
         </div>
+        
         <div class="form-group">          
-          <input type="text" id="mobile" name="mobile" formControlName="mobile" 
+          <input type="text" id="customer-mobile" name="mobile" formControlName="mobile" 
            required minlength="10" maxlength="10" 
-          class="form-control form-control-sm" [class.is-invalid]="mobile.invalid && (mobile.dirty || mobile.touched)">
-          <label for="mobile">Mobile</label>
+           class="form-control form-control-sm" [class.is-invalid]="mobile.invalid && (mobile.dirty || mobile.touched)">
+          <label for="customer-mobile">Enter your mobile number</label>
           <div *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)" class="invalid-feedback">
             <div *ngIf="mobile.errors?.['required']">
               This field is required.
             </div>
-            <div *ngIf="mobile.errors?.['minlength']">
-              This field must have at least 10 character.
+            <div *ngIf="mobile.errors?.['minlength'] || mobile.errors?.['maxlength']">
+              Mobile number must be exactly 10 digits.
             </div>
-            <div *ngIf="mobile.errors?.['maxlength']">
-              This field must have at most 10 characters.
+            <div *ngIf="mobile.errors?.['onlyNumber']">
+              Mobile number must start with 6, 7, 8, or 9 and contain only digits.
             </div>
-            <div *ngIf="!mobile.errors?.['required'] && !mobile.errors?.['minlength'] && !mobile.errors?.['maxlength'] && mobile.errors?.['onlyNumber']">
-              Invalid Mobile format.
-            </div>
-         
-         </div>
+          </div>          
         </div>
+        
         <div class="form-group">          
-          <input type="email" id="email" name="email" formControlName="email" 
+          <input type="email" id="customer-email" name="email" formControlName="email" 
               required minlength="1" maxlength="250" 
              class="form-control form-control-sm" [class.is-invalid]="email.invalid && (email.dirty || email.touched)">
-             <label for="query">Email</label>
+             <label for="customer-email">Enter your email</label>
              <div *ngIf="email.invalid && (email.dirty || email.touched)" class="invalid-feedback">
                <div *ngIf="email.errors?.['required']">
                  This field is required.
@@ -69,13 +64,21 @@
                <div *ngIf="!email.errors?.['required'] && !email.errors?.['minlength'] && !email.errors?.['maxlength'] && email.errors?.['emailValidator']">
                  Invalid email format.
                </div>
-             
             </div>
         </div>
       </div>
-      <div class="modal-footers">
-        <button class="btorng" (click)="onSubmit()">Submit</button>
+      <div class="customer-enquiry-footer">
+        <button class="customer-enquiry-submit btorng" (click)="onSubmit()">Submit</button>
       </div>
     </form>
+  </div>
+  
+  <div *ngIf="formSubmitted" class="success-message">
+    <div class="success-box">
+      <img src="assets/svg/success-check.svg" alt="Success" class="success-icon">
+      <h2 class="success-title">🎉 Thank You!</h2>
+      <p class="success-text">Your enquiry has been received. Our team will get back to you soon.</p>
+      <button class="success-close-btn" (click)="closed()">Return to page</button>
+    </div>
   </div>
 </div>

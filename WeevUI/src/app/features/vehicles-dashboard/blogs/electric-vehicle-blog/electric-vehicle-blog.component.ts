@@ -192,8 +192,26 @@ As the EV market continues to grow, job creation and economic benefits are unfol
 
 
   onSelect(twId: any) {
-    this.router.navigate(['/Selection', twId]);
+    const twowheeler = this.twowheelerlist.find(
+      (i) =>
+        // console.log(i.twid);
+        i.twId === twId
+    );
+    const vehicle =
+      twowheeler.manufacturer +
+      '_' +
+      twowheeler.model +
+      '_' +
+      twowheeler.variant;
+    console.log(vehicle);
+
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      this.router.navigate(['/Selection', vehicle]).then(() => {
+      });
+    }, 510);
   }
+  
   
 
   

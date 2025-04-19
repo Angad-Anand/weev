@@ -40,13 +40,13 @@ export class BikesDetailsComponent implements OnInit {
   brand: string = '';
   ngOnInit(): void {
     this.route.params.subscribe((params: any) => {
-      // console.log('Route parameters:', params); // Log all parameters
-      this.brand = params['Brand']; // This should match the route parameter name
-      // console.log(`Brand received: ${this.brand}`); // Debugging line
+      this.brand = params['Brand'];
     });
+    
     this.getTwoWheelerData();
+    this.cd.detectChanges(); 
 
-    window.scrollTo(0, 0); // Scroll to top
+    window.scrollTo(0, 0);
     this.loadMoreItems();
   }
 
@@ -73,6 +73,9 @@ export class BikesDetailsComponent implements OnInit {
   getTwoWheelerData() {
     this.vehiclesService.getTwoWheelerData().subscribe((response) => {
       this.allTwoWheelerList = response;
+      const vehicleWithImage = this.allTwoWheelerList.filter((i) => !i.path.includes('pr1.jpeg'));
+
+      this.allTwoWheelerList=vehicleWithImage;
       if (this.title == 'Bikes') {
         this.filterByType('all');
         this.title = 'All Vehicles';
@@ -156,21 +159,9 @@ export class BikesDetailsComponent implements OnInit {
   // manufacturer + model //exShowroomPrice //
 
   onSelect(twId: any) {
-    this.router.navigate(['/Selection', twId]);
-    // const twowheeler = this.allTwoWheelerList.find(i => i.twId === twId);
-    // this.router.navigate(["/Selection", twowheeler.manufacturer+''+twowheeler.model]);
+    // this.router.navigate(['/Selection', twId]);
+    const twowheeler = this.allTwoWheelerList.find(i => i.twId === twId);
+    this.router.navigate(["/Selection", twowheeler.manufacturer+'_'+twowheeler.model+'_'+twowheeler.variant]);
 
   }
 }
-
-// for (var i = 0; i < this.twowheelerlist.length; i++) {
-//   if (this.twowheelerlist[i].variantType === "Top") {
-//     this.filteredtwowheelerlist.push(this.twowheelerlist[i]);
-//   }
-// }
-// for (var i = 0; i < this.filteredtwowheelerlist.length; i++) {
-//   this.filteredtwowheelerlist[i] = Object.assign({}, this.filteredtwowheelerlist[i], {
-//     selectedRating: this.filteredtwowheelerlist[i].ourRating,
-//     unSelectRating: 5-this.filteredtwowheelerlist[i].ourRating
-//   });
-// }

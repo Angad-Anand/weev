@@ -1,9 +1,17 @@
+/* Reset default margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* General Styling for Desktop */
 .about-us-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  padding: 20px;
 }
 
 .about-us-section,
@@ -11,68 +19,93 @@
 .vision-section {
   width: 100vw;
   min-height: 85vh;
-  // min-height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
-  padding: 20px;
+  text-shadow: 0 10px 10px rgba(0, 0, 0, 0.7);
+  margin: 0 0 5px 0; /* Bottom margin for separation */
   box-sizing: border-box;
 }
 
 .about-us-section {
-  background: url("../../../../assets/images/about-us-ev.jpeg") no-repeat center
-    center/cover;
+  background: url("../../../../assets/images/About.jpg") no-repeat center center/cover;
 }
 
 .mission-section {
-  background: url("../../../../assets/images/mission-ev.jpeg") no-repeat center
-    center/cover;
+  background: url("../../../../assets/images/mission.jpg") no-repeat center center/cover;
 }
 
 .vision-section {
-  background: url("../../../../assets/images/EV.png") no-repeat center
-    center/cover;
+  background: url("../../../../assets/images/Vision.png") no-repeat center center/cover;
 }
 
 .about-us-header,
 .mission-header,
 .vision-header {
-  background-size: cover;
-  background-position: center;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  width: 60%;
-  padding: 50px;
-  height: 85vh;
-  border-radius: 20px;
-  // background-color: rgba(10, 25, 47, 0.5);
-  // backdrop-filter: blur(10px);
+  // align-items: flex-start;
+  width: 100%;
+  // padding: 50px;
+  // border-radius: 20px;
+  text-align: center;
+
+  /* Glass effect */
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.1), /* More transparent at the start */
+    rgba(255, 255, 255, 0.03) /* Very light transparency at the end */
+  );
+  backdrop-filter: blur(7px); /* Stronger blur for better separation */
+  -webkit-backdrop-filter: blur(20px); /* Safari support */
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Lighter border for subtle edge */
+  color: white;
 }
+
 
 /* Headings and text styling */
 h1,
 h2 {
-  margin: 10px 0;
-  font-size: 2rem;
-  position: absolute;
-  top: 20vh;
+  margin: 10px ;
+  font-size: 3rem;
+  color: white;
 }
 
 p {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   line-height: 1.6;
-  position: absolute;
-  // top: 30vh;
-  bottom: 10vh;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
+/* Media Query for Mobile */
 @media (max-width: 768px) {
-  .about-us-section {
+  .about-us-section,
+  .mission-section,
+  .vision-section {
     min-height: 300px;
+  }
+
+  .about-us-header,
+  .mission-header,
+  .vision-header {
+    width: 90%;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  h1,
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
   }
 }

@@ -1,0 +1,19 @@
+<div class="vehicle-card">
+  <div class="vehicle-icon">
+    <img src="assets/images/bike1-svgrepo-com.svg" alt="Vehicle Icon" />
+  </div>
+  <div class="comparesearchbox">
+    <input type="text" placeholder="Search..." [(ngModel)]="searchTerm" (input)="showSuggestions()" />
+    <button (click)="search()">
+      <img src="assets/images/search.svg" alt="Search" />
+    </button>
+    <div *ngIf="suggestionsVisible" class="suggestions">
+      <div *ngFor="let suggestion of filteredSuggestions" (click)="selectSuggestion(suggestion.twId)"
+        class="suggestion-item">
+        <div class="suggestion-text">
+          {{ suggestion.manufacturer }} {{ suggestion.model }} {{ suggestion.variant }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

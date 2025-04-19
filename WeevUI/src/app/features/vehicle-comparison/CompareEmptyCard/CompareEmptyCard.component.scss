@@ -1,0 +1,209 @@
+
+.vehicle-card {
+    max-width: 100%;
+    min-width: 250px;
+    height: 300px;
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+  .vehicle-icon {
+    width: 150px;
+    height: 150px;
+    //   border: 2px dashed #49007e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 30px;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='rgba(251, 243, 255, 1)' rx='100' ry='100' stroke='rgba(216, 137, 255, 1)' stroke-width='5' stroke-dasharray='15%2c 15%2c 1' stroke-dashoffset='0' stroke-linecap='round'/%3e%3c/svg%3e");
+    border-radius: 100px;
+  }
+  .vehicle-icon img {
+    width: 70px;
+    height: 70px;
+  }
+  .vehicle-icon::after {
+    content: "+";
+    position: absolute;
+    top: 10%;
+    right: -0%;
+    background: #49007e;
+    color: white;
+    font-size: 35px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  .comparesearchbox {
+    position: relative;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    height: 40px;
+    padding: 0 10px;
+    -webkit-box-shadow: inset 0px 0px 14px -2px rgb(255,173,255,0.5);
+    -moz-box-shadow: inset 0px 0px 14px -2px rgb(255,173,255,0.5);
+    box-shadow: inset 0px 0px 14px -2px rgb(255,173,255,0.5);
+  }
+  
+  .comparesearchbox input {
+    width: 100%; /* Default width for desktop */
+    border: none;
+    height: 100%;
+    background: none;
+    
+  }
+  
+  .comparesearchbox input:focus {
+    background: none;
+    outline: none;
+  }
+  
+  .comparesearchbox button {
+    border: none;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .comparesearchbox img {
+    height: 20px;
+    width: 20px;
+  }
+  
+  .comparesearchbox .suggestion-title {
+    padding: 10px 5px 10px 20px;
+    font-size: 12px;
+    color: #7a7a7a;
+    text-transform: uppercase;
+  }
+  
+  .comparesearchbox .suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    z-index: 10;
+    height: auto;
+    max-height: 330px;
+    overflow-y: auto;
+    -webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.5);
+    // display: none;
+  }
+  
+  .comparesearchbox:focus .suggestions,
+  .comparesearchbox:active .suggestions {
+    display: block;
+  }
+  
+  .comparesearchbox .suggestion-item {
+    cursor: pointer;
+    text-align: left;
+    font-size: 14px;
+    padding: 10px 5px 10px 20px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+  }
+  
+  .comparesearchbox .suggestion-item .trending-icon {
+    margin-right: 10px;
+  }
+  
+  .comparesearchbox .suggestion-item:hover {
+    background-color: #f0f0f0;
+  }
+  
+  *::-webkit-scrollbar {
+    height: 10px;
+    width: 5px;
+  }
+  *::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: #dfe9eb;
+  }
+  
+  *::-webkit-scrollbar-track:hover {
+    background-color: #b8c0c2;
+  }
+  
+  *::-webkit-scrollbar-track:active {
+    background-color: #b8c0c2;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #b6b6b6;
+  }
+  
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: #636363;
+  }
+  
+  *::-webkit-scrollbar-thumb:active {
+    background-color: #636363;
+  }
+  
+
+  @media only screen and (max-width: 768px) {
+    .vehicle-card{
+      max-width: 100%;
+      min-width: 180px;
+      height: 263px;
+      padding: 15px;
+    }
+    .vehicle-icon{
+      width: 150px;
+      height: 150px;
+    }
+
+    .vehicle-icon img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .vehicle-icon::after{
+      width: 30px;
+      height: 30px;
+      font-size: 30px;
+    }
+
+    .comparesearchbox{
+      width: 150px;
+      font-size: 12px;
+    }
+
+    .comparesearchbox img {
+      height: 15px;
+      width: 15px;
+    }
+
+    .comparesearchbox .suggestion-item {
+      padding: 10px;
+    }
+  }
+  
+
+  

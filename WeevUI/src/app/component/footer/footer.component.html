@@ -1,121 +1,56 @@
 <div class="footer-container">
-   <div class="footer">
-     <!-- Contact Us Section -->
-     <div class="footer-section contact-us">
-       <h3>Contact Us</h3>
-       <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
-         <!-- Name Field -->
-         <div class="form-group">
-           <label for="name">Name</label>
-           <input
-             type="text"
-             id="name"
-             formControlName="name"
-             placeholder="Enter your name"
-           />
-           <small *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="error-message">
-             <span *ngIf="name?.errors?.['required']">Name is required.</span>
-             <span *ngIf="name?.errors?.['minlength']">Name must be at least 3 characters long.</span>
-           </small>
-         </div>
-       
-         <!-- Email Field -->
-         <div class="form-group">
-           <label for="email">Email</label>
-           <input
-             type="email"
-             id="email"
-             formControlName="email"
-             placeholder="Enter your email"
-             required
-             title="Please enter a valid email address (e.g., user@example.com)"
-           />
-           <small *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="error-message">
-             <span *ngIf="email?.errors?.['required']">Email is required.</span>
-             <span *ngIf="email?.errors?.['email']">Invalid email format.</span>
-           </small>
-         </div>
-       
-         <!-- Contact Number Field -->
-         <div class="form-group">
-           <label for="number">Contact Number</label>
-           <input
-             type="tel"
-             id="number"
-             formControlName="number"
-             placeholder="Enter your mobile number"
-             required
-             pattern="[0-9]{10}"
-             title="Mobile number must be exactly 10 digits"
-           />
-           <small *ngIf="number?.invalid && (number?.dirty || number?.touched)" class="error-message">
-             <span *ngIf="number?.errors?.['required']">Contact number is required.</span>
-             <span *ngIf="number?.errors?.['pattern']">Mobile number must be exactly 10 digits.</span>
-           </small>
-         </div>
-       
-         <!-- Remarks Field -->
-         <div class="form-group">
-           <label for="remarks">Remarks/Comments</label>
-           <textarea
-             id="remarks"
-             rows="5"
-             formControlName="remarks"
-             placeholder="Enter your remarks"
-           ></textarea>
-         </div>
-       
-         <!-- Submit Button -->
-         <button type="submit" class="footer-submit" [disabled]="contactForm.invalid">Submit</button>
-       </form>
-       
-       
-     </div>
- 
-     <!-- Navigation Section -->
-     <div class="footer-section navigation">
-       <h3>Quick Links</h3>
-       <ul class="nav-links">
-         <li><a href="/">Home</a></li>
-         <li><a href="/About">About Us</a></li>
-         <li><a href="/BlogPageComponent">Blogs</a></li>
-         <li><a href="/Bikes/Type/Bikes">Bikes</a></li>
-         <li><a href="/Bikes/Type/Scooters">Scooters</a></li>
-       </ul>
-     </div>
- 
-     <!-- Brands and Social Media Section -->
-     <div class="footer-section">
-       <div class="Brands">
-         <h3>Brands</h3>
-         <ul class="brand-links">
-           <li><a href="/Bikes/Brand/Ola">Ola</a></li>
-           <li><a href="/Bikes/Brand/Ather">Ather</a></li>
-           <li><a href="/Bikes/Brand/Revolt">Revolt</a></li>
-           <li><a href="/Bikes/Brand/Ultraviolette">Ultraviolette</a></li>
-           <li><a href="/Bikes/Brand/Odysse">Odysse</a></li>
-           <li><a href="/Bikes/Brand/Bajaj">Bajaj</a></li>
-         </ul>
-       </div>
-       <!-- <div class="social-media">
-         <h3>Follow Us</h3>
-         <p>Stay connected through social platforms</p>
-         <ul class="social-links">
-           <li><a href="#" target="_blank">Facebook</a></li>
-           <li><a href="#" target="_blank">Twitter</a></li>
-           <li><a href="#" target="_blank">Instagram</a></li>
-         </ul>
-       </div> -->
-     </div>
-   </div>
- 
-  </div>
-  <!-- Privacy Policy and Copyright -->
-  <div class="privacy-copyright">
-     <div class="privacy-terms">
-        <div class="" (click)="privacypolicy()">Privacy Policy</div>
-        <div class="copyright">
-         © 2024 WEev
+  <div class="footer">
+    <div class="footer-section navigation">
+      <div class="brands">
+        <h3>Quick Links</h3>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/About">About Us</a></li>
+          <li><a (click)="open(popup)">
+              Contact Us
+            </a></li>
+          <li><a href="/BlogPageComponent">Blogs</a></li>
+          <li><a href="/Bikes/Type/Bikes">Bikes</a></li>
+          <li><a href="/Bikes/Type/Scooters">Scooters</a></li>
+        </ul>
       </div>
-     </div>
+    </div>
+    <!-- Brands and Social Media Section -->
+    <div class="footer-section">
+      <div class="Brands">
+        <h3>Bikes</h3>
+        <ul class="brand-links">
+          <li><a href="/Bikes/Brand/Torq">Torq</a></li>
+          <li><a href="/Bikes/Brand/Ather">Ather</a></li>
+          <li><a href="/Bikes/Brand/Revolt">Revolt</a></li>
+          <li><a href="/Bikes/Brand/Ultraviolette">Ultraviolette</a></li>
+          <li><a href="/Bikes/Brand/Odysse">Odysse</a></li>
+          <li><a href="/Bikes/Brand/Kabira Mobility">Kabira Mobility</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-section">
+      <div class="Brands">
+        <h3>Brands</h3>
+        <ul class="brand-links">
+          <li><a href="/Bikes/Brand/Ola">Ola</a></li>
+          <li><a href="/Bikes/Brand/Ather">Ather</a></li>
+          <li><a href="/Bikes/Brand/Simple">Simple</a></li>
+          <li><a href="/Bikes/Brand/Hero">Hero</a></li>
+          <li><a href="/Bikes/Brand/Odysse">Odysse</a></li>
+          <li><a href="/Bikes/Brand/Bajaj">Bajaj</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
+
+</div>
+<!-- Privacy Policy and Copyright -->
+<div class="privacy-copyright">
+  <div class="privacy-terms">
+    <div class="" (click)="privacypolicy()">Privacy Policy</div>
+    <div class="copyright">
+      © 2024 WEEV
+    </div>
+  </div>
+</div>

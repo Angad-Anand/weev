@@ -1,0 +1,11 @@
+<div class="selected-option">
+  <div class="close-button" (click)="removeCard()">×</div>
+  <img [src]="cardData?.imageUrl" alt="" (click)="goToVehicle()">
+  <div class="selected-details">
+      <div class="selected-option-title">{{ cardData?.title }}</div>
+      <select class="varient-dropdown" id="">
+          <option *ngFor="let variant of cardData?.variants" [value]="variant">{{ variant }}</option>
+      </select>
+      <div class="selected-option-price">Rs. {{ cardData?.price }}</div>
+  </div>
+</div>

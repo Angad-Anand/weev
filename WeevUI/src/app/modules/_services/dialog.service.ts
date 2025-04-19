@@ -19,7 +19,8 @@ export class DialogService {
     className?: string): Observable<string> {
     const subject = new Subject<string>();
 
-    this.modalRef = this.bsModalService.show(component, {
+    this.modalRef = 
+    this.bsModalService.show(component, {
 
       initialState: {
         title: title,
@@ -27,7 +28,8 @@ export class DialogService {
       },
 
       class: className,
-
+      backdrop: 'static',  // Prevent closing by clicking outside
+      keyboard: false,  // Prevent closing with Escape key
     });
 
     this.modalRef?.content.onClose.subscribe((result: any) => { subject.next(result); });

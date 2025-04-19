@@ -1,56 +1,54 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/modules/auth/_services/auth.service';
+import { DialogService } from 'src/app/modules/_services/dialog.service';
+import { CustomerEnquiriesComponent } from 'src/app/component/customer-enquiries/customer-enquiries.component';
+import { takeWhile } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent implements OnInit {
-  contactForm: FormGroup;
-
+  popup = false;
   currentDateYear: Date = new Date();
 
-  constructor(private fb: FormBuilder,private router: Router,) { 
-    // Initialize the form with validation rules
-    this.contactForm = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(3)]],
-      email: ['', [Validators.required, Validators.email]],
-      number: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
-      remarks: [''],
-    });}
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+    private readonly dialogService: DialogService,
+    private cd: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
+    this.cd.detectChanges();
+  }
+  public open(modal: any): void {
+    const name = { type: 'Customeenquiry', value: 'vinay' };
+    this.dialogService
+      .openModal('Contact Us', name, CustomerEnquiriesComponent)
+      .pipe(takeWhile(() => true))
+      .subscribe((customeData: any) => {
+        if (!!customeData) {
+          // console.log(customeData);
+          this.authService.Customerenquiries(customeData);
+        }
+      });
+  }
+  brands: string[] = [
+    'Ola',
+    'Ather',
+    'Revolt',
+    'Ultraviolette',
+    'Odysse',
+    'Bajaj',
+  ];
+  navigateToBrand(brand: string) {
+    this.router.navigate(['/Bikes/Brand/', brand]);
   }
 
-  // Method to handle form submission
-  onSubmit(): void {
-    if (this.contactForm.valid) {
-      console.log('Form Submitted', this.contactForm.value);
-      alert('Form Submitted Successfully!');
-      this.contactForm.reset(); // Reset the form after submission
-    } else {
-      console.log('Form Invalid', this.contactForm.errors);
-      alert('Please correct the errors in the form.');
-    }
-  }
-
-  // Utility getters for easy access in the template
-  get name() {
-    return this.contactForm.get('name');
-  }
-  get email() {
-    return this.contactForm.get('email');
-  }
-  get number() {
-    return this.contactForm.get('number');
-  }
-
-  privacypolicy(){
+  privacypolicy() {
     this.router.navigate(['PrivacyPolicy']);
   }
-
 }
-
-

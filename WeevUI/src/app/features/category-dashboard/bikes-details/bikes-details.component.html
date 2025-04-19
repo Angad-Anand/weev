@@ -1,33 +1,15 @@
 <section>
    <div class="headingarea ">
-      <!-- <ol class="breadcrumb">
-         <div ><a routerLink="" style="color: black;">Home</a></div>
-         <div>
-            <svg class="back" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-               <path d="M7 13L1 7L7 1" stroke="#23272F" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" />
-            </svg>
-            <span class="bike_title">{{title}}</span>
-         </div>
-      </ol> -->
+      
 
       <h1 class="pagehead">{{title}}
       </h1>
-      <!-- <h6 class="pagesub">
-         There are 299 electric bikes/motorcycles currently on sale from various manufacturers like Ather, Ola, TVS and
-         many more starting from Rs 25,000. The most popular products under this bracket are the Ola S1(Rs. 84,999),
-         Ather 450X(Rs. 1.19 Lakh)
-      </h6> -->
+      
    </div>
-   <!-- <div class="line"></div> -->
+   
 </section>
 
-<div class="bikes-landingarea">
-   <!-- <div class="filter-buttons">
-      <button (click)="filterByType('all')" [class.active]="activeFilter === 'all'">All</button>
-      <button (click)="filterByType('bike')" [class.active]="activeFilter === 'bike'">Bike</button>
-      <button (click)="filterByType('scooter')" [class.active]="activeFilter === 'scooter'">Scooter</button>
-   </div> -->
+<div class="bikes-landingarea">   
    <div *ngIf="loading" class="loading">
       <div class="loader"></div>
    </div>
@@ -48,12 +30,3 @@
       </div>
    </div>
 </div>
-
-<!-- <div class="icobx">
-            <a href="#" class="share">
-               <img src="assets/images/share.svg" alt="Share Icon">
-            </a>
-            <a href="#" class="heart">
-               <img src="assets/images/heart.svg" alt="Wishlist Icon">
-            </a>
-         </div> -->

@@ -2,7 +2,6 @@ import { Component, OnInit, ElementRef, ViewChild, ChangeDetectorRef, HostListen
 import { Router, ActivatedRoute } from '@angular/router';
 import { VehiclesService } from 'src/app/modules/_services/vehicles.service';
 import { ProductListModel } from 'src/app/modules/auth/_models/product.model';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-vehiclecolorpage',
@@ -15,7 +14,7 @@ export class VehicleColorPageComponent {
   productListModel: ProductListModel | undefined;
   productID: number = 0 ;
   productlist: Array<ProductListModel> = new Array<ProductListModel>();
-
+  twowheelerlist: Array<any> = [];
   colorimagePaths: { colorPath: string; colorName: string }[] = [];
   ReqimagePaths: { imagePath: string}[] = [];
   currentIndexImage: number = 0;
@@ -38,7 +37,7 @@ export class VehicleColorPageComponent {
     this.route.params.subscribe((params) => (this.productID = params['twId']));
     
     //vinay
-    // this.route.params.subscribe((params) => (this.productName = params['twId']));
+     this.route.params.subscribe((params) => (this.productName = params['twId']));
 
     this.activeTab = 'images';
     this.checkMobileView(window.innerWidth);
@@ -55,31 +54,23 @@ export class VehicleColorPageComponent {
 
 
   ngOnInit(): void {
-    this.startLoading();
-    this.productListModel = Object.assign({}, EMPTY_Application);
-    if (this.productID != 0 || this.productID != undefined) {
-      this.getProductDataWithID(+this.productID);
-      this.getTabNameWithID(+this.productID);
-      this.getAllTabNameWithID(+this.productID);
-    }
-    // this.getTwoWheelerDatas();
+    this.startLoading();    
+     this.getTwoWheelerDatas();
   }
 
 //vinay
-//   twowheelerlist: Array<ProductListModel> = new Array<ProductListModel>();
-//   getTwoWheelerDatas() {
-//     this.vehiclesService.getTwoWheelerData()
-//       .subscribe((response) => {
-//         this.twowheelerlist = response;
-//         const twowheeler = this.twowheelerlist.find(i => i.manufacturer+''+i.model === this.productName);
-//         this.productID=twowheeler.twId;
-//         this.productListModel = Object.assign({}, EMPTY_Application);
-//         if (this.productID != 0 || this.productID != undefined) {
-//           this.getProductDataWithID(+this.productID);
-//         }
-//     
-//       });
-//   }
+  
+  getTwoWheelerDatas() {
+    this.vehiclesService.getTwoWheelerData()
+      .subscribe((response) => {
+        this.twowheelerlist = response;
+        const twowheeler = this.twowheelerlist.find(i => i.manufacturer+'_'+i.model+'_'+i.variant === this.productName);
+        this.productID=twowheeler.twId;
+        this.productListModel = Object.assign({}, EMPTY_Application);
+        if (this.productID != 0 || this.productID != undefined) {
+          this.getProductDataWithID(+this.productID);
+        }});
+      }
 
   startLoading() {
     this.loading = true;
@@ -119,6 +110,8 @@ export class VehicleColorPageComponent {
         const transformedResponse = this.transformResponse(response);
         this.productlist = transformedResponse;
         this.productListModel = this.productlist;
+        this.getAllTabNameWithID(productID);
+        this.getTabNameWithID(productID);
       });
   }
   //image path
@@ -130,7 +123,7 @@ export class VehicleColorPageComponent {
       .getAllTabNameWithID(productID)
       .subscribe((response) => {
         this.imagetabs = response.map((tab: string) => tab.toLowerCase());
-        console.log(this.imagetabs);
+        // console.log(this.imagetabs);
         this.getAllImageNameWithID(+this.productID);
       });
   }
@@ -143,7 +136,7 @@ export class VehicleColorPageComponent {
         this.ReqimagePaths = this.imagetabs.map((tab) => ({
           imagePath:this.imagePaths[tab],  
         }));
-        console.log(this.ReqimagePaths);
+        // console.log(this.ReqimagePaths);
       });
   }
 
@@ -171,7 +164,7 @@ export class VehicleColorPageComponent {
   }
 
   onDetails() {
-    this.router.navigate(['/Selection', this.productID]);
+    this.router.navigate(['/Selection', this.productName]);
   }
 
   prevSlideImage() {
@@ -223,14 +216,14 @@ export class VehicleColorPageComponent {
   }
 
   onSpecs() {
-    this.twId = this.productID;
-    this.router.navigate(['/Selection', this.twId, 'Specs']);
+   
+    this.router.navigate(['/Selection', this.productName, 'Specs']);
   }
 
-  twId: number = 0;
+  
   onVarient() {
-    this.twId = this.productID;
-    this.router.navigate(['/Selection', this.twId]).then(() => {
+    
+    this.router.navigate(['/Selection', this.productName]).then(() => {
       setTimeout(() => {
         const variants_Container = document.getElementById('variantsContainer');
         if (variants_Container) {

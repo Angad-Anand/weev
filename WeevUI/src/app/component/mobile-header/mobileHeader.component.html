@@ -2,14 +2,14 @@
    <div class="nav">
       <div class="leftarea">
          <a routerLink="/home">
-            <img class="logo" src="assets/images/weev_logo7.svg" />
+            <img class="logo" src="assets/images/weev_logo9.svg" />
          </a>
       </div>
       <div class="rightarea">
          <div class="search-box">
             <input type="text" placeholder="Search..." [(ngModel)]="searchTerm" (input)="showSuggestions()"
                (click)="onSearchBoxClick();" />
-            <button (click)="search();">
+            <button (click)="search();" (click)="onSearchBoxClick();">
                <img src="assets/images/search.svg" alt="Search" />
             </button>
             <div *ngIf="suggestionsVisible" class="suggestions">

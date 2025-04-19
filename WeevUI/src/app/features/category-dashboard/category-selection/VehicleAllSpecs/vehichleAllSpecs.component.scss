@@ -187,7 +187,7 @@
 .spec-label {
   font-weight: normal;
   text-align: left;
-  /* width: 100%; */
+  width: auto; 
 }
 
 .spec-value {
@@ -236,10 +236,6 @@
 
   .gallery-container{
     flex-direction: column;
-  }
-
-  .mainDetails .main-image-container {
-    
   }
 
   .mainDetails .main-image-container img {
@@ -324,11 +320,12 @@
     gap: 0px;
     font-size: 12px;
   }
-
+  
   .spec-row div {
-    /* outline: 1px solid green; */
+    width: auto;
     justify-content: space-between;
     margin-bottom: 0px;
   }
+
 
 }

@@ -1,7 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { VehiclesService } from 'src/app/modules/_services/vehicles.service';
-
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-electric-vehicle-blog-3',
   templateUrl: './electric-vehicle-blog-3.component.html',
@@ -59,14 +59,12 @@ export class ElectricVehicleBlogComponent3 {
 
 
 
-
-
-
-  twowheelerlist: Array<any> = new Array<any>();
+twowheelerlist: Array<any> = new Array<any>();
   toptwowheelerlist: Array<any> = new Array<any>();
   recenttwowheelerlist: Array<any> = new Array<any>();
+  brands: any[] = [];
 
-  constructor(private router: Router, public vehiclesService: VehiclesService){
+  constructor(private http: HttpClient, private router: Router, public vehiclesService: VehiclesService){
 
   }
 
@@ -76,7 +74,11 @@ export class ElectricVehicleBlogComponent3 {
   ngOnInit(): void {
     this.getTwoWheelerData();
     window.scrollTo(0, 0); // Scroll to top
-   
+    
+    this.http.get<any[]>('assets/json/brands.json').subscribe(data => {
+      this.brands = data;
+    //   console.log(this.brands);
+    });
 
     // const stickyElement = document.querySelector('.sticky') as HTMLElement;
     // this.stickyOffSet=stickyElement.offsetTop;
@@ -88,7 +90,10 @@ export class ElectricVehicleBlogComponent3 {
   //   this.isSticky=window.pageYOffset>this.stickyOffSet;
   // }
   
-
+  navigateToBrand(Brand: string) {
+    console.log(`Navigating to brand: ${Brand}`); // Debugging line
+    this.router.navigate(['/Bikes/Brand/', Brand]); // Ensure this matches the route configuration
+}
  
   getTwoWheelerData() {
     this.vehiclesService.getTwoWheelerData().subscribe((response) => {
@@ -110,7 +115,24 @@ export class ElectricVehicleBlogComponent3 {
 
 
   onSelect(twId: any) {
-    this.router.navigate(['/Selection', twId]);
+    const twowheeler = this.twowheelerlist.find(
+      (i) =>
+        // console.log(i.twid);
+        i.twId === twId
+    );
+    const vehicle =
+      twowheeler.manufacturer +
+      '_' +
+      twowheeler.model +
+      '_' +
+      twowheeler.variant;
+    console.log(vehicle);
+
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      this.router.navigate(['/Selection', vehicle]).then(() => {
+      });
+    }, 510);
   }
   
 

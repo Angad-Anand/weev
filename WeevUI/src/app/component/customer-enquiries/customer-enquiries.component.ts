@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { BsModalRef } from "ngx-bootstrap/modal";
+import {
+  FormControl,
+  FormGroup,
+  Validators,
+  AbstractControl,
+  ValidationErrors,
+  ValidatorFn,
+} from '@angular/forms';
+import { BsModalRef } from 'ngx-bootstrap/modal';
 import { Subject } from 'rxjs';
 import { ICustomerenquiries } from 'src/app/_models/IUserRegistration.models';
 import { emailValidator } from 'src/app/utils/email-validator.directive';
@@ -9,18 +16,22 @@ import { onlyNumber } from 'src/app/utils/only-number.directive';
 @Component({
   selector: 'app-customer-enquiries',
   templateUrl: './customer-enquiries.component.html',
-  styleUrls: ['./customer-enquiries.component.scss']
+  styleUrls: ['./customer-enquiries.component.scss'],
 })
 export class CustomerEnquiriesComponent implements OnInit {
-  public onClose!: Subject<string | null>
+  public onClose!: Subject<string | null>;
   title!: string;
   data!: any;
   closeBtnName!: string;
   list!: string[];
   enquiriesForm!: FormGroup;
   userForm: ICustomerenquiries;
-  
-  constructor(public bsModalRef: BsModalRef) { this.userForm = {} as ICustomerenquiries;}
+  successMessage: string = '';
+  formSubmitted: boolean = false;
+
+  constructor(public bsModalRef: BsModalRef) {
+    this.userForm = {} as ICustomerenquiries;
+  }
 
   ngOnInit(): void {
     this.onClose = new Subject();
@@ -29,7 +40,7 @@ export class CustomerEnquiriesComponent implements OnInit {
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(45),
-      ]),      
+      ]),
       email: new FormControl(this.userForm.email, [
         Validators.required,
         Validators.minLength(1),
@@ -39,16 +50,18 @@ export class CustomerEnquiriesComponent implements OnInit {
       mobile: new FormControl(this.userForm.mobile, [
         Validators.required,
         Validators.minLength(10),
-        Validators.maxLength(10),  
-        onlyNumber(),      
+        Validators.maxLength(10),
+        onlyNumber(),
+        this.mobileNumberValidator(),
       ]),
-      
     });
   }
-  closed() {    
+
+  closed() {
     this.bsModalRef.hide();
     this.onClose.next('');
   }
+
   onSubmit() {
     if (this.enquiriesForm.invalid) {
       for (const control of Object.keys(this.enquiriesForm.controls)) {
@@ -59,7 +72,8 @@ export class CustomerEnquiriesComponent implements OnInit {
     this.userForm = this.enquiriesForm.value;
     let data: any = this.userForm;
     this.onClose.next(data);
-    this.bsModalRef.hide();
+    // Show success message
+    this.formSubmitted = true;
   }
 
   get username() {
@@ -72,5 +86,16 @@ export class CustomerEnquiriesComponent implements OnInit {
 
   get email() {
     return this.enquiriesForm.get('email')!;
+  }
+
+  mobileNumberValidator(): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
+      const value = control.value;
+      if (!value) {
+        return null;
+      }
+      const onlyNumbersRegex = /^[6-9]\d{9}$/;
+      return onlyNumbersRegex.test(value) ? null : { onlyNumber: true };
+    };
   }
 }
